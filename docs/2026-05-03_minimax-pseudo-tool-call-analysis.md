@@ -182,3 +182,42 @@ Just enable RAG. The minimax X+M cell becomes X+R+M (or "X+M with stub-geos-rag 
 4. If even Option A doesn't recover, fall back to Option C: enable RAG as a defensive measure, label it as such, and discuss the cross-model adapter-ranking caveat in the paper.
 
 The original failed run is preserved as evidence of the pseudo-call failure mode; the corrected run gives the apples-to-apples comparison the cross-model panel is supposed to provide.
+
+## Disclaim-rerun results (2026-05-03 16:38 UTC)
+
+\textbf{Big lift, but not full recovery.}
+
+| config | fa0 | scored | fail | total real tool calls | pseudo tool calls |
+|---|---:|---:|---:|---:|---:|
+| X+M (no disclaim) | $0.392$ | $9$ | $8$ | 665 (74/successful task) | 18 |
+| X+M (disclaim) | $\mathbf{0.711}$ | $14$ | $3$ | 834 (60/successful task) | 12 |
+
+Recovery: $+0.319$pp absolute. Five of the eight pseudo-call failures rescued. Pseudo-calls drop $18 \to 12$. The disclaimer suppresses the pathology in most tasks but not all.
+
+\textbf{Three tasks still fail with the same pseudo-call signature even with the disclaimer in place}: \texttt{ExampleThermalLeakyWell}, \texttt{buckleyLeverettProblem}, \texttt{kgdExperimentValidation}. In each, real tool calls = 0 and pseudo-call counts on \texttt{mcp\_\_geos-rag\_\_search\_navigator|schema|technical} are 2--3. minimax sometimes ignores the explicit in-prompt "do NOT call these" instruction. Why these three specific tasks (and not others) hit the failure mode after the disclaimer is unclear.
+
+\textbf{What this means for cross-model adapter ranking}:
+
+| backbone | Vanilla | X+M (corrected) | SE |
+|---|---:|---:|---:|
+| DSv4-flash (3 seeds) | $0.910$ | $0.921$ | $0.919$ |
+| minimax-m2.7 (1 seed) | $0.821$ | $0.711$ (was $0.392$) | $0.861$ |
+| gemini-3-flash-preview (1 seed) | $0.768$ | $0.797$ | $0.757$ |
+
+Even with the disclaimer fix, \textbf{minimax × X+M ($0.711$) is below minimax × Vanilla ($0.821$)} by $11$pp. The X+M adapter does not help minimax. SE remains the best minimax cell. The cross-model adapter recommendation now stands:
+
+\begin{quote}
+\textbf{X+M is the right cell on DSv4-flash and gemini, but not on minimax.} On minimax, prefer SE (the self-evolved monolith with both geos-rag and xmllint MCP servers registered) or Vanilla. The X+M cell's hidden dependence on the geos-rag namespace makes it brittle on backbones with strong priors over Claude-Code MCP conventions.
+\end{quote>
+
+This is a more nuanced and more honest finding than the original "X+M wins on test-17" framing.
+
+## Possible extensions if the residual 3 failures are load-bearing
+
+The disclaimer recovery is partial. If the 3 residual failures matter for the paper headline, two follow-ups are reasonable:
+
+\textbf{Stronger disclaimer}: re-rank the prompt content to put the disclaimer EARLIER (before the cheatsheet, not at the tail) so the "do NOT pseudo-call" instruction is more salient than the cheatsheet's RAG-style narrative might be. Cheap to test.
+
+\textbf{Stub geos-rag MCP server}: add a no-op handler for \texttt{mcp\_\_geos-rag\_\_search\_*} that returns "this tool is not available in this configuration; use Glob/Grep against /geos\_lib/". minimax would now have actual tool entries to invoke (via real \texttt{tool\_use}, not pseudo-call), the runtime would route them to the stub, and the agent would see a useful redirect message. Implementation cost: 1 hour for a small Python MCP shim.
+
+We do not implement either of these in the current run; we report the disclaimer-only result and note the residual.
