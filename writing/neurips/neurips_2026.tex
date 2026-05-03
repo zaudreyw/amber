@@ -263,10 +263,10 @@ Adapter cells are no more expensive than Vanilla in wall-clock per task. Table~\
 
 An earlier version of our system attempted to expose cheatsheet-like content through an MCP \texttt{memory\_lookup} tool with embedding top-$k$ retrieval over a distilled corpus. Across every test-set run in which the tool was available, the agent called it \textbf{zero times}. The tool is functional (verified to fail hard on a missing API key and to return correctly formatted results when called manually). The agent simply did not elect to invoke it. We treat this as a clean negative result on this task--model pair: making procedural domain knowledge \emph{retrievable} is not sufficient if the agent does not invoke retrieval. Delivering the same content through an always-on channel (\texttt{--append-system-prompt}, the M factor) produced the lift instead.
 
-\subsection{Cross-model: plugin generalises across backbones}
-\label{subsec:cross-model}
+\subsection{Cross-model and cross-harness}
+\label{subsec:cross-cutting}
 
-The headline cells in Table~\ref{tab:main-results} all use \texttt{deepseek-v4-flash}. To check that the plugin's contribution is not a deepseek-v4-flash-specific artefact, we re-run the \emph{Vanilla} cell and a single-factor RAG-only cell (R only) on \texttt{deepseek-v3.2} and \texttt{minimax/minimax-m2.7} on a 35-task superset that overlaps test-17. The plugin lifts $+0.175$ on \texttt{deepseek-v3.2} (paired 35 tasks) and $+0.115$ on \texttt{minimax-m2.7} (paired 15 tasks). The plugin generalises across backbones; the same is plausible but unverified for the cheatsheet (M factor) on backbones other than \texttt{deepseek-v4-flash}.
+We ran two cross-cutting panels (full tables in App.~\ref{app:cross-model-detail}). \textbf{Cross-model} (Vanilla / X+M / SE on \texttt{minimax-m2.7} and \texttt{google/gemini-3-flash-preview} via OpenRouter, $n=1$): X+M wins on every backbone --- minimax $0.821 \to 0.867$, gemini $0.768 \to 0.797$. \textbf{Cross-harness} (Vanilla and X+M on OpenHands × \texttt{deepseek-v4-flash}, $n=3$): consistent $-4$--$5$pp gap from CC at both cells; X+M lift larger on OH ($+0.025$) than CC ($+0.011$); $\sigma$ reduction ${\sim}3\times$ on both harnesses. The minimax X+M number is post-fix; the initial launch surfaced an orchestrator bug (App.~\ref{app:cross-model-detail}) that collapsed minimax X+M to $0.392$ before the fix.
 
 \subsection{Harness-less one-shot: a model-class lower bound}
 \label{subsec:harnessless}
@@ -302,8 +302,11 @@ The reported main effect of $\mathrm{X}$ is not the effect of ``MCP validator al
 \paragraph{Held-out-10 is harder, not just out-of-distribution.}
 Three of the ten Held-out-10 tasks score below 0.7 under Vanilla; zero of seventeen test-17 tasks do. The non-pathological seven Held-out-10 tasks have a Vanilla mean of $0.898$, indistinguishable from test-17's $0.910$. We cannot determine from our records whether Held-out-10 was selected uniform-at-random over difficulty or curated for ``interesting'' advanced examples. Either way, the headline ``OOD'' gain is more accurately framed as a ``hard-tail'' gain: adapters earn value on compound multi-physics tasks the bare model has no template for. Stronger quantitative claims about effect size require a larger pool of hard-tail tasks; we treat the Held-out-10 result as an existence-of-effect finding.
 
-\paragraph{Single backbone, single harness.}
-All cell-level numbers use \texttt{deepseek-v4-flash} on Claude Code; cross-backbone results on the R factor only (App.~\ref{app:cross-model}) suggest the plugin generalises but do not verify the same for X, M, or SE. We outline cross-model and cross-harness experiments (\texttt{minimax-m2.7}, \texttt{gemini-3-flash-preview}, OpenHands, OpenCode) in App.~\ref{app:future-work}.
+\paragraph{Cross-model and cross-harness coverage.}
+Headline 3-seed numbers use \texttt{deepseek-v4-flash} on Claude Code. Cross-model 1-seed runs on \texttt{minimax-m2.7} and \texttt{google/gemini-3-flash-preview} confirm the X+M ranking transfers (\S\ref{subsec:cross-model}). Cross-harness 3-seed runs on OpenHands × \texttt{deepseek-v4-flash} confirm the X+M lift on a second harness, with a consistent $-4$--$5$pp gap from CC at both Vanilla and X+M (\S\ref{subsec:cross-harness}). We did not run OpenCode (no extant integration) and we did not multi-seed the cross-model runs (single-seed effect-size estimates have wider error bars than the headline DSv4 numbers).
+
+\paragraph{Native-plugin-prefix bug spillover on autocamp $R$ main effect.}
+A user-prompt prefix instructing the agent to call \texttt{mcp\_\_geos-rag\_\_*} was previously injected into every cell with \texttt{plugin\_enabled=True} regardless of whether geos-rag was registered (App.~\ref{app:cross-model-detail}). The bug was silent on DSv4 but caused minimax × X+M to collapse during cross-model. Cells affected include F2/F4/F6/F8/F11, so the reported $R = -0.033$ partially measures ``agent stuck on impossible instruction in $R^{-}$ cells''. A clean re-run of F0/F4/F6/SE on DSv4 with the fixed gate is recommended for camera-ready; the X+M-vs-Vanilla relative ranking is unaffected since both are $R^{-}$.
 
 \paragraph{Bottleneck labels are not adjudicated.}
 Per-task failure categories come from \texttt{deepseek-v4-flash} prompted with strict-JSON output. Counts are descriptive, not gold-standard labels; DSv4-pro syntheses occasionally over-claim mechanism. Numerical observations are reliable; causal claims should be cross-checked against the per-task CSV in the supplement.
@@ -447,10 +450,32 @@ Code: \texttt{scripts/bottleneck/\{extract,llm\_per\_task,aggregate\}.py}.
   \end{tabular}
 \end{table}
 
-\section{Cross-model and cross-harness}
+\section{Cross-model and cross-harness — full panels}
+\label{app:cross-model-detail}
 \label{app:cross-model}
 
-\textbf{R-factor cross-model verification.} On a 35-task superset that overlaps test-17, the retrieval plugin lifts $+0.175$ on \texttt{deepseek-v3.2} (paired 35 tasks) and $+0.115$ on \texttt{minimax-m2.7} (paired 15 tasks). Cross-backbone evidence for X, M, and SE is left to future work (App.~\ref{app:future-work}).
+\textbf{Setup.} Cross-model: $n=1$ seed of Vanilla, X+M, SE on test-17 with two backbones (\texttt{minimax-m2.7}, \texttt{google/gemini-3-flash-preview}) via OpenRouter, harness held at Claude Code, default-off harness env (\texttt{GEOS\_HOOK\_POSTTOOLUSE} unset, autocamp-experiment-state parity). Cross-harness: $n=3$ seeds of Vanilla and X+M on test-17 with \texttt{deepseek-v4-flash}, harness varied between Claude Code and OpenHands. Headline DSv4 numbers from Table~\ref{tab:main-results} included for comparison.
+
+\begin{table}[h]
+  \caption{Full cross-model and cross-harness panel. Counts in parentheses are task failures out of 17. The minimax × X+M result of $0.392$ in italic is the pre-fix number reported in the project log; the corrected number ($0.867$) replaces it after the prefix-gate bug fix described below.}
+  \label{tab:cross-cutting-full}
+  \centering
+  \small
+  \begin{tabular}{llccc}
+    \toprule
+    \textbf{Harness} & \textbf{Backbone} & \textbf{Vanilla} & \textbf{X+M} & \textbf{SE} \\
+    \midrule
+    CC & \texttt{deepseek-v4-flash} ($n=3$) & $0.910 \pm 0.024$ & $0.921 \pm 0.007$ & $0.919 \pm 0.020$ \\
+    CC & \texttt{minimax-m2.7} ($n=1$)        & $0.821$ ($1$ fail) & $0.867$ ($0$ fails) [was $\mathit{0.392}$] & $0.861$ ($0$ fails) \\
+    CC & \texttt{gemini-3-flash-preview} ($n=1$) & $0.768$ ($0$ fails) & $0.797$ ($0$ fails) & $0.757$ ($1$ fail) \\
+    OH & \texttt{deepseek-v4-flash} ($n=3$) & $0.856 \pm 0.061$ & $0.881 \pm 0.023$ & --- \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+\textbf{Native-plugin-prefix bug discovered via cross-model panel.} On the first launch, minimax × X+M scored a striking $0.392$ with $8/17$ tasks failing entirely (zero XMLs written). Trajectory inspection showed minimax emitting calls to \texttt{mcp\_\_geos-rag\_\_search\_navigator}, \texttt{search\_schema}, \texttt{search\_technical} as text-formatted ``pseudo-tool-call'' wrappers --- but these tools were not registered in the X+M cell (only \texttt{mcp\_\_xmllint\_\_validate\_geos\_xml} was). Adversarial review (RN-006) traced the source: \texttt{src/runner/prompts/native\_plugin\_prefix.txt} literally instructs the agent to call those three tools, and \texttt{src/runner/orchestrator.py} was injecting the prefix into the user prompt for every cell with \texttt{plugin\_enabled=True}, regardless of whether the geos-rag MCP server was actually registered. After fixing the gate to key on \texttt{rag\_enabled} instead, the minimax × X+M re-run scored $0.867$ with $0$ task failures and $0$ pseudo-tool calls --- now \emph{above} both Vanilla and SE on the same backbone.
+
+\textbf{R-factor cross-model corroboration} (older runs). On a 35-task superset that overlaps test-17, the retrieval plugin lifts $+0.175$ on \texttt{deepseek-v3.2} (paired 35 tasks) and $+0.115$ on \texttt{minimax-m2.7} (paired 15 tasks). These older runs predate the bug discovery; the headline result above (X+M and SE × test-17) supersedes them.
 
 \textbf{Harness-less floor.} A one-shot direct-prompting baseline on \texttt{minimax-m2.7} (\texttt{scripts/harnessless\_eval.py}; \texttt{deepseek-v4-flash} not yet run in this configuration) reaches fa0 $= 0.333$ on test-17 with no task passing TreeSim $\geq 0.7$. We treat this as a model-class lower bound rather than a per-model floor.
 
@@ -461,10 +486,18 @@ Code: \texttt{scripts/bottleneck/\{extract,llm\_per\_task,aggregate\}.py}.
 
 \todo{Expand the four-point design recommendations from \S\ref{sec:analysis} into half-page paragraphs each, with concrete pseudocode for the proposed attribute-level oracle and cross-section consistency hooks.}
 
-\section{Cross-model / cross-harness experiment plan}
+\section{Future work — open follow-ups}
 \label{app:future-work}
 
-\todo{Detailed plan for: (i) re-running Vanilla, X+M, and SE on \texttt{minimax-m2.7} and \texttt{google/gemini-3-flash-preview} via OpenRouter, 3 seeds each, both task sets; (ii) re-running the same three cells on the OpenHands harness and the OpenCode harness with \texttt{deepseek-v4-flash} backbone; (iii) tabulating cross-model and cross-harness ranking changes.}
+\textbf{Multi-seed cross-model.} Repeat the cross-model panel (Vanilla, X+M, SE on minimax and gemini) with $n=3$ seeds to tighten effect-size estimates. Cost is the limiting factor: at OpenRouter list pricing, gemini-3-flash-preview is the dominant share (${\sim}3\times$ DSv4 input, ${\sim}11\times$ output per million tokens). Single-seed already establishes that the X+M ranking transfers; multi-seed sharpens the magnitude.
+
+\textbf{Clean re-run of autocamp factorial cells with the prefix-gate fix.} The autocamp $R$ main effect ($-0.033$) was contaminated by the native-plugin-prefix bug for cells with $R^{-}$ that did not opt out of the prefix (F2, F4, F6, F8, F11). Re-running F0/F4/F6/SE on DSv4 × test-17 at 3 seeds with the fix in place gives a clean estimate. Estimate: ${\sim}1.5$h wall-clock, low API spend on DSv4-flash.
+
+\textbf{OpenCode harness integration.} Build a thin wrapper for OpenCode (no extant integration) and re-run Vanilla and X+M-equivalent. We outlined the implementation cost as $\sim$4--8h.
+
+\textbf{Execution-correctness ladder.} Run a sample of agent-produced decks through actual GEOS execution to convert TreeSim into a runnability metric. Even a small panel (5 tasks × 2 cells × 1 seed) would convert the structural-similarity metric into a ladder.
+
+\textbf{Cross-section consistency hook} (from the bottleneck analysis). Implement an adapter that validates \texttt{<ElementRegion materialList>} entries against \texttt{<Constitutive>} block names, then re-run as a new cell. This converts the bottleneck-analysis-as-observation into adapter-design-as-output.
 
 \section{Implementation details}
 \label{app:impl}
