@@ -57,9 +57,56 @@ minimax:tool_call wrappers; those are text and will not execute.
 
 \textbf{4. Memory cheatsheet} (m1u, prepended via \texttt{--append-system-prompt}). I grepped \texttt{plugin/memory\_primer\_dsv4\_m1u.md}, \texttt{plugin/GEOS\_PRIMER\_contract.md}, and \texttt{run/AGENTS.md} for any string matching \texttt{geos-rag|mcp\_\_geos|search\_navigator|search\_schema|search\_technical}: \textbf{zero matches}. The agent was given no in-prompt mention of any \texttt{mcp\_\_geos-rag\_\_*} tool name.
 
-## So why does minimax invoke geos-rag?
+## Investigation: where does minimax learn about \texttt{mcp\_\_geos-rag\_\_*}?
 
-\textbf{Answer: it's training-data prior, not in-prompt suggestion.}
+The user pushed back on the easy "training data prior" answer because the project timeline excludes our repo from minimax-m2.7's training corpus:
+
+| event | date |
+|---|---|
+| minimax-m2.7 release (\texttt{minimax-m2.7-20260318}) | 2026-03-18 |
+| repo3 earliest commit (``Add Claude Code plugin scaffold'') | 2026-04-17 |
+| First commit mentioning \texttt{geos-rag} (``Add GEOS RAG MCP tools'') | 2026-04-17 |
+
+Our repo is one month younger than minimax-m2.7. minimax cannot have been trained on \texttt{repo3-plugin}.
+
+\textbf{What we ruled out via direct inspection of the failed task's stdout (the \texttt{TutorialSneddon} run that produced 0 XMLs):}
+
+\textbf{1. Not in any prompt or cheatsheet}: \texttt{grep} for \texttt{geos-rag|mcp\_\_geos|search\_navigator|search\_schema|search\_technical} across \texttt{run/AGENTS.md}, \texttt{plugin/GEOS\_PRIMER\_contract.md}, and \texttt{plugin/memory\_primer\_dsv4\_m1u.md} returns zero matches. None of the text the agent saw in its system prompt mentions any \texttt{geos-rag} tool name.
+
+\textbf{2. Not in the runtime tool list}: Claude Code's \texttt{system/init} event for the failed run is verbatim:
+
+\begin{verbatim}
+mcp_servers: [{'name': 'xmllint', 'status': 'connected'}]
+tools (24 total): ['Task', 'Bash', 'Edit', 'Glob', 'Grep', 'Read', ...,
+                   'mcp__xmllint__validate_geos_xml']
+plugins: []
+skills: ['update-config', 'debug', 'simplify', 'batch',
+         'fewer-permission-prompts', 'loop', 'claude-api']  # CC built-ins only
+\end{verbatim}
+
+\texttt{plugins: []} confirms that \emph{Claude Code did not auto-load the repo3-plugin from \texttt{CLAUDE\_PLUGIN\_ROOT}} despite the directory being mounted at \texttt{/plugins/repo3}; \texttt{--strict-mcp-config} is doing its job. \texttt{skills: [...]} lists only Claude Code's seven built-in skills, none of which is \texttt{geos-rag}. So Claude Code did not surface \texttt{plugin/skills/geos-rag/SKILL.md} into the agent's context.
+
+\textbf{3. Not from a prior tool invocation}: the failed-task trajectory is exactly four events long: \texttt{system/init} → assistant text + thinking → \texttt{result/success}. The pseudo-call appears in \emph{the assistant's first turn} as raw text, with zero prior \texttt{tool\_use}, \texttt{Read}, \texttt{Glob}, or anything else. minimax could not have read \texttt{plugin/.claude-plugin/plugin.json} or any other mounted file because it never had the chance — the pseudo-call was the very first content it produced.
+
+\textbf{4. Not a general minimax tendency}: Vanilla minimax (no MCP server registered, \texttt{mcp\_servers: []}) shows \texttt{pseudo\_tool\_calls: 0} across all 17 tasks and 41+ real \texttt{tool\_use} blocks per task. The pseudo-call only fires when at least one MCP tool \emph{is} registered.
+
+\textbf{5. Not a DSv4-flash or gemini issue}: across the entire autocamp factorial (51 tasks × 9 cells × 3 seeds = ${\sim}1{,}300$ DSv4-flash trajectories), \texttt{pseudo\_tool\_counts} is empty everywhere. DSv4-flash never hallucinates MCP tool names, regardless of which MCP servers are connected.
+
+\textbf{What's left: training-data pattern completion.}
+
+The remaining plausible explanation is that minimax-m2.7 generates \texttt{mcp\_\_geos-rag\_\_search\_navigator|schema|technical} as a \emph{plausible inference} from two cues:
+
+\textbf{(i)} The presence of \emph{any} MCP tool in the tool list (here, \texttt{mcp\_\_xmllint\_\_*}) signals to minimax that "this is a Claude-Code-style agent loop with MCP servers". minimax has been trained on Claude Code agent traces — this is in its public training data, by Anthropic's own publication and by the existence of MCP/Claude Code traces on the open internet.
+
+\textbf{(ii)} The task domain is "GEOS XML authoring". minimax has likely seen agentic traces in other simulator/scientific/RAG settings where the pattern \texttt{mcp\_\_<domain>-rag\_\_search\_navigator|schema|technical} (or near-cognates: \texttt{search\_docs}, \texttt{search\_examples}) appears — these are common conventions in the Anthropic MCP examples and in third-party domain RAG plugins. minimax extrapolates from "MCP tool present + GEOS domain" → "the standard GEOS-RAG suite must also be available".
+
+The naming \texttt{search\_navigator / search\_schema / search\_technical} is suspiciously specific — three tools, those exact verb-noun combinations. These names are not particularly generic; for "navigator" especially, the semantic alignment to "doc orientation" is a non-trivial coincidence. We cannot fully exclude that minimax saw \emph{some} pre-existing public artefact (an Anthropic example, an early Brian repo, a related public project) that used these exact names. We have not exhaustively searched the open web for prior uses; we note only that our \texttt{repo3} could not have been the source.
+
+\textbf{Practical takeaway:} regardless of the exact training-data path, the model's behaviour is to fill in a plausible RAG namespace whenever \emph{any} MCP tool is registered. The disclaimer fix below works because it explicitly contradicts the model's prior with concrete in-prompt evidence ("these tools are NOT registered, do NOT call them").
+
+## Original (now-superseded) framing
+
+\textbf{Earlier we wrote: "training-data prior, not in-prompt suggestion."} That bottom line is still correct, but the rationale needs the qualification above: the training data cannot have been our repo, so the prior is over generic Claude-Code-style RAG plugins and/or some public artefact that used very similar tool names. Below is the original three-piece evidence (still holds):
 
 Three pieces of evidence:
 
