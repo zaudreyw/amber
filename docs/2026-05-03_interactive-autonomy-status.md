@@ -43,3 +43,10 @@
 - Audit clean: no agent Read or Bash'd `/supervisor/spec.md` directly.
 - Total wall time end-to-end: ~3 hours. Cost: well under $5 (DSv4-flash +
   one DSv4-pro pass on spec generation).
+- 2026-05-03 ~12:30 UTC — kicked off **V1 neutral-prompt rerun** (matt's
+  request, "less prescriptive about infer vs consult"). Two new agent
+  variants `ia_{F0,F4}_interactive_v1` with `supervisor_prompt_variant=
+  v1_neutral`. Same wiring otherwise. 32 runs (8 tasks × 2 cells × 2
+  difficulties × 1 seed). ETA ~2h wall, ~$2 cost.
+  - Sanity-checked: V0 ≠ V1 system prompt; V1 docstring served by MCP
+    over `tools/list`. Both confirmed by direct probes before launch.

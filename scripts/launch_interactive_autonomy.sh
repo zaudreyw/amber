@@ -22,8 +22,9 @@ DIFFICULTY="${2:?difficulty (medium|hard) required}"
 SMOKE_FLAG="${3:-}"
 
 case "$MODE" in
-  modeA) AGENTS=(ia_F0_noninteractive ia_F4_noninteractive) ;;
-  modeB) AGENTS=(ia_F0_interactive  ia_F4_interactive)  ;;
+  modeA)   AGENTS=(ia_F0_noninteractive ia_F4_noninteractive) ;;
+  modeB)   AGENTS=(ia_F0_interactive    ia_F4_interactive)    ;;
+  modeBv1) AGENTS=(ia_F0_interactive_v1 ia_F4_interactive_v1) ;;
   *) echo "bad mode: $MODE" >&2; exit 2 ;;
 esac
 
@@ -67,7 +68,7 @@ RESULTS_ROOT="${REPO_ROOT}/data/eval/interactive_autonomy_2026-05-03/${MODE}_${D
 mkdir -p "$RESULTS_ROOT/_logs"
 
 SUPERVISOR_FLAG=()
-if [ "$MODE" = "modeB" ]; then
+if [ "$MODE" = "modeB" ] || [ "$MODE" = "modeBv1" ]; then
   SUPERVISOR_FLAG=(--supervisor-spec-dir "$SUPERVISOR_SPEC_DIR")
 fi
 

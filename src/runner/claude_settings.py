@@ -104,6 +104,7 @@ def write_claude_mcp_config(
     supervisor_task_name: str = "",
     supervisor_model: str = "deepseek-v4-flash",
     supervisor_base_url: str = "https://api.deepseek.com/v1",
+    supervisor_prompt_variant: str = "v0",
     memory_variant: str = "lexical",  # "lexical" (memory_mcp.py) or "embed" (memory_mcp_embed.py)
     memory_items_host_path: Path | None = None,
     memory_embed_index_host_path: Path | None = None,
@@ -220,6 +221,7 @@ def write_claude_mcp_config(
                 "SUPERVISOR_TASK_NAME": supervisor_task_name,
                 "SUPERVISOR_LLM_MODEL": supervisor_model,
                 "SUPERVISOR_LLM_BASE_URL": supervisor_base_url,
+                "SUPERVISOR_PROMPT_VARIANT": supervisor_prompt_variant,
                 # API key forwarded from the docker process env (see
                 # docker_cmd.py — DEEPSEEK_API_KEY is added to -e list when
                 # any agent has supervisor_enabled).

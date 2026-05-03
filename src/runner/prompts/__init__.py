@@ -86,7 +86,7 @@ def build_task_prompt(task_instructions: str) -> str:
     )
 
 
-_SUPERVISOR_INSTRUCTIONS = (
+_SUPERVISOR_INSTRUCTIONS_V0 = (
     "\n## Asking the human researcher\n"
     "Some details of the simulation specification you received are "
     "intentionally unspecified. A simulated human researcher is "
@@ -101,6 +101,24 @@ _SUPERVISOR_INSTRUCTIONS = (
     "specification.\n"
 )
 
+_SUPERVISOR_INSTRUCTIONS_V1_NEUTRAL = (
+    "\n## The human researcher channel\n"
+    "A simulated human researcher is available via the "
+    "`mcp__geos-supervisor__consult_supervisor` tool. The simulation "
+    "specification you received may be incomplete; values that are "
+    "missing can be inferred from GEOS conventions and analogous "
+    "examples, OR you may ask the researcher. Choose whichever path "
+    "is more reliable for the value at hand. Ask short, specific, "
+    "single-question queries; batch related parameters into one "
+    "question when that is natural. The researcher will answer "
+    "concisely using only the original specification.\n"
+)
+
+_SUPERVISOR_INSTRUCTION_VARIANTS = {
+    "v0": _SUPERVISOR_INSTRUCTIONS_V0,
+    "v1_neutral": _SUPERVISOR_INSTRUCTIONS_V1_NEUTRAL,
+}
+
 
 def build_system_prompt(
     agents_context: str,
@@ -112,6 +130,7 @@ def build_system_prompt(
     plugin_enabled: bool = True,
     rag_enabled: bool | None = None,
     supervisor_enabled: bool = False,
+    supervisor_prompt_variant: str = "v0",
 ) -> tuple[str, bool]:
     if rag_enabled is None:
         rag_enabled = plugin_enabled
@@ -150,7 +169,10 @@ def build_system_prompt(
     )
 
     supervisor_instructions = (
-        _SUPERVISOR_INSTRUCTIONS if supervisor_enabled else ""
+        _SUPERVISOR_INSTRUCTION_VARIANTS.get(
+            supervisor_prompt_variant, _SUPERVISOR_INSTRUCTIONS_V0
+        )
+        if supervisor_enabled else ""
     )
 
     # Optional disclaimer that names the geos-rag MCP tools as unavailable.

@@ -127,6 +127,9 @@ def run_task(
         plugin_enabled=_plugin_on,
         rag_enabled=_rag_on,
         supervisor_enabled=bool(agent.get("supervisor_enabled", False)),
+        supervisor_prompt_variant=str(
+            agent.get("supervisor_prompt_variant", "v0")
+        ),
     )
     # If we're delivering the cheatsheet via the workspace (instead of system prompt),
     # drop the file into the result_dir so Docker bind-mounts it as /workspace/CHEATSHEET.md.
@@ -236,6 +239,9 @@ def run_task(
                 supervisor_task_name=task_name,
                 supervisor_model=str(agent.get("supervisor_model", "deepseek-v4-flash")),
                 supervisor_base_url=str(agent.get("supervisor_base_url", "https://api.deepseek.com/v1")),
+                supervisor_prompt_variant=str(
+                    agent.get("supervisor_prompt_variant", "v0")
+                ),
                 memory_variant=str(agent.get("memory_variant", "lexical")),
                 memory_items_host_path=(
                     Path(agent["memory_items_path"]).resolve()

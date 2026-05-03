@@ -123,27 +123,55 @@ def _log(payload: dict[str, Any]) -> None:
         print(f"supervisor_mcp: log write failed: {e}", file=sys.stderr)
 
 
+PROMPT_VARIANT = os.environ.get("SUPERVISOR_PROMPT_VARIANT", "v0").strip()
+
+_DOCSTRING_V0 = (
+    "Ask a clarifying question to the human researcher.\n\n"
+    "Use this when the simulation specification you received does not "
+    "contain a value or detail you need to make a faithful XML, and you "
+    "cannot reasonably infer it from GEOS conventions or domain "
+    "knowledge. Each call costs the researcher's time, so prefer to "
+    "infer when you can. The researcher will answer concisely using "
+    "only information in their original specification.\n\n"
+    "Args:\n"
+    "    question: A short, specific question. State the parameter or "
+    "choice you are asking about.\n\n"
+    "Returns:\n"
+    "    {\"answer\": <str>, \"latency_seconds\": <float>}"
+)
+
+_DOCSTRING_V1_NEUTRAL = (
+    "Ask the human researcher a clarifying question.\n\n"
+    "The simulation specification you received may be incomplete. "
+    "Missing values can be inferred from GEOS conventions and "
+    "analogous examples, or you may ask the researcher. Choose "
+    "whichever path is more reliable for the value at hand. The "
+    "researcher will answer concisely using only the original "
+    "specification.\n\n"
+    "Args:\n"
+    "    question: A short, specific question. State the parameter or "
+    "choice you are asking about.\n\n"
+    "Returns:\n"
+    "    {\"answer\": <str>, \"latency_seconds\": <float>}"
+)
+
+_DOCSTRING_BY_VARIANT = {
+    "v0": _DOCSTRING_V0,
+    "v1_neutral": _DOCSTRING_V1_NEUTRAL,
+}
+_consult_doc = _DOCSTRING_BY_VARIANT.get(PROMPT_VARIANT, _DOCSTRING_V0)
+print(
+    f"supervisor_mcp: prompt_variant={PROMPT_VARIANT}",
+    file=sys.stderr,
+)
+
+
 app = FastMCP("geos-supervisor")
 
 
-@app.tool()
+@app.tool(description=_consult_doc)
 def consult_supervisor(question: str) -> dict[str, Any]:
-    """Ask a clarifying question to the human researcher.
-
-    Use this when the simulation specification you received does not
-    contain a value or detail you need to make a faithful XML, and you
-    cannot reasonably infer it from GEOS conventions or domain
-    knowledge. Each call costs the researcher's time, so prefer to
-    infer when you can. The researcher will answer concisely using
-    only information in their original specification.
-
-    Args:
-        question: A short, specific question. State the parameter or
-            choice you are asking about.
-
-    Returns:
-        {"answer": <str>, "latency_seconds": <float>}
-    """
+    """Forwards the agent's question to the simulated human researcher LLM."""
     started = time.time()
     if not SPEC_TEXT:
         return {

@@ -792,4 +792,40 @@ AGENTS: dict[str, dict] = {
         "supervisor_base_url": "https://api.deepseek.com/v1",
         "cheatsheet_path": REPO_ROOT / "plugin" / "memory_primer_dsv4_m1u.md",
     },
+    # V1 neutral-prompt variants — same as the corresponding V0 cells
+    # but `supervisor_prompt_variant="v1_neutral"` (drops the
+    # "prefer to infer" framing in both the system-prompt addendum
+    # and the consult_supervisor docstring). See
+    # docs/2026-05-04_interactive-autonomy-results.md §"Diagnostic".
+    "ia_F0_interactive_v1": {
+        "runner": "claude_native",
+        "results_dir": DATA_DIR / "eval" / "interactive_autonomy_2026-05-03" / "ia_F0_int_v1",
+        "api_key_env": "ANTHROPIC_AUTH_TOKEN",
+        "model": DEFAULT_CLAUDE_MODEL,
+        "requires_rag": False,
+        "plugin_enabled": True,
+        "rag_enabled": False,
+        "stop_hook_enabled": False,
+        "supervisor_enabled": True,
+        "supervisor_model": "deepseek-v4-flash",
+        "supervisor_base_url": "https://api.deepseek.com/v1",
+        "supervisor_prompt_variant": "v1_neutral",
+        "memory_prompt_hint": False,
+    },
+    "ia_F4_interactive_v1": {
+        "runner": "claude_native",
+        "results_dir": DATA_DIR / "eval" / "interactive_autonomy_2026-05-03" / "ia_F4_int_v1",
+        "api_key_env": "ANTHROPIC_AUTH_TOKEN",
+        "model": DEFAULT_CLAUDE_MODEL,
+        "requires_rag": False,
+        "plugin_enabled": True,
+        "rag_enabled": False,
+        "stop_hook_enabled": False,
+        "xmllint_mcp_enabled": True,
+        "supervisor_enabled": True,
+        "supervisor_model": "deepseek-v4-flash",
+        "supervisor_base_url": "https://api.deepseek.com/v1",
+        "supervisor_prompt_variant": "v1_neutral",
+        "cheatsheet_path": REPO_ROOT / "plugin" / "memory_primer_dsv4_m1u.md",
+    },
 }
