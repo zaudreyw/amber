@@ -77,9 +77,31 @@ DSv4-flash silently ignored the impossible instruction (its prior over "I should
 
 **Spillover**: the autocamp R main effect ($-0.033$) was measuring not just "RAG vs no-RAG" but "RAG vs no-RAG, with the no-RAG cells being told to use a missing RAG tool". The team's existing `abl_c9_no_prefix` cell (autocamp_v4 too has the opt-out) was created precisely because someone noticed a $+0.24$ surprise from this prefix on DSv4. The bug's effect is bounded but non-zero on DSv4 and severe on minimax.
 
-**Re-run launched**: `minimax_minimax-m2.7_F4_fixprefix_s1` --- minimax × X+M × test-17 × 1 seed with the bug-fix and the disclaimer OFF. Will compare to the disclaimer-on result ($0.711$) to see if removing the bad instruction at its source recovers more than the disclaimer's tail-end correction did.
+**Re-run completed (2026-05-03 23:38 UTC)**: minimax × X+M × test-17 × 1 seed with the bug-fix in place and the disclaimer OFF.
 
-The original analysis below is preserved as the diagnostic walkthrough that led to RN-006. The training-data-prior framing is wrong; the bug is in our code.
+| config | fa0 | scored | fail | pseudo MCP calls |
+|---|---:|---:|---:|---:|
+| X+M (no disclaim, buggy prefix) | $0.3916$ | $9$ | $8$ | $18$ |
+| X+M (disclaim, buggy prefix) | $0.7108$ | $14$ | $3$ | $12$ |
+| **X+M (prefix gate fixed, no disclaim)** | **$0.8668$** | **$17$** | **$0$** | **$0$** |
+
+**The bug fix at the source completely eliminates the pathology.** Zero pseudo MCP calls, zero task failures, fa0 lifts from $0.392 \to 0.867$ ($+47.5$pp absolute). The disclaimer-only intervention recovered $+31.9$pp; fixing the buggy gate at the source recovers the additional $15.6$pp on top of that.
+
+**Updated cross-model panel** (replacing the corrupt minimax × X+M number):
+
+| backbone | Vanilla | X+M | SE |
+|---|---:|---:|---:|
+| DSv4-flash (3 seeds) | $0.910$ | $\mathbf{0.921}$ | $0.919$ |
+| minimax-m2.7 (1 seed) | $0.821$ | $\mathbf{0.867}$ | $0.861$ |
+| gemini-3-flash-preview (1 seed) | $0.768$ | $\mathbf{0.797}$ | $0.757$ |
+
+**X+M now wins on every backbone we tested.** Adapter ranking IS preserved across DSv4-flash, minimax-m2.7, and gemini-3-flash-preview --- the apparent cross-model adapter-ranking inversion was an artefact of our broken-prefix bug. The corrected cross-model story is:
+
+\begin{quote}
+The X+M adapter recommendation transfers across all three backbones we tested. On minimax-m2.7 specifically, $+0.046$pp over Vanilla, slightly larger than the $+0.011$ on DSv4-flash, consistent with the "adapters help weaker backbones more" pattern from the autocamp scaleup analysis. The disclaimer fix is no longer needed; the underlying bug is fixed at the source.
+\end{quote}
+
+The original analysis below (the "training-data prior" hypothesis and the disclaimer fix) is preserved as the diagnostic walkthrough that led to RN-006. The training-data-prior framing was wrong; the bug was in our code.
 
 ## (Original) Investigation: where does minimax learn about \texttt{mcp\_\_geos-rag\_\_*}?
 
