@@ -259,12 +259,21 @@ def run_task(
         else:
             plugin_dir = None
         native_model = claude_model or agent.get("model") or DEFAULT_CLAUDE_MODEL
-        # The native_plugin_prefix is a user-prompt addendum that says
-        # "Don't call Skill; use mcp__geos-rag__* tools". Historically gated
-        # on plugin_enabled (so a RAG-disabled cell with plugin still
-        # loaded gets the prefix — confusing but how prior cells ran).
-        # Agents can explicitly opt out via add_native_plugin_prefix=False.
-        _add_prefix = bool(agent.get("add_native_plugin_prefix", enable_plugin))
+        # The native_plugin_prefix is a user-prompt addendum that names
+        # specific MCP tools the agent should call ("Use the GEOS RAG MCP
+        # tools directly: mcp__geos-rag__search_navigator, ..."). It only
+        # makes sense when the geos-rag MCP server is actually registered,
+        # i.e. when rag_enabled is True. Historically the gate was
+        # plugin_enabled, which fired the prefix on plugin-on / RAG-off
+        # cells (autocamp_F2/F4/F6/F8/F11 and various ablations). On
+        # disciplined backbones (DSv4-flash) the agent silently ignored
+        # the impossible instruction; on minimax-m2.7 it produced pseudo
+        # MCP tool calls that the runtime cannot route, causing the
+        # observed X+M collapse on the 2026-05-03 cross-model run.
+        # See RN-006 and docs/2026-05-03_minimax-pseudo-tool-call-analysis.md.
+        # Default now matches whether RAG is actually on; agents can still
+        # explicitly override via add_native_plugin_prefix.
+        _add_prefix = bool(agent.get("add_native_plugin_prefix", _rag_on))
         if _add_prefix:
             native_prompt = f"{native_plugin_prefix()}{prompt}"
         else:

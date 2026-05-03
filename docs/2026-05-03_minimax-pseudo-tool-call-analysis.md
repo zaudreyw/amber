@@ -57,7 +57,31 @@ minimax:tool_call wrappers; those are text and will not execute.
 
 \textbf{4. Memory cheatsheet} (m1u, prepended via \texttt{--append-system-prompt}). I grepped \texttt{plugin/memory\_primer\_dsv4\_m1u.md}, \texttt{plugin/GEOS\_PRIMER\_contract.md}, and \texttt{run/AGENTS.md} for any string matching \texttt{geos-rag|mcp\_\_geos|search\_navigator|search\_schema|search\_technical}: \textbf{zero matches}. The agent was given no in-prompt mention of any \texttt{mcp\_\_geos-rag\_\_*} tool name.
 
-## Investigation: where does minimax learn about \texttt{mcp\_\_geos-rag\_\_*}?
+## Update (2026-05-03 17:10 UTC): the actual cause is a bug in our code
+
+**The "training-data prior" hypothesis below is wrong.** Adversarial review (RN-006) found that `src/runner/prompts/native_plugin_prefix.txt` literally contains the string:
+
+> "Do not call the Skill tool. Use the GEOS RAG MCP tools directly: `mcp__geos-rag__search_navigator`, `mcp__geos-rag__search_schema`, and `mcp__geos-rag__search_technical`. Before writing XML, call at least one of the plugin RAG tools..."
+
+This file is **prepended to the user prompt** (not the system prompt — that's why my earlier grep missed it; I only grepped system-prompt sources) of every cell with `plugin_enabled=True`. The gate at `src/runner/orchestrator.py:267` was:
+
+```python
+_add_prefix = bool(agent.get("add_native_plugin_prefix", enable_plugin))
+```
+
+It should have been gated on `_rag_on` (whether the geos-rag MCP server is actually registered). Cells with `plugin_enabled=True, rag_enabled=False` --- including autocamp_F2, F4, F6, F8, F11 and several ablation cells --- were being told to use a tool that wasn't registered.
+
+DSv4-flash silently ignored the impossible instruction (its prior over "I should follow these explicit instructions" is weaker than its prior over "the actual tool list is what's available"). minimax-m2.7 dutifully complied, emitting pseudo-tool calls because the runtime has no real handler for the named tools. Hence the X+M collapse.
+
+**Fix applied** at orchestrator.py:276 (commit pending): default gate is now `_rag_on`. Cells that have an explicit `add_native_plugin_prefix=True` opt-in still get the prefix.
+
+**Spillover**: the autocamp R main effect ($-0.033$) was measuring not just "RAG vs no-RAG" but "RAG vs no-RAG, with the no-RAG cells being told to use a missing RAG tool". The team's existing `abl_c9_no_prefix` cell (autocamp_v4 too has the opt-out) was created precisely because someone noticed a $+0.24$ surprise from this prefix on DSv4. The bug's effect is bounded but non-zero on DSv4 and severe on minimax.
+
+**Re-run launched**: `minimax_minimax-m2.7_F4_fixprefix_s1` --- minimax × X+M × test-17 × 1 seed with the bug-fix and the disclaimer OFF. Will compare to the disclaimer-on result ($0.711$) to see if removing the bad instruction at its source recovers more than the disclaimer's tail-end correction did.
+
+The original analysis below is preserved as the diagnostic walkthrough that led to RN-006. The training-data-prior framing is wrong; the bug is in our code.
+
+## (Original) Investigation: where does minimax learn about \texttt{mcp\_\_geos-rag\_\_*}?
 
 The user pushed back on the easy "training data prior" answer because the project timeline excludes our repo from minimax-m2.7's training corpus:
 
