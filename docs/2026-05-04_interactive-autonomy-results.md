@@ -325,6 +325,104 @@ guess; the researcher will tell you when to stop"**.
 | TutorialPoroelasticity                | 0.633 | 0.704 | 0.787 | 0.726 | 0.000 | 0.744 | 0.762 | 0.698 |
 | TutorialSneddon                       | 0.853 | 0.793 | 0.882 | 0.863 | 0.869 | 0.824 | 0.904 | 0.905 |
 
+## V1 follow-up: less prescriptive prompt (added 2026-05-04)
+
+Question: was the 1/32 V0 consult rate driven by the "prefer to infer
+when you can" framing in V0's docstring + system-prompt addendum?
+Reran the 32 interactive cells with `supervisor_prompt_variant =
+v1_neutral` — both the docstring and the addendum drop the prefer-
+to-infer language and treat infer-vs-ask as peer paths ("Choose
+whichever is more reliable for the value at hand"). All other knobs
+identical. New cells `ia_{F0,F4}_interactive_v1` write to a separate
+`modeBv1_*` results subtree so V0 numbers are unchanged.
+
+### Headline: identical consult rate
+
+|  | V0 prompt | V1 neutral prompt |
+|---|---:|---:|
+| `consult_supervisor` calls (out of 32) | **1** | **1** |
+| tasks with at least one call (out of 16) | 1 | 1 |
+
+Same rate. The prompt twist did not move the needle. The single V1
+call was a good one — F0_interactive_v1 on
+ExampleThermoporoelasticConsolidation/Medium asking *"For the fully-
+implicit (FIM) couplingType in SinglePhasePoromechanics, what is the
+correct element string? Is it 'FullyImplicit' as used in
+ThermoPoroPlastic_consolidation_base.xml?"* The supervisor (now with
+the patched 1500-token budget + `reasoning_content` fallback) answered
+cleanly: *"The specification does not specify the exact XML element
+string for the couplingType in SinglePhasePoromechanics. It only
+states that the solution strategy should be fully implicit."* Stayed
+within the spec, did not invent a value, did not leak.
+
+(Side note: the agent named `ThermoPoroPlastic_consolidation_base.xml`
+in the question — that's the GT for this task. Either the agent
+hallucinated the basename pattern or it slipped through contamination.
+Worth checking the contamination block in a follow-up; supervisor
+itself didn't confirm or deny.)
+
+### TreeSim comparison V0 vs V1
+
+| difficulty | config | V0 fa0 | V1 fa0 | Δ |
+|---|---|---:|---:|---:|
+| Medium | F0_interactive  | 0.884 | 0.613 (1 fail) | **−0.271** |
+| Medium | F4_interactive  | 0.875 | 0.867 | −0.008 |
+| Hard   | F0_interactive  | 0.710 (1 fail) | 0.762 | +0.052 |
+| Hard   | F4_interactive  | 0.840 | 0.838 | −0.002 |
+
+F4 is essentially identical across V0 / V1 (Δ within ±1 pp at both
+difficulties). F0/Medium swung sharply down by 27 pp due to a single
+near-zero task (ExampleEDPWellbore at 0.000) and ExampleIsothermalLeakyWell
+collapsing from 0.838 to 0.128. F0/Hard improved by 5 pp from a
+TutorialPoroelasticity recovery (0.000 → 0.235). Both swings are
+dominated by single-task variance at n=1, not by the prompt change.
+**Read F4 numbers as the meaningful signal: V0 ≈ V1 within noise.**
+
+### Interpretation
+
+Hypothesis (III) — that the V0 "prefer to infer" framing was
+artificially suppressing the consult rate — is **not supported**.
+After removing that framing entirely from both the docstring and the
+system-prompt block, the agent still consulted only 1 / 32 times.
+
+That leaves Hypotheses (I) and (II) — agent prefers inference and/or
+on-disk GEOS examples function as a sufficient oracle — as the
+remaining candidates. Per §C above (15/26 dropped Mandel/Hard values
+findable on disk), (II) has direct evidence behind it. (I) is harder
+to test without changing the model.
+
+### Implication for the workshop write-up
+
+The story is now stronger and tighter:
+
+> *On a relaxed-specification GEOS XML authoring task with a working
+> simulated supervisor channel exposed as an MCP tool, DSv4-flash
+> consulted **2 times across 64 interactive trials (3.1 %)**
+> regardless of whether the channel was framed as a costly last
+> resort or as a peer-equivalent path. The dominant explanation is
+> structural: the on-disk GEOS examples expose ~58 % of the omitted
+> T2/T3 values to a literal `grep`, so inference is genuinely the
+> cheaper path. To measure consultation behaviour rather than
+> retrieval, the filesystem oracle has to be removed first.*
+
+This is a more honest framing than the V0-only writeup — and it
+preempts the obvious reviewer question "did you try a less biased
+prompt?".
+
+### Auto-table
+
+The full per-cell, per-task numbers (including the 4 V1 cells) live
+in `docs/2026-05-04_interactive-autonomy-autotable.md`, regenerated
+each time `scripts/analyze_interactive_autonomy.py` runs. This
+curated report is the place for interpretation; the autotable is the
+raw numbers.
+
+### Cost & wall (V1)
+
+- 32 interactive runs at DSv4-flash: well under $3 estimated, ~110
+  min wall (workers=4). Within projection.
+- 1 supervisor LLM call: ~$0.001.
+
 ## What's interesting for the workshop write-up
 
 If we want to pitch this as an AI4Science workshop "autonomous discovery

@@ -21,7 +21,8 @@ from statistics import mean
 ROOT = Path("data/eval/interactive_autonomy_2026-05-03")
 RES_ROOT = ROOT / "_results"
 OUT_AGG = RES_ROOT / "aggregate.json"
-OUT_MD = Path("docs/2026-05-04_interactive-autonomy-results.md")
+# DO NOT overwrite the curated morning report. Auto-table goes here.
+OUT_MD = Path("docs/2026-05-04_interactive-autonomy-autotable.md")
 
 # 8 study tasks
 TASKS = [
@@ -106,7 +107,7 @@ def load_supervisor_calls() -> list[dict]:
     Path: data/eval/interactive_autonomy_2026-05-03/<mode_diff>/<agent>/<run>/<task>/supervisor_calls.jsonl
     """
     calls = []
-    for p in sorted(ROOT.glob("mode*_*/ia_*_interactive/*/*/supervisor_calls.jsonl")):
+    for p in sorted(ROOT.glob("mode*_*/ia_*/*/*/supervisor_calls.jsonl")):
         parts = p.relative_to(ROOT).parts
         mode_diff = parts[0]
         agent = parts[1]
