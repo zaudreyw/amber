@@ -4,6 +4,29 @@ Tracks substantive edits to the NeurIPS submission draft. Append-only; newest en
 
 ---
 
+## 2026-05-04 — split-rename + Table 1 compaction + abstract compression
+
+**Author**: research-copilot, same session.
+
+**Goal**: respond to three pieces of feedback from the user.
+
+### Changes
+
+- **Split renames**:
+  - `test-17` → `val` (validation / cell-selection split). Internal name retired.
+  - `Held-out-10` / `held-out-10` → `held-out-eval` (held-out evaluation split, never tuned against). Internal name retired.
+  - Sample sizes are not in the split names anymore. Descriptive text in §5.1 still mentions "17 tasks" / "10 tasks" once when introducing each split, but they are no longer carried as suffixes throughout.
+  - All in-text references, table captions, table column headers, paragraph headings, subsection headings, and appendix references propagated.
+- **Table 1 layout**: collapsed the four `score` / `$\sigma$` columns into two `mean ± std` columns, dropping the table from 7 columns to 5. The TreeSim score and its standard deviation now appear as `0.910 ± 0.024` (etc.) within a single cell. Caption updated to explain the `±` convention. The table no longer extends past the right margin (verified via `pdftotext -layout` --- all rows render within the printable width).
+- **Abstract** rewritten as a single paragraph and compressed by ~40%: kept the DSL framing, the SIA recipe, the three findings (factorial reliability story, autonomy-companion 3% rate, human-baseline contrast), and the closing recommendations. Cut: the explicit "two harder regimes" lead-in, the bolded numbered-list structure, and several adjective-heavy clauses. The abstract now ends mid-page-1 and the introduction begins on page 1 (verified via `pdftotext -f 1 -l 1`); previously the abstract filled the entire first page.
+- **Build**: `pdflatex` succeeds, 28 pages, 371,176 bytes.
+
+### Numbers / files NOT changed
+
+All tabular numbers, footnotes, figure references, and appendix content unchanged from the previous pass; this is a presentation-only edit.
+
+---
+
 ## 2026-05-04 — workshop-alignment + human-baseline pass
 
 **Author**: research-copilot (Matt's session, pre-advisor meeting)
