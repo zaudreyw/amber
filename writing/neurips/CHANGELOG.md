@@ -4,6 +4,35 @@ Tracks substantive edits to the NeurIPS submission draft. Append-only; newest en
 
 ---
 
+## 2026-05-04 — SIGA naming + abstract clarity pass (pre-submission)
+
+**Author**: research-copilot, same session. Drives toward the abstract-submission deadline (a few hours out).
+
+**Goal**: respond to (a) advisor's request to keep "Grounding" in the method name; (b) Brian's four pieces of feedback on the abstract (clarity of "design-space cells cluster within seed noise", what "catastrophic failure" and "compared to what" mean, what the consultation channel actually is, and what "failure categories that survive the vanilla→best transition" means); (c) the user's hand-revised abstract draft; (d) the new submission type ("Use-inspired"; main contribution is in framing/designing approaches for a real-world application).
+
+### Changes
+
+- **Method name renamed**: SIA → **SIGA** (Simulator-Interface Grounding Adapter). Hyphenated as "Simulator-Interface" so "Interface" parses as modifying "Simulator", not "Grounding". Title updated. All in-text mentions, contributions list, captions, and tables propagated. Rationale lives at `docs/2026-05-04_siga-vs-sia-naming.md` (three load-bearing arguments: "grounding" is established ML terminology that names exactly what we do; "Adapter" alone collides badly with parameter-efficient adapter literature like LoRA; the grounding framing aligns with the use-inspired submission type's framing/design contribution).
+- **Abstract** rewritten as a single paragraph (~285 words). Specific clarity edits in response to Brian's feedback:
+  - *Brian: "design-space cells cluster within seed noise" — what does this imply?* Now explicit: "no component combination improves over vanilla Claude Code by more than across-seed noise" (on the validation split, on tasks the bare harness already handles competently).
+  - *Brian: "reduce standard deviation ~40× by preventing catastrophic failure" — compared to what? what is catastrophic failure?* Now reads "reduce across-seed variability by ${\sim}40\times$ relative to the vanilla baseline by preventing the agent from producing unparseable or empty decks on a hard tail of compound multi-physics tasks" — concrete on the comparison baseline (vanilla CC) and on the failure mode (unparseable / empty decks).
+  - *Brian: "human consultation channel is exposed as a tool" — what is this?* Now describes the implementation: "We expose a `consult_supervisor` tool whose handler is a separate LLM instance with access to the original full brief, simulating a domain expert."
+  - *Brian: "failure categories that survive the vanilla→best transition" — failure is what we want?* Reworded: "failure modes that remain unresolved even under our best configuration." Reads as a normal English sentence; no inversion.
+  - Kept the user's hand-edited bones: the DSL framing opening, "bespoke package of skills, tools, and workflow-altering control flow", "more than $8\times$ as long" human-baseline phrasing, "case study" framing.
+  - Trimmed: the "the only main effect that clears noise on the validation split is generic retrieval, and it is *negative*" sentence (kept in intro and Results; removed from abstract for length and to avoid double-loading the "no improvement on val" point).
+
+### Build status
+
+`pdflatex` succeeds, 28 pages, 371,199 bytes. Abstract no longer fills page 1; introduction begins on page 1.
+
+### Open items
+
+- The full method section still uses the older "four-component recipe" language. The abstract now describes SIGA more openly as "a bespoke package of skills, tools, and workflow-altering control flow that grounds the agent's outputs in the simulator's documentation, schema, and example library." For the full-paper submission a few days out, consider unifying: either (a) lean into the four-component recipe consistently, or (b) lean into the broader "skills, tools, control flow" framing and present the four components as one possible structuring of the recipe.
+- The acronym SIGA is used a few times in figures and tables that may need their captions updated for camera-ready (some still say "SIA" as a leftover token in non-search-replaceable contexts? — verified clean by `grep "SIA\b" neurips_2026.tex` returning empty).
+- Title still says "Adapters" (plural). For a single-system case study some reviewers may prefer "Adapter" (singular). Defer the call to the user.
+
+---
+
 ## 2026-05-04 — split-rename + Table 1 compaction + abstract compression
 
 **Author**: research-copilot, same session.
