@@ -4,6 +4,24 @@ Tracks substantive edits to the NeurIPS submission draft. Append-only; newest en
 
 ---
 
+## 2026-05-04 — abstract: surface the self-evolved variant as automatic-discovery teaser
+
+**Author**: research-copilot, same session.
+
+**Goal**: respond to user's instinct that self-evolving / self-creating agent harnesses are methodologically more interesting than manual factorial design and worth surfacing in the abstract — without overclaiming.
+
+### Changes (abstract only)
+
+- Expanded the **Efficiency** bullet to make explicit that the self-evolved monolithic variant is *not* hand-designed: "adapter contents iteratively rewritten by an offline pipeline rather than designed by hand." Closing clause: "a preliminary signal that automatic SIGA discovery is a tractable follow-up to the manual design space we explore here." This positions the SE result as both an efficiency point and a methodological teaser pointing at Paper 2.
+- **Honest framing kept**: the variant is described as "iteratively rewritten by an offline pipeline" — not as full self-evolution, not as Meta-Harness-style online search, not as a method we propose. The phrasing "preliminary signal" / "tractable follow-up" hedges against reviewers who would otherwise ask "where's the comparison to automatic harness search?"
+- Did not promote SE to a fourth axis (Reliability / Quality / Efficiency stays clean three-axis); did not claim "self-evolving adapter" as a method name; did not introduce Paper 2 explicitly. The teaser is one clause; reviewers can read further if interested.
+
+### Build status
+
+`pdflatex` succeeds, 28 pages, 371,682 bytes. Intro starts on page 1.
+
+---
+
 ## 2026-05-04 — abstract reordering: lead with positive results
 
 **Author**: research-copilot, same session.
