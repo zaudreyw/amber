@@ -4,6 +4,34 @@ Tracks substantive edits to the NeurIPS submission draft. Append-only; newest en
 
 ---
 
+## 2026-05-04 — abstract reordering: lead with positive results
+
+**Author**: research-copilot, same session.
+
+**Goal**: respond to user feedback that the bottom half of the abstract had bad flow and led with negative framing ("not improving over noise"). Use-inspired submissions in particular benefit from a positive-results-forward abstract.
+
+### Changes (abstract only)
+
+- **Replaced the "no improvement on val / cluster within seed noise" lead** with a three-axis positive frame: **Reliability** (~40× variance reduction), **Quality** (+7 pp on the hard tail of held-out-eval, vanilla → best SIGA), **Efficiency** (SE matches the best factorial cell at ~16% fewer tool calls than vanilla CC). The val-vs-held-out-eval hedge is retained in the body of the paper but is no longer the abstract's headline.
+- **Reordered the bottom half** to: factorial benefits → autonomy contribution → human baseline → recommendations. The autonomy probe is now framed as "we additionally contribute a behavioural finding about how a coding-agent harness handles deliberately under-specified briefs" rather than as a passive companion study; the human baseline lands as the punchy concrete contrast right before the close.
+- **Numbers cited** (verified against `docs/2026-05-02_efficiency-table.md` and `tab:main-results`):
+  - 40× variance reduction: held-out-eval Vanilla σ=0.081 → S+X best σ=0.002 (40× ≈ ratio).
+  - 7 pp quality lift on hard tail: held-out-eval Vanilla 0.720 → SE 0.789 (Δ = +0.069 ≈ 7 pp).
+  - 16% tool-call reduction: F0 (vanilla) 82 tools/task → SE 69 tools/task (Δ = -13, ≈ -16%).
+  - 8× human-baseline wall-clock: agent ~5 min vs P1 48.2 min, P2 46.7 min on `buckleyLeverettProblem`.
+  - 3% consultation rate: 1/32 in V0, 1/32 in V1.
+
+### Build status
+
+`pdflatex` succeeds, 28 pages, 371,451 bytes. Intro starts on page 1.
+
+### Open items
+
+- Body of the paper still has paragraphs phrased as "cells cluster within seed noise on val" — that's accurate and worth keeping in §6.1, but consider whether the *headline* paragraph of §6 should mirror the abstract's three-axis frame for consistency.
+- Consider adding a one-sentence "regime-dependent" hedge somewhere in §6 to acknowledge that the abstract's positive numbers are held-out-eval; on val the same components are within noise. (Currently this is in §6.1 paragraph "On val, adapter wins are within seed noise" — fine, but a reader skimming results-only might miss the contrast.)
+
+---
+
 ## 2026-05-04 — SIGA naming + abstract clarity pass (pre-submission)
 
 **Author**: research-copilot, same session. Drives toward the abstract-submission deadline (a few hours out).
