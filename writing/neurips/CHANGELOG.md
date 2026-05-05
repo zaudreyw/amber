@@ -4,6 +4,41 @@ Tracks substantive edits to the NeurIPS submission draft. Append-only; newest en
 
 ---
 
+## 2026-05-04 — abstract tightening: cut implementation detail to body
+
+**Author**: research-copilot, same session.
+
+**Goal**: reduce abstract from ~330 words to ~280 by moving implementation detail to the body. The abstract should carry headline framing and headline numbers; the *what* of the consultation tool, the *how* of the human-baseline-vs-agent comparison, and the prompt-framing invariance result all belong in the body.
+
+### Edits
+
+- **Three-axis sentences compressed.** Reliability / Quality / Efficiency each became a single short sentence. The "SIGA reduces across-seed variability... by preventing the agent from producing unparseable or empty decks" phrasing was tightened to "${\sim}40{\times}$ lower across-seed variance, by preventing unparseable or empty decks on a hard tail of compound multi-physics tasks." Saves ~25 words across the three axes.
+- **Cut the `consult_supervisor` implementation detail.** "Backed by a separate LLM instance with access to the original full brief, simulating a domain expert" → "an explicit human-consultation tool". The handler-LLM detail belongs in §6.7 / App.~G; the abstract just needs the *finding* (3% rate, on-disk library as substitute). Saves ~22 words.
+- **Cut the prompt-framing invariance hedge.** "Regardless of prompt framing" was load-bearing in §6.7 (the V0/V1 invariance is the diagnostic for "framing isn't the binding constraint"), but in the abstract the headline result is the rate itself; the framing-robustness detail can sit in the body. Saves ~5 words.
+- **Cut the human-baseline file-count and browser-history detail.** "Complete only the first of two required files" and "browser histories show dozens of documentation visits" were doing two different jobs (time + quality contrast, file-usage strategy contrast). The strategy contrast is in §6.8; the abstract keeps "more than $8\times$ as long ... at lower quality." Saves ~30 words.
+- **Tightened "we additionally contribute a behavioural finding"** to "we further characterise coding-agent behaviour" — same role in the abstract structure (additional contribution, not derivative measurement) but two words shorter.
+- **Cut "SIGA components and a self-evolved monolithic variant"** — the reader does not need to know in the abstract that we evaluated 11+ cells. Just say "Resolution-IV factorial" and let the body explain. Saves ~9 words.
+- **Cut "as a case study"** from the GEOS instantiation sentence — already implicit. Saves ~5 words.
+- **Replaced "manually-designed configuration" with "hand-designed cell"** — terser and matches the body's "cell" language.
+- **Replaced "SIGA-equipped agent" with "SIGA agent"** — same meaning, fewer words.
+- **Replaced "(XML decks, input scripts, namelists)" parenthetical with em-dashed apposition** — same content, slightly tighter rhythm. (Optional cosmetic change; can revert.)
+
+### What stayed (load-bearing)
+
+- DSL framing in the opening (Brian's previous question made clear this framing actually clarifies the bottleneck).
+- "Bespoke package of skills, tools, and workflow-altering control flow" SIGA description (user's hand-edit).
+- Three explicit benefit axes with bolded labels (positive-results-forward structure).
+- Self-evolved variant as automatic-discovery teaser.
+- Human baseline 8× contrast as visceral hook.
+- Autonomy-as-contribution framing.
+- Closing recommendations.
+
+### Build status
+
+`pdflatex` succeeds. Page count drops to **27** (was 28); page 1 now shows ~7 lines of intro after the abstract (was ~3). Total bytes: 370,695.
+
+---
+
 ## 2026-05-04 — abstract: surface the self-evolved variant as automatic-discovery teaser
 
 **Author**: research-copilot, same session.
