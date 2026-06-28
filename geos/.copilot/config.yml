@@ -1,0 +1,28 @@
+mode: attach
+project_name: repo3
+created: "2026-04-20"
+copilot_path: "research-copilot"
+
+host_docs:
+  path: "docs"
+  naming: "copilot-numbered"
+  pattern: "XN-NNN_slug.md"
+  next_number: 24
+  frontmatter: true
+  note: |
+    Existing hand-authored module docs (README.md, evaluation.md,
+    experiment_runner.md, cc_run_comparison.md) are flat slug-named
+    and have no frontmatter. Copilot-generated research notes use
+    XN-NNN prefixes to stay visually distinct. Keep hand docs
+    untouched unless explicitly asked.
+
+research_objective: |
+  Find adaptations to the Claude Code harness that measurably beat
+  vanilla CC on the GEOS XML authoring task (36-task eval set, easy
+  setting). Primary metric: mean TreeSim (XMLTreeSim headline, 0-1).
+  Secondary metrics: %% tasks scoring >=7/10, wall-clock, token usage,
+  tool-call counts.
+
+deadline:
+  first_checkin: "2026-04-20 ~7h from 10:09 local — advisor meeting"
+  final_results: "~1 week"

@@ -1,0 +1,46 @@
+[  1/17] AdvancedExampleCasedContactThermoElasticWellbore  9.54/10
+[  2/17] AdvancedExampleDeviatedElasticWellbore  4.33/10
+[  3/17] AdvancedExampleDruckerPrager  9.21/10
+[  4/17] AdvancedExampleExtendedDruckerPrager  9.12/10
+[  5/17] AdvancedExampleModifiedCamClay  5.16/10
+[  6/17] AdvancedExampleViscoDruckerPrager  9.98/10
+[  7/17] ExampleDPWellbore  10.00/10
+[  8/17] ExampleEDPWellbore  4.12/10
+[  9/17] ExampleIsothermalLeakyWell  9.88/10
+[ 10/17] ExampleMandel  9.69/10
+[ 11/17] ExampleThermalLeakyWell  9.69/10
+[ 12/17] ExampleThermoporoelasticConsolidation  2.57/10
+[ 13/17] TutorialPoroelasticity  2.89/10
+[ 14/17] TutorialSneddon  3.16/10
+[ 15/17] buckleyLeverettProblem  9.30/10
+[ 16/17] kgdExperimentValidation  10.00/10
+[ 17/17] pknViscosityDominated  9.63/10
+
+============================================================
+  Batch evaluation: 17/17 succeeded
+============================================================
+  Scored-only     overall_score mean: 7.545  (median 9.300, range 2.57-10.00)
+  Failures-as-0   overall_score mean: 7.545
+  Scored-only     treesim       mean: 0.755
+  Failures-as-0   treesim       mean: 0.755
+  Pass ≥7: 11/17 (of scored)
+
+  10.00/10  ExampleDPWellbore  treesim=1.000
+  10.00/10  kgdExperimentValidation  treesim=1.000
+   9.98/10  AdvancedExampleViscoDruckerPrager  treesim=0.998
+   9.88/10  ExampleIsothermalLeakyWell  treesim=0.988
+   9.69/10  ExampleMandel  treesim=0.969
+   9.69/10  ExampleThermalLeakyWell  treesim=0.969
+   9.63/10  pknViscosityDominated  treesim=0.963
+   9.54/10  AdvancedExampleCasedContactThermoElasticWellbore  treesim=0.954
+   9.30/10  buckleyLeverettProblem  treesim=0.930
+   9.21/10  AdvancedExampleDruckerPrager  treesim=0.921
+   9.12/10  AdvancedExampleExtendedDruckerPrager  treesim=0.912
+   5.16/10  AdvancedExampleModifiedCamClay  treesim=0.516
+   4.33/10  AdvancedExampleDeviatedElasticWellbore  treesim=0.433
+   4.12/10  ExampleEDPWellbore  treesim=0.412
+   3.16/10  TutorialSneddon  treesim=0.316
+   2.89/10  TutorialPoroelasticity  treesim=0.289
+   2.57/10  ExampleThermoporoelasticConsolidation  treesim=0.257
+
+Wrote misc/memory_artifacts/scores/mem_m1g_s2_summary.json

@@ -1,0 +1,311 @@
+You are a memory curator for an LLM agent that converts natural-language physics simulation specs into GEOS XML. The agent has access to RAG over GEOS documentation. Your job is to distill a single "cheatsheet" — a markdown document — that the agent will see in its system prompt at every task.
+
+The cheatsheet must:
+- Consolidate cross-task patterns observed across multiple past tasks.
+- Emphasize solver-family routing rules ("when task involves X, use solver Y").
+- Include a short "common anti-patterns" section listing hallucinated element names to avoid (be specific about what NOT to use).
+- Be actionable by an agent that has not seen the past tasks.
+
+**Critical abstraction rules** (the output will be automatically audited; any violation fails the artifact):
+
+1. NEVER include raw XML element content (no `<ElementName ...>` snippets).
+2. NEVER include any filename of the form `*.xml`. Reference element names and attribute names only.
+3. NEVER name a specific past task as "task X used these files." Instead, phrase as conditional rules: "When a task describes physics Y, the solver hierarchy is Z." This allows transfer to new tasks.
+4. Include anti-patterns as explicit "do NOT" statements when they help avoid known hallucination classes (e.g., "do NOT use `<FractureModel>` — that is invented vocabulary; use `<SurfaceGenerator>` for hydraulic fracture tasks.").
+5. Keep content terse and information-dense. Each item must be independently actionable by an agent that has not seen any training trajectory.
+6. Use physics-family tags where relevant: `hydrofracture`, `triaxial`, `poromechanics`, `thermal`, `contact`, `wellbore`, `multiphase`, etc.
+
+
+**Strict token budget**: the final cheatsheet must be under 1500 tokens.
+
+
+You are given TreeSim-grounded feedback (failure mode classification, weakest section scores, dominant failure dimension, attribute vs structural accuracy) to help identify the most valuable anti-patterns and structural rules. **Important:** do NOT invent anti-patterns about real GEOS elements. Anti-patterns must name specific INCORRECT element names (e.g., `<FractureModel>`) — use your own knowledge of the GEOS schema to avoid mistakenly flagging real elements like `Constitutive`, `ElementRegions`, `CellElementRegion`, `SolidMechanicsLagrangianFEM`, `SinglePhasePoromechanics`, etc. as hallucinations. If you are not sure whether a tag is a GEOS element, OMIT the anti-pattern rather than risk a false warning.
+
+Below are observations from training tasks the agent has previously attempted. Produce a single markdown cheatsheet that distills cross-task patterns and anti-patterns to help future tasks succeed.
+
+## Training trajectory observations (36 tasks)
+
+### Training task #1
+- final_treesim: 0.9983
+- productive RAG queries (sanitized): ['triaxial driver strain control oedometric compression single element', '<xml_filename_stripped>', 'ViscoplasticModifiedCamClay', 'DruckerPrager', 'ViscoDruckerPrager']
+- tool call summary: rag=10 reads=9 writes=2
+- failure_mode: success
+- dominant failure dimension: structural_completeness
+- attr_accuracy=1.0 struct_completeness=1.0
+
+### Training task #2
+- final_treesim: 0.9695
+- productive RAG queries (sanitized): ['hydrofracture solver hydraulic fracture propagation KGD toughness dominated', 'Hydrofracture solver XML', 'Hydrofracture example XML mesh boundary conditions', 'InternalMesh bias element geometric', 'fracture flow parallel plates permeability model']
+- tool call summary: rag=8 reads=4 writes=2
+- failure_mode: success
+- dominant failure dimension: structural_completeness
+- attr_accuracy=0.985 struct_completeness=1.0
+
+### Training task #3
+- final_treesim: 0.9572
+- productive RAG queries (sanitized): ['triaxial driver example Extended Drucker Prager', 'ExtendedDruckerPrager', '<xml_filename_stripped>', 'TriaxialDriver', 'TriaxialDriver name']
+- tool call summary: rag=7 reads=5 writes=1
+- failure_mode: success
+- dominant failure dimension: structural_completeness
+- attr_accuracy=0.975 struct_completeness=1.0
+
+### Training task #4
+- final_treesim: 0.9317
+- productive RAG queries (sanitized): ['hydraulic fracture KGD viscosity dominated simulation setup', 'Hydrofracture solver XML example', 'CompressibleSinglePhaseFluid', 'ElasticIsotropic', 'CompressibleSolidParallelPlatesPermeability']
+- tool call summary: rag=15 reads=3 writes=3
+- failure_mode: success
+- dominant failure dimension: structural_completeness
+- attr_accuracy=0.935 struct_completeness=1.0
+
+### Training task #5
+- final_treesim: 0.8978
+- productive RAG queries (sanitized): ['hydrofracture solver configuration radial penny-shaped fracture benchmark', 'Hydrofracture solver XML example', 'ParallelPlatesPermeability', 'SourceFlux', 'SourceFlux scale']
+- tool call summary: rag=10 reads=4 writes=2
+- failure_mode: success
+- dominant failure dimension: structural_completeness
+- attr_accuracy=0.842 struct_completeness=1.0
+
+### Training task #6
+- final_treesim: 0.8804
+- productive RAG queries (sanitized): ['Lagrangian contact surface generation Coulomb friction solid mechanics wellbore casing cement rock interfaces', 'CasedElasticWellbore', 'SolidMechanicsLagrangeContact', 'SurfaceGenerator', 'SurfaceGenerator name']
+- tool call summary: rag=8 reads=11 writes=3
+- failure_mode: success
+- dominant failure dimension: structural_completeness
+- attr_accuracy=0.826 struct_completeness=1.0
+
+### Training task #7
+- final_treesim: 0.8671
+- productive RAG queries (sanitized): ['solid mechanics Lagrangian FEM solver configuration', 'wellbore mesh generator internal mesh radial', 'InternalWellbore mesh attribute', 'SolidMechanicsLagrangianFEM solver attributes', 'ElasticIsotropic constitutive model']
+- tool call summary: rag=14 reads=7 writes=2
+- failure_mode: success
+- dominant failure dimension: structural_completeness
+- attr_accuracy=0.739 struct_completeness=1.0
+
+### Training task #8
+- final_treesim: 0.866
+- productive RAG queries (sanitized): ['hydrofracture solver XML example hydraulic fracture benchmark', 'Hydrofracture solver attributes', 'InternalMesh xCoords yCoords zCoords nx ny nz', 'fracture surface region element regions hydraulic aperture', 'kgdToughnessDominated benchmark xml']
+- tool call summary: rag=12 reads=2 writes=2
+- failure_mode: success
+- dominant failure dimension: structural_completeness
+- attr_accuracy=0.82 struct_completeness=1.0
+
+### Training task #9
+- final_treesim: 0.8569
+- productive RAG queries (sanitized): ['SolidMechanicsLagrangianFEM solid mechanics finite element', 'InternalMesh radial elementTypes C3D8', 'InternalWellbore', 'cellBlockNames InternalWellbore', 'traction FieldSpecification']
+- tool call summary: rag=10 reads=12 writes=3
+- failure_mode: success
+- dominant failure dimension: structural_completeness
+- attr_accuracy=0.791 struct_completeness=1.0
+
+### Training task #10
+- final_treesim: 0.8508
+- productive RAG queries (sanitized): ['thermal compressible flow single phase thermal', 'SinglePhaseThermalFVM', 'thermal fluid constitutive model volumetric heat capacity', 'SolidInternalEnergy', 'SinglePhaseThermalConductivity']
+- tool call summary: rag=11 reads=8 writes=2
+- failure_mode: success
+- dominant failure dimension: structural_completeness
+- attr_accuracy=0.8 struct_completeness=1.0
+
+### Training task #11
+- final_treesim: 0.8441
+- productive RAG queries (sanitized): ['compositional multiphase flow dead oil fluid example', 'DeadOilFluid', 'CompositionalMultiphaseFVM well source flux sink pressure', 'SourceFlux', 'SourceFlux injection water']
+- tool call summary: rag=13 reads=9 writes=2
+- failure_mode: success
+- weakest sections: FieldSpecifications (0.49)
+- dominant failure dimension: structural_completeness
+- attr_accuracy=0.648 struct_completeness=1.0
+
+### Training task #12
+- final_treesim: 0.8043
+- productive RAG queries (sanitized): ['dead oil two phase flow well simulation XML example', 'DeadOilFluid well XML example', 'CompositionalMultiphaseWell', 'DeadOilFluid', 'CompositionalMultiphaseFVM CompositionalMultiphaseWell']
+- tool call summary: rag=16 reads=15 writes=3
+- failure_mode: success
+- weakest sections: Events (0.00)
+- dominant failure dimension: structural_completeness
+- attr_accuracy=0.774 struct_completeness=1.0
+
+### Training task #13
+- final_treesim: 0.8023
+- productive RAG queries (sanitized): ['Visco Extended Drucker Prager constitutive model parameters', 'ViscoExtendedDruckerPrager constitutive', 'InternalMesh elementBlocks segment xCoords yCoords zCoords', 'cellBlockNames InternalMesh', 'SolidMechanicsLagrangianFEM']
+- tool call summary: rag=16 reads=8 writes=2
+- failure_mode: success
+- weakest sections: Events (0.42)
+- dominant failure dimension: structural_completeness
+- attr_accuracy=0.704 struct_completeness=1.0
+
+### Training task #14
+- final_treesim: 0.7564
+- productive RAG queries (sanitized): ['poromechanics coupled single phase flow solid mechanics internal wellbore mesh', 'InternalMesh wellbore radial tangential z elements', 'SinglePhasePoromechanics', 'SinglePhasePoromechanics flowSolverName solidSolverName', 'InternalWellbore']
+- tool call summary: rag=11 reads=6 writes=3
+- failure_mode: success
+- weakest sections: Outputs (0.47)
+- dominant failure dimension: structural_completeness
+- attr_accuracy=0.675 struct_completeness=1.0
+
+### Training task #15
+- final_treesim: 0.7347
+- productive RAG queries (sanitized): ['compositional multiphase flow well injection CO2', 'TableFunction nearest neighbor permeability interpolation', 'external table function voxel permeability interpolation', 'FieldCaseTutorial table function perm.geos', 'TableFunction voxelFile coordinateFile']
+- tool call summary: rag=23 reads=10 writes=2
+- failure_mode: success
+- weakest sections: Functions (0.38), Mesh (0.43)
+- dominant failure dimension: tag_coverage
+- attr_accuracy=0.787 struct_completeness=1.0
+
+### Training task #16
+- final_treesim: 0.712
+- productive RAG queries (sanitized): ['poromechanics coupled single phase poromechanics example XML', 'SinglePhasePoromechanics', 'VTKMesh', 'CellElementRegion', 'ElasticIsotropic']
+- tool call summary: rag=12 reads=4 writes=4
+- failure_mode: success
+- weakest sections: ElementRegions (0.50)
+- dominant failure dimension: structural_completeness
+- attr_accuracy=0.616 struct_completeness=1.0
+
+### Training task #17
+- final_treesim: 0.5964
+- productive RAG queries (sanitized): ['contact mechanics intersecting fractures solid mechanics Lagrangian contact solver', 'contact solver Lagrangian', 'InternalMesh refinement transition elements', 'Lagrangian contact solver fracture Coulomb friction', 'EmbeddedSurface fracture region']
+- tool call summary: rag=14 reads=5 writes=5
+- failure_mode: mixed_failure
+- weakest sections: NumericalMethods (0.00), Solvers (0.30), FieldSpecifications (0.31), Functions (0.42), Geometry (0.49)
+- dominant failure dimension: tag_coverage
+- attr_accuracy=0.673 struct_completeness=1.0
+
+### Training task #18
+- final_treesim: 0.5371
+- productive RAG queries (sanitized): ['temperature dependent thermal conductivity isotropic gradient linear temperature dependence', 'ThermalConductivity constitutive model temperature dependent', 'single phase thermal flow solver finite volume thermal', 'SinglePhaseThermalFVM solver', 'SinglePhaseThermalFVM']
+- tool call summary: rag=12 reads=10 writes=2
+- failure_mode: F2_attr_drift
+- weakest sections: Events (0.00), Constitutive (0.43)
+- dominant failure dimension: tag_coverage
+- attr_accuracy=0.559 struct_completeness=1.0
+
+### Training task #19
+- final_treesim: 0.1667
+- tool call summary: rag=0 reads=27 writes=7
+- failure_mode: F3_missing_components
+- weakest sections: Constitutive (0.00), ElementRegions (0.00), Events (0.00), Functions (0.00), Mesh (0.00)
+- dominant failure dimension: structural_completeness
+- attr_accuracy=1.0 struct_completeness=0.0
+
+### Training task #20
+- final_treesim: 0.0
+- tool call summary: rag=0 reads=0 writes=3
+- failure_mode: F1_schema_hallucination
+- weakest sections: Constitutive (0.00), ElementRegions (0.00), FieldSpecifications (0.00), Functions (0.00), Geometry (0.00)
+- dominant failure dimension: tag_coverage
+- attr_accuracy=0.5 struct_completeness=0.5
+
+### Training task #21
+- final_treesim: None
+- tool call summary: rag=0 reads=1 writes=10
+- failure_mode: success
+- dominant failure dimension: unknown
+
+### Training task #22
+- final_treesim: None
+- tool call summary: rag=0 reads=0 writes=4
+- failure_mode: success
+- dominant failure dimension: unknown
+
+### Training task #23
+- final_treesim: 1.0
+- tool call summary: rag=0 reads=19 writes=4
+- failure_mode: success
+- dominant failure dimension: structural_completeness
+- attr_accuracy=1.0 struct_completeness=1.0
+
+### Training task #24
+- final_treesim: 0.9968
+- tool call summary: rag=0 reads=34 writes=7
+- failure_mode: success
+- dominant failure dimension: structural_completeness
+- attr_accuracy=1.0 struct_completeness=1.0
+
+### Training task #25
+- final_treesim: 0.13
+- tool call summary: rag=0 reads=0 writes=2
+- failure_mode: F1_schema_hallucination
+- weakest sections: ElementRegions (0.00), Events (0.00), NumericalMethods (0.00), Outputs (0.00), Solvers (0.00)
+- dominant failure dimension: tag_coverage
+- attr_accuracy=0.577 struct_completeness=0.5
+
+### Training task #26
+- final_treesim: 0.1613
+- tool call summary: rag=0 reads=0 writes=2
+- failure_mode: F1_schema_hallucination
+- weakest sections: Events (0.00), NumericalMethods (0.00), Solvers (0.00), Tasks (0.00), ElementRegions (0.30)
+- dominant failure dimension: tag_coverage
+- attr_accuracy=0.286 struct_completeness=1.0
+
+### Training task #27
+- final_treesim: 0.0185
+- tool call summary: rag=0 reads=0 writes=3
+- failure_mode: F1_schema_hallucination
+- weakest sections: Constitutive (0.00), Events (0.00), Mesh (0.00), NumericalMethods (0.00), Outputs (0.00)
+- dominant failure dimension: element_type_match
+- attr_accuracy=1.0 struct_completeness=0.25
+
+### Training task #28
+- final_treesim: None
+- tool call summary: rag=0 reads=0 writes=0
+- failure_mode: success
+- dominant failure dimension: unknown
+
+### Training task #29
+- final_treesim: 0.1599
+- tool call summary: rag=0 reads=2 writes=2
+- failure_mode: F1_schema_hallucination
+- weakest sections: Constitutive (0.00), Events (0.00), Geometry (0.00), NumericalMethods (0.00), ElementRegions (0.30)
+- dominant failure dimension: attribute_accuracy
+- attr_accuracy=0.067 struct_completeness=0.75
+
+### Training task #30
+- final_treesim: 0.0
+- tool call summary: rag=0 reads=4 writes=9
+- failure_mode: F1_schema_hallucination
+- weakest sections: Constitutive (0.00), ElementRegions (0.00), Events (0.00), FieldSpecifications (0.00), Mesh (0.00)
+- dominant failure dimension: element_type_match
+- attr_accuracy=1.0 struct_completeness=0.5
+
+### Training task #31
+- final_treesim: 0.1285
+- tool call summary: rag=0 reads=2 writes=5
+- failure_mode: F2_attr_drift
+- weakest sections: Events (0.00), Geometry (0.00), NumericalMethods (0.00), Outputs (0.00), Solvers (0.00)
+- dominant failure dimension: attribute_accuracy
+- attr_accuracy=0.206 struct_completeness=0.75
+
+### Training task #32
+- final_treesim: 0.0
+- tool call summary: rag=0 reads=0 writes=2
+- failure_mode: F1_schema_hallucination
+- weakest sections: Constitutive (0.00), ElementRegions (0.00), Events (0.00), FieldSpecifications (0.00), NumericalMethods (0.00)
+- dominant failure dimension: element_type_match
+- attr_accuracy=1.0 struct_completeness=0.25
+
+### Training task #33
+- final_treesim: 0.9642
+- tool call summary: rag=0 reads=14 writes=2
+- failure_mode: success
+- dominant failure dimension: structural_completeness
+- attr_accuracy=0.959 struct_completeness=1.0
+
+### Training task #34
+- final_treesim: None
+- tool call summary: rag=0 reads=0 writes=3
+- failure_mode: success
+- dominant failure dimension: unknown
+
+### Training task #35
+- final_treesim: 0.9966
+- tool call summary: rag=0 reads=23 writes=4
+- failure_mode: success
+- dominant failure dimension: structural_completeness
+- attr_accuracy=0.994 struct_completeness=1.0
+
+### Training task #36
+- final_treesim: 0.8813
+- tool call summary: rag=0 reads=5 writes=5
+- failure_mode: success
+- dominant failure dimension: tag_coverage
+- attr_accuracy=0.904 struct_completeness=1.0
+
+Now produce the cheatsheet.

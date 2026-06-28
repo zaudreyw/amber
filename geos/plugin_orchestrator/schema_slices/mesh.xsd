@@ -1,0 +1,267 @@
+<!-- Extracted from GEOS schema.xsd. -->
+<!-- Authoritative: attribute names, types, defaults. -->
+<xsd:complexType name="InternalMeshType">
+		<xsd:choice minOccurs="0" maxOccurs="unbounded">
+			<xsd:element name="InternalWell" type="InternalWellType">
+				<xsd:unique name="MeshInternalMeshInternalWellPerforationUniqueName">
+					<xsd:selector xpath="Perforation" />
+					<xsd:field xpath="@name" />
+				</xsd:unique>
+			</xsd:element>
+			<xsd:element name="Region" type="RegionType" />
+			<xsd:element name="VTKWell" type="VTKWellType">
+				<xsd:unique name="MeshInternalMeshVTKWellPerforationUniqueName">
+					<xsd:selector xpath="Perforation" />
+					<xsd:field xpath="@name" />
+				</xsd:unique>
+			</xsd:element>
+		</xsd:choice>
+		<!--cellBlockNames => Names of each mesh block-->
+		<xsd:attribute name="cellBlockNames" type="groupNameRef_array" use="required" />
+		<!--elementTypes => Element types of each mesh block. Use "C3D8" for linear brick element. Possible values are: Vertex, BEAM, C2D3, C2D4, Polygon, C3D4, C3D5, C3D6, C3D8, PentagonalPrism, HexagonalPrism, HeptagonalPrism, OctagonalPrism, NonagonalPrism, DecagonalPrism, HendecagonalPrism, Polyhedron.-->
+		<xsd:attribute name="elementTypes" type="string_array" use="required" />
+		<!--nx => Number of elements in the x-direction within each mesh block-->
+		<xsd:attribute name="nx" type="integer_array" use="required" />
+		<!--ny => Number of elements in the y-direction within each mesh block-->
+		<xsd:attribute name="ny" type="integer_array" use="required" />
+		<!--nz => Number of elements in the z-direction within each mesh block-->
+		<xsd:attribute name="nz" type="integer_array" use="required" />
+		<!--positionTolerance => A position tolerance to verify if a node belong to a nodeset-->
+		<xsd:attribute name="positionTolerance" type="real64" default="1e-10" />
+		<!--trianglePattern => Pattern by which to decompose the hex mesh into wedges-->
+		<xsd:attribute name="trianglePattern" type="integer" default="0" />
+		<!--xBias => Bias of element sizes in the x-direction within each mesh block (dx_left=(1+b)*L/N, dx_right=(1-b)*L/N)-->
+		<xsd:attribute name="xBias" type="real64_array" default="{1}" />
+		<!--xCoords => x-coordinates of each mesh block vertex-->
+		<xsd:attribute name="xCoords" type="real64_array" use="required" />
+		<!--yBias => Bias of element sizes in the y-direction within each mesh block (dy_left=(1+b)*L/N, dx_right=(1-b)*L/N)-->
+		<xsd:attribute name="yBias" type="real64_array" default="{1}" />
+		<!--yCoords => y-coordinates of each mesh block vertex-->
+		<xsd:attribute name="yCoords" type="real64_array" use="required" />
+		<!--zBias => Bias of element sizes in the z-direction within each mesh block (dz_left=(1+b)*L/N, dz_right=(1-b)*L/N)-->
+		<xsd:attribute name="zBias" type="real64_array" default="{1}" />
+		<!--zCoords => z-coordinates of each mesh block vertex-->
+		<xsd:attribute name="zCoords" type="real64_array" use="required" />
+		<!--name => A name is required for any non-unique nodes-->
+		<xsd:attribute name="name" type="groupName" use="required" />
+	</xsd:complexType>
+
+<xsd:complexType name="VTKMeshType">
+		<xsd:choice minOccurs="0" maxOccurs="unbounded">
+			<xsd:element name="InternalWell" type="InternalWellType">
+				<xsd:unique name="MeshVTKMeshInternalWellPerforationUniqueName">
+					<xsd:selector xpath="Perforation" />
+					<xsd:field xpath="@name" />
+				</xsd:unique>
+			</xsd:element>
+			<xsd:element name="Region" type="RegionType" />
+			<xsd:element name="VTKWell" type="VTKWellType">
+				<xsd:unique name="MeshVTKMeshVTKWellPerforationUniqueName">
+					<xsd:selector xpath="Perforation" />
+					<xsd:field xpath="@name" />
+				</xsd:unique>
+			</xsd:element>
+		</xsd:choice>
+		<!--dataSourceName => Name of the VTK data source-->
+		<xsd:attribute name="dataSourceName" type="string" default="" />
+		<!--faceBlocks => For multi-block files, names of the face mesh block.-->
+		<xsd:attribute name="faceBlocks" type="groupNameRef_array" default="{}" />
+		<!--fieldNamesInGEOS => Names of the volumic fields in GEOS to import into-->
+		<xsd:attribute name="fieldNamesInGEOS" type="groupNameRef_array" default="{}" />
+		<!--fieldsToImport => Volumic fields to be imported from the external mesh file-->
+		<xsd:attribute name="fieldsToImport" type="groupNameRef_array" default="{}" />
+		<!--file => Path to the mesh file-->
+		<xsd:attribute name="file" type="path" default="" />
+		<!--logLevel => Sets the level of information to write in the standard output (the console typically).
+Information output from lower logLevels is added with the desired log level
+2
+ - VTK mesh generator steps-->
+		<xsd:attribute name="logLevel" type="integer" default="0" />
+		<!--mainBlockName => For multi-block files, name of the 3d mesh block.-->
+		<xsd:attribute name="mainBlockName" type="groupNameRef" default="main" />
+		<!--nodesetNames => Names of the VTK nodesets to import-->
+		<xsd:attribute name="nodesetNames" type="groupNameRef_array" default="{}" />
+		<!--partitionMethod => Method (library) used to partition the mesh-->
+		<xsd:attribute name="partitionMethod" type="geos_vtk_PartitionMethod" default="parmetis" />
+		<!--partitionRefinement => Number of partitioning refinement iterations (defaults to 1, recommended value).A value of 0 disables graph partitioning and keeps simple kd-tree partitions (not recommended). Values higher than 1 may lead to slightly improved partitioning, but yield diminishing returns.-->
+		<xsd:attribute name="partitionRefinement" type="integer" default="1" />
+		<!--regionAttribute => Name of the VTK cell attribute to use as region marker-->
+		<xsd:attribute name="regionAttribute" type="groupNameRef" default="attribute" />
+		<!--scale => Scale the coordinates of the vertices by given scale factors (after translation)-->
+		<xsd:attribute name="scale" type="R1Tensor" default="{1,1,1}" />
+		<!--structuredIndexAttribute => Name of the VTK cell attribute containing structured cell index (e.g. Cartesian IJK)-->
+		<xsd:attribute name="structuredIndexAttribute" type="string" default="" />
+		<!--surfacicFieldsInGEOS => Names of the surfacic fields in GEOS to import into-->
+		<xsd:attribute name="surfacicFieldsInGEOS" type="groupNameRef_array" default="{}" />
+		<!--surfacicFieldsToImport => Surfacic fields to be imported from the external mesh file-->
+		<xsd:attribute name="surfacicFieldsToImport" type="groupNameRef_array" default="{}" />
+		<!--translate => Translate the coordinates of the vertices by a given vector (prior to scaling)-->
+		<xsd:attribute name="translate" type="R1Tensor" default="{0,0,0}" />
+		<!--useGlobalIds => Controls the use of global IDs in the input file for cells and points. If set to 0 (default value), the GlobalId arrays in the input mesh are used if available, and generated otherwise. If set to a negative value, the GlobalId arrays in the input mesh are not used, and generated global Ids are automatically generated. If set to a positive value, the GlobalId arrays in the input mesh are used and required, and the simulation aborts if they are not available-->
+		<xsd:attribute name="useGlobalIds" type="integer" default="0" />
+		<!--name => A name is required for any non-unique nodes-->
+		<xsd:attribute name="name" type="groupName" use="required" />
+	</xsd:complexType>
+
+<xsd:complexType name="InternalWellboreType">
+		<xsd:choice minOccurs="0" maxOccurs="unbounded">
+			<xsd:element name="InternalWell" type="InternalWellType">
+				<xsd:unique name="MeshInternalWellboreInternalWellPerforationUniqueName">
+					<xsd:selector xpath="Perforation" />
+					<xsd:field xpath="@name" />
+				</xsd:unique>
+			</xsd:element>
+			<xsd:element name="Region" type="RegionType" />
+			<xsd:element name="VTKWell" type="VTKWellType">
+				<xsd:unique name="MeshInternalWellboreVTKWellPerforationUniqueName">
+					<xsd:selector xpath="Perforation" />
+					<xsd:field xpath="@name" />
+				</xsd:unique>
+			</xsd:element>
+		</xsd:choice>
+		<!--autoSpaceRadialElems => Automatically set number and spacing of elements in the radial direction. This overrides the values of nr!Value in each block indicates factor to scale the radial increment.Larger numbers indicate larger radial elements.-->
+		<xsd:attribute name="autoSpaceRadialElems" type="real64_array" default="{-1}" />
+		<!--cartesianMappingInnerRadius => If using a Cartesian aligned outer boundary, this is inner radius at which to start the mapping.-->
+		<xsd:attribute name="cartesianMappingInnerRadius" type="real64" default="1e+99" />
+		<!--cellBlockNames => Names of each mesh block-->
+		<xsd:attribute name="cellBlockNames" type="groupNameRef_array" use="required" />
+		<!--elementTypes => Element types of each mesh block. Use "C3D8" for linear brick element. Possible values are: Vertex, BEAM, C2D3, C2D4, Polygon, C3D4, C3D5, C3D6, C3D8, PentagonalPrism, HexagonalPrism, HeptagonalPrism, OctagonalPrism, NonagonalPrism, DecagonalPrism, HendecagonalPrism, Polyhedron.-->
+		<xsd:attribute name="elementTypes" type="string_array" use="required" />
+		<!--hardRadialCoords => Sets the radial spacing to specified values-->
+		<xsd:attribute name="hardRadialCoords" type="real64_array" default="{0}" />
+		<!--nr => Number of elements in the radial direction-->
+		<xsd:attribute name="nr" type="integer_array" use="required" />
+		<!--nt => Number of elements in the tangent direction-->
+		<xsd:attribute name="nt" type="integer_array" use="required" />
+		<!--nz => Number of elements in the z-direction within each mesh block-->
+		<xsd:attribute name="nz" type="integer_array" use="required" />
+		<!--positionTolerance => A position tolerance to verify if a node belong to a nodeset-->
+		<xsd:attribute name="positionTolerance" type="real64" default="1e-10" />
+		<!--rBias => Bias of element sizes in the radial direction-->
+		<xsd:attribute name="rBias" type="real64_array" default="{-0.8}" />
+		<!--radius => Wellbore radius-->
+		<xsd:attribute name="radius" type="real64_array" use="required" />
+		<!--theta => Tangent angle defining geometry size: 90 for quarter, 180 for half and 360 for full wellbore geometry-->
+		<xsd:attribute name="theta" type="real64_array" use="required" />
+		<!--trajectory => Coordinates defining the wellbore trajectory-->
+		<xsd:attribute name="trajectory" type="real64_array2d" default="{{0}}" />
+		<!--trianglePattern => Pattern by which to decompose the hex mesh into wedges-->
+		<xsd:attribute name="trianglePattern" type="integer" default="0" />
+		<!--useCartesianOuterBoundary => Enforce a Cartesian aligned outer boundary on the outer block starting with the radial block specified in this value-->
+		<xsd:attribute name="useCartesianOuterBoundary" type="integer" default="1000000" />
+		<!--xBias => Bias of element sizes in the x-direction within each mesh block (dx_left=(1+b)*L/N, dx_right=(1-b)*L/N)-->
+		<xsd:attribute name="xBias" type="real64_array" default="{1}" />
+		<!--yBias => Bias of element sizes in the y-direction within each mesh block (dy_left=(1+b)*L/N, dx_right=(1-b)*L/N)-->
+		<xsd:attribute name="yBias" type="real64_array" default="{1}" />
+		<!--zBias => Bias of element sizes in the z-direction within each mesh block (dz_left=(1+b)*L/N, dz_right=(1-b)*L/N)-->
+		<xsd:attribute name="zBias" type="real64_array" default="{1}" />
+		<!--zCoords => z-coordinates of each mesh block vertex-->
+		<xsd:attribute name="zCoords" type="real64_array" use="required" />
+		<!--name => A name is required for any non-unique nodes-->
+		<xsd:attribute name="name" type="groupName" use="required" />
+	</xsd:complexType>
+
+<xsd:complexType name="MeshType">
+		<xsd:choice minOccurs="0" maxOccurs="unbounded">
+			<xsd:element name="InternalMesh" type="InternalMeshType">
+				<xsd:unique name="MeshInternalMeshInternalWellUniqueName">
+					<xsd:selector xpath="InternalWell" />
+					<xsd:field xpath="@name" />
+				</xsd:unique>
+				<xsd:unique name="MeshInternalMeshRegionUniqueName">
+					<xsd:selector xpath="Region" />
+					<xsd:field xpath="@name" />
+				</xsd:unique>
+				<xsd:unique name="MeshInternalMeshVTKWellUniqueName">
+					<xsd:selector xpath="VTKWell" />
+					<xsd:field xpath="@name" />
+				</xsd:unique>
+			</xsd:element>
+			<xsd:element name="InternalWellbore" type="InternalWellboreType">
+				<xsd:unique name="MeshInternalWellboreInternalWellUniqueName">
+					<xsd:selector xpath="InternalWell" />
+					<xsd:field xpath="@name" />
+				</xsd:unique>
+				<xsd:unique name="MeshInternalWellboreRegionUniqueName">
+					<xsd:selector xpath="Region" />
+					<xsd:field xpath="@name" />
+				</xsd:unique>
+				<xsd:unique name="MeshInternalWellboreVTKWellUniqueName">
+					<xsd:selector xpath="VTKWell" />
+					<xsd:field xpath="@name" />
+				</xsd:unique>
+			</xsd:element>
+			<xsd:element name="ParticleMesh" type="ParticleMeshType" />
+			<xsd:element name="VTKMesh" type="VTKMeshType">
+				<xsd:unique name="MeshVTKMeshInternalWellUniqueName">
+					<xsd:selector xpath="InternalWell" />
+					<xsd:field xpath="@name" />
+				</xsd:unique>
+				<xsd:unique name="MeshVTKMeshRegionUniqueName">
+					<xsd:selector xpath="Region" />
+					<xsd:field xpath="@name" />
+				</xsd:unique>
+				<xsd:unique name="MeshVTKMeshVTKWellUniqueName">
+					<xsd:selector xpath="VTKWell" />
+					<xsd:field xpath="@name" />
+				</xsd:unique>
+			</xsd:element>
+		</xsd:choice>
+		<!--logLevel => Sets the level of information to write in the standard output (the console typically).
+Information output from lower logLevels is added with the desired log level
+1
+ - Information on fields import-->
+		<xsd:attribute name="logLevel" type="integer" default="0" />
+	</xsd:complexType>
+
+<xsd:complexType name="GeometryType">
+		<xsd:choice minOccurs="0" maxOccurs="unbounded">
+			<xsd:element name="Box" type="BoxType" />
+			<xsd:element name="CustomPolarObject" type="CustomPolarObjectType" />
+			<xsd:element name="Cylinder" type="CylinderType" />
+			<xsd:element name="Disc" type="DiscType" />
+			<xsd:element name="Rectangle" type="RectangleType" />
+			<xsd:element name="ThickPlane" type="ThickPlaneType" />
+		</xsd:choice>
+	</xsd:complexType>
+
+<xsd:complexType name="BoxType">
+		<!--epsilon => Absolute tolerance for coordinate checks. If not specified, default value of 1e-6 * GlobalLengthScale will be used, where GlobalLengthScale is the length scale of the domain.-->
+		<xsd:attribute name="epsilon" type="real64" default="-1" />
+		<!--strike => The strike angle of the box-->
+		<xsd:attribute name="strike" type="real64" default="-90" />
+		<!--xMax => Maximum (x,y,z) coordinates of the box-->
+		<xsd:attribute name="xMax" type="R1Tensor" use="required" />
+		<!--xMin => Minimum (x,y,z) coordinates of the box-->
+		<xsd:attribute name="xMin" type="R1Tensor" use="required" />
+		<!--name => A name is required for any non-unique nodes-->
+		<xsd:attribute name="name" type="groupName" use="required" />
+	</xsd:complexType>
+
+<xsd:complexType name="CylinderType">
+		<!--epsilon => Absolute tolerance for coordinate checks. If not specified, default value of 1e-6 * GlobalLengthScale will be used, where GlobalLengthScale is the length scale of the domain.-->
+		<xsd:attribute name="epsilon" type="real64" default="-1" />
+		<!--firstFaceCenter => Center point of the first face of the cylinder-->
+		<xsd:attribute name="firstFaceCenter" type="R1Tensor" use="required" />
+		<!--innerRadius => Inner radius of the annulus-->
+		<xsd:attribute name="innerRadius" type="real64" default="-1" />
+		<!--outerRadius => Outer radius of the cylinder-->
+		<xsd:attribute name="outerRadius" type="real64" use="required" />
+		<!--secondFaceCenter => Center point of the second face of the cylinder-->
+		<xsd:attribute name="secondFaceCenter" type="R1Tensor" use="required" />
+		<!--name => A name is required for any non-unique nodes-->
+		<xsd:attribute name="name" type="groupName" use="required" />
+	</xsd:complexType>
+
+<xsd:complexType name="ThickPlaneType">
+		<!--epsilon => Absolute tolerance for coordinate checks. If not specified, default value of 1e-6 * GlobalLengthScale will be used, where GlobalLengthScale is the length scale of the domain.-->
+		<xsd:attribute name="epsilon" type="real64" default="-1" />
+		<!--normal => Normal (n_x,n_y,n_z) to the plane (will be normalized automatically)-->
+		<xsd:attribute name="normal" type="R1Tensor" use="required" />
+		<!--origin => Origin point (x,y,z) of the plane (basically, any point on the plane)-->
+		<xsd:attribute name="origin" type="R1Tensor" use="required" />
+		<!--thickness => The total thickness of the plane (with half to each side)-->
+		<xsd:attribute name="thickness" type="real64" use="required" />
+		<!--name => A name is required for any non-unique nodes-->
+		<xsd:attribute name="name" type="groupName" use="required" />
+	</xsd:complexType>

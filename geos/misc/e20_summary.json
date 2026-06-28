@@ -1,0 +1,422 @@
+[
+  {
+    "cell": "C0_nohook",
+    "agent": "claude_code_repo3_plugin_nohook",
+    "statuses": {
+      "success": 10,
+      "timeout": 1,
+      "running": 1
+    },
+    "attempt_statuses": {
+      "success": 9,
+      "timeout": 1,
+      "failed_no_outputs": 2
+    },
+    "n_total": 12,
+    "n_success": 10,
+    "n_failed_no_outputs": 0,
+    "failure_rate": 0.0,
+    "first_attempt_failure_rate": 0.16666666666666666,
+    "stop_hook_errors": 0,
+    "hook_event_counts": {},
+    "hook_rescues_attempted": 0,
+    "hook_rescues_succeeded": 0,
+    "per_task_faz_mean": {
+      "AdvancedExampleDeviatedElasticWellbore": 0.544,
+      "AdvancedExampleDruckerPrager": 0.6581,
+      "ExampleDPWellbore": 0.8933666666666666,
+      "ExampleThermalLeakyWell": 0.4747
+    },
+    "overall_faz_mean": 0.6425416666666667,
+    "per_run": [
+      {
+        "run": "e20_run1",
+        "task": "AdvancedExampleDeviatedElasticWellbore",
+        "status": "success",
+        "treesim": 0.428
+      },
+      {
+        "run": "e20_run1",
+        "task": "AdvancedExampleDruckerPrager",
+        "status": "success",
+        "treesim": 0.975
+      },
+      {
+        "run": "e20_run1",
+        "task": "ExampleDPWellbore",
+        "status": "success",
+        "treesim": 0.9502
+      },
+      {
+        "run": "e20_run1",
+        "task": "ExampleThermalLeakyWell",
+        "status": "timeout",
+        "treesim": 0.5027
+      },
+      {
+        "run": "e20_run2",
+        "task": "AdvancedExampleDeviatedElasticWellbore",
+        "status": "success",
+        "treesim": 0.4138
+      },
+      {
+        "run": "e20_run2",
+        "task": "AdvancedExampleDruckerPrager",
+        "status": "success",
+        "treesim": 0.5392
+      },
+      {
+        "run": "e20_run2",
+        "task": "ExampleDPWellbore",
+        "status": "success",
+        "treesim": 0.9339
+      },
+      {
+        "run": "e20_run2",
+        "task": "ExampleThermalLeakyWell",
+        "status": "success",
+        "treesim": 0.4609
+      },
+      {
+        "run": "e20_run3",
+        "task": "AdvancedExampleDeviatedElasticWellbore",
+        "status": "success",
+        "treesim": 0.7902
+      },
+      {
+        "run": "e20_run3",
+        "task": "AdvancedExampleDruckerPrager",
+        "status": "success",
+        "treesim": 0.4601
+      },
+      {
+        "run": "e20_run3",
+        "task": "ExampleDPWellbore",
+        "status": "success",
+        "treesim": 0.796
+      },
+      {
+        "run": "e20_run3",
+        "task": "ExampleThermalLeakyWell",
+        "status": "running",
+        "treesim": 0.4605
+      }
+    ]
+  },
+  {
+    "cell": "C1_hook",
+    "agent": "claude_code_repo3_plugin",
+    "statuses": {
+      "success": 12
+    },
+    "attempt_statuses": {
+      "success": 12
+    },
+    "n_total": 12,
+    "n_success": 12,
+    "n_failed_no_outputs": 0,
+    "failure_rate": 0.0,
+    "first_attempt_failure_rate": 0.0,
+    "stop_hook_errors": 1,
+    "hook_event_counts": {
+      "xml_clean": 11,
+      "no_xml": 1,
+      "stop_hook_active": 1
+    },
+    "hook_rescues_attempted": 1,
+    "hook_rescues_succeeded": 1,
+    "per_task_faz_mean": {
+      "AdvancedExampleDeviatedElasticWellbore": 0.6840666666666667,
+      "AdvancedExampleDruckerPrager": 0.6779,
+      "ExampleDPWellbore": 0.4897,
+      "ExampleThermalLeakyWell": 0.2699
+    },
+    "overall_faz_mean": 0.5303916666666667,
+    "per_run": [
+      {
+        "run": "e20_run1",
+        "task": "AdvancedExampleDeviatedElasticWellbore",
+        "status": "success",
+        "treesim": 0.3366
+      },
+      {
+        "run": "e20_run1",
+        "task": "AdvancedExampleDruckerPrager",
+        "status": "success",
+        "treesim": 0.9903
+      },
+      {
+        "run": "e20_run1",
+        "task": "ExampleDPWellbore",
+        "status": "success",
+        "treesim": 0.1503
+      },
+      {
+        "run": "e20_run1",
+        "task": "ExampleThermalLeakyWell",
+        "status": "success",
+        "treesim": null
+      },
+      {
+        "run": "e20_run2",
+        "task": "AdvancedExampleDeviatedElasticWellbore",
+        "status": "success",
+        "treesim": 0.8529
+      },
+      {
+        "run": "e20_run2",
+        "task": "AdvancedExampleDruckerPrager",
+        "status": "success",
+        "treesim": 0.5484
+      },
+      {
+        "run": "e20_run2",
+        "task": "ExampleDPWellbore",
+        "status": "success",
+        "treesim": 0.9261
+      },
+      {
+        "run": "e20_run2",
+        "task": "ExampleThermalLeakyWell",
+        "status": "success",
+        "treesim": 0.3727
+      },
+      {
+        "run": "e20_run3",
+        "task": "AdvancedExampleDeviatedElasticWellbore",
+        "status": "success",
+        "treesim": 0.8627
+      },
+      {
+        "run": "e20_run3",
+        "task": "AdvancedExampleDruckerPrager",
+        "status": "success",
+        "treesim": 0.495
+      },
+      {
+        "run": "e20_run3",
+        "task": "ExampleDPWellbore",
+        "status": "success",
+        "treesim": 0.3927
+      },
+      {
+        "run": "e20_run3",
+        "task": "ExampleThermalLeakyWell",
+        "status": "success",
+        "treesim": 0.437
+      }
+    ]
+  },
+  {
+    "cell": "C2_noop_nohook",
+    "agent": "claude_code_repo3_plugin_noop_nohook",
+    "statuses": {
+      "success": 10,
+      "timeout": 1,
+      "running": 1
+    },
+    "attempt_statuses": {
+      "success": 10,
+      "timeout": 1,
+      "running": 1
+    },
+    "n_total": 12,
+    "n_success": 10,
+    "n_failed_no_outputs": 0,
+    "failure_rate": 0.0,
+    "first_attempt_failure_rate": 0.0,
+    "stop_hook_errors": 0,
+    "hook_event_counts": {},
+    "hook_rescues_attempted": 0,
+    "hook_rescues_succeeded": 0,
+    "per_task_faz_mean": {
+      "AdvancedExampleDeviatedElasticWellbore": 0.5655333333333333,
+      "AdvancedExampleDruckerPrager": 0.7720333333333333,
+      "ExampleDPWellbore": 0.6137333333333334,
+      "ExampleThermalLeakyWell": 0.42816666666666664
+    },
+    "overall_faz_mean": 0.5948666666666667,
+    "per_run": [
+      {
+        "run": "e20_run1",
+        "task": "AdvancedExampleDeviatedElasticWellbore",
+        "status": "success",
+        "treesim": 0.8953
+      },
+      {
+        "run": "e20_run1",
+        "task": "AdvancedExampleDruckerPrager",
+        "status": "success",
+        "treesim": 0.9517
+      },
+      {
+        "run": "e20_run1",
+        "task": "ExampleDPWellbore",
+        "status": "success",
+        "treesim": 0.2897
+      },
+      {
+        "run": "e20_run1",
+        "task": "ExampleThermalLeakyWell",
+        "status": "timeout",
+        "treesim": 0.1835
+      },
+      {
+        "run": "e20_run2",
+        "task": "AdvancedExampleDeviatedElasticWellbore",
+        "status": "success",
+        "treesim": 0.4331
+      },
+      {
+        "run": "e20_run2",
+        "task": "AdvancedExampleDruckerPrager",
+        "status": "success",
+        "treesim": 0.5483
+      },
+      {
+        "run": "e20_run2",
+        "task": "ExampleDPWellbore",
+        "status": "success",
+        "treesim": 0.5608
+      },
+      {
+        "run": "e20_run2",
+        "task": "ExampleThermalLeakyWell",
+        "status": "success",
+        "treesim": 0.6653
+      },
+      {
+        "run": "e20_run3",
+        "task": "AdvancedExampleDeviatedElasticWellbore",
+        "status": "success",
+        "treesim": 0.3682
+      },
+      {
+        "run": "e20_run3",
+        "task": "AdvancedExampleDruckerPrager",
+        "status": "success",
+        "treesim": 0.8161
+      },
+      {
+        "run": "e20_run3",
+        "task": "ExampleDPWellbore",
+        "status": "success",
+        "treesim": 0.9907
+      },
+      {
+        "run": "e20_run3",
+        "task": "ExampleThermalLeakyWell",
+        "status": "running",
+        "treesim": 0.4357
+      }
+    ]
+  },
+  {
+    "cell": "C4_hook_noop",
+    "agent": "claude_code_repo3_plugin_noop",
+    "statuses": {
+      "success": 9,
+      "timeout": 2,
+      "running": 1
+    },
+    "attempt_statuses": {
+      "success": 8,
+      "failed_no_outputs": 1,
+      "timeout": 2,
+      "running": 1
+    },
+    "n_total": 12,
+    "n_success": 9,
+    "n_failed_no_outputs": 0,
+    "failure_rate": 0.0,
+    "first_attempt_failure_rate": 0.08333333333333333,
+    "stop_hook_errors": 1,
+    "hook_event_counts": {
+      "xml_clean": 11,
+      "no_xml": 2
+    },
+    "hook_rescues_attempted": 2,
+    "hook_rescues_succeeded": 2,
+    "per_task_faz_mean": {
+      "AdvancedExampleDeviatedElasticWellbore": 0.7072666666666667,
+      "AdvancedExampleDruckerPrager": 0.6793333333333333,
+      "ExampleDPWellbore": 0.5339333333333334,
+      "ExampleThermalLeakyWell": 0.3058333333333333
+    },
+    "overall_faz_mean": 0.5565916666666667,
+    "per_run": [
+      {
+        "run": "e20_run1",
+        "task": "AdvancedExampleDeviatedElasticWellbore",
+        "status": "success",
+        "treesim": 0.8856
+      },
+      {
+        "run": "e20_run1",
+        "task": "AdvancedExampleDruckerPrager",
+        "status": "success",
+        "treesim": 0.515
+      },
+      {
+        "run": "e20_run1",
+        "task": "ExampleDPWellbore",
+        "status": "success",
+        "treesim": 0.8733
+      },
+      {
+        "run": "e20_run1",
+        "task": "ExampleThermalLeakyWell",
+        "status": "timeout",
+        "treesim": 0.2356
+      },
+      {
+        "run": "e20_run2",
+        "task": "AdvancedExampleDeviatedElasticWellbore",
+        "status": "success",
+        "treesim": 0.5313
+      },
+      {
+        "run": "e20_run2",
+        "task": "AdvancedExampleDruckerPrager",
+        "status": "success",
+        "treesim": 0.9906
+      },
+      {
+        "run": "e20_run2",
+        "task": "ExampleDPWellbore",
+        "status": "success",
+        "treesim": 0.3708
+      },
+      {
+        "run": "e20_run2",
+        "task": "ExampleThermalLeakyWell",
+        "status": "timeout",
+        "treesim": 0.3813
+      },
+      {
+        "run": "e20_run3",
+        "task": "AdvancedExampleDeviatedElasticWellbore",
+        "status": "success",
+        "treesim": 0.7049
+      },
+      {
+        "run": "e20_run3",
+        "task": "AdvancedExampleDruckerPrager",
+        "status": "success",
+        "treesim": 0.5324
+      },
+      {
+        "run": "e20_run3",
+        "task": "ExampleDPWellbore",
+        "status": "success",
+        "treesim": 0.3577
+      },
+      {
+        "run": "e20_run3",
+        "task": "ExampleThermalLeakyWell",
+        "status": "running",
+        "treesim": 0.3006
+      }
+    ]
+  }
+]

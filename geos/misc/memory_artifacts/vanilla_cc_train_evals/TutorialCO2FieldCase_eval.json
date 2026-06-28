@@ -1,0 +1,778 @@
+{
+  "experiment": "TutorialCO2FieldCase",
+  "overall_score": 9.64,
+  "overall_01": 0.9642,
+  "treesim": 0.9642,
+  "treesim_section_scores": {
+    "Constitutive": 1.0,
+    "ElementRegions": 1.0,
+    "Events": 1.0,
+    "FieldSpecifications": 1.0,
+    "Functions": 0.72,
+    "Mesh": 1.0,
+    "NumericalMethods": 1.0,
+    "Outputs": 0.9222,
+    "Solvers": 1.0,
+    "Tasks": 1.0
+  },
+  "treesim_detail": {
+    "tag": "Problem",
+    "name": "",
+    "score": 0.9642,
+    "attr_score": 1.0,
+    "n_gt_children": 10,
+    "n_matched": 10,
+    "n_extra": 0,
+    "children_score": 0.9642,
+    "children": [
+      {
+        "tag": "Constitutive",
+        "name": "",
+        "score": 1.0,
+        "attr_score": 1.0,
+        "n_gt_children": 6,
+        "n_matched": 6,
+        "n_extra": 0,
+        "children_score": 1.0,
+        "children": [
+          {
+            "tag": "BrooksCoreyRelativePermeability",
+            "name": "relperm",
+            "score": 1.0,
+            "attr_score": 1.0,
+            "n_gt_children": 0,
+            "n_matched": 0,
+            "n_extra": 0
+          },
+          {
+            "tag": "CO2BrinePhillipsFluid",
+            "name": "fluid",
+            "score": 1.0,
+            "attr_score": 1.0,
+            "n_gt_children": 0,
+            "n_matched": 0,
+            "n_extra": 0
+          },
+          {
+            "tag": "CompressibleSolidConstantPermeability",
+            "name": "rock",
+            "score": 1.0,
+            "attr_score": 1.0,
+            "n_gt_children": 0,
+            "n_matched": 0,
+            "n_extra": 0
+          },
+          {
+            "tag": "ConstantPermeability",
+            "name": "rockPerm",
+            "score": 1.0,
+            "attr_score": 1.0,
+            "n_gt_children": 0,
+            "n_matched": 0,
+            "n_extra": 0
+          },
+          {
+            "tag": "NullModel",
+            "name": "nullSolid",
+            "score": 1.0,
+            "attr_score": 1.0,
+            "n_gt_children": 0,
+            "n_matched": 0,
+            "n_extra": 0
+          },
+          {
+            "tag": "PressurePorosity",
+            "name": "rockPorosity",
+            "score": 1.0,
+            "attr_score": 1.0,
+            "n_gt_children": 0,
+            "n_matched": 0,
+            "n_extra": 0
+          }
+        ]
+      },
+      {
+        "tag": "ElementRegions",
+        "name": "",
+        "score": 1.0,
+        "attr_score": 1.0,
+        "n_gt_children": 2,
+        "n_matched": 2,
+        "n_extra": 0,
+        "children_score": 1.0,
+        "children": [
+          {
+            "tag": "CellElementRegion",
+            "name": "reservoir",
+            "score": 1.0,
+            "attr_score": 1.0,
+            "n_gt_children": 0,
+            "n_matched": 0,
+            "n_extra": 0
+          },
+          {
+            "tag": "WellElementRegion",
+            "name": "wellRegion",
+            "score": 1.0,
+            "attr_score": 1.0,
+            "n_gt_children": 0,
+            "n_matched": 0,
+            "n_extra": 0
+          }
+        ]
+      },
+      {
+        "tag": "Events",
+        "name": "",
+        "score": 1.0,
+        "attr_score": 1.0,
+        "n_gt_children": 5,
+        "n_matched": 5,
+        "n_extra": 0,
+        "children_score": 1.0,
+        "children": [
+          {
+            "tag": "PeriodicEvent",
+            "name": "solverApplications",
+            "score": 1.0,
+            "attr_score": 1.0,
+            "n_gt_children": 0,
+            "n_matched": 0,
+            "n_extra": 0
+          },
+          {
+            "tag": "PeriodicEvent",
+            "name": "timeHistoryOutput",
+            "score": 1.0,
+            "attr_score": 1.0,
+            "n_gt_children": 0,
+            "n_matched": 0,
+            "n_extra": 0
+          },
+          {
+            "tag": "PeriodicEvent",
+            "name": "timeHistoryCollection",
+            "score": 1.0,
+            "attr_score": 1.0,
+            "n_gt_children": 0,
+            "n_matched": 0,
+            "n_extra": 0
+          },
+          {
+            "tag": "PeriodicEvent",
+            "name": "restarts",
+            "score": 1.0,
+            "attr_score": 1.0,
+            "n_gt_children": 0,
+            "n_matched": 0,
+            "n_extra": 0
+          },
+          {
+            "tag": "PeriodicEvent",
+            "name": "outputs",
+            "score": 1.0,
+            "attr_score": 1.0,
+            "n_gt_children": 0,
+            "n_matched": 0,
+            "n_extra": 0
+          }
+        ]
+      },
+      {
+        "tag": "FieldSpecifications",
+        "name": "",
+        "score": 1.0,
+        "attr_score": 1.0,
+        "n_gt_children": 6,
+        "n_matched": 6,
+        "n_extra": 0,
+        "children_score": 1.0,
+        "children": [
+          {
+            "tag": "FieldSpecification",
+            "name": "initialComposition_water",
+            "score": 1.0,
+            "attr_score": 1.0,
+            "n_gt_children": 0,
+            "n_matched": 0,
+            "n_extra": 0
+          },
+          {
+            "tag": "FieldSpecification",
+            "name": "initialComposition_co2",
+            "score": 1.0,
+            "attr_score": 1.0,
+            "n_gt_children": 0,
+            "n_matched": 0,
+            "n_extra": 0
+          },
+          {
+            "tag": "FieldSpecification",
+            "name": "initialPressure",
+            "score": 1.0,
+            "attr_score": 1.0,
+            "n_gt_children": 0,
+            "n_matched": 0,
+            "n_extra": 0
+          },
+          {
+            "tag": "FieldSpecification",
+            "name": "permz",
+            "score": 1.0,
+            "attr_score": 1.0,
+            "n_gt_children": 0,
+            "n_matched": 0,
+            "n_extra": 0
+          },
+          {
+            "tag": "FieldSpecification",
+            "name": "permy",
+            "score": 1.0,
+            "attr_score": 1.0,
+            "n_gt_children": 0,
+            "n_matched": 0,
+            "n_extra": 0
+          },
+          {
+            "tag": "FieldSpecification",
+            "name": "permx",
+            "score": 1.0,
+            "attr_score": 1.0,
+            "n_gt_children": 0,
+            "n_matched": 0,
+            "n_extra": 0
+          }
+        ]
+      },
+      {
+        "tag": "Functions",
+        "name": "",
+        "score": 0.72,
+        "attr_score": 1.0,
+        "n_gt_children": 3,
+        "n_matched": 3,
+        "n_extra": 0,
+        "children_score": 0.6,
+        "children": [
+          {
+            "tag": "TableFunction",
+            "name": "permzFunc",
+            "score": 0.6,
+            "attr_score": 0.6,
+            "n_gt_children": 0,
+            "n_matched": 0,
+            "n_extra": 0
+          },
+          {
+            "tag": "TableFunction",
+            "name": "permyFunc",
+            "score": 0.6,
+            "attr_score": 0.6,
+            "n_gt_children": 0,
+            "n_matched": 0,
+            "n_extra": 0
+          },
+          {
+            "tag": "TableFunction",
+            "name": "permxFunc",
+            "score": 0.6,
+            "attr_score": 0.6,
+            "n_gt_children": 0,
+            "n_matched": 0,
+            "n_extra": 0
+          }
+        ]
+      },
+      {
+        "tag": "Mesh",
+        "name": "",
+        "score": 1.0,
+        "attr_score": 1.0,
+        "n_gt_children": 1,
+        "n_matched": 1,
+        "n_extra": 0,
+        "children_score": 1.0,
+        "children": [
+          {
+            "tag": "InternalMesh",
+            "name": "cartesianMesh",
+            "score": 1.0,
+            "attr_score": 1.0,
+            "n_gt_children": 1,
+            "n_matched": 1,
+            "n_extra": 0,
+            "children_score": 1.0,
+            "children": [
+              {
+                "tag": "InternalWell",
+                "name": "wellInjector1",
+                "score": 1.0,
+                "attr_score": 1.0,
+                "n_gt_children": 1,
+                "n_matched": 1,
+                "n_extra": 0,
+                "children_score": 1.0
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "tag": "NumericalMethods",
+        "name": "",
+        "score": 1.0,
+        "attr_score": 1.0,
+        "n_gt_children": 1,
+        "n_matched": 1,
+        "n_extra": 0,
+        "children_score": 1.0,
+        "children": [
+          {
+            "tag": "FiniteVolume",
+            "name": "",
+            "score": 1.0,
+            "attr_score": 1.0,
+            "n_gt_children": 1,
+            "n_matched": 1,
+            "n_extra": 0,
+            "children_score": 1.0,
+            "children": [
+              {
+                "tag": "TwoPointFluxApproximation",
+                "name": "fluidTPFA",
+                "score": 1.0,
+                "attr_score": 1.0,
+                "n_gt_children": 0,
+                "n_matched": 0,
+                "n_extra": 0
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "tag": "Outputs",
+        "name": "",
+        "score": 0.9222,
+        "attr_score": 1.0,
+        "n_gt_children": 3,
+        "n_matched": 3,
+        "n_extra": 0,
+        "children_score": 0.8889,
+        "children": [
+          {
+            "tag": "Restart",
+            "name": "restartOutput",
+            "score": 1.0,
+            "attr_score": 1.0,
+            "n_gt_children": 0,
+            "n_matched": 0,
+            "n_extra": 0
+          },
+          {
+            "tag": "TimeHistory",
+            "name": "timeHistoryOutput",
+            "score": 0.6667,
+            "attr_score": 0.6667,
+            "n_gt_children": 0,
+            "n_matched": 0,
+            "n_extra": 0
+          },
+          {
+            "tag": "VTK",
+            "name": "simpleReservoirViz",
+            "score": 1.0,
+            "attr_score": 1.0,
+            "n_gt_children": 0,
+            "n_matched": 0,
+            "n_extra": 0
+          }
+        ]
+      },
+      {
+        "tag": "Solvers",
+        "name": "",
+        "score": 1.0,
+        "attr_score": 1.0,
+        "n_gt_children": 3,
+        "n_matched": 3,
+        "n_extra": 0,
+        "children_score": 1.0,
+        "children": [
+          {
+            "tag": "CompositionalMultiphaseFVM",
+            "name": "compositionalMultiphaseFlow",
+            "score": 1.0,
+            "attr_score": 1.0,
+            "n_gt_children": 0,
+            "n_matched": 0,
+            "n_extra": 0
+          },
+          {
+            "tag": "CompositionalMultiphaseReservoir",
+            "name": "coupledFlowAndWells",
+            "score": 1.0,
+            "attr_score": 1.0,
+            "n_gt_children": 2,
+            "n_matched": 2,
+            "n_extra": 0,
+            "children_score": 1.0,
+            "children": [
+              {
+                "tag": "LinearSolverParameters",
+                "name": "",
+                "score": 1.0,
+                "attr_score": 1.0,
+                "n_gt_children": 0,
+                "n_matched": 0,
+                "n_extra": 0
+              },
+              {
+                "tag": "NonlinearSolverParameters",
+                "name": "",
+                "score": 1.0,
+                "attr_score": 1.0,
+                "n_gt_children": 0,
+                "n_matched": 0,
+                "n_extra": 0
+              }
+            ]
+          },
+          {
+            "tag": "CompositionalMultiphaseWell",
+            "name": "compositionalMultiphaseWell",
+            "score": 1.0,
+            "attr_score": 1.0,
+            "n_gt_children": 1,
+            "n_matched": 1,
+            "n_extra": 0,
+            "children_score": 1.0,
+            "children": [
+              {
+                "tag": "WellControls",
+                "name": "wellControls",
+                "score": 1.0,
+                "attr_score": 1.0,
+                "n_gt_children": 0,
+                "n_matched": 0,
+                "n_extra": 0
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "tag": "Tasks",
+        "name": "",
+        "score": 1.0,
+        "attr_score": 1.0,
+        "n_gt_children": 1,
+        "n_matched": 1,
+        "n_extra": 0,
+        "children_score": 1.0,
+        "children": [
+          {
+            "tag": "PackCollection",
+            "name": "wellPressureCollection",
+            "score": 1.0,
+            "attr_score": 1.0,
+            "n_gt_children": 0,
+            "n_matched": 0,
+            "n_extra": 0
+          }
+        ]
+      }
+    ]
+  },
+  "dimension_scores": {
+    "structural_completeness": 1.0,
+    "element_type_match": 1.0,
+    "attribute_accuracy": 0.9588,
+    "tag_coverage": 1.0
+  },
+  "ordering_score": 1.0,
+  "weights": {
+    "structural_completeness": 0.15,
+    "element_type_match": 0.35,
+    "attribute_accuracy": 0.35,
+    "tag_coverage": 0.15
+  },
+  "details": {
+    "structural_completeness": {
+      "required_present": [
+        "Constitutive",
+        "ElementRegions",
+        "Events",
+        "Mesh"
+      ],
+      "required_missing": []
+    },
+    "element_type_match": {
+      "gt_only": [],
+      "gen_only": [],
+      "shared": [
+        "BrooksCoreyRelativePermeability",
+        "CO2BrinePhillipsFluid",
+        "CellElementRegion",
+        "CompositionalMultiphaseFVM",
+        "CompositionalMultiphaseReservoir",
+        "CompositionalMultiphaseWell",
+        "CompressibleSolidConstantPermeability",
+        "ConstantPermeability",
+        "Constitutive",
+        "ElementRegions",
+        "Events",
+        "FieldSpecification",
+        "FieldSpecifications",
+        "FiniteVolume",
+        "Functions",
+        "InternalMesh",
+        "InternalWell",
+        "LinearSolverParameters",
+        "Mesh",
+        "NonlinearSolverParameters",
+        "NullModel",
+        "NumericalMethods",
+        "Outputs",
+        "PackCollection",
+        "Perforation",
+        "PeriodicEvent",
+        "PressurePorosity",
+        "Restart",
+        "Solvers",
+        "TableFunction",
+        "Tasks",
+        "TimeHistory",
+        "TwoPointFluxApproximation",
+        "VTK",
+        "WellControls",
+        "WellElementRegion"
+      ]
+    },
+    "attribute_accuracy": {
+      "matched_attrs": 163,
+      "total_attrs": 170,
+      "elements_compared": 47,
+      "elements_unmatched_gt": 0,
+      "elements_unmatched_gen": 0,
+      "top_mismatches": [
+        {
+          "gt_tag": "TimeHistory",
+          "gt_name": "timeHistoryOutput",
+          "gen_name": "timeHistoryOutput",
+          "similarity": 0.7,
+          "attrs_matched": 2,
+          "attrs_total": 3,
+          "mismatches": [
+            "sources: GT='{/Tasks/wellPressureCollection}' GEN='{ /Tasks/wellPressureCollection }'"
+          ]
+        },
+        {
+          "gt_tag": "TableFunction",
+          "gt_name": "permzFunc",
+          "gen_name": "permzFunc",
+          "similarity": 0.7,
+          "attrs_matched": 3,
+          "attrs_total": 5,
+          "mismatches": [
+            "inputVarNames: GT='{elementCenter}' GEN='{ elementCenter }'",
+            "coordinateFiles: GT='{tables_FieldCaseTuto/xlin2.geos,tables_FieldCaseTuto/ylin2.geos,tables_FieldCaseTuto/zlin2.geos}' GEN='{ tables_FieldCaseTuto/xlin2.geos, tables_FieldCaseTuto/ylin2.geos, tables_FieldCaseTuto/zlin2.geos }'"
+          ]
+        },
+        {
+          "gt_tag": "TableFunction",
+          "gt_name": "permyFunc",
+          "gen_name": "permyFunc",
+          "similarity": 0.7,
+          "attrs_matched": 3,
+          "attrs_total": 5,
+          "mismatches": [
+            "inputVarNames: GT='{elementCenter}' GEN='{ elementCenter }'",
+            "coordinateFiles: GT='{tables_FieldCaseTuto/xlin2.geos,tables_FieldCaseTuto/ylin2.geos,tables_FieldCaseTuto/zlin2.geos}' GEN='{ tables_FieldCaseTuto/xlin2.geos, tables_FieldCaseTuto/ylin2.geos, tables_FieldCaseTuto/zlin2.geos }'"
+          ]
+        },
+        {
+          "gt_tag": "TableFunction",
+          "gt_name": "permxFunc",
+          "gen_name": "permxFunc",
+          "similarity": 0.7,
+          "attrs_matched": 3,
+          "attrs_total": 5,
+          "mismatches": [
+            "inputVarNames: GT='{elementCenter}' GEN='{ elementCenter }'",
+            "coordinateFiles: GT='{tables_FieldCaseTuto/xlin2.geos,tables_FieldCaseTuto/ylin2.geos,tables_FieldCaseTuto/zlin2.geos}' GEN='{ tables_FieldCaseTuto/xlin2.geos, tables_FieldCaseTuto/ylin2.geos, tables_FieldCaseTuto/zlin2.geos }'"
+          ]
+        }
+      ]
+    },
+    "tag_coverage": {
+      "covered": [
+        "BrooksCoreyRelativePermeability",
+        "CO2BrinePhillipsFluid",
+        "CellElementRegion",
+        "CompositionalMultiphaseFVM",
+        "CompositionalMultiphaseReservoir",
+        "CompositionalMultiphaseWell",
+        "CompressibleSolidConstantPermeability",
+        "ConstantPermeability",
+        "Constitutive",
+        "ElementRegions",
+        "Events",
+        "FieldSpecification",
+        "FieldSpecifications",
+        "FiniteVolume",
+        "Functions",
+        "InternalMesh",
+        "InternalWell",
+        "LinearSolverParameters",
+        "Mesh",
+        "NonlinearSolverParameters",
+        "NullModel",
+        "NumericalMethods",
+        "Outputs",
+        "PackCollection",
+        "Perforation",
+        "PeriodicEvent",
+        "PressurePorosity",
+        "Restart",
+        "Solvers",
+        "TableFunction",
+        "Tasks",
+        "TimeHistory",
+        "TwoPointFluxApproximation",
+        "VTK",
+        "WellControls",
+        "WellElementRegion"
+      ],
+      "missing": []
+    },
+    "ordering": {
+      "gt_order": [
+        "outputs",
+        "restarts",
+        "timeHistoryCollection",
+        "timeHistoryOutput",
+        "solverApplications"
+      ],
+      "gen_order": [
+        "outputs",
+        "restarts",
+        "timeHistoryCollection",
+        "timeHistoryOutput",
+        "solverApplications"
+      ],
+      "inversions": 0,
+      "max_inversions": 10,
+      "matched_count": 5
+    }
+  },
+  "match_summary": {
+    "paired_elements": 47,
+    "gt_unmatched": 0,
+    "gen_unmatched": 0
+  },
+  "gt_sections": [
+    "Constitutive",
+    "ElementRegions",
+    "Events",
+    "FieldSpecifications",
+    "Functions",
+    "Mesh",
+    "NumericalMethods",
+    "Outputs",
+    "Solvers",
+    "Tasks"
+  ],
+  "gen_sections": [
+    "Constitutive",
+    "ElementRegions",
+    "Events",
+    "FieldSpecifications",
+    "Functions",
+    "Mesh",
+    "NumericalMethods",
+    "Outputs",
+    "Solvers",
+    "Tasks"
+  ],
+  "gt_element_types": [
+    "BrooksCoreyRelativePermeability",
+    "CO2BrinePhillipsFluid",
+    "CellElementRegion",
+    "CompositionalMultiphaseFVM",
+    "CompositionalMultiphaseReservoir",
+    "CompositionalMultiphaseWell",
+    "CompressibleSolidConstantPermeability",
+    "ConstantPermeability",
+    "Constitutive",
+    "ElementRegions",
+    "Events",
+    "FieldSpecification",
+    "FieldSpecifications",
+    "FiniteVolume",
+    "Functions",
+    "InternalMesh",
+    "InternalWell",
+    "LinearSolverParameters",
+    "Mesh",
+    "NonlinearSolverParameters",
+    "NullModel",
+    "NumericalMethods",
+    "Outputs",
+    "PackCollection",
+    "Perforation",
+    "PeriodicEvent",
+    "PressurePorosity",
+    "Restart",
+    "Solvers",
+    "TableFunction",
+    "Tasks",
+    "TimeHistory",
+    "TwoPointFluxApproximation",
+    "VTK",
+    "WellControls",
+    "WellElementRegion"
+  ],
+  "gen_element_types": [
+    "BrooksCoreyRelativePermeability",
+    "CO2BrinePhillipsFluid",
+    "CellElementRegion",
+    "CompositionalMultiphaseFVM",
+    "CompositionalMultiphaseReservoir",
+    "CompositionalMultiphaseWell",
+    "CompressibleSolidConstantPermeability",
+    "ConstantPermeability",
+    "Constitutive",
+    "ElementRegions",
+    "Events",
+    "FieldSpecification",
+    "FieldSpecifications",
+    "FiniteVolume",
+    "Functions",
+    "InternalMesh",
+    "InternalWell",
+    "LinearSolverParameters",
+    "Mesh",
+    "NonlinearSolverParameters",
+    "NullModel",
+    "NumericalMethods",
+    "Outputs",
+    "PackCollection",
+    "Perforation",
+    "PeriodicEvent",
+    "PressurePorosity",
+    "Restart",
+    "Solvers",
+    "TableFunction",
+    "Tasks",
+    "TimeHistory",
+    "TwoPointFluxApproximation",
+    "VTK",
+    "WellControls",
+    "WellElementRegion"
+  ],
+  "mode": "directory",
+  "gt_dir": "/data/shared/geophysics_agent_data/data/eval/experiments_gt/TutorialCO2FieldCase/inputs",
+  "gen_dir": "data/eval/claude_code_no_plugin/vanilla_cc_train_s1/TutorialCO2FieldCase/inputs",
+  "status": "success"
+}

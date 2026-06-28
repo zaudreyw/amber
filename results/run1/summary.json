@@ -1,0 +1,58 @@
+{
+  "run_name": "run1",
+  "model": "claude-sonnet-4-6",
+  "started": "2026-06-24T07:39:36.068285",
+  "elapsed_seconds": 44.6,
+  "steps": 5,
+  "files_written": [
+    "inputs/tleap.in",
+    "inputs/01_Min.in",
+    "inputs/02_Heat.in",
+    "inputs/03_Prod.in"
+  ],
+  "inputs_dir": "/home/audrey/amber/results/run1/inputs",
+  "ground_truth_dir": "tasks/alanine_dipeptide/ground_truth",
+  "metrics": {
+    "overall_score_01": 0.0,
+    "overall_score_10": 0.0,
+    "stage_scores": {
+      "tleap": 0.0,
+      "min": 0.0,
+      "heat": 0.0,
+      "equil": 0.5,
+      "prod": 0.0
+    },
+    "file_presence": {
+      "tleap": false,
+      "mdin_min": false,
+      "mdin_heat": false,
+      "mdin_equil": false,
+      "mdin_prod": false
+    },
+    "details": {
+      "tleap": {
+        "overall": 0.0,
+        "missing_commands": [
+          "(file absent)"
+        ],
+        "extra_commands": []
+      },
+      "mdin_min": {
+        "note": "file absent",
+        "overall": 0.0
+      },
+      "mdin_heat": {
+        "note": "file absent",
+        "overall": 0.0
+      },
+      "mdin_equil": {
+        "note": "no GT mdin for stage equil",
+        "overall": 0.5
+      },
+      "mdin_prod": {
+        "note": "file absent",
+        "overall": 0.0
+      }
+    }
+  }
+}

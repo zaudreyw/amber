@@ -1,0 +1,46 @@
+[  1/17] AdvancedExampleCasedContactThermoElasticWellbore  9.46/10
+[  2/17] AdvancedExampleDeviatedElasticWellbore  9.95/10
+[  3/17] AdvancedExampleDruckerPrager  9.85/10
+[  4/17] AdvancedExampleExtendedDruckerPrager  9.37/10
+[  5/17] AdvancedExampleModifiedCamClay  9.58/10
+[  6/17] AdvancedExampleViscoDruckerPrager  10.00/10
+[  7/17] ExampleDPWellbore  9.03/10
+[  8/17] ExampleEDPWellbore  9.62/10
+[  9/17] ExampleIsothermalLeakyWell  3.58/10
+[ 10/17] ExampleMandel  8.75/10
+[ 11/17] ExampleThermalLeakyWell  4.10/10
+[ 12/17] ExampleThermoporoelasticConsolidation  3.93/10
+[ 13/17] TutorialPoroelasticity  5.11/10
+[ 14/17] TutorialSneddon  9.51/10
+[ 15/17] buckleyLeverettProblem  9.61/10
+[ 16/17] kgdExperimentValidation  2.91/10
+[ 17/17] pknViscosityDominated  2.45/10
+
+============================================================
+  Batch evaluation: 17/17 succeeded
+============================================================
+  Scored-only     overall_score mean: 7.459  (median 9.370, range 2.45-10.00)
+  Failures-as-0   overall_score mean: 7.459
+  Scored-only     treesim       mean: 0.746
+  Failures-as-0   treesim       mean: 0.746
+  Pass ≥7: 11/17 (of scored)
+
+  10.00/10  AdvancedExampleViscoDruckerPrager  treesim=1.000
+   9.95/10  AdvancedExampleDeviatedElasticWellbore  treesim=0.995
+   9.85/10  AdvancedExampleDruckerPrager  treesim=0.985
+   9.62/10  ExampleEDPWellbore  treesim=0.962
+   9.61/10  buckleyLeverettProblem  treesim=0.961
+   9.58/10  AdvancedExampleModifiedCamClay  treesim=0.958
+   9.51/10  TutorialSneddon  treesim=0.951
+   9.46/10  AdvancedExampleCasedContactThermoElasticWellbore  treesim=0.946
+   9.37/10  AdvancedExampleExtendedDruckerPrager  treesim=0.937
+   9.03/10  ExampleDPWellbore  treesim=0.902
+   8.75/10  ExampleMandel  treesim=0.875
+   5.11/10  TutorialPoroelasticity  treesim=0.511
+   4.10/10  ExampleThermalLeakyWell  treesim=0.410
+   3.93/10  ExampleThermoporoelasticConsolidation  treesim=0.393
+   3.58/10  ExampleIsothermalLeakyWell  treesim=0.358
+   2.91/10  kgdExperimentValidation  treesim=0.291
+   2.45/10  pknViscosityDominated  treesim=0.245
+
+Wrote misc/memory_artifacts/scores/mem_m4u_s2_summary.json

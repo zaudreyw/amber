@@ -1,0 +1,8 @@
+{
+  "artifact": "plugin/memory_index.json",
+  "artifact_size_chars": 14752,
+  "n_strings_checked": 434,
+  "regex_hits": [],
+  "blocklist_hits": [],
+  "passed": true
+}

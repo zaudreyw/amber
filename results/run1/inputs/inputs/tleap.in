@@ -1,0 +1,28 @@
+# tleap.in
+# System preparation for alanine dipeptide in explicit OPC water
+# Reproduces Amber Tutorial B0
+
+# Load force field parameters
+source leaprc.protein.ff19SB
+source leaprc.water.opc
+
+# Build alanine dipeptide (ACE-ALA-NME) directly in LEaP
+mol = sequence { ACE ALA NME }
+
+# Check the system for any issues (valence, charges, etc.)
+check mol
+
+# Solvate with a truncated octahedral OPC water box (10 Angstrom buffer)
+solvateoct mol OPCBOX 10.0
+
+# Neutralize and check charge balance
+addions mol Na+ 0
+addions mol Cl- 0
+
+# Final check after solvation and ion addition
+check mol
+
+# Save topology (.parm7) and coordinates (.rst7)
+saveamberparm mol system.parm7 system.rst7
+
+quit

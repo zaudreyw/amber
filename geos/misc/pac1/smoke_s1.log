@@ -1,0 +1,33 @@
+[93mWarning: --ground-truth-dir '/home/matt/sci/repo3/data/eval/experiments_gt' does not exist; GT XML blocking disabled.[0m
+
+[1m[95m======================================================================[0m
+[1m[95m  GEOS Eval Harness[0m
+[1m[95m======================================================================[0m
+  Run name       : pac1_smoke_s1
+  Experiments dir: /data/shared/geophysics_agent_data/data/eval/experiments_test36_template
+  Tasks          : 2
+  Agents         : ['claude_code_repo3_plugin', 'claude_code_repo3_plugin_gmemsilent']
+  Combos         : 4
+  Timeout        : 1200s per task
+  Workers        : 4
+  Pseudo retries : 1
+  Dry run        : False
+  GT XML blocking: disabled
+  Results root   : /home/matt/sci/repo3/data/eval
+  Temp GEOS dir  : /data/matt/geos_eval_tmp
+  GEOS lib dir   : /data/shared/geophysics_agent_data/data/GEOS
+  GEOS primer    : /home/brianliu/geophys-embodied-agent-framework/modules/profile/GEOS_PRIMER.md
+  Plugin dir     : /home/matt/sci/repo3/plugin
+  Vector DB dir  : /data/shared/geophysics_agent_data/data/vector_db
+  Claude model   : minimax/minimax-m2.7
+  Results (claude_code_repo3_plugin): /home/matt/sci/repo3/data/eval/claude_code_repo3_plugin/pac1_smoke_s1
+  Results (claude_code_repo3_plugin_gmemsilent): /home/matt/sci/repo3/data/eval/claude_code_repo3_plugin_gmemsilent/pac1_smoke_s1
+  Started        : 2026-04-21T19:46:01.105711
+[1m[95m======================================================================[0m
+
+[  1/4] [92msuccess       [0m  claude_code_repo3_plugin_gmemsilent  ExampleMandel
+[  2/4] [92msuccess       [0m  claude_code_repo3_plugin      ExampleMandel
+[  3/4] [92msuccess       [0m  claude_code_repo3_plugin_gmemsilent  TutorialSneddon
+[  4/4] [92msuccess       [0m  claude_code_repo3_plugin      TutorialSneddon
+
+[1mDone[0m: [92m4 succeeded[0m, [91m0 failed[0m / 4 total

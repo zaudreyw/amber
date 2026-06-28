@@ -1,0 +1,614 @@
+{
+  "experiment": "relaxationTest",
+  "overall_score": 1.29,
+  "overall_01": 0.1285,
+  "treesim": 0.1285,
+  "treesim_section_scores": {
+    "Constitutive": 0.3389,
+    "ElementRegions": 0.3,
+    "Events": 0.0,
+    "FieldSpecifications": 0.4389,
+    "Functions": 0.3,
+    "Geometry": 0.0,
+    "Mesh": 0.3286,
+    "NumericalMethods": 0.0,
+    "Outputs": 0.0,
+    "Solvers": 0.0,
+    "Tasks": 0.0
+  },
+  "treesim_detail": {
+    "tag": "Problem",
+    "name": "",
+    "score": 0.1285,
+    "attr_score": 1.0,
+    "n_gt_children": 11,
+    "n_matched": 5,
+    "n_extra": 4,
+    "children_score": 0.1551,
+    "children": [
+      {
+        "tag": "Constitutive",
+        "name": "",
+        "score": 0.3389,
+        "attr_score": 1.0,
+        "n_gt_children": 1,
+        "n_matched": 1,
+        "n_extra": 0,
+        "children_score": 0.0556,
+        "children": [
+          {
+            "tag": "ViscoExtendedDruckerPrager",
+            "name": "rock",
+            "score": 0.0556,
+            "attr_score": 0.0556,
+            "n_gt_children": 0,
+            "n_matched": 0,
+            "n_extra": 0
+          }
+        ]
+      },
+      {
+        "tag": "ElementRegions",
+        "name": "",
+        "score": 0.3,
+        "attr_score": 1.0,
+        "n_gt_children": 1,
+        "n_matched": 0,
+        "n_extra": 8,
+        "children_score": 0.0,
+        "children": [
+          {
+            "tag": "CellElementRegion",
+            "name": "Domain",
+            "score": 0.0,
+            "attr_score": 0.0,
+            "n_gt_children": 0,
+            "n_matched": 0,
+            "n_extra": 0
+          }
+        ]
+      },
+      {
+        "tag": "Events",
+        "name": "",
+        "score": 0.0,
+        "attr_score": 0.0,
+        "n_gt_children": 0,
+        "n_matched": 0,
+        "n_extra": 0
+      },
+      {
+        "tag": "FieldSpecifications",
+        "name": "",
+        "score": 0.4389,
+        "attr_score": 1.0,
+        "n_gt_children": 9,
+        "n_matched": 6,
+        "n_extra": 0,
+        "children_score": 0.1984,
+        "children": [
+          {
+            "tag": "FieldSpecification",
+            "name": "stressZZ",
+            "score": 0.4286,
+            "attr_score": 0.4286,
+            "n_gt_children": 0,
+            "n_matched": 0,
+            "n_extra": 0
+          },
+          {
+            "tag": "FieldSpecification",
+            "name": "stressYY",
+            "score": 0.4286,
+            "attr_score": 0.4286,
+            "n_gt_children": 0,
+            "n_matched": 0,
+            "n_extra": 0
+          },
+          {
+            "tag": "FieldSpecification",
+            "name": "stressXX",
+            "score": 0.4286,
+            "attr_score": 0.4286,
+            "n_gt_children": 0,
+            "n_matched": 0,
+            "n_extra": 0
+          },
+          {
+            "tag": "FieldSpecification",
+            "name": "zconstraint",
+            "score": 0.1667,
+            "attr_score": 0.1667,
+            "n_gt_children": 0,
+            "n_matched": 0,
+            "n_extra": 0
+          },
+          {
+            "tag": "FieldSpecification",
+            "name": "yconstraint",
+            "score": 0.1667,
+            "attr_score": 0.1667,
+            "n_gt_children": 0,
+            "n_matched": 0,
+            "n_extra": 0
+          },
+          {
+            "tag": "FieldSpecification",
+            "name": "xconstraint",
+            "score": 0.1667,
+            "attr_score": 0.1667,
+            "n_gt_children": 0,
+            "n_matched": 0,
+            "n_extra": 0
+          },
+          {
+            "tag": "FieldSpecification",
+            "name": "axialload",
+            "score": 0.0,
+            "attr_score": 0.0,
+            "n_gt_children": 0,
+            "n_matched": 0,
+            "n_extra": 0
+          },
+          {
+            "tag": "Traction",
+            "name": "xconfinement",
+            "score": 0.0,
+            "attr_score": 0.0,
+            "n_gt_children": 0,
+            "n_matched": 0,
+            "n_extra": 0
+          },
+          {
+            "tag": "Traction",
+            "name": "yconfinement",
+            "score": 0.0,
+            "attr_score": 0.0,
+            "n_gt_children": 0,
+            "n_matched": 0,
+            "n_extra": 0
+          }
+        ]
+      },
+      {
+        "tag": "Functions",
+        "name": "",
+        "score": 0.3,
+        "attr_score": 1.0,
+        "n_gt_children": 1,
+        "n_matched": 0,
+        "n_extra": 1,
+        "children_score": 0.0,
+        "children": [
+          {
+            "tag": "TableFunction",
+            "name": "timeFunction",
+            "score": 0.0,
+            "attr_score": 0.0,
+            "n_gt_children": 0,
+            "n_matched": 0,
+            "n_extra": 0
+          }
+        ]
+      },
+      {
+        "tag": "Geometry",
+        "name": "",
+        "score": 0.0,
+        "attr_score": 0.0,
+        "n_gt_children": 0,
+        "n_matched": 0,
+        "n_extra": 0
+      },
+      {
+        "tag": "Mesh",
+        "name": "",
+        "score": 0.3286,
+        "attr_score": 1.0,
+        "n_gt_children": 1,
+        "n_matched": 1,
+        "n_extra": 1,
+        "children_score": 0.0909,
+        "children": [
+          {
+            "tag": "InternalMesh",
+            "name": "mesh",
+            "score": 0.0909,
+            "attr_score": 0.0909,
+            "n_gt_children": 0,
+            "n_matched": 0,
+            "n_extra": 0
+          }
+        ]
+      },
+      {
+        "tag": "NumericalMethods",
+        "name": "",
+        "score": 0.0,
+        "attr_score": 0.0,
+        "n_gt_children": 0,
+        "n_matched": 0,
+        "n_extra": 0
+      },
+      {
+        "tag": "Outputs",
+        "name": "",
+        "score": 0.0,
+        "attr_score": 0.0,
+        "n_gt_children": 0,
+        "n_matched": 0,
+        "n_extra": 0
+      },
+      {
+        "tag": "Solvers",
+        "name": "",
+        "score": 0.0,
+        "attr_score": 0.0,
+        "n_gt_children": 0,
+        "n_matched": 0,
+        "n_extra": 0
+      },
+      {
+        "tag": "Tasks",
+        "name": "",
+        "score": 0.0,
+        "attr_score": 0.0,
+        "n_gt_children": 0,
+        "n_matched": 0,
+        "n_extra": 0
+      }
+    ]
+  },
+  "dimension_scores": {
+    "structural_completeness": 0.75,
+    "element_type_match": 0.4048,
+    "attribute_accuracy": 0.2059,
+    "tag_coverage": 0.6071
+  },
+  "ordering_score": 1.0,
+  "weights": {
+    "structural_completeness": 0.15,
+    "element_type_match": 0.35,
+    "attribute_accuracy": 0.35,
+    "tag_coverage": 0.15
+  },
+  "details": {
+    "structural_completeness": {
+      "required_present": [
+        "Constitutive",
+        "ElementRegions",
+        "Mesh"
+      ],
+      "required_missing": [
+        "Events"
+      ]
+    },
+    "element_type_match": {
+      "gt_only": [
+        "Box",
+        "FiniteElementSpace",
+        "FiniteElements",
+        "Geometry",
+        "NumericalMethods",
+        "Outputs",
+        "PackCollection",
+        "PeriodicEvent",
+        "SolidMechanicsLagrangianFEM",
+        "Tasks",
+        "Traction"
+      ],
+      "gen_only": [
+        "ElementBlock",
+        "ElementRegionStressHistory",
+        "Event",
+        "Field",
+        "NodeBoundingBox",
+        "NodeRegionHistory",
+        "NodeSet",
+        "Output",
+        "Parameter",
+        "Schedule",
+        "SolidMechanicsLagrangeSSLE",
+        "TableData",
+        "TimeHistoryReport",
+        "TractionBoundaryCondition"
+      ],
+      "shared": [
+        "CellElementRegion",
+        "Constitutive",
+        "ElementRegions",
+        "Events",
+        "FieldSpecification",
+        "FieldSpecifications",
+        "Functions",
+        "InternalMesh",
+        "LinearSolverParameters",
+        "Mesh",
+        "NonlinearSolverParameters",
+        "Restart",
+        "Solvers",
+        "TableFunction",
+        "TimeHistory",
+        "VTK",
+        "ViscoExtendedDruckerPrager"
+      ]
+    },
+    "attribute_accuracy": {
+      "matched_attrs": 14,
+      "total_attrs": 68,
+      "elements_compared": 13,
+      "elements_unmatched_gt": 29,
+      "elements_unmatched_gen": 48,
+      "top_mismatches": [
+        {
+          "gt_tag": "FieldSpecification",
+          "gt_name": "stressZZ",
+          "gen_name": "initialStress-zz",
+          "similarity": 0.3,
+          "attrs_matched": 3,
+          "attrs_total": 7,
+          "mismatches": [
+            "initialCondition: missing in GEN",
+            "objectPath: GT='ElementRegions/Domain' GEN='ElementRegions'",
+            "name: GT='stressZZ' GEN='initialStress-zz'",
+            "setNames: GT='{all}' GEN='all'"
+          ]
+        },
+        {
+          "gt_tag": "FieldSpecification",
+          "gt_name": "stressYY",
+          "gen_name": "initialStress-yy",
+          "similarity": 0.3,
+          "attrs_matched": 3,
+          "attrs_total": 7,
+          "mismatches": [
+            "initialCondition: missing in GEN",
+            "objectPath: GT='ElementRegions/Domain' GEN='ElementRegions'",
+            "name: GT='stressYY' GEN='initialStress-yy'",
+            "setNames: GT='{all}' GEN='all'"
+          ]
+        },
+        {
+          "gt_tag": "FieldSpecification",
+          "gt_name": "stressXX",
+          "gen_name": "initialStress-xx",
+          "similarity": 0.3,
+          "attrs_matched": 3,
+          "attrs_total": 7,
+          "mismatches": [
+            "initialCondition: missing in GEN",
+            "objectPath: GT='ElementRegions/Domain' GEN='ElementRegions'",
+            "name: GT='stressXX' GEN='initialStress-xx'",
+            "setNames: GT='{all}' GEN='all'"
+          ]
+        },
+        {
+          "gt_tag": "FieldSpecification",
+          "gt_name": "zconstraint",
+          "gen_name": "initialStress-yz",
+          "similarity": 0.12,
+          "attrs_matched": 1,
+          "attrs_total": 6,
+          "mismatches": [
+            "fieldName: GT='totalDisplacement' GEN='rock_stress'",
+            "objectPath: GT='nodeManager' GEN='ElementRegions'",
+            "name: GT='zconstraint' GEN='initialStress-yz'",
+            "component: GT='2' GEN='5'",
+            "setNames: GT='{ zneg }' GEN='all'"
+          ]
+        },
+        {
+          "gt_tag": "FieldSpecification",
+          "gt_name": "yconstraint",
+          "gen_name": "initialStress-xz",
+          "similarity": 0.12,
+          "attrs_matched": 1,
+          "attrs_total": 6,
+          "mismatches": [
+            "fieldName: GT='totalDisplacement' GEN='rock_stress'",
+            "objectPath: GT='nodeManager' GEN='ElementRegions'",
+            "name: GT='yconstraint' GEN='initialStress-xz'",
+            "component: GT='1' GEN='4'",
+            "setNames: GT='{ yneg }' GEN='all'"
+          ]
+        },
+        {
+          "gt_tag": "FieldSpecification",
+          "gt_name": "xconstraint",
+          "gen_name": "initialStress-xy",
+          "similarity": 0.12,
+          "attrs_matched": 1,
+          "attrs_total": 6,
+          "mismatches": [
+            "fieldName: GT='totalDisplacement' GEN='rock_stress'",
+            "objectPath: GT='nodeManager' GEN='ElementRegions'",
+            "name: GT='xconstraint' GEN='initialStress-xy'",
+            "component: GT='0' GEN='3'",
+            "setNames: GT='{ xneg }' GEN='all'"
+          ]
+        },
+        {
+          "gt_tag": "InternalMesh",
+          "gt_name": "mesh",
+          "gen_name": "mesh",
+          "similarity": 0.4,
+          "attrs_matched": 1,
+          "attrs_total": 11,
+          "mismatches": [
+            "cellBlockNames: missing in GEN",
+            "nz: missing in GEN",
+            "elementTypes: GT='{ C3D8 }' GEN='C3D8'",
+            "xCoords: GT='{ 0, 0.9, 1.0 }' GEN='0.0 0.1111111 0.2222222 0.3333333 0.4444444 0.5555556 0.6666667 0.7777778 0.8888889 1.0'",
+            "numberOfElements: extra in GEN",
+            "zCoords: GT='{ 0, 0.9, 1.0 }' GEN='0.0 0.1111111 0.2222222 0.3333333 0.4444444 0.5555556 0.6666667 0.7777778 0.8888889 1.0'",
+            "ny: missing in GEN",
+            "nx: missing in GEN",
+            "yCoords: GT='{ 0, 0.9, 1.0 }' GEN='0.0 0.1111111 0.2222222 0.3333333 0.4444444 0.5555556 0.6666667 0.7777778 0.8888889 1.0'",
+            "resultPolyFile: extra in GEN"
+          ]
+        },
+        {
+          "gt_tag": "ViscoExtendedDruckerPrager",
+          "gt_name": "rock",
+          "gen_name": "RockViscoEP",
+          "similarity": 0.0353,
+          "attrs_matched": 1,
+          "attrs_total": 18,
+          "mismatches": [
+            "defaultBulkModulus: missing in GEN",
+            "dilationRatio: extra in GEN",
+            "defaultResidualFrictionAngle: missing in GEN",
+            "defaultHardening: missing in GEN",
+            "name: GT='rock' GEN='RockViscoEP'",
+            "cohesion: extra in GEN",
+            "frictionAngleResidual: extra in GEN",
+            "bulkModulus: extra in GEN",
+            "defaultDensity: missing in GEN",
+            "density: extra in GEN",
+            "defaultDilationRatio: missing in GEN",
+            "shearModulus: extra in GEN",
+            "defaultCohesion: missing in GEN",
+            "defaultShearModulus: missing in GEN",
+            "defaultInitialFrictionAngle: missing in GEN",
+            "frictionAngleInitial: extra in GEN",
+            "hardeningRate: extra in GEN"
+          ]
+        }
+      ]
+    },
+    "tag_coverage": {
+      "covered": [
+        "CellElementRegion",
+        "Constitutive",
+        "ElementRegions",
+        "Events",
+        "FieldSpecification",
+        "FieldSpecifications",
+        "Functions",
+        "InternalMesh",
+        "LinearSolverParameters",
+        "Mesh",
+        "NonlinearSolverParameters",
+        "Restart",
+        "Solvers",
+        "TableFunction",
+        "TimeHistory",
+        "VTK",
+        "ViscoExtendedDruckerPrager"
+      ],
+      "missing": [
+        "Box",
+        "FiniteElementSpace",
+        "FiniteElements",
+        "Geometry",
+        "NumericalMethods",
+        "Outputs",
+        "PackCollection",
+        "PeriodicEvent",
+        "SolidMechanicsLagrangianFEM",
+        "Tasks",
+        "Traction"
+      ]
+    },
+    "ordering": {
+      "note": "No Events section to check ordering"
+    }
+  },
+  "match_summary": {
+    "paired_elements": 13,
+    "gt_unmatched": 29,
+    "gen_unmatched": 48
+  },
+  "gt_sections": [
+    "Constitutive",
+    "ElementRegions",
+    "Events",
+    "FieldSpecifications",
+    "Functions",
+    "Geometry",
+    "Mesh",
+    "NumericalMethods",
+    "Outputs",
+    "Solvers",
+    "Tasks"
+  ],
+  "gen_sections": [
+    "Constitutive",
+    "ElementRegions",
+    "FieldSpecifications",
+    "FieldSpecifications",
+    "Functions",
+    "Mesh",
+    "Output",
+    "Problem",
+    "Solvers",
+    "TimeHistory"
+  ],
+  "gt_element_types": [
+    "Box",
+    "CellElementRegion",
+    "Constitutive",
+    "ElementRegions",
+    "Events",
+    "FieldSpecification",
+    "FieldSpecifications",
+    "FiniteElementSpace",
+    "FiniteElements",
+    "Functions",
+    "Geometry",
+    "InternalMesh",
+    "LinearSolverParameters",
+    "Mesh",
+    "NonlinearSolverParameters",
+    "NumericalMethods",
+    "Outputs",
+    "PackCollection",
+    "PeriodicEvent",
+    "Restart",
+    "SolidMechanicsLagrangianFEM",
+    "Solvers",
+    "TableFunction",
+    "Tasks",
+    "TimeHistory",
+    "Traction",
+    "VTK",
+    "ViscoExtendedDruckerPrager"
+  ],
+  "gen_element_types": [
+    "CellElementRegion",
+    "Constitutive",
+    "ElementBlock",
+    "ElementRegionStressHistory",
+    "ElementRegions",
+    "Event",
+    "Events",
+    "Field",
+    "FieldSpecification",
+    "FieldSpecifications",
+    "Functions",
+    "InternalMesh",
+    "LinearSolverParameters",
+    "Mesh",
+    "NodeBoundingBox",
+    "NodeRegionHistory",
+    "NodeSet",
+    "NonlinearSolverParameters",
+    "Output",
+    "Parameter",
+    "Restart",
+    "Schedule",
+    "SolidMechanicsLagrangeSSLE",
+    "Solvers",
+    "TableData",
+    "TableFunction",
+    "TimeHistory",
+    "TimeHistoryReport",
+    "TractionBoundaryCondition",
+    "VTK",
+    "ViscoExtendedDruckerPrager"
+  ],
+  "mode": "directory",
+  "gt_dir": "/data/shared/geophysics_agent_data/data/eval/experiments_gt/relaxationTest/inputs",
+  "gen_dir": "data/eval/claude_code_no_plugin/vanilla_cc_train_s1/relaxationTest/inputs",
+  "status": "success"
+}

@@ -1,0 +1,42 @@
+[  1/17] AdvancedExampleCasedContactThermoElasticWellbore  FAILED: FileNotFoundError: No XML files found in data/eval/claude_code_repo3_plugin_m3g/mem_m3g_s3/AdvancedExampleCasedContactThermoElasticWellbore/inputs
+[  2/17] AdvancedExampleDeviatedElasticWellbore  FAILED: FileNotFoundError: No XML files found in data/eval/claude_code_repo3_plugin_m3g/mem_m3g_s3/AdvancedExampleDeviatedElasticWellbore/inputs
+[  3/17] AdvancedExampleDruckerPrager  FAILED: FileNotFoundError: No XML files found in data/eval/claude_code_repo3_plugin_m3g/mem_m3g_s3/AdvancedExampleDruckerPrager/inputs
+[  4/17] AdvancedExampleExtendedDruckerPrager  FAILED: FileNotFoundError: No XML files found in data/eval/claude_code_repo3_plugin_m3g/mem_m3g_s3/AdvancedExampleExtendedDruckerPrager/inputs
+[  5/17] AdvancedExampleModifiedCamClay  FAILED: FileNotFoundError: No XML files found in data/eval/claude_code_repo3_plugin_m3g/mem_m3g_s3/AdvancedExampleModifiedCamClay/inputs
+[  6/17] AdvancedExampleViscoDruckerPrager  FAILED: FileNotFoundError: No XML files found in data/eval/claude_code_repo3_plugin_m3g/mem_m3g_s3/AdvancedExampleViscoDruckerPrager/inputs
+[  7/17] ExampleDPWellbore  FAILED: FileNotFoundError: No XML files found in data/eval/claude_code_repo3_plugin_m3g/mem_m3g_s3/ExampleDPWellbore/inputs
+[  8/17] ExampleEDPWellbore  FAILED: FileNotFoundError: No XML files found in data/eval/claude_code_repo3_plugin_m3g/mem_m3g_s3/ExampleEDPWellbore/inputs
+[  9/17] ExampleIsothermalLeakyWell  FAILED: FileNotFoundError: No XML files found in data/eval/claude_code_repo3_plugin_m3g/mem_m3g_s3/ExampleIsothermalLeakyWell/inputs
+[ 10/17] ExampleMandel  FAILED: FileNotFoundError: No XML files found in data/eval/claude_code_repo3_plugin_m3g/mem_m3g_s3/ExampleMandel/inputs
+[ 11/17] ExampleThermalLeakyWell  FAILED: FileNotFoundError: No XML files found in data/eval/claude_code_repo3_plugin_m3g/mem_m3g_s3/ExampleThermalLeakyWell/inputs
+[ 12/17] ExampleThermoporoelasticConsolidation  FAILED: FileNotFoundError: No XML files found in data/eval/claude_code_repo3_plugin_m3g/mem_m3g_s3/ExampleThermoporoelasticConsolidation/inputs
+[ 13/17] TutorialPoroelasticity  FAILED: FileNotFoundError: No XML files found in data/eval/claude_code_repo3_plugin_m3g/mem_m3g_s3/TutorialPoroelasticity/inputs
+[ 14/17] TutorialSneddon  FAILED: FileNotFoundError: No XML files found in data/eval/claude_code_repo3_plugin_m3g/mem_m3g_s3/TutorialSneddon/inputs
+[ 15/17] buckleyLeverettProblem  FAILED: FileNotFoundError: No XML files found in data/eval/claude_code_repo3_plugin_m3g/mem_m3g_s3/buckleyLeverettProblem/inputs
+[ 16/17] kgdExperimentValidation  FAILED: FileNotFoundError: No XML files found in data/eval/claude_code_repo3_plugin_m3g/mem_m3g_s3/kgdExperimentValidation/inputs
+[ 17/17] pknViscosityDominated  FAILED: FileNotFoundError: No XML files found in data/eval/claude_code_repo3_plugin_m3g/mem_m3g_s3/pknViscosityDominated/inputs
+
+============================================================
+  Batch evaluation: 0/17 succeeded
+============================================================
+
+  Failed (17) — counted as 0 in failures-as-zero mean:
+    AdvancedExampleCasedContactThermoElasticWellbore: FileNotFoundError: No XML files found in data/eval/claude_code_repo3_plugin_m3g/mem_m3g_s3/AdvancedExampleCasedContactThermoElasticWellbore/inputs
+    AdvancedExampleDeviatedElasticWellbore: FileNotFoundError: No XML files found in data/eval/claude_code_repo3_plugin_m3g/mem_m3g_s3/AdvancedExampleDeviatedElasticWellbore/inputs
+    AdvancedExampleDruckerPrager: FileNotFoundError: No XML files found in data/eval/claude_code_repo3_plugin_m3g/mem_m3g_s3/AdvancedExampleDruckerPrager/inputs
+    AdvancedExampleExtendedDruckerPrager: FileNotFoundError: No XML files found in data/eval/claude_code_repo3_plugin_m3g/mem_m3g_s3/AdvancedExampleExtendedDruckerPrager/inputs
+    AdvancedExampleModifiedCamClay: FileNotFoundError: No XML files found in data/eval/claude_code_repo3_plugin_m3g/mem_m3g_s3/AdvancedExampleModifiedCamClay/inputs
+    AdvancedExampleViscoDruckerPrager: FileNotFoundError: No XML files found in data/eval/claude_code_repo3_plugin_m3g/mem_m3g_s3/AdvancedExampleViscoDruckerPrager/inputs
+    ExampleDPWellbore: FileNotFoundError: No XML files found in data/eval/claude_code_repo3_plugin_m3g/mem_m3g_s3/ExampleDPWellbore/inputs
+    ExampleEDPWellbore: FileNotFoundError: No XML files found in data/eval/claude_code_repo3_plugin_m3g/mem_m3g_s3/ExampleEDPWellbore/inputs
+    ExampleIsothermalLeakyWell: FileNotFoundError: No XML files found in data/eval/claude_code_repo3_plugin_m3g/mem_m3g_s3/ExampleIsothermalLeakyWell/inputs
+    ExampleMandel: FileNotFoundError: No XML files found in data/eval/claude_code_repo3_plugin_m3g/mem_m3g_s3/ExampleMandel/inputs
+    ExampleThermalLeakyWell: FileNotFoundError: No XML files found in data/eval/claude_code_repo3_plugin_m3g/mem_m3g_s3/ExampleThermalLeakyWell/inputs
+    ExampleThermoporoelasticConsolidation: FileNotFoundError: No XML files found in data/eval/claude_code_repo3_plugin_m3g/mem_m3g_s3/ExampleThermoporoelasticConsolidation/inputs
+    TutorialPoroelasticity: FileNotFoundError: No XML files found in data/eval/claude_code_repo3_plugin_m3g/mem_m3g_s3/TutorialPoroelasticity/inputs
+    TutorialSneddon: FileNotFoundError: No XML files found in data/eval/claude_code_repo3_plugin_m3g/mem_m3g_s3/TutorialSneddon/inputs
+    buckleyLeverettProblem: FileNotFoundError: No XML files found in data/eval/claude_code_repo3_plugin_m3g/mem_m3g_s3/buckleyLeverettProblem/inputs
+    kgdExperimentValidation: FileNotFoundError: No XML files found in data/eval/claude_code_repo3_plugin_m3g/mem_m3g_s3/kgdExperimentValidation/inputs
+    pknViscosityDominated: FileNotFoundError: No XML files found in data/eval/claude_code_repo3_plugin_m3g/mem_m3g_s3/pknViscosityDominated/inputs
+
+Wrote misc/memory_artifacts/scores/mem_m3g_s3_summary.json

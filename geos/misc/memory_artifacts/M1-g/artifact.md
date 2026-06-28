@@ -1,0 +1,31 @@
+# GEOS XML Configuration Cheatsheet
+
+## Solver Selection & Physics Routing
+
+*   **`hydrofracture`**: Use `Hydrofracture` solver. For toughness-dominated (KGD) or viscosity-dominated regimes, ensure the `fractureRegionName` matches a defined `SurfaceGenerator` or `FaceGroup`.
+*   **`triaxial` / `oedometric`**: Use `TriaxialDriver` for single-element or laboratory-scale tests. It requires `strainControl` or `stressControl` specifications.
+*   **`poromechanics`**: Use `SinglePhasePoromechanics`. This is a multi-physics wrapper; you must explicitly define and link a `flowSolverName` (e.g., `SinglePhaseFVM`) and a `solidSolverName` (e.g., `SolidMechanicsLagrangianFEM`).
+*   **`thermal`**: Use `SinglePhaseThermalFVM` for fluid heat transport. Pair with `SolidInternalEnergy` and `SinglePhaseThermalConductivity` in the constitutive section.
+*   **`multiphase`**: Use `CompositionalMultiphaseFVM`. For black-oil models, use `DeadOilFluid`.
+*   **`contact`**: Use `SolidMechanicsLagrangeContact` for interfaces (e.g., wellbore casing-rock). Requires a `SurfaceGenerator` to define the contact pair.
+*   **`wellbore`**: Use `InternalWellbore` mesh generator for radial geometries.
+
+## Structural Patterns & Requirements
+
+*   **Mesh & Regions**: Every `CellElementRegion` must reference a `cellBlockNames` attribute that exists in the `Mesh` section. For `InternalMesh`, define `xCoords`, `yCoords`, and `zCoords` explicitly.
+*   **Constitutive Models**: 
+    *   Plasticity: Use `ViscoExtendedDruckerPrager` or `ViscoplasticModifiedCamClay` for complex soil/rock behavior.
+    *   Flow: `ParallelPlatesPermeability` is standard for fracture flow; `CompressibleSinglePhaseFluid` for basic reservoir fluids.
+*   **Field Specifications**: Use `FieldSpecification` for boundary conditions (traction, pressure, displacement). Ensure the `objectPath` correctly targets the intended `FaceGroup` or `NodeGroup`.
+*   **Events**: Always include an `Events` section. Use `PeriodicEvent` or `SoloEvent` to trigger `Solver` execution and `Outputs`.
+*   **Functions**: Use `TableFunction` for spatially varying properties (e.g., voxel-based permeability). Attributes like `voxelFile` and `coordinateFile` are required for external data.
+
+## Common Anti-Patterns (Do NOT Use)
+
+*   **DO NOT** use `<FractureModel>` or `<FracturePhysics>`; use `SurfaceGenerator` or `Hydrofracture` solver elements.
+*   **DO NOT** use `<BoundaryCondition>`; use `FieldSpecification` for all BCs and initial conditions.
+*   **DO NOT** use `<Material>`; use `Constitutive` to define material laws and `ElementRegions` to assign them.
+*   **DO NOT** use `<FluidProperties>`; use specific fluid constitutive models like `DeadOilFluid` or `CompressibleSinglePhaseFluid`.
+*   **DO NOT** use `<MeshGenerator>`; use `InternalMesh`, `InternalWellbore`, or `VTKMesh`.
+*   **DO NOT** use `<Output>`; use `VTK` or `Restart` within the `Outputs` block, triggered by an `Event`.
+*   **DO NOT** use `<TimeStepper>`; time stepping is typically defined within the `Solver` attributes or via `targetTime` in `Events`.

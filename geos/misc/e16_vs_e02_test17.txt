@@ -1,0 +1,43 @@
+
+==============================================================================
+  noplug_mm_v2 vs plug_mm_v2
+==============================================================================
+  tasks in both: 12
+  only in plug_mm_v2: ['AdvancedExampleDeviatedElasticWellbore', 'AdvancedExampleExtendedDruckerPrager', 'AdvancedExampleModifiedCamClay', 'ExampleThermoporoelasticConsolidation']
+
+  noplug_mm_v2
+    scored: 12/12    failed: []
+    mean: 0.566    median: 0.750    range: [0.021, 0.932]
+    pass >=0.7: 7/12
+
+  plug_mm_v2
+    scored: 16/16    failed: []
+    mean: 0.793    median: 0.857    range: [0.275, 0.998]
+    pass >=0.7: 13/16
+
+  Paired on 12 tasks scored in both runs:
+    mean delta (noplug_mm_v2 - plug_mm_v2): -0.251
+    median delta: -0.052
+    wins noplug_mm_v2: 3
+    wins plug_mm_v2: 9
+    ties: 0
+
+  Biggest wins for noplug_mm_v2:
+    +0.044   noplug_mm_v2=0.775  plug_mm_v2=0.731   buckleyLeverettProblem
+    +0.023   noplug_mm_v2=0.922  plug_mm_v2=0.899   ExampleDPWellbore
+    +0.022   noplug_mm_v2=0.887  plug_mm_v2=0.865   kgdExperimentValidation
+    -0.014   noplug_mm_v2=0.925  plug_mm_v2=0.939   ExampleMandel
+    -0.022   noplug_mm_v2=0.725  plug_mm_v2=0.747   TutorialPoroelasticity
+    -0.023   noplug_mm_v2=0.932  plug_mm_v2=0.955   ExampleEDPWellbore
+    -0.080   noplug_mm_v2=0.195  plug_mm_v2=0.275   TutorialSneddon
+    -0.211   noplug_mm_v2=0.788  plug_mm_v2=0.998   AdvancedExampleDruckerPrager
+
+  Biggest wins for plug_mm_v2:
+    -0.970   noplug_mm_v2=0.021  plug_mm_v2=0.991   pknViscosityDominated
+    -0.758   noplug_mm_v2=0.129  plug_mm_v2=0.886   AdvancedExampleViscoDruckerPrager
+    -0.665   noplug_mm_v2=0.146  plug_mm_v2=0.810   AdvancedExampleCasedContactThermoElasticWellbore
+    -0.358   noplug_mm_v2=0.348  plug_mm_v2=0.707   ExampleIsothermalLeakyWell
+    -0.211   noplug_mm_v2=0.788  plug_mm_v2=0.998   AdvancedExampleDruckerPrager
+    -0.080   noplug_mm_v2=0.195  plug_mm_v2=0.275   TutorialSneddon
+    -0.023   noplug_mm_v2=0.932  plug_mm_v2=0.955   ExampleEDPWellbore
+    -0.022   noplug_mm_v2=0.725  plug_mm_v2=0.747   TutorialPoroelasticity

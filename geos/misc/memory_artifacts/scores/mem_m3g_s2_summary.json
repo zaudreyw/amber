@@ -1,0 +1,131 @@
+{
+  "timestamp": "2026-04-22T07:29:28.103576",
+  "experiments_dir": "data/eval/claude_code_repo3_plugin_m3g/mem_m3g_s2",
+  "ground_truth_dir": "/data/shared/geophysics_agent_data/data/eval/experiments_gt",
+  "metric": "judge_geos",
+  "summary": {
+    "n_total": 17,
+    "n_scored": 0,
+    "n_failed": 17,
+    "failed_names": [
+      "AdvancedExampleCasedContactThermoElasticWellbore",
+      "AdvancedExampleDeviatedElasticWellbore",
+      "AdvancedExampleDruckerPrager",
+      "AdvancedExampleExtendedDruckerPrager",
+      "AdvancedExampleModifiedCamClay",
+      "AdvancedExampleViscoDruckerPrager",
+      "ExampleDPWellbore",
+      "ExampleEDPWellbore",
+      "ExampleIsothermalLeakyWell",
+      "ExampleMandel",
+      "ExampleThermalLeakyWell",
+      "ExampleThermoporoelasticConsolidation",
+      "TutorialPoroelasticity",
+      "TutorialSneddon",
+      "buckleyLeverettProblem",
+      "kgdExperimentValidation",
+      "pknViscosityDominated"
+    ],
+    "overall_score": {
+      "scored_mean": null,
+      "scored_median": null,
+      "scored_n": 0,
+      "with_failures_as_zero_mean": 0.0,
+      "total_n": 17
+    },
+    "treesim": {
+      "scored_mean": null,
+      "scored_median": null,
+      "scored_n": 0,
+      "with_failures_as_zero_mean": 0.0,
+      "total_n": 17
+    }
+  },
+  "results": [
+    {
+      "experiment": "AdvancedExampleCasedContactThermoElasticWellbore",
+      "status": "error",
+      "error": "FileNotFoundError: No XML files found in data/eval/claude_code_repo3_plugin_m3g/mem_m3g_s2/AdvancedExampleCasedContactThermoElasticWellbore/inputs"
+    },
+    {
+      "experiment": "AdvancedExampleDeviatedElasticWellbore",
+      "status": "error",
+      "error": "FileNotFoundError: No XML files found in data/eval/claude_code_repo3_plugin_m3g/mem_m3g_s2/AdvancedExampleDeviatedElasticWellbore/inputs"
+    },
+    {
+      "experiment": "AdvancedExampleDruckerPrager",
+      "status": "error",
+      "error": "FileNotFoundError: No XML files found in data/eval/claude_code_repo3_plugin_m3g/mem_m3g_s2/AdvancedExampleDruckerPrager/inputs"
+    },
+    {
+      "experiment": "AdvancedExampleExtendedDruckerPrager",
+      "status": "error",
+      "error": "FileNotFoundError: No XML files found in data/eval/claude_code_repo3_plugin_m3g/mem_m3g_s2/AdvancedExampleExtendedDruckerPrager/inputs"
+    },
+    {
+      "experiment": "AdvancedExampleModifiedCamClay",
+      "status": "error",
+      "error": "FileNotFoundError: No XML files found in data/eval/claude_code_repo3_plugin_m3g/mem_m3g_s2/AdvancedExampleModifiedCamClay/inputs"
+    },
+    {
+      "experiment": "AdvancedExampleViscoDruckerPrager",
+      "status": "error",
+      "error": "FileNotFoundError: No XML files found in data/eval/claude_code_repo3_plugin_m3g/mem_m3g_s2/AdvancedExampleViscoDruckerPrager/inputs"
+    },
+    {
+      "experiment": "ExampleDPWellbore",
+      "status": "error",
+      "error": "FileNotFoundError: No XML files found in data/eval/claude_code_repo3_plugin_m3g/mem_m3g_s2/ExampleDPWellbore/inputs"
+    },
+    {
+      "experiment": "ExampleEDPWellbore",
+      "status": "error",
+      "error": "FileNotFoundError: No XML files found in data/eval/claude_code_repo3_plugin_m3g/mem_m3g_s2/ExampleEDPWellbore/inputs"
+    },
+    {
+      "experiment": "ExampleIsothermalLeakyWell",
+      "status": "error",
+      "error": "FileNotFoundError: No XML files found in data/eval/claude_code_repo3_plugin_m3g/mem_m3g_s2/ExampleIsothermalLeakyWell/inputs"
+    },
+    {
+      "experiment": "ExampleMandel",
+      "status": "error",
+      "error": "FileNotFoundError: No XML files found in data/eval/claude_code_repo3_plugin_m3g/mem_m3g_s2/ExampleMandel/inputs"
+    },
+    {
+      "experiment": "ExampleThermalLeakyWell",
+      "status": "error",
+      "error": "FileNotFoundError: No XML files found in data/eval/claude_code_repo3_plugin_m3g/mem_m3g_s2/ExampleThermalLeakyWell/inputs"
+    },
+    {
+      "experiment": "ExampleThermoporoelasticConsolidation",
+      "status": "error",
+      "error": "FileNotFoundError: No XML files found in data/eval/claude_code_repo3_plugin_m3g/mem_m3g_s2/ExampleThermoporoelasticConsolidation/inputs"
+    },
+    {
+      "experiment": "TutorialPoroelasticity",
+      "status": "error",
+      "error": "FileNotFoundError: No XML files found in data/eval/claude_code_repo3_plugin_m3g/mem_m3g_s2/TutorialPoroelasticity/inputs"
+    },
+    {
+      "experiment": "TutorialSneddon",
+      "status": "error",
+      "error": "FileNotFoundError: No XML files found in data/eval/claude_code_repo3_plugin_m3g/mem_m3g_s2/TutorialSneddon/inputs"
+    },
+    {
+      "experiment": "buckleyLeverettProblem",
+      "status": "error",
+      "error": "FileNotFoundError: No XML files found in data/eval/claude_code_repo3_plugin_m3g/mem_m3g_s2/buckleyLeverettProblem/inputs"
+    },
+    {
+      "experiment": "kgdExperimentValidation",
+      "status": "error",
+      "error": "FileNotFoundError: No XML files found in data/eval/claude_code_repo3_plugin_m3g/mem_m3g_s2/kgdExperimentValidation/inputs"
+    },
+    {
+      "experiment": "pknViscosityDominated",
+      "status": "error",
+      "error": "FileNotFoundError: No XML files found in data/eval/claude_code_repo3_plugin_m3g/mem_m3g_s2/pknViscosityDominated/inputs"
+    }
+  ]
+}

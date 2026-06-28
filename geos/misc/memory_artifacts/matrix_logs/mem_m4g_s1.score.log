@@ -1,0 +1,46 @@
+[  1/17] AdvancedExampleCasedContactThermoElasticWellbore  9.89/10
+[  2/17] AdvancedExampleDeviatedElasticWellbore  8.60/10
+[  3/17] AdvancedExampleDruckerPrager  10.00/10
+[  4/17] AdvancedExampleExtendedDruckerPrager  9.61/10
+[  5/17] AdvancedExampleModifiedCamClay  9.08/10
+[  6/17] AdvancedExampleViscoDruckerPrager  6.43/10
+[  7/17] ExampleDPWellbore  10.00/10
+[  8/17] ExampleEDPWellbore  9.79/10
+[  9/17] ExampleIsothermalLeakyWell  9.91/10
+[ 10/17] ExampleMandel  5.08/10
+[ 11/17] ExampleThermalLeakyWell  3.32/10
+[ 12/17] ExampleThermoporoelasticConsolidation  8.68/10
+[ 13/17] TutorialPoroelasticity  6.57/10
+[ 14/17] TutorialSneddon  1.84/10
+[ 15/17] buckleyLeverettProblem  9.84/10
+[ 16/17] kgdExperimentValidation  9.80/10
+[ 17/17] pknViscosityDominated  10.00/10
+
+============================================================
+  Batch evaluation: 17/17 succeeded
+============================================================
+  Scored-only     overall_score mean: 8.144  (median 9.610, range 1.84-10.00)
+  Failures-as-0   overall_score mean: 8.144
+  Scored-only     treesim       mean: 0.814
+  Failures-as-0   treesim       mean: 0.814
+  Pass ≥7: 12/17 (of scored)
+
+  10.00/10  AdvancedExampleDruckerPrager  treesim=1.000
+  10.00/10  ExampleDPWellbore  treesim=1.000
+  10.00/10  pknViscosityDominated  treesim=1.000
+   9.91/10  ExampleIsothermalLeakyWell  treesim=0.991
+   9.89/10  AdvancedExampleCasedContactThermoElasticWellbore  treesim=0.989
+   9.84/10  buckleyLeverettProblem  treesim=0.984
+   9.80/10  kgdExperimentValidation  treesim=0.980
+   9.79/10  ExampleEDPWellbore  treesim=0.979
+   9.61/10  AdvancedExampleExtendedDruckerPrager  treesim=0.961
+   9.08/10  AdvancedExampleModifiedCamClay  treesim=0.908
+   8.68/10  ExampleThermoporoelasticConsolidation  treesim=0.868
+   8.60/10  AdvancedExampleDeviatedElasticWellbore  treesim=0.860
+   6.57/10  TutorialPoroelasticity  treesim=0.657
+   6.43/10  AdvancedExampleViscoDruckerPrager  treesim=0.643
+   5.08/10  ExampleMandel  treesim=0.508
+   3.32/10  ExampleThermalLeakyWell  treesim=0.332
+   1.84/10  TutorialSneddon  treesim=0.184
+
+Wrote misc/memory_artifacts/scores/mem_m4g_s1_summary.json

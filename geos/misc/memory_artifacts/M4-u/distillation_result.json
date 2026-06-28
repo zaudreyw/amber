@@ -1,0 +1,14 @@
+{
+  "variant": "M4-u",
+  "kind": "M4",
+  "grounded": false,
+  "budget_tokens": 1000,
+  "n_reports": 36,
+  "prompt_tokens": 2681,
+  "model": "google/gemini-3-flash-preview",
+  "final_artifact_tokens": 817,
+  "within_budget": true,
+  "retried_for_budget": false,
+  "artifact_path": "/home/matt/sci/repo3/misc/memory_artifacts/M4-u/items.json",
+  "hygiene_passed": true
+}

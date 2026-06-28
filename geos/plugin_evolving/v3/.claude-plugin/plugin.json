@@ -1,0 +1,12 @@
+{
+  "name": "geos-self-evolving",
+  "version": "0.0.0",
+  "description": "Self-evolving GEOS XML authoring plugin (v0 = blank scaffolding)",
+  "mcpServers": {
+    "xmllint": {
+      "type": "stdio",
+      "command": "python3",
+      "args": ["/plugins/repo3/scripts/xmllint_mcp.py"]
+    }
+  }
+}

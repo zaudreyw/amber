@@ -1,0 +1,866 @@
+[
+  {
+    "task_id": "AdvancedExampleViscoModifiedCamClay",
+    "final_treesim": 0.9983,
+    "failure_mode": "success",
+    "section_failures": [
+      {
+        "section": "Constitutive",
+        "score": 0.99
+      },
+      {
+        "section": "ElementRegions",
+        "score": 1.0
+      },
+      {
+        "section": "Events",
+        "score": 1.0
+      },
+      {
+        "section": "Functions",
+        "score": 1.0
+      },
+      {
+        "section": "Mesh",
+        "score": 1.0
+      }
+    ],
+    "top_missed_elements": [],
+    "top_hallucinated_elements": [],
+    "dominant_dimension": "structural_completeness",
+    "attribute_accuracy": 1.0,
+    "structural_completeness": 1.0,
+    "tool_call_summary": {
+      "rag_queries": 10,
+      "reads": 9,
+      "writes": 2,
+      "edits": 1,
+      "bashes": 14,
+      "total": 43
+    },
+    "productive_rag_queries_sanitized": [
+      "triaxial driver strain control oedometric compression single element",
+      "<xml_filename_stripped>",
+      "ViscoplasticModifiedCamClay",
+      "DruckerPrager",
+      "ViscoDruckerPrager"
+    ],
+    "agent_response_tail": "t**: Text file with time, strains, stresses, and solver convergence data\n\n## Usage\nRun the simulation with:\n```bash\ngeosx -i inputs/<xml_filename_stripped>\n```\n\nThe results will be written to `ViscoModifiedCamClayResults.txt` in the working directory, ready for comparison with your semi-analytical Perzyna-based solution.\n\nThe base file is reusable for testing other materials in your library by simply changing the `material` attribute in the benchmark file's `TriaxialDriver` task."
+  },
+  {
+    "task_id": "kgdToughnessDominated",
+    "final_treesim": 0.9695,
+    "failure_mode": "success",
+    "section_failures": [
+      {
+        "section": "Functions",
+        "score": 0.767
+      },
+      {
+        "section": "Geometry",
+        "score": 0.953
+      },
+      {
+        "section": "Constitutive",
+        "score": 0.956
+      },
+      {
+        "section": "Events",
+        "score": 0.994
+      },
+      {
+        "section": "Solvers",
+        "score": 0.994
+      }
+    ],
+    "top_missed_elements": [],
+    "top_hallucinated_elements": [],
+    "dominant_dimension": "structural_completeness",
+    "attribute_accuracy": 0.985,
+    "structural_completeness": 1.0,
+    "tool_call_summary": {
+      "rag_queries": 8,
+      "reads": 4,
+      "writes": 2,
+      "edits": 0,
+      "bashes": 2,
+      "total": 21
+    },
+    "productive_rag_queries_sanitized": [
+      "hydrofracture solver hydraulic fracture propagation KGD toughness dominated",
+      "Hydrofracture solver XML",
+      "Hydrofracture example XML mesh boundary conditions",
+      "InternalMesh bias element geometric",
+      "fracture flow parallel plates permeability model"
+    ],
+    "agent_response_tail": "l surface\u2011generation solo event.\n\n## Key adaptations for toughness\u2011dominated regime\n- Fluid viscosity set to 1.0e\u20116 Pa\u00b7s (ultra\u2011low to enforce toughness dominance).\n- Rock toughness increased to 1.0e6 Pa\u00b7m\u00b9\u141f\u00b2.\n- All SI units (Pa, m, s) used throughout.\n- Half\u2011wing injection rate (\u20135.0e\u20112\u202fkg/s) accounts for symmetry.\n\nThe input deck is ready to run; the benchmark file includes the base file via `<Included>`. You can launch the simulation with `geosx -i inputs/<xml_filename_stripped>`."
+  },
+  {
+    "task_id": "triaxialDriverExample",
+    "final_treesim": 0.9572,
+    "failure_mode": "success",
+    "section_failures": [
+      {
+        "section": "ElementRegions",
+        "score": 0.767
+      },
+      {
+        "section": "Functions",
+        "score": 0.977
+      },
+      {
+        "section": "Constitutive",
+        "score": 1.0
+      },
+      {
+        "section": "Events",
+        "score": 1.0
+      },
+      {
+        "section": "Mesh",
+        "score": 1.0
+      }
+    ],
+    "top_missed_elements": [],
+    "top_hallucinated_elements": [],
+    "dominant_dimension": "structural_completeness",
+    "attribute_accuracy": 0.975,
+    "structural_completeness": 1.0,
+    "tool_call_summary": {
+      "rag_queries": 7,
+      "reads": 5,
+      "writes": 1,
+      "edits": 1,
+      "bashes": 3,
+      "total": 22
+    },
+    "productive_rag_queries_sanitized": [
+      "triaxial driver example Extended Drucker Prager",
+      "ExtendedDruckerPrager",
+      "<xml_filename_stripped>",
+      "TriaxialDriver",
+      "TriaxialDriver name"
+    ],
+    "agent_response_tail": "ignment\n\n## Assumptions & Notes\n1. The table files (`tables/time.geos`, `tables/axialStrain.geos`, `tables/radialStress.geos`) must exist in the relative paths shown when running the simulation.\n2. The `TriaxialDriver` task internally handles the solver configuration and output generation.\n3. All units are SI (Pa, m, s, kg/m\u00b3) as required by GEOS.\n\nThe input deck follows the structure of validated GEOS triaxial driver examples, adapted to your specific material parameters and loading conditions."
+  },
+  {
+    "task_id": "kgdViscosityDominated",
+    "final_treesim": 0.9317,
+    "failure_mode": "success",
+    "section_failures": [
+      {
+        "section": "Functions",
+        "score": 0.767
+      },
+      {
+        "section": "Outputs",
+        "score": 0.825
+      },
+      {
+        "section": "Solvers",
+        "score": 0.892
+      },
+      {
+        "section": "Constitutive",
+        "score": 0.956
+      },
+      {
+        "section": "ElementRegions",
+        "score": 1.0
+      }
+    ],
+    "top_missed_elements": [],
+    "top_hallucinated_elements": [],
+    "dominant_dimension": "structural_completeness",
+    "attribute_accuracy": 0.935,
+    "structural_completeness": 1.0,
+    "tool_call_summary": {
+      "rag_queries": 15,
+      "reads": 3,
+      "writes": 3,
+      "edits": 0,
+      "bashes": 1,
+      "total": 27
+    },
+    "productive_rag_queries_sanitized": [
+      "hydraulic fracture KGD viscosity dominated simulation setup",
+      "Hydrofracture solver XML example",
+      "CompressibleSinglePhaseFluid",
+      "ElasticIsotropic",
+      "CompressibleSolidParallelPlatesPermeability"
+    ],
+    "agent_response_tail": "ive default (1000\u202fkg/m\u00b3).\n- The `ParallelPlatesPermeability` uses the cubic\u2011law relationship (no explicit `transversalPermeability`).\n- Both scenario files include a `SoloEvent` that calls the `SurfaceGenerator` before the first coupled solve to initialize the fracture.\n\nAll files are ready for validation and execution. The base file contains the complete physics description, while the two scenario files provide the mesh, geometry, and scheduling specifics for your benchmark and smoke\u2011test runs."
+  },
+  {
+    "task_id": "pennyFracViscosityDominated",
+    "final_treesim": 0.8978,
+    "failure_mode": "success",
+    "section_failures": [
+      {
+        "section": "Geometry",
+        "score": 0.642
+      },
+      {
+        "section": "Functions",
+        "score": 0.767
+      },
+      {
+        "section": "Events",
+        "score": 0.799
+      },
+      {
+        "section": "Mesh",
+        "score": 0.844
+      },
+      {
+        "section": "Constitutive",
+        "score": 0.898
+      }
+    ],
+    "top_missed_elements": [],
+    "top_hallucinated_elements": [],
+    "dominant_dimension": "structural_completeness",
+    "attribute_accuracy": 0.842,
+    "structural_completeness": 1.0,
+    "tool_call_summary": {
+      "rag_queries": 10,
+      "reads": 4,
+      "writes": 2,
+      "edits": 1,
+      "bashes": 0,
+      "total": 21
+    },
+    "productive_rag_queries_sanitized": [
+      "hydrofracture solver configuration radial penny-shaped fracture benchmark",
+      "Hydrofracture solver XML example",
+      "ParallelPlatesPermeability",
+      "SourceFlux",
+      "SourceFlux scale"
+    ],
+    "agent_response_tail": "oToughness`), fracture\u2011wide time\u2011history (`pennyShapedViscosityDominated_output`), source\u2011set curves (`hydrofracture_source_curves`), and restart files every 100\u202fs.\n\n## How to Run\n```bash\ngeosx -i inputs/<xml_filename_stripped>\n```\n\nThe configuration closely follows the GEOS hydraulic\u2011fracturing validation examples, adapting the mesh, geometry, material properties, and time\u2011stepping to your radial\u2011fracture specification. All units are SI, and gravity is disabled as requested."
+  },
+  {
+    "task_id": "AdvancedExampleCasedElasticWellboreImperfectInterfaces",
+    "final_treesim": 0.8804,
+    "failure_mode": "success",
+    "section_failures": [
+      {
+        "section": "NumericalMethods",
+        "score": 0.755
+      },
+      {
+        "section": "Events",
+        "score": 0.761
+      },
+      {
+        "section": "ElementRegions",
+        "score": 0.781
+      },
+      {
+        "section": "Constitutive",
+        "score": 0.81
+      },
+      {
+        "section": "Outputs",
+        "score": 0.833
+      }
+    ],
+    "top_missed_elements": [],
+    "top_hallucinated_elements": [],
+    "dominant_dimension": "structural_completeness",
+    "attribute_accuracy": 0.826,
+    "structural_completeness": 1.0,
+    "tool_call_summary": {
+      "rag_queries": 8,
+      "reads": 11,
+      "writes": 3,
+      "edits": 1,
+      "bashes": 1,
+      "total": 30
+    },
+    "productive_rag_queries_sanitized": [
+      "Lagrangian contact surface generation Coulomb friction solid mechanics wellbore casing cement rock interfaces",
+      "CasedElasticWellbore",
+      "SolidMechanicsLagrangeContact",
+      "SurfaceGenerator",
+      "SurfaceGenerator name"
+    ],
+    "agent_response_tail": "\n- **Loading**: Normal traction on the inner casing face (`rneg`) scaled by the provided time\u2011history table (10\u202fMPa base \u00d7 table multiplier).\n- **Units**: SI throughout (Pa, m, s, kg/m\u00b3).\n- **Gravity**: Set to zero vector in the `<Solvers>` tag.\n\nThe input deck follows the structure of GEOS validation examples (e.g., `CasedThermoElasticWellbore_ImperfectInterfaces` and `Sneddon` contact\u2011mechanics problems) while stripping out thermal/flow components to match your purely mechanical specification."
+  },
+  {
+    "task_id": "ExampleKirschWellbore",
+    "final_treesim": 0.8671,
+    "failure_mode": "success",
+    "section_failures": [
+      {
+        "section": "Events",
+        "score": 0.621
+      },
+      {
+        "section": "Solvers",
+        "score": 0.732
+      },
+      {
+        "section": "ElementRegions",
+        "score": 0.767
+      },
+      {
+        "section": "FieldSpecifications",
+        "score": 0.801
+      },
+      {
+        "section": "Outputs",
+        "score": 0.883
+      }
+    ],
+    "top_missed_elements": [],
+    "top_hallucinated_elements": [],
+    "dominant_dimension": "structural_completeness",
+    "attribute_accuracy": 0.739,
+    "structural_completeness": 1.0,
+    "tool_call_summary": {
+      "rag_queries": 14,
+      "reads": 7,
+      "writes": 2,
+      "edits": 2,
+      "bashes": 6,
+      "total": 36
+    },
+    "productive_rag_queries_sanitized": [
+      "solid mechanics Lagrangian FEM solver configuration",
+      "wellbore mesh generator internal mesh radial",
+      "InternalWellbore mesh attribute",
+      "SolidMechanicsLagrangianFEM solver attributes",
+      "ElasticIsotropic constitutive model"
+    ],
+    "agent_response_tail": "flexibility**: VTK for spatial visualization, HDF5 time histories for quantitative verification against Kirsch solution\n- **Single-shot displacement output**: Displacement history written only at final time via `SoloEvent`\n\nThe configuration is ready for execution with `geosx -i inputs/<xml_filename_stripped>`. The stress and displacement outputs in the `outputs/` directory can be compared with the analytical Kirsch solution for a drained vertical wellbore under anisotropic far-field stress."
+  },
+  {
+    "task_id": "pennyFracToughnessDominated",
+    "final_treesim": 0.866,
+    "failure_mode": "success",
+    "section_failures": [
+      {
+        "section": "Functions",
+        "score": 0.533
+      },
+      {
+        "section": "Mesh",
+        "score": 0.708
+      },
+      {
+        "section": "Geometry",
+        "score": 0.72
+      },
+      {
+        "section": "Solvers",
+        "score": 0.841
+      },
+      {
+        "section": "Events",
+        "score": 0.845
+      }
+    ],
+    "top_missed_elements": [],
+    "top_hallucinated_elements": [],
+    "dominant_dimension": "structural_completeness",
+    "attribute_accuracy": 0.82,
+    "structural_completeness": 1.0,
+    "tool_call_summary": {
+      "rag_queries": 12,
+      "reads": 2,
+      "writes": 2,
+      "edits": 0,
+      "bashes": 3,
+      "total": 26
+    },
+    "productive_rag_queries_sanitized": [
+      "hydrofracture solver XML example hydraulic fracture benchmark",
+      "Hydrofracture solver attributes",
+      "InternalMesh xCoords yCoords zCoords nx ny nz",
+      "fracture surface region element regions hydraulic aperture",
+      "kgdToughnessDominated benchmark xml"
+    ],
+    "agent_response_tail": "sDominated` example from the GEOS repository.\n- All required attributes are populated according to the schema retrieved via the GEOS RAG tools.\n- The two\u2011file pattern promotes reusability: the base file contains all physics definitions; the benchmark file supplies the mesh, geometry, and injection schedule.\n\nThe input deck is ready for execution. If you would like a Python script to visualize the results (e.g., pressure and aperture versus time), I can create one in `/workspace/inputs/scripts/`."
+  },
+  {
+    "task_id": "AdvancedExampleCasedElasticWellbore",
+    "final_treesim": 0.8569,
+    "failure_mode": "success",
+    "section_failures": [
+      {
+        "section": "ElementRegions",
+        "score": 0.767
+      },
+      {
+        "section": "Solvers",
+        "score": 0.772
+      },
+      {
+        "section": "Constitutive",
+        "score": 0.825
+      },
+      {
+        "section": "FieldSpecifications",
+        "score": 0.848
+      },
+      {
+        "section": "Events",
+        "score": 0.864
+      }
+    ],
+    "top_missed_elements": [],
+    "top_hallucinated_elements": [],
+    "dominant_dimension": "structural_completeness",
+    "attribute_accuracy": 0.791,
+    "structural_completeness": 1.0,
+    "tool_call_summary": {
+      "rag_queries": 10,
+      "reads": 12,
+      "writes": 3,
+      "edits": 1,
+      "bashes": 2,
+      "total": 34
+    },
+    "productive_rag_queries_sanitized": [
+      "SolidMechanicsLagrangianFEM solid mechanics finite element",
+      "InternalMesh radial elementTypes C3D8",
+      "InternalWellbore",
+      "cellBlockNames InternalWellbore",
+      "traction FieldSpecification"
+    ],
+    "agent_response_tail": "), no explicit constraints on the theta boundaries (`tneg`/`tpos`) are imposed; the squared outer boundary and top/bottom planes suffice to prevent rigid\u2011body motion.\n- Initial stresses are zero (default for linear elasticity).\n- The density (2700\u202fkg/m\u00b3) is assigned uniformly to all three materials; it does not affect the quasi\u2011static response.\n\nAll files are ready in `/workspace/inputs`. You can run the simulation with, for example:\n```bash\ngeosx -i inputs/<xml_filename_stripped>\n```"
+  },
+  {
+    "task_id": "AdvancedWellboreExampleNonLinearThermalDiffusionTemperatureDependentVolumetricHeatCapacity",
+    "final_treesim": 0.8508,
+    "failure_mode": "success",
+    "section_failures": [
+      {
+        "section": "ElementRegions",
+        "score": 0.533
+      },
+      {
+        "section": "Solvers",
+        "score": 0.587
+      },
+      {
+        "section": "FieldSpecifications",
+        "score": 0.802
+      },
+      {
+        "section": "Constitutive",
+        "score": 0.884
+      },
+      {
+        "section": "Events",
+        "score": 1.0
+      }
+    ],
+    "top_missed_elements": [],
+    "top_hallucinated_elements": [],
+    "dominant_dimension": "structural_completeness",
+    "attribute_accuracy": 0.8,
+    "structural_completeness": 1.0,
+    "tool_call_summary": {
+      "rag_queries": 11,
+      "reads": 8,
+      "writes": 2,
+      "edits": 2,
+      "bashes": 5,
+      "total": 32
+    },
+    "productive_rag_queries_sanitized": [
+      "thermal compressible flow single phase thermal",
+      "SinglePhaseThermalFVM",
+      "thermal fluid constitutive model volumetric heat capacity",
+      "SolidInternalEnergy",
+      "SinglePhaseThermalConductivity"
+    ],
+    "agent_response_tail": "` faces \u2013 zero-flux conditions are natural for symmetry planes\n\n## Validation Notes\n\nThe configuration follows the structure of GEOS thermal diffusion examples (like `linearThermalDiffusion` and `ThermoPoroElasticWellbore`). The mesh uses `InternalWellbore` with `autoSpaceRadialElems=\"{0,0,1}\"` to automatically space the outermost radial segment as requested.\n\nYou can run the simulation with:\n```bash\ngeosx -i inputs/<xml_filename_stripped>\n```"
+  },
+  {
+    "task_id": "TutorialDeadOilBottomLayersSPE10",
+    "final_treesim": 0.8441,
+    "failure_mode": "success",
+    "section_failures": [
+      {
+        "section": "FieldSpecifications",
+        "score": 0.49
+      },
+      {
+        "section": "Tasks",
+        "score": 0.58
+      },
+      {
+        "section": "Functions",
+        "score": 0.697
+      },
+      {
+        "section": "Events",
+        "score": 0.738
+      },
+      {
+        "section": "Mesh",
+        "score": 0.922
+      }
+    ],
+    "top_missed_elements": [],
+    "top_hallucinated_elements": [],
+    "dominant_dimension": "structural_completeness",
+    "attribute_accuracy": 0.648,
+    "structural_completeness": 1.0,
+    "tool_call_summary": {
+      "rag_queries": 13,
+      "reads": 9,
+      "writes": 2,
+      "edits": 4,
+      "bashes": 2,
+      "total": 37
+    },
+    "productive_rag_queries_sanitized": [
+      "compositional multiphase flow dead oil fluid example",
+      "DeadOilFluid",
+      "CompositionalMultiphaseFVM well source flux sink pressure",
+      "SourceFlux",
+      "SourceFlux injection water"
+    ],
+    "agent_response_tail": "6 for permeability)\n3. **Units**: All values in SI units (Pa, m, kg, s)\n4. **Physics**: Immiscible two-phase dead oil model with Brooks-Corey relative permeability\n5. **Numerics**: Maximum component fraction change limited to 0.1 per timestep, adaptive timestepping with up to 10 cuts\n\nThe simulation is ready to run with the provided external data files (`xlin.geos`, `ylin.geos`, `zlin.geos`, `poro.geos`, `permx.geos`, `permy.geos`, `permz.geos`, `pres_pvdo.txt`, `B_o_pvdo.txt`, `visc_pvdo.txt`)."
+  },
+  {
+    "task_id": "TutorialDeadOilEgg",
+    "final_treesim": 0.8043,
+    "failure_mode": "success",
+    "section_failures": [
+      {
+        "section": "Events",
+        "score": 0.0
+      },
+      {
+        "section": "Outputs",
+        "score": 0.523
+      },
+      {
+        "section": "Mesh",
+        "score": 0.745
+      },
+      {
+        "section": "Tasks",
+        "score": 0.825
+      },
+      {
+        "section": "FieldSpecifications",
+        "score": 0.866
+      }
+    ],
+    "top_missed_elements": [],
+    "top_hallucinated_elements": [],
+    "dominant_dimension": "structural_completeness",
+    "attribute_accuracy": 0.774,
+    "structural_completeness": 1.0,
+    "tool_call_summary": {
+      "rag_queries": 16,
+      "reads": 15,
+      "writes": 3,
+      "edits": 3,
+      "bashes": 7,
+      "total": 54
+    },
+    "productive_rag_queries_sanitized": [
+      "dead oil two phase flow well simulation XML example",
+      "DeadOilFluid well XML example",
+      "CompositionalMultiphaseWell",
+      "DeadOilFluid",
+      "CompositionalMultiphaseFVM CompositionalMultiphaseWell"
+    ],
+    "agent_response_tail": ""
+  },
+  {
+    "task_id": "relaxationTest",
+    "final_treesim": 0.8023,
+    "failure_mode": "success",
+    "section_failures": [
+      {
+        "section": "Events",
+        "score": 0.422
+      },
+      {
+        "section": "Outputs",
+        "score": 0.606
+      },
+      {
+        "section": "Solvers",
+        "score": 0.613
+      },
+      {
+        "section": "Functions",
+        "score": 0.65
+      },
+      {
+        "section": "FieldSpecifications",
+        "score": 0.76
+      }
+    ],
+    "top_missed_elements": [],
+    "top_hallucinated_elements": [],
+    "dominant_dimension": "structural_completeness",
+    "attribute_accuracy": 0.704,
+    "structural_completeness": 1.0,
+    "tool_call_summary": {
+      "rag_queries": 16,
+      "reads": 8,
+      "writes": 2,
+      "edits": 5,
+      "bashes": 3,
+      "total": 38
+    },
+    "productive_rag_queries_sanitized": [
+      "Visco Extended Drucker Prager constitutive model parameters",
+      "ViscoExtendedDruckerPrager constitutive",
+      "InternalMesh elementBlocks segment xCoords yCoords zCoords",
+      "cellBlockNames InternalMesh",
+      "SolidMechanicsLagrangianFEM"
+    ],
+    "agent_response_tail": "history via the `dispTable` function.\n- **Outputs**: Time\u2011history files `stress_history` and `displacement_history` will be written to `outputs/` together with VTK files and restart snapshots.\n\n## Running the Simulation\n\nExecute GEOS with:\n```bash\ngeosx -i inputs/<xml_filename_stripped>\n```\n\nAll output files will be placed in the `outputs/` directory as required.\n\nThe input decks are complete, reusable, and ready for validation of the viscoplastic relaxation response."
+  },
+  {
+    "task_id": "AdvancedExampleDeviatedPoroElasticWellbore",
+    "final_treesim": 0.7564,
+    "failure_mode": "success",
+    "section_failures": [
+      {
+        "section": "Outputs",
+        "score": 0.475
+      },
+      {
+        "section": "ElementRegions",
+        "score": 0.65
+      },
+      {
+        "section": "FieldSpecifications",
+        "score": 0.684
+      },
+      {
+        "section": "Events",
+        "score": 0.689
+      },
+      {
+        "section": "Solvers",
+        "score": 0.748
+      }
+    ],
+    "top_missed_elements": [],
+    "top_hallucinated_elements": [],
+    "dominant_dimension": "structural_completeness",
+    "attribute_accuracy": 0.675,
+    "structural_completeness": 1.0,
+    "tool_call_summary": {
+      "rag_queries": 11,
+      "reads": 6,
+      "writes": 3,
+      "edits": 3,
+      "bashes": 5,
+      "total": 32
+    },
+    "productive_rag_queries_sanitized": [
+      "poromechanics coupled single phase flow solid mechanics internal wellbore mesh",
+      "InternalMesh wellbore radial tangential z elements",
+      "SinglePhasePoromechanics",
+      "SinglePhasePoromechanics flowSolverName solidSolverName",
+      "InternalWellbore"
+    ],
+    "agent_response_tail": "rnay\u2011Cheng analytical solutions. All parameters (moduli, permeability, fluid properties, injection pressure, geometry) match the specification. The simulation can be launched with:\n\n```bash\ngeosx -i inputs/<xml_filename_stripped>\n```\n\nResults will be written to `outputs/` as parallel Silo files; the example script `inputs/scripts/plot_results.py` provides a starting point for extracting and plotting key quantities (pressure, stresses) against the analytical solutions."
+  },
+  {
+    "task_id": "TutorialCO2FieldCase",
+    "final_treesim": 0.7347,
+    "failure_mode": "success",
+    "section_failures": [
+      {
+        "section": "Functions",
+        "score": 0.376
+      },
+      {
+        "section": "Mesh",
+        "score": 0.428
+      },
+      {
+        "section": "Events",
+        "score": 0.58
+      },
+      {
+        "section": "Outputs",
+        "score": 0.594
+      },
+      {
+        "section": "Tasks",
+        "score": 0.65
+      }
+    ],
+    "top_missed_elements": [],
+    "top_hallucinated_elements": [],
+    "dominant_dimension": "tag_coverage",
+    "attribute_accuracy": 0.787,
+    "structural_completeness": 1.0,
+    "tool_call_summary": {
+      "rag_queries": 23,
+      "reads": 10,
+      "writes": 2,
+      "edits": 5,
+      "bashes": 6,
+      "total": 53
+    },
+    "productive_rag_queries_sanitized": [
+      "compositional multiphase flow well injection CO2",
+      "TableFunction nearest neighbor permeability interpolation",
+      "external table function voxel permeability interpolation",
+      "FieldCaseTutorial table function perm.geos",
+      "TableFunction voxelFile coordinateFile"
+    ],
+    "agent_response_tail": "_FieldCaseTuto/` directory (xlin2.geos, ylin2.geos, zlin2.geos, perm.geos)\n- Fluid property tables (`pvtgas.txt`, `pvtliquid.txt`, `co2flash.txt`) should be placed in a `tables/` subdirectory\n- The configuration assumes SI units throughout (Pa, m, s, kg/mol)\n- No-flow boundaries are implicit on domain edges\n- Initial conditions neglect hydrostatic equilibrium as specified\n\nThe setup follows GEOS validation example patterns and should provide a robust foundation for your CO\u2082 injection simulation."
+  },
+  {
+    "task_id": "faultVerification",
+    "final_treesim": 0.712,
+    "failure_mode": "success",
+    "section_failures": [
+      {
+        "section": "ElementRegions",
+        "score": 0.498
+      },
+      {
+        "section": "Mesh",
+        "score": 0.533
+      },
+      {
+        "section": "Constitutive",
+        "score": 0.627
+      },
+      {
+        "section": "FieldSpecifications",
+        "score": 0.742
+      },
+      {
+        "section": "Events",
+        "score": 0.772
+      }
+    ],
+    "top_missed_elements": [],
+    "top_hallucinated_elements": [],
+    "dominant_dimension": "structural_completeness",
+    "attribute_accuracy": 0.616,
+    "structural_completeness": 1.0,
+    "tool_call_summary": {
+      "rag_queries": 12,
+      "reads": 4,
+      "writes": 4,
+      "edits": 1,
+      "bashes": 0,
+      "total": 26
+    },
+    "productive_rag_queries_sanitized": [
+      "poromechanics coupled single phase poromechanics example XML",
+      "SinglePhasePoromechanics",
+      "VTKMesh",
+      "CellElementRegion",
+      "ElasticIsotropic"
+    ],
+    "agent_response_tail": "88`, etc.) and traction references face\u2011set `91` directly from the VTK mesh.\n\n## Usage\n\nPlace the provided `faultMesh.vtu` in the same directory (`/workspace/inputs/`). Run either benchmark with:\n```bash\ngeosx -i inputs/<xml_filename_stripped>\n```\nor\n```bash\ngeosx -i inputs/<xml_filename_stripped>\n```\n\nThe outputs will be written to `/workspace/outputs/` with the file root `faultModel`. Restart files are generated every 10\u202fs, and VTK snapshots are written every 2\u202fs for visualization."
+  },
+  {
+    "task_id": "ExampleTFrac",
+    "final_treesim": 0.5964,
+    "failure_mode": "mixed_failure",
+    "section_failures": [
+      {
+        "section": "NumericalMethods",
+        "score": 0.0
+      },
+      {
+        "section": "Solvers",
+        "score": 0.3
+      },
+      {
+        "section": "FieldSpecifications",
+        "score": 0.314
+      },
+      {
+        "section": "Functions",
+        "score": 0.417
+      },
+      {
+        "section": "Geometry",
+        "score": 0.491
+      }
+    ],
+    "top_missed_elements": [],
+    "top_hallucinated_elements": [],
+    "dominant_dimension": "tag_coverage",
+    "attribute_accuracy": 0.673,
+    "structural_completeness": 1.0,
+    "tool_call_summary": {
+      "rag_queries": 14,
+      "reads": 5,
+      "writes": 5,
+      "edits": 0,
+      "bashes": 0,
+      "total": 32
+    },
+    "productive_rag_queries_sanitized": [
+      "contact mechanics intersecting fractures solid mechanics Lagrangian contact solver",
+      "contact solver Lagrangian",
+      "InternalMesh refinement transition elements",
+      "Lagrangian contact solver fracture Coulomb friction",
+      "EmbeddedSurface fracture region"
+    ],
+    "agent_response_tail": "s simple linear interpolation via table function\n- Boundary conditions: roller constraints on all outer faces (zero normal displacement)\n- Gravity disabled as requested\n- The configuration uses the `SolidMechanicsLagrangeContact` solver with TPFA stabilization, matching similar benchmark examples\n\nAll files are in `/workspace/inputs/` as required. The structure separates reusable physics (base), case-specific geometry (benchmark), and execution control (main), enabling easy parameter variations."
+  },
+  {
+    "task_id": "AdvancedExampleWellboreNonLinearThermalDiffusionTemperatureDependentSinglePhaseThermalConductivity",
+    "final_treesim": 0.5371,
+    "failure_mode": "F2_attr_drift",
+    "section_failures": [
+      {
+        "section": "Events",
+        "score": 0.0
+      },
+      {
+        "section": "Constitutive",
+        "score": 0.427
+      },
+      {
+        "section": "NumericalMethods",
+        "score": 0.51
+      },
+      {
+        "section": "Solvers",
+        "score": 0.517
+      },
+      {
+        "section": "ElementRegions",
+        "score": 0.533
+      }
+    ],
+    "top_missed_elements": [],
+    "top_hallucinated_elements": [],
+    "dominant_dimension": "tag_coverage",
+    "attribute_accuracy": 0.559,
+    "structural_completeness": 1.0,
+    "tool_call_summary": {
+      "rag_queries": 12,
+      "reads": 10,
+      "writes": 2,
+      "edits": 12,
+      "bashes": 1,
+      "total": 44
+    },
+    "productive_rag_queries_sanitized": [
+      "temperature dependent thermal conductivity isotropic gradient linear temperature dependence",
+      "ThermalConductivity constitutive model temperature dependent",
+      "single phase thermal flow solver finite volume thermal",
+      "SinglePhaseThermalFVM solver",
+      "SinglePhaseThermalFVM"
+    ],
+    "agent_response_tail": "`block3`) all assigned to the `reservoir` region\n- **Automatic spacing**: Outer radial interval uses `autoSpaceRadialElems=\"{0,0,1}\"` for geometric progression\n- **Boundary sets**: `rneg` (wellbore), `rpos` (far-field) for applying pressure/temperature conditions\n- **Thermal coupling**: `isThermal=\"1\"` enables energy balance equation in the flow solver\n\nThe input follows GEOS best practices with a reusable base file and case-specific benchmark file, enabling parameter sweeps and variant studies."
+  }
+]

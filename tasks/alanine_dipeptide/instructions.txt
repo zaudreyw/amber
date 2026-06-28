@@ -1,0 +1,45 @@
+Set up a 3-stage Amber MD simulation for alanine dipeptide in explicit water.
+This reproduces Amber Tutorial B0 (Simple Simulation of Alanine Dipeptide).
+
+System preparation (tleap.in):
+- Build alanine dipeptide as the ACE-ALA-NME sequence (no PDB file needed)
+- Force field: ff19SB (source leaprc.protein.ff19SB)
+- Water model: OPC (source leaprc.water.opc)
+- Solvate with an octahedral box, 10 Angstrom buffer (solvateoct, OPCBOX)
+- Save topology and coordinate files as parm7 and rst7
+
+Simulation stages:
+
+1. Energy minimization (01_Min.in):
+   - 2000 total steps: first 1000 steepest descent, then conjugate gradient
+   - Non-bonded cutoff: 8.0 Angstrom
+   - No trajectory written (ntwx=0)
+   - Print every 100 steps (ntpr=100)
+
+2. NVT heating (02_Heat.in):
+   - 10000 steps, dt=0.002 ps (= 20 ps total)
+   - Heat from 0 K to 300 K using NMROPT temperature ramps:
+       steps 0-9000: 0 K → 300 K
+       steps 9001-10000: hold at 300 K
+   - Constant volume (ntb=1, ntp=0)
+   - SHAKE on all bonds involving hydrogen (ntc=2, ntf=2)
+   - Langevin thermostat (ntt=3), collision frequency gamma_ln=2.0
+   - Non-bonded cutoff: 8.0 Angstrom
+   - Random seed (ig=-1)
+   - Write trajectory every 100 steps (ntwx=100), print every 100 steps (ntpr=100)
+
+3. NPT production (03_Prod.in):
+   - 5,000,000 steps, dt=0.002 ps (= 10 ns total) at 300 K
+   - Read coordinates AND velocities from restart file (ntx=5, irest=1)
+   - Constant pressure (ntb=2, ntp=1) with Berendsen barostat (barostat=1)
+   - SHAKE on all bonds involving hydrogen (ntc=2, ntf=2)
+   - Langevin thermostat (ntt=3), collision frequency gamma_ln=2.0
+   - Non-bonded cutoff: 8.0 Angstrom
+   - Random seed (ig=-1)
+   - Write trajectory every 100 steps (ntwx=100), print every 100 steps (ntpr=100)
+
+Write exactly these four files:
+- tleap.in
+- 01_Min.in
+- 02_Heat.in
+- 03_Prod.in

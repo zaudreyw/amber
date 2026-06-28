@@ -1,0 +1,19 @@
+[project]
+name = "amber-md-eval"
+version = "0.1.0"
+description = "Amber MD agent evaluation harness"
+requires-python = ">=3.12"
+dependencies = [
+    "anthropic>=0.40.0",
+    "lxml>=5.0.0",
+    "openai>=2.0.0",
+    "python-dotenv>=1.0.0",
+]
+
+[tool.uv]
+package = false
+
+[dependency-groups]
+dev = [
+    "ipykernel>=7.2.0",
+]

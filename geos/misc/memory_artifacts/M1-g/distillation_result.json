@@ -1,0 +1,14 @@
+{
+  "variant": "M1-g",
+  "kind": "M1",
+  "grounded": true,
+  "budget_tokens": 1500,
+  "n_reports": 36,
+  "prompt_tokens": 4316,
+  "model": "google/gemini-3-flash-preview",
+  "final_artifact_tokens": 911,
+  "within_budget": true,
+  "retried_for_budget": false,
+  "artifact_path": "/home/matt/sci/repo3/misc/memory_artifacts/M1-g/artifact.md",
+  "hygiene_passed": true
+}

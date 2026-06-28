@@ -1,0 +1,35 @@
+{
+  "version": 3,
+  "parent": 2,
+  "timestamp": "2026-04-30T12:20:02.753937",
+  "round_mean_treesim": 0,
+  "round_n_tasks": 5,
+  "files_proposed": [
+    "PRIMER.md",
+    "memory/cheatsheet.md",
+    "skills/copy-dependencies.md",
+    "agents/dependency-copier.md"
+  ],
+  "written": [
+    {
+      "path": "PRIMER.md",
+      "bytes": 3122,
+      "stripped_xml_filenames": 5
+    },
+    {
+      "path": "memory/cheatsheet.md",
+      "bytes": 4507,
+      "stripped_xml_filenames": 6
+    },
+    {
+      "path": "skills/copy-dependencies.md",
+      "bytes": 1550,
+      "stripped_xml_filenames": 2
+    },
+    {
+      "path": "agents/dependency-copier.md",
+      "bytes": 1231,
+      "stripped_xml_filenames": 1
+    }
+  ]
+}

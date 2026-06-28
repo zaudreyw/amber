@@ -1,0 +1,62 @@
+Alanine dipeptide - NVT Heating (0 K to 300 K, 20 ps)
+ &cntrl
+  ! Run type: MD
+  imin=0,
+
+  ! Start from scratch (new coordinates, no velocities)
+  irest=0,
+  ntx=1,
+
+  ! Simulation length: 10000 steps * 0.002 ps = 20 ps
+  nstlim=10000,
+  dt=0.002,
+
+  ! SHAKE on all bonds involving hydrogen
+  ntc=2,
+  ntf=2,
+
+  ! Non-bonded cutoff (Angstrom)
+  cut=8.0,
+
+  ! Periodic boundary: constant volume (NVT)
+  ntb=1,
+  ntp=0,
+
+  ! Langevin thermostat
+  ntt=3,
+  gamma_ln=2.0,
+
+  ! Temperature controlled via NMROPT ramp below
+  tempi=0.0,
+  temp0=300.0,
+
+  ! NMROPT=1 enables the &wt temperature ramp blocks
+  nmropt=1,
+
+  ! Random seed (new seed each run)
+  ig=-1,
+
+  ! Output: print and write trajectory every 100 steps
+  ntpr=100,
+  ntwx=100,
+  ntwr=10000,
+ /
+ &wt
+  ! Ramp 1: linearly heat from 0 K to 300 K over steps 0-9000
+  type='TEMP0',
+  istep1=0,
+  istep2=9000,
+  value1=0.0,
+  value2=300.0,
+ /
+ &wt
+  ! Ramp 2: hold at 300 K from step 9001 to 10000
+  type='TEMP0',
+  istep1=9001,
+  istep2=10000,
+  value1=300.0,
+  value2=300.0,
+ /
+ &wt
+  type='END',
+ /

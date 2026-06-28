@@ -1,0 +1,101 @@
+{
+  "a_name": "C2_min_sr_no_rag_3s",
+  "b_name": "C4_min_rag_sr_s1",
+  "mean_a": 0.9133980392156863,
+  "mean_b": 0.8789941176470588,
+  "per_task": {
+    "AdvancedExampleCasedContactThermoElasticWellbore": {
+      "a": 0.8227,
+      "b": 0.8203,
+      "delta": -0.0023999999999999577
+    },
+    "AdvancedExampleDeviatedElasticWellbore": {
+      "a": 0.947,
+      "b": 0.9125,
+      "delta": -0.034499999999999975
+    },
+    "AdvancedExampleDruckerPrager": {
+      "a": 0.9746,
+      "b": 0.9594,
+      "delta": -0.015199999999999991
+    },
+    "AdvancedExampleExtendedDruckerPrager": {
+      "a": 0.9826666666666667,
+      "b": 0.9335,
+      "delta": -0.04916666666666669
+    },
+    "AdvancedExampleModifiedCamClay": {
+      "a": 0.9355,
+      "b": 0.8995,
+      "delta": -0.03600000000000003
+    },
+    "AdvancedExampleViscoDruckerPrager": {
+      "a": 0.9859,
+      "b": 0.9741,
+      "delta": -0.011800000000000033
+    },
+    "ExampleDPWellbore": {
+      "a": 0.9978333333333333,
+      "b": 0.9516,
+      "delta": -0.04623333333333335
+    },
+    "ExampleEDPWellbore": {
+      "a": 0.9966666666666667,
+      "b": 0.9541,
+      "delta": -0.04256666666666675
+    },
+    "ExampleIsothermalLeakyWell": {
+      "a": 0.7719333333333334,
+      "b": 0.8557,
+      "delta": 0.08376666666666666
+    },
+    "ExampleMandel": {
+      "a": 0.9429666666666666,
+      "b": 0.8325,
+      "delta": -0.1104666666666666
+    },
+    "ExampleThermalLeakyWell": {
+      "a": 0.8661333333333333,
+      "b": 0.8602,
+      "delta": -0.005933333333333346
+    },
+    "ExampleThermoporoelasticConsolidation": {
+      "a": 0.8711,
+      "b": 0.7074,
+      "delta": -0.16369999999999996
+    },
+    "TutorialPoroelasticity": {
+      "a": 0.7921333333333334,
+      "b": 0.7393,
+      "delta": -0.0528333333333334
+    },
+    "TutorialSneddon": {
+      "a": 0.8668666666666667,
+      "b": 0.8886,
+      "delta": 0.02173333333333327
+    },
+    "buckleyLeverettProblem": {
+      "a": 0.8679333333333333,
+      "b": 0.7099,
+      "delta": -0.15803333333333336
+    },
+    "kgdExperimentValidation": {
+      "a": 0.9107,
+      "b": 0.9491,
+      "delta": 0.0384000000000001
+    },
+    "pknViscosityDominated": {
+      "a": 0.9951333333333333,
+      "b": 0.9952,
+      "delta": 6.666666666665932e-05
+    }
+  },
+  "big_swing": [
+    "ExampleThermoporoelasticConsolidation",
+    "buckleyLeverettProblem",
+    "ExampleMandel"
+  ],
+  "patterns": [
+    "**RAG replaces filesystem search**: in 3/3 big-swing tasks, B used RAG instead of Glob/Grep (smoking-gun mechanism for plugin underperformance)."
+  ]
+}

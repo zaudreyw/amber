@@ -1,0 +1,8 @@
+{
+  "artifact": "misc/memory_artifacts/M-placebo/artifact.md",
+  "artifact_size_chars": 5004,
+  "n_strings_checked": 1,
+  "regex_hits": [],
+  "blocklist_hits": [],
+  "passed": true
+}

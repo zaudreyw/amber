@@ -1,0 +1,46 @@
+[  1/17] AdvancedExampleCasedContactThermoElasticWellbore  9.57/10
+[  2/17] AdvancedExampleDeviatedElasticWellbore  9.68/10
+[  3/17] AdvancedExampleDruckerPrager  9.92/10
+[  4/17] AdvancedExampleExtendedDruckerPrager  9.61/10
+[  5/17] AdvancedExampleModifiedCamClay  10.00/10
+[  6/17] AdvancedExampleViscoDruckerPrager  10.00/10
+[  7/17] ExampleDPWellbore  10.00/10
+[  8/17] ExampleEDPWellbore  3.96/10
+[  9/17] ExampleIsothermalLeakyWell  9.93/10
+[ 10/17] ExampleMandel  9.52/10
+[ 11/17] ExampleThermalLeakyWell  9.82/10
+[ 12/17] ExampleThermoporoelasticConsolidation  9.32/10
+[ 13/17] TutorialPoroelasticity  3.06/10
+[ 14/17] TutorialSneddon  2.57/10
+[ 15/17] buckleyLeverettProblem  9.84/10
+[ 16/17] kgdExperimentValidation  9.23/10
+[ 17/17] pknViscosityDominated  10.00/10
+
+============================================================
+  Batch evaluation: 17/17 succeeded
+============================================================
+  Scored-only     overall_score mean: 8.590  (median 9.680, range 2.57-10.00)
+  Failures-as-0   overall_score mean: 8.590
+  Scored-only     treesim       mean: 0.859
+  Failures-as-0   treesim       mean: 0.859
+  Pass ≥7: 14/17 (of scored)
+
+  10.00/10  AdvancedExampleModifiedCamClay  treesim=1.000
+  10.00/10  AdvancedExampleViscoDruckerPrager  treesim=1.000
+  10.00/10  ExampleDPWellbore  treesim=1.000
+  10.00/10  pknViscosityDominated  treesim=1.000
+   9.93/10  ExampleIsothermalLeakyWell  treesim=0.993
+   9.92/10  AdvancedExampleDruckerPrager  treesim=0.992
+   9.84/10  buckleyLeverettProblem  treesim=0.984
+   9.82/10  ExampleThermalLeakyWell  treesim=0.982
+   9.68/10  AdvancedExampleDeviatedElasticWellbore  treesim=0.968
+   9.61/10  AdvancedExampleExtendedDruckerPrager  treesim=0.961
+   9.57/10  AdvancedExampleCasedContactThermoElasticWellbore  treesim=0.957
+   9.52/10  ExampleMandel  treesim=0.952
+   9.32/10  ExampleThermoporoelasticConsolidation  treesim=0.932
+   9.23/10  kgdExperimentValidation  treesim=0.923
+   3.96/10  ExampleEDPWellbore  treesim=0.396
+   3.06/10  TutorialPoroelasticity  treesim=0.306
+   2.57/10  TutorialSneddon  treesim=0.257
+
+Wrote misc/memory_artifacts/scores/mem_m1u_s1_summary.json

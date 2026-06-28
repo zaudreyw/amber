@@ -1,0 +1,45 @@
+[93mWarning: --ground-truth-dir '/home/matt/sci/repo3/data/eval/experiments_gt' does not exist; GT XML blocking disabled.[0m
+
+[1m[95m======================================================================[0m
+[1m[95m  GEOS Eval Harness[0m
+[1m[95m======================================================================[0m
+  Run name       : mem_m4g_s2
+  Experiments dir: /data/shared/geophysics_agent_data/data/eval/experiments_test36_template
+  Tasks          : 17
+  Agents         : ['claude_code_repo3_plugin_m4g']
+  Combos         : 17
+  Timeout        : 1200s per task
+  Workers        : 12
+  Pseudo retries : 1
+  Dry run        : False
+  GT XML blocking: disabled
+  Results root   : /home/matt/sci/repo3/data/eval
+  Temp GEOS dir  : /data/matt/geos_eval_tmp
+  GEOS lib dir   : /data/shared/geophysics_agent_data/data/GEOS
+  GEOS primer    : /home/brianliu/geophys-embodied-agent-framework/modules/profile/GEOS_PRIMER.md
+  Plugin dir     : /home/matt/sci/repo3/plugin
+  Vector DB dir  : /data/shared/geophysics_agent_data/data/vector_db
+  Claude model   : minimax/minimax-m2.7
+  Results (claude_code_repo3_plugin_m4g): /home/matt/sci/repo3/data/eval/claude_code_repo3_plugin_m4g/mem_m4g_s2
+  Started        : 2026-04-22T06:51:17.964269
+[1m[95m======================================================================[0m
+
+[  1/17] [92msuccess       [0m  claude_code_repo3_plugin_m4g  AdvancedExampleDruckerPrager
+[  2/17] [92msuccess       [0m  claude_code_repo3_plugin_m4g  ExampleDPWellbore
+[  3/17] [92msuccess       [0m  claude_code_repo3_plugin_m4g  AdvancedExampleExtendedDruckerPrager
+[  4/17] [92msuccess       [0m  claude_code_repo3_plugin_m4g  AdvancedExampleModifiedCamClay
+[  5/17] [92msuccess       [0m  claude_code_repo3_plugin_m4g  ExampleMandel
+[  6/17] [92msuccess       [0m  claude_code_repo3_plugin_m4g  AdvancedExampleViscoDruckerPrager
+[  7/17] [92msuccess       [0m  claude_code_repo3_plugin_m4g  ExampleEDPWellbore
+[  8/17] [92msuccess       [0m  claude_code_repo3_plugin_m4g  AdvancedExampleDeviatedElasticWellbore
+[  9/17] [92msuccess       [0m  claude_code_repo3_plugin_m4g  AdvancedExampleCasedContactThermoElasticWellbore
+[ 10/17] [92msuccess       [0m  claude_code_repo3_plugin_m4g  kgdExperimentValidation
+[ 11/17] [92msuccess       [0m  claude_code_repo3_plugin_m4g  TutorialPoroelasticity
+[ 12/17] [92msuccess       [0m  claude_code_repo3_plugin_m4g  ExampleIsothermalLeakyWell
+[ 13/17] [92msuccess       [0m  claude_code_repo3_plugin_m4g  buckleyLeverettProblem
+[ 14/17] [92msuccess       [0m  claude_code_repo3_plugin_m4g  ExampleThermalLeakyWell
+[ 15/17] [92msuccess       [0m  claude_code_repo3_plugin_m4g  TutorialSneddon
+[ 16/17] [92msuccess       [0m  claude_code_repo3_plugin_m4g  pknViscosityDominated
+[ 17/17] [92msuccess       [0m  claude_code_repo3_plugin_m4g  ExampleThermoporoelasticConsolidation
+
+[1mDone[0m: [92m17 succeeded[0m, [91m0 failed[0m / 17 total

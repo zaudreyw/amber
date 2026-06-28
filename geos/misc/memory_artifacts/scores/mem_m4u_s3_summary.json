@@ -1,0 +1,3419 @@
+{
+  "timestamp": "2026-04-22T06:38:31.816324",
+  "experiments_dir": "data/eval/claude_code_repo3_plugin_m4u/mem_m4u_s3",
+  "ground_truth_dir": "/data/shared/geophysics_agent_data/data/eval/experiments_gt",
+  "metric": "judge_geos",
+  "summary": {
+    "n_total": 17,
+    "n_scored": 4,
+    "n_failed": 13,
+    "failed_names": [
+      "AdvancedExampleCasedContactThermoElasticWellbore",
+      "AdvancedExampleDeviatedElasticWellbore",
+      "AdvancedExampleDruckerPrager",
+      "AdvancedExampleExtendedDruckerPrager",
+      "AdvancedExampleModifiedCamClay",
+      "ExampleDPWellbore",
+      "ExampleEDPWellbore",
+      "ExampleIsothermalLeakyWell",
+      "ExampleMandel",
+      "ExampleThermalLeakyWell",
+      "TutorialSneddon",
+      "kgdExperimentValidation",
+      "pknViscosityDominated"
+    ],
+    "overall_score": {
+      "scored_mean": 6.512499999999999,
+      "scored_median": 6.46,
+      "scored_min": 3.52,
+      "scored_max": 9.61,
+      "scored_n": 4,
+      "with_failures_as_zero_mean": 1.5323529411764705,
+      "total_n": 17
+    },
+    "treesim": {
+      "scored_mean": 0.651375,
+      "scored_median": 0.64625,
+      "scored_min": 0.3519,
+      "scored_max": 0.9611,
+      "scored_n": 4,
+      "with_failures_as_zero_mean": 0.15326470588235294,
+      "total_n": 17
+    }
+  },
+  "results": [
+    {
+      "experiment": "AdvancedExampleCasedContactThermoElasticWellbore",
+      "status": "error",
+      "error": "FileNotFoundError: No XML files found in data/eval/claude_code_repo3_plugin_m4u/mem_m4u_s3/AdvancedExampleCasedContactThermoElasticWellbore/inputs"
+    },
+    {
+      "experiment": "AdvancedExampleDeviatedElasticWellbore",
+      "status": "error",
+      "error": "FileNotFoundError: No XML files found in data/eval/claude_code_repo3_plugin_m4u/mem_m4u_s3/AdvancedExampleDeviatedElasticWellbore/inputs"
+    },
+    {
+      "experiment": "AdvancedExampleDruckerPrager",
+      "status": "error",
+      "error": "FileNotFoundError: No XML files found in data/eval/claude_code_repo3_plugin_m4u/mem_m4u_s3/AdvancedExampleDruckerPrager/inputs"
+    },
+    {
+      "experiment": "AdvancedExampleExtendedDruckerPrager",
+      "status": "error",
+      "error": "FileNotFoundError: No XML files found in data/eval/claude_code_repo3_plugin_m4u/mem_m4u_s3/AdvancedExampleExtendedDruckerPrager/inputs"
+    },
+    {
+      "experiment": "AdvancedExampleModifiedCamClay",
+      "status": "error",
+      "error": "FileNotFoundError: No XML files found in data/eval/claude_code_repo3_plugin_m4u/mem_m4u_s3/AdvancedExampleModifiedCamClay/inputs"
+    },
+    {
+      "experiment": "AdvancedExampleViscoDruckerPrager",
+      "overall_score": 9.61,
+      "overall_01": 0.9611,
+      "treesim": 0.9611,
+      "treesim_section_scores": {
+        "Constitutive": 1.0,
+        "ElementRegions": 0.7667,
+        "Events": 1.0,
+        "Functions": 1.0,
+        "Mesh": 1.0,
+        "Tasks": 1.0
+      },
+      "treesim_detail": {
+        "tag": "Problem",
+        "name": "",
+        "score": 0.9611,
+        "attr_score": 1.0,
+        "n_gt_children": 6,
+        "n_matched": 6,
+        "n_extra": 0,
+        "children_score": 0.9611,
+        "children": [
+          {
+            "tag": "Constitutive",
+            "name": "",
+            "score": 1.0,
+            "attr_score": 1.0,
+            "n_gt_children": 6,
+            "n_matched": 6,
+            "n_extra": 0,
+            "children_score": 1.0,
+            "children": [
+              {
+                "tag": "DruckerPrager",
+                "name": "DruckerPrager",
+                "score": 1.0,
+                "attr_score": 1.0,
+                "n_gt_children": 0,
+                "n_matched": 0,
+                "n_extra": 0
+              },
+              {
+                "tag": "ExtendedDruckerPrager",
+                "name": "ExtendedDruckerPrager",
+                "score": 1.0,
+                "attr_score": 1.0,
+                "n_gt_children": 0,
+                "n_matched": 0,
+                "n_extra": 0
+              },
+              {
+                "tag": "ModifiedCamClay",
+                "name": "ModifiedCamClay",
+                "score": 1.0,
+                "attr_score": 1.0,
+                "n_gt_children": 0,
+                "n_matched": 0,
+                "n_extra": 0
+              },
+              {
+                "tag": "ViscoDruckerPrager",
+                "name": "ViscoDruckerPrager",
+                "score": 1.0,
+                "attr_score": 1.0,
+                "n_gt_children": 0,
+                "n_matched": 0,
+                "n_extra": 0
+              },
+              {
+                "tag": "ViscoExtendedDruckerPrager",
+                "name": "ViscoExtendedDruckerPrager",
+                "score": 1.0,
+                "attr_score": 1.0,
+                "n_gt_children": 0,
+                "n_matched": 0,
+                "n_extra": 0
+              },
+              {
+                "tag": "ViscoModifiedCamClay",
+                "name": "ViscoModifiedCamClay",
+                "score": 1.0,
+                "attr_score": 1.0,
+                "n_gt_children": 0,
+                "n_matched": 0,
+                "n_extra": 0
+              }
+            ]
+          },
+          {
+            "tag": "ElementRegions",
+            "name": "",
+            "score": 0.7667,
+            "attr_score": 1.0,
+            "n_gt_children": 1,
+            "n_matched": 1,
+            "n_extra": 0,
+            "children_score": 0.6667,
+            "children": [
+              {
+                "tag": "CellElementRegion",
+                "name": "dummy",
+                "score": 0.6667,
+                "attr_score": 0.6667,
+                "n_gt_children": 0,
+                "n_matched": 0,
+                "n_extra": 0
+              }
+            ]
+          },
+          {
+            "tag": "Events",
+            "name": "",
+            "score": 1.0,
+            "attr_score": 1.0,
+            "n_gt_children": 1,
+            "n_matched": 1,
+            "n_extra": 0,
+            "children_score": 1.0,
+            "children": [
+              {
+                "tag": "SoloEvent",
+                "name": "triaxialDriver",
+                "score": 1.0,
+                "attr_score": 1.0,
+                "n_gt_children": 0,
+                "n_matched": 0,
+                "n_extra": 0
+              }
+            ]
+          },
+          {
+            "tag": "Functions",
+            "name": "",
+            "score": 1.0,
+            "attr_score": 1.0,
+            "n_gt_children": 3,
+            "n_matched": 3,
+            "n_extra": 0,
+            "children_score": 1.0,
+            "children": [
+              {
+                "tag": "TableFunction",
+                "name": "stressFunction",
+                "score": 1.0,
+                "attr_score": 1.0,
+                "n_gt_children": 0,
+                "n_matched": 0,
+                "n_extra": 0
+              },
+              {
+                "tag": "TableFunction",
+                "name": "strainFunction",
+                "score": 1.0,
+                "attr_score": 1.0,
+                "n_gt_children": 0,
+                "n_matched": 0,
+                "n_extra": 0
+              },
+              {
+                "tag": "TableFunction",
+                "name": "zeroStrain",
+                "score": 1.0,
+                "attr_score": 1.0,
+                "n_gt_children": 0,
+                "n_matched": 0,
+                "n_extra": 0
+              }
+            ]
+          },
+          {
+            "tag": "Mesh",
+            "name": "",
+            "score": 1.0,
+            "attr_score": 1.0,
+            "n_gt_children": 1,
+            "n_matched": 1,
+            "n_extra": 0,
+            "children_score": 1.0,
+            "children": [
+              {
+                "tag": "InternalMesh",
+                "name": "mesh1",
+                "score": 1.0,
+                "attr_score": 1.0,
+                "n_gt_children": 0,
+                "n_matched": 0,
+                "n_extra": 0
+              }
+            ]
+          },
+          {
+            "tag": "Tasks",
+            "name": "",
+            "score": 1.0,
+            "attr_score": 1.0,
+            "n_gt_children": 1,
+            "n_matched": 1,
+            "n_extra": 0,
+            "children_score": 1.0,
+            "children": [
+              {
+                "tag": "TriaxialDriver",
+                "name": "triaxialDriver",
+                "score": 1.0,
+                "attr_score": 1.0,
+                "n_gt_children": 0,
+                "n_matched": 0,
+                "n_extra": 0
+              }
+            ]
+          }
+        ]
+      },
+      "dimension_scores": {
+        "structural_completeness": 1.0,
+        "element_type_match": 1.0,
+        "attribute_accuracy": 0.9889,
+        "tag_coverage": 1.0
+      },
+      "ordering_score": 1.0,
+      "weights": {
+        "structural_completeness": 0.15,
+        "element_type_match": 0.35,
+        "attribute_accuracy": 0.35,
+        "tag_coverage": 0.15
+      },
+      "details": {
+        "structural_completeness": {
+          "required_present": [
+            "Constitutive",
+            "ElementRegions",
+            "Events",
+            "Mesh"
+          ],
+          "required_missing": []
+        },
+        "element_type_match": {
+          "gt_only": [],
+          "gen_only": [],
+          "shared": [
+            "CellElementRegion",
+            "Constitutive",
+            "DruckerPrager",
+            "ElementRegions",
+            "Events",
+            "ExtendedDruckerPrager",
+            "Functions",
+            "InternalMesh",
+            "Mesh",
+            "ModifiedCamClay",
+            "SoloEvent",
+            "TableFunction",
+            "Tasks",
+            "TriaxialDriver",
+            "ViscoDruckerPrager",
+            "ViscoExtendedDruckerPrager",
+            "ViscoModifiedCamClay"
+          ]
+        },
+        "attribute_accuracy": {
+          "matched_attrs": 89,
+          "total_attrs": 90,
+          "elements_compared": 19,
+          "elements_unmatched_gt": 0,
+          "elements_unmatched_gen": 0,
+          "top_mismatches": [
+            {
+              "gt_tag": "CellElementRegion",
+              "gt_name": "dummy",
+              "gen_name": "dummy",
+              "similarity": 0.7,
+              "attrs_matched": 2,
+              "attrs_total": 3,
+              "mismatches": [
+                "cellBlocks: GT='{ * }' GEN='{ cellBlock01 }'"
+              ]
+            }
+          ]
+        },
+        "tag_coverage": {
+          "covered": [
+            "CellElementRegion",
+            "Constitutive",
+            "DruckerPrager",
+            "ElementRegions",
+            "Events",
+            "ExtendedDruckerPrager",
+            "Functions",
+            "InternalMesh",
+            "Mesh",
+            "ModifiedCamClay",
+            "SoloEvent",
+            "TableFunction",
+            "Tasks",
+            "TriaxialDriver",
+            "ViscoDruckerPrager",
+            "ViscoExtendedDruckerPrager",
+            "ViscoModifiedCamClay"
+          ],
+          "missing": []
+        },
+        "ordering": {
+          "note": "Too few PeriodicEvents to check ordering"
+        }
+      },
+      "match_summary": {
+        "paired_elements": 19,
+        "gt_unmatched": 0,
+        "gen_unmatched": 0
+      },
+      "gt_sections": [
+        "Constitutive",
+        "ElementRegions",
+        "Events",
+        "Functions",
+        "Mesh",
+        "Tasks"
+      ],
+      "gen_sections": [
+        "Constitutive",
+        "ElementRegions",
+        "Events",
+        "Functions",
+        "Mesh",
+        "Tasks"
+      ],
+      "gt_element_types": [
+        "CellElementRegion",
+        "Constitutive",
+        "DruckerPrager",
+        "ElementRegions",
+        "Events",
+        "ExtendedDruckerPrager",
+        "Functions",
+        "InternalMesh",
+        "Mesh",
+        "ModifiedCamClay",
+        "SoloEvent",
+        "TableFunction",
+        "Tasks",
+        "TriaxialDriver",
+        "ViscoDruckerPrager",
+        "ViscoExtendedDruckerPrager",
+        "ViscoModifiedCamClay"
+      ],
+      "gen_element_types": [
+        "CellElementRegion",
+        "Constitutive",
+        "DruckerPrager",
+        "ElementRegions",
+        "Events",
+        "ExtendedDruckerPrager",
+        "Functions",
+        "InternalMesh",
+        "Mesh",
+        "ModifiedCamClay",
+        "SoloEvent",
+        "TableFunction",
+        "Tasks",
+        "TriaxialDriver",
+        "ViscoDruckerPrager",
+        "ViscoExtendedDruckerPrager",
+        "ViscoModifiedCamClay"
+      ],
+      "mode": "directory",
+      "gt_dir": "/data/shared/geophysics_agent_data/data/eval/experiments_gt/AdvancedExampleViscoDruckerPrager/inputs",
+      "gen_dir": "data/eval/claude_code_repo3_plugin_m4u/mem_m4u_s3/AdvancedExampleViscoDruckerPrager/inputs",
+      "status": "success"
+    },
+    {
+      "experiment": "ExampleDPWellbore",
+      "status": "error",
+      "error": "FileNotFoundError: No XML files found in data/eval/claude_code_repo3_plugin_m4u/mem_m4u_s3/ExampleDPWellbore/inputs"
+    },
+    {
+      "experiment": "ExampleEDPWellbore",
+      "status": "error",
+      "error": "FileNotFoundError: No XML files found in data/eval/claude_code_repo3_plugin_m4u/mem_m4u_s3/ExampleEDPWellbore/inputs"
+    },
+    {
+      "experiment": "ExampleIsothermalLeakyWell",
+      "status": "error",
+      "error": "FileNotFoundError: No XML files found in data/eval/claude_code_repo3_plugin_m4u/mem_m4u_s3/ExampleIsothermalLeakyWell/inputs"
+    },
+    {
+      "experiment": "ExampleMandel",
+      "status": "error",
+      "error": "FileNotFoundError: No XML files found in data/eval/claude_code_repo3_plugin_m4u/mem_m4u_s3/ExampleMandel/inputs"
+    },
+    {
+      "experiment": "ExampleThermalLeakyWell",
+      "status": "error",
+      "error": "FileNotFoundError: No XML files found in data/eval/claude_code_repo3_plugin_m4u/mem_m4u_s3/ExampleThermalLeakyWell/inputs"
+    },
+    {
+      "experiment": "ExampleThermoporoelasticConsolidation",
+      "overall_score": 9.28,
+      "overall_01": 0.9283,
+      "treesim": 0.9283,
+      "treesim_section_scores": {
+        "Constitutive": 0.965,
+        "ElementRegions": 1.0,
+        "FieldSpecifications": 1.0,
+        "Functions": 1.0,
+        "NumericalMethods": 1.0,
+        "Outputs": 1.0,
+        "Solvers": 1.0,
+        "Tasks": 1.0
+      },
+      "treesim_detail": {
+        "tag": "Problem",
+        "name": "",
+        "score": 0.9283,
+        "attr_score": 1.0,
+        "n_gt_children": 9,
+        "n_matched": 9,
+        "n_extra": 19,
+        "children_score": 0.9961,
+        "children": [
+          {
+            "tag": "Constitutive",
+            "name": "",
+            "score": 0.965,
+            "attr_score": 1.0,
+            "n_gt_children": 7,
+            "n_matched": 7,
+            "n_extra": 0,
+            "children_score": 0.95,
+            "children": [
+              {
+                "tag": "BiotPorosity",
+                "name": "rockPorosity",
+                "score": 1.0,
+                "attr_score": 1.0,
+                "n_gt_children": 0,
+                "n_matched": 0,
+                "n_extra": 0
+              },
+              {
+                "tag": "ConstantPermeability",
+                "name": "rockPerm",
+                "score": 1.0,
+                "attr_score": 1.0,
+                "n_gt_children": 0,
+                "n_matched": 0,
+                "n_extra": 0
+              },
+              {
+                "tag": "ElasticIsotropic",
+                "name": "rockSolid",
+                "score": 1.0,
+                "attr_score": 1.0,
+                "n_gt_children": 0,
+                "n_matched": 0,
+                "n_extra": 0
+              },
+              {
+                "tag": "PorousElasticIsotropic",
+                "name": "rock",
+                "score": 1.0,
+                "attr_score": 1.0,
+                "n_gt_children": 0,
+                "n_matched": 0,
+                "n_extra": 0
+              },
+              {
+                "tag": "SinglePhaseThermalConductivity",
+                "name": "thermalCond",
+                "score": 1.0,
+                "attr_score": 1.0,
+                "n_gt_children": 0,
+                "n_matched": 0,
+                "n_extra": 0
+              },
+              {
+                "tag": "SolidInternalEnergy",
+                "name": "rockInternalEnergy",
+                "score": 0.75,
+                "attr_score": 0.75,
+                "n_gt_children": 0,
+                "n_matched": 0,
+                "n_extra": 0
+              },
+              {
+                "tag": "ThermalCompressibleSinglePhaseFluid",
+                "name": "water",
+                "score": 0.9,
+                "attr_score": 0.9,
+                "n_gt_children": 0,
+                "n_matched": 0,
+                "n_extra": 0
+              }
+            ]
+          },
+          {
+            "tag": "ElementRegions",
+            "name": "",
+            "score": 1.0,
+            "attr_score": 1.0,
+            "n_gt_children": 1,
+            "n_matched": 1,
+            "n_extra": 0,
+            "children_score": 1.0,
+            "children": [
+              {
+                "tag": "CellElementRegion",
+                "name": "Domain",
+                "score": 1.0,
+                "attr_score": 1.0,
+                "n_gt_children": 0,
+                "n_matched": 0,
+                "n_extra": 0
+              }
+            ]
+          },
+          {
+            "tag": "FieldSpecifications",
+            "name": "",
+            "score": 1.0,
+            "attr_score": 1.0,
+            "n_gt_children": 11,
+            "n_matched": 11,
+            "n_extra": 0,
+            "children_score": 1.0,
+            "children": [
+              {
+                "tag": "FieldSpecification",
+                "name": "boundaryTemperature",
+                "score": 1.0,
+                "attr_score": 1.0,
+                "n_gt_children": 0,
+                "n_matched": 0,
+                "n_extra": 0
+              },
+              {
+                "tag": "FieldSpecification",
+                "name": "boundaryPressure",
+                "score": 1.0,
+                "attr_score": 1.0,
+                "n_gt_children": 0,
+                "n_matched": 0,
+                "n_extra": 0
+              },
+              {
+                "tag": "FieldSpecification",
+                "name": "zconstraint",
+                "score": 1.0,
+                "attr_score": 1.0,
+                "n_gt_children": 0,
+                "n_matched": 0,
+                "n_extra": 0
+              },
+              {
+                "tag": "FieldSpecification",
+                "name": "yconstraint",
+                "score": 1.0,
+                "attr_score": 1.0,
+                "n_gt_children": 0,
+                "n_matched": 0,
+                "n_extra": 0
+              },
+              {
+                "tag": "FieldSpecification",
+                "name": "xconstraint",
+                "score": 1.0,
+                "attr_score": 1.0,
+                "n_gt_children": 0,
+                "n_matched": 0,
+                "n_extra": 0
+              },
+              {
+                "tag": "FieldSpecification",
+                "name": "initialSigma_z",
+                "score": 1.0,
+                "attr_score": 1.0,
+                "n_gt_children": 0,
+                "n_matched": 0,
+                "n_extra": 0
+              },
+              {
+                "tag": "FieldSpecification",
+                "name": "initialSigma_y",
+                "score": 1.0,
+                "attr_score": 1.0,
+                "n_gt_children": 0,
+                "n_matched": 0,
+                "n_extra": 0
+              },
+              {
+                "tag": "FieldSpecification",
+                "name": "initialSigma_x",
+                "score": 1.0,
+                "attr_score": 1.0,
+                "n_gt_children": 0,
+                "n_matched": 0,
+                "n_extra": 0
+              },
+              {
+                "tag": "FieldSpecification",
+                "name": "initialTemperature",
+                "score": 1.0,
+                "attr_score": 1.0,
+                "n_gt_children": 0,
+                "n_matched": 0,
+                "n_extra": 0
+              },
+              {
+                "tag": "FieldSpecification",
+                "name": "initialPressure",
+                "score": 1.0,
+                "attr_score": 1.0,
+                "n_gt_children": 0,
+                "n_matched": 0,
+                "n_extra": 0
+              },
+              {
+                "tag": "Traction",
+                "name": "traction",
+                "score": 1.0,
+                "attr_score": 1.0,
+                "n_gt_children": 0,
+                "n_matched": 0,
+                "n_extra": 0
+              }
+            ]
+          },
+          {
+            "tag": "Functions",
+            "name": "",
+            "score": 1.0,
+            "attr_score": 1.0,
+            "n_gt_children": 1,
+            "n_matched": 1,
+            "n_extra": 0,
+            "children_score": 1.0,
+            "children": [
+              {
+                "tag": "TableFunction",
+                "name": "timeFunction",
+                "score": 1.0,
+                "attr_score": 1.0,
+                "n_gt_children": 0,
+                "n_matched": 0,
+                "n_extra": 0
+              }
+            ]
+          },
+          {
+            "tag": "NumericalMethods",
+            "name": "",
+            "score": 1.0,
+            "attr_score": 1.0,
+            "n_gt_children": 2,
+            "n_matched": 2,
+            "n_extra": 0,
+            "children_score": 1.0,
+            "children": [
+              {
+                "tag": "FiniteElements",
+                "name": "",
+                "score": 1.0,
+                "attr_score": 1.0,
+                "n_gt_children": 1,
+                "n_matched": 1,
+                "n_extra": 0,
+                "children_score": 1.0,
+                "children": [
+                  {
+                    "tag": "FiniteElementSpace",
+                    "name": "FE1",
+                    "score": 1.0,
+                    "attr_score": 1.0,
+                    "n_gt_children": 0,
+                    "n_matched": 0,
+                    "n_extra": 0
+                  }
+                ]
+              },
+              {
+                "tag": "FiniteVolume",
+                "name": "",
+                "score": 1.0,
+                "attr_score": 1.0,
+                "n_gt_children": 1,
+                "n_matched": 1,
+                "n_extra": 0,
+                "children_score": 1.0,
+                "children": [
+                  {
+                    "tag": "TwoPointFluxApproximation",
+                    "name": "tpfaFlow",
+                    "score": 1.0,
+                    "attr_score": 1.0,
+                    "n_gt_children": 0,
+                    "n_matched": 0,
+                    "n_extra": 0
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "tag": "Outputs",
+            "name": "",
+            "score": 1.0,
+            "attr_score": 1.0,
+            "n_gt_children": 5,
+            "n_matched": 5,
+            "n_extra": 0,
+            "children_score": 1.0,
+            "children": [
+              {
+                "tag": "Restart",
+                "name": "restartOutput",
+                "score": 1.0,
+                "attr_score": 1.0,
+                "n_gt_children": 0,
+                "n_matched": 0,
+                "n_extra": 0
+              },
+              {
+                "tag": "TimeHistory",
+                "name": "displacementHistoryOutput",
+                "score": 1.0,
+                "attr_score": 1.0,
+                "n_gt_children": 0,
+                "n_matched": 0,
+                "n_extra": 0
+              },
+              {
+                "tag": "TimeHistory",
+                "name": "temperatureHistoryOutput",
+                "score": 1.0,
+                "attr_score": 1.0,
+                "n_gt_children": 0,
+                "n_matched": 0,
+                "n_extra": 0
+              },
+              {
+                "tag": "TimeHistory",
+                "name": "pressureHistoryOutput",
+                "score": 1.0,
+                "attr_score": 1.0,
+                "n_gt_children": 0,
+                "n_matched": 0,
+                "n_extra": 0
+              },
+              {
+                "tag": "VTK",
+                "name": "thermoPoroVTKOutput",
+                "score": 1.0,
+                "attr_score": 1.0,
+                "n_gt_children": 0,
+                "n_matched": 0,
+                "n_extra": 0
+              }
+            ]
+          },
+          {
+            "tag": "Solvers",
+            "name": "",
+            "score": 1.0,
+            "attr_score": 1.0,
+            "n_gt_children": 3,
+            "n_matched": 3,
+            "n_extra": 0,
+            "children_score": 1.0,
+            "children": [
+              {
+                "tag": "SinglePhaseFVM",
+                "name": "flowSolver",
+                "score": 1.0,
+                "attr_score": 1.0,
+                "n_gt_children": 2,
+                "n_matched": 2,
+                "n_extra": 0,
+                "children_score": 1.0,
+                "children": [
+                  {
+                    "tag": "LinearSolverParameters",
+                    "name": "",
+                    "score": 1.0,
+                    "attr_score": 1.0,
+                    "n_gt_children": 0,
+                    "n_matched": 0,
+                    "n_extra": 0
+                  },
+                  {
+                    "tag": "NonlinearSolverParameters",
+                    "name": "",
+                    "score": 1.0,
+                    "attr_score": 1.0,
+                    "n_gt_children": 0,
+                    "n_matched": 0,
+                    "n_extra": 0
+                  }
+                ]
+              },
+              {
+                "tag": "SinglePhasePoromechanics",
+                "name": "thermoPoroSolver",
+                "score": 1.0,
+                "attr_score": 1.0,
+                "n_gt_children": 2,
+                "n_matched": 2,
+                "n_extra": 0,
+                "children_score": 1.0,
+                "children": [
+                  {
+                    "tag": "LinearSolverParameters",
+                    "name": "",
+                    "score": 1.0,
+                    "attr_score": 1.0,
+                    "n_gt_children": 0,
+                    "n_matched": 0,
+                    "n_extra": 0
+                  },
+                  {
+                    "tag": "NonlinearSolverParameters",
+                    "name": "",
+                    "score": 1.0,
+                    "attr_score": 1.0,
+                    "n_gt_children": 0,
+                    "n_matched": 0,
+                    "n_extra": 0
+                  }
+                ]
+              },
+              {
+                "tag": "SolidMechanicsLagrangianFEM",
+                "name": "solidMechSolver",
+                "score": 1.0,
+                "attr_score": 1.0,
+                "n_gt_children": 0,
+                "n_matched": 0,
+                "n_extra": 0
+              }
+            ]
+          },
+          {
+            "tag": "Solvers",
+            "name": "",
+            "score": 1.0,
+            "attr_score": 1.0,
+            "n_gt_children": 3,
+            "n_matched": 3,
+            "n_extra": 0,
+            "children_score": 1.0,
+            "children": [
+              {
+                "tag": "SinglePhaseFVM",
+                "name": "flowSolver",
+                "score": 1.0,
+                "attr_score": 1.0,
+                "n_gt_children": 2,
+                "n_matched": 2,
+                "n_extra": 0,
+                "children_score": 1.0,
+                "children": [
+                  {
+                    "tag": "LinearSolverParameters",
+                    "name": "",
+                    "score": 1.0,
+                    "attr_score": 1.0,
+                    "n_gt_children": 0,
+                    "n_matched": 0,
+                    "n_extra": 0
+                  },
+                  {
+                    "tag": "NonlinearSolverParameters",
+                    "name": "",
+                    "score": 1.0,
+                    "attr_score": 1.0,
+                    "n_gt_children": 0,
+                    "n_matched": 0,
+                    "n_extra": 0
+                  }
+                ]
+              },
+              {
+                "tag": "SinglePhasePoromechanics",
+                "name": "thermoPoroSolver",
+                "score": 1.0,
+                "attr_score": 1.0,
+                "n_gt_children": 2,
+                "n_matched": 2,
+                "n_extra": 0,
+                "children_score": 1.0,
+                "children": [
+                  {
+                    "tag": "LinearSolverParameters",
+                    "name": "",
+                    "score": 1.0,
+                    "attr_score": 1.0,
+                    "n_gt_children": 0,
+                    "n_matched": 0,
+                    "n_extra": 0
+                  },
+                  {
+                    "tag": "NonlinearSolverParameters",
+                    "name": "",
+                    "score": 1.0,
+                    "attr_score": 1.0,
+                    "n_gt_children": 0,
+                    "n_matched": 0,
+                    "n_extra": 0
+                  }
+                ]
+              },
+              {
+                "tag": "SolidMechanicsLagrangianFEM",
+                "name": "solidMechSolver",
+                "score": 1.0,
+                "attr_score": 1.0,
+                "n_gt_children": 0,
+                "n_matched": 0,
+                "n_extra": 0
+              }
+            ]
+          },
+          {
+            "tag": "Tasks",
+            "name": "",
+            "score": 1.0,
+            "attr_score": 1.0,
+            "n_gt_children": 3,
+            "n_matched": 3,
+            "n_extra": 0,
+            "children_score": 1.0,
+            "children": [
+              {
+                "tag": "PackCollection",
+                "name": "displacementCollection",
+                "score": 1.0,
+                "attr_score": 1.0,
+                "n_gt_children": 0,
+                "n_matched": 0,
+                "n_extra": 0
+              },
+              {
+                "tag": "PackCollection",
+                "name": "temperatureCollection",
+                "score": 1.0,
+                "attr_score": 1.0,
+                "n_gt_children": 0,
+                "n_matched": 0,
+                "n_extra": 0
+              },
+              {
+                "tag": "PackCollection",
+                "name": "pressureCollection",
+                "score": 1.0,
+                "attr_score": 1.0,
+                "n_gt_children": 0,
+                "n_matched": 0,
+                "n_extra": 0
+              }
+            ]
+          }
+        ]
+      },
+      "dimension_scores": {
+        "structural_completeness": 1.0,
+        "element_type_match": 0.8889,
+        "attribute_accuracy": 0.9886,
+        "tag_coverage": 1.0
+      },
+      "ordering_score": 1.0,
+      "weights": {
+        "structural_completeness": 0.15,
+        "element_type_match": 0.35,
+        "attribute_accuracy": 0.35,
+        "tag_coverage": 0.15
+      },
+      "details": {
+        "structural_completeness": {
+          "required_present": [
+            "Constitutive",
+            "ElementRegions"
+          ],
+          "required_missing": []
+        },
+        "element_type_match": {
+          "gt_only": [],
+          "gen_only": [
+            "Events",
+            "InternalMesh",
+            "Mesh",
+            "PeriodicEvent"
+          ],
+          "shared": [
+            "BiotPorosity",
+            "CellElementRegion",
+            "ConstantPermeability",
+            "Constitutive",
+            "ElasticIsotropic",
+            "ElementRegions",
+            "FieldSpecification",
+            "FieldSpecifications",
+            "FiniteElementSpace",
+            "FiniteElements",
+            "FiniteVolume",
+            "Functions",
+            "LinearSolverParameters",
+            "NonlinearSolverParameters",
+            "NumericalMethods",
+            "Outputs",
+            "PackCollection",
+            "PorousElasticIsotropic",
+            "Restart",
+            "SinglePhaseFVM",
+            "SinglePhasePoromechanics",
+            "SinglePhaseThermalConductivity",
+            "SolidInternalEnergy",
+            "SolidMechanicsLagrangianFEM",
+            "Solvers",
+            "TableFunction",
+            "Tasks",
+            "ThermalCompressibleSinglePhaseFluid",
+            "TimeHistory",
+            "Traction",
+            "TwoPointFluxApproximation",
+            "VTK"
+          ]
+        },
+        "attribute_accuracy": {
+          "matched_attrs": 173,
+          "total_attrs": 175,
+          "elements_compared": 55,
+          "elements_unmatched_gt": 0,
+          "elements_unmatched_gen": 146,
+          "top_mismatches": [
+            {
+              "gt_tag": "SolidInternalEnergy",
+              "gt_name": "rockInternalEnergy",
+              "gen_name": "rockInternalEnergy",
+              "similarity": 0.8,
+              "attrs_matched": 3,
+              "attrs_total": 4,
+              "mismatches": [
+                "referenceTemperature: GT='0.0' GEN='273.0'"
+              ]
+            },
+            {
+              "gt_tag": "ThermalCompressibleSinglePhaseFluid",
+              "gt_name": "water",
+              "gen_name": "water",
+              "similarity": 0.9333,
+              "attrs_matched": 9,
+              "attrs_total": 10,
+              "mismatches": [
+                "referenceTemperature: GT='0.0' GEN='273.0'"
+              ]
+            }
+          ]
+        },
+        "tag_coverage": {
+          "covered": [
+            "BiotPorosity",
+            "CellElementRegion",
+            "ConstantPermeability",
+            "Constitutive",
+            "ElasticIsotropic",
+            "ElementRegions",
+            "FieldSpecification",
+            "FieldSpecifications",
+            "FiniteElementSpace",
+            "FiniteElements",
+            "FiniteVolume",
+            "Functions",
+            "LinearSolverParameters",
+            "NonlinearSolverParameters",
+            "NumericalMethods",
+            "Outputs",
+            "PackCollection",
+            "PorousElasticIsotropic",
+            "Restart",
+            "SinglePhaseFVM",
+            "SinglePhasePoromechanics",
+            "SinglePhaseThermalConductivity",
+            "SolidInternalEnergy",
+            "SolidMechanicsLagrangianFEM",
+            "Solvers",
+            "TableFunction",
+            "Tasks",
+            "ThermalCompressibleSinglePhaseFluid",
+            "TimeHistory",
+            "Traction",
+            "TwoPointFluxApproximation",
+            "VTK"
+          ],
+          "missing": []
+        },
+        "ordering": {
+          "note": "No Events section to check ordering"
+        }
+      },
+      "match_summary": {
+        "paired_elements": 55,
+        "gt_unmatched": 0,
+        "gen_unmatched": 146
+      },
+      "gt_sections": [
+        "Constitutive",
+        "ElementRegions",
+        "FieldSpecifications",
+        "Functions",
+        "NumericalMethods",
+        "Outputs",
+        "Solvers",
+        "Solvers",
+        "Tasks"
+      ],
+      "gen_sections": [
+        "Constitutive",
+        "Constitutive",
+        "Constitutive",
+        "ElementRegions",
+        "ElementRegions",
+        "ElementRegions",
+        "Events",
+        "Events",
+        "FieldSpecifications",
+        "FieldSpecifications",
+        "FieldSpecifications",
+        "Functions",
+        "Functions",
+        "Functions",
+        "Mesh",
+        "Mesh",
+        "NumericalMethods",
+        "NumericalMethods",
+        "NumericalMethods",
+        "Outputs",
+        "Outputs",
+        "Outputs",
+        "Solvers",
+        "Solvers",
+        "Solvers",
+        "Tasks",
+        "Tasks",
+        "Tasks"
+      ],
+      "gt_element_types": [
+        "BiotPorosity",
+        "CellElementRegion",
+        "ConstantPermeability",
+        "Constitutive",
+        "ElasticIsotropic",
+        "ElementRegions",
+        "FieldSpecification",
+        "FieldSpecifications",
+        "FiniteElementSpace",
+        "FiniteElements",
+        "FiniteVolume",
+        "Functions",
+        "LinearSolverParameters",
+        "NonlinearSolverParameters",
+        "NumericalMethods",
+        "Outputs",
+        "PackCollection",
+        "PorousElasticIsotropic",
+        "Restart",
+        "SinglePhaseFVM",
+        "SinglePhasePoromechanics",
+        "SinglePhaseThermalConductivity",
+        "SolidInternalEnergy",
+        "SolidMechanicsLagrangianFEM",
+        "Solvers",
+        "TableFunction",
+        "Tasks",
+        "ThermalCompressibleSinglePhaseFluid",
+        "TimeHistory",
+        "Traction",
+        "TwoPointFluxApproximation",
+        "VTK"
+      ],
+      "gen_element_types": [
+        "BiotPorosity",
+        "CellElementRegion",
+        "ConstantPermeability",
+        "Constitutive",
+        "ElasticIsotropic",
+        "ElementRegions",
+        "Events",
+        "FieldSpecification",
+        "FieldSpecifications",
+        "FiniteElementSpace",
+        "FiniteElements",
+        "FiniteVolume",
+        "Functions",
+        "InternalMesh",
+        "LinearSolverParameters",
+        "Mesh",
+        "NonlinearSolverParameters",
+        "NumericalMethods",
+        "Outputs",
+        "PackCollection",
+        "PeriodicEvent",
+        "PorousElasticIsotropic",
+        "Restart",
+        "SinglePhaseFVM",
+        "SinglePhasePoromechanics",
+        "SinglePhaseThermalConductivity",
+        "SolidInternalEnergy",
+        "SolidMechanicsLagrangianFEM",
+        "Solvers",
+        "TableFunction",
+        "Tasks",
+        "ThermalCompressibleSinglePhaseFluid",
+        "TimeHistory",
+        "Traction",
+        "TwoPointFluxApproximation",
+        "VTK"
+      ],
+      "mode": "directory",
+      "gt_dir": "/data/shared/geophysics_agent_data/data/eval/experiments_gt/ExampleThermoporoelasticConsolidation/inputs",
+      "gen_dir": "data/eval/claude_code_repo3_plugin_m4u/mem_m4u_s3/ExampleThermoporoelasticConsolidation/inputs",
+      "status": "success"
+    },
+    {
+      "experiment": "TutorialPoroelasticity",
+      "overall_score": 3.52,
+      "overall_01": 0.3519,
+      "treesim": 0.3519,
+      "treesim_section_scores": {
+        "Constitutive": 0.3,
+        "ElementRegions": 0.5333,
+        "Events": 0.5631,
+        "FieldSpecifications": 0.4996,
+        "Functions": 0.58,
+        "Mesh": 0.5333,
+        "NumericalMethods": 0.3,
+        "Outputs": 0.3,
+        "Solvers": 0.0,
+        "Tasks": 0.0
+      },
+      "treesim_detail": {
+        "tag": "Problem",
+        "name": "",
+        "score": 0.3519,
+        "attr_score": 1.0,
+        "n_gt_children": 19,
+        "n_matched": 16,
+        "n_extra": 16,
+        "children_score": 0.3976,
+        "children": [
+          {
+            "tag": "Constitutive",
+            "name": "",
+            "score": 0.3,
+            "attr_score": 1.0,
+            "n_gt_children": 5,
+            "n_matched": 1,
+            "n_extra": 4,
+            "children_score": 0.04,
+            "children": [
+              {
+                "tag": "BiotPorosity",
+                "name": "skeletonPorosity",
+                "score": 0.0,
+                "attr_score": 0.0,
+                "n_gt_children": 0,
+                "n_matched": 0,
+                "n_extra": 0
+              },
+              {
+                "tag": "CompressibleSinglePhaseFluid",
+                "name": "fluid",
+                "score": 0.2,
+                "attr_score": 0.2,
+                "n_gt_children": 0,
+                "n_matched": 0,
+                "n_extra": 0
+              },
+              {
+                "tag": "ConstantPermeability",
+                "name": "skeletonPerm",
+                "score": 0.0,
+                "attr_score": 0.0,
+                "n_gt_children": 0,
+                "n_matched": 0,
+                "n_extra": 0
+              },
+              {
+                "tag": "ElasticIsotropic",
+                "name": "skeleton",
+                "score": 0.0,
+                "attr_score": 0.0,
+                "n_gt_children": 0,
+                "n_matched": 0,
+                "n_extra": 0
+              },
+              {
+                "tag": "PorousElasticIsotropic",
+                "name": "porousRock",
+                "score": 0.0,
+                "attr_score": 0.0,
+                "n_gt_children": 0,
+                "n_matched": 0,
+                "n_extra": 0
+              }
+            ]
+          },
+          {
+            "tag": "Constitutive",
+            "name": "",
+            "score": 0.3,
+            "attr_score": 1.0,
+            "n_gt_children": 5,
+            "n_matched": 1,
+            "n_extra": 4,
+            "children_score": 0.04,
+            "children": [
+              {
+                "tag": "BiotPorosity",
+                "name": "skeletonPorosity",
+                "score": 0.0,
+                "attr_score": 0.0,
+                "n_gt_children": 0,
+                "n_matched": 0,
+                "n_extra": 0
+              },
+              {
+                "tag": "CompressibleSinglePhaseFluid",
+                "name": "fluid",
+                "score": 0.2,
+                "attr_score": 0.2,
+                "n_gt_children": 0,
+                "n_matched": 0,
+                "n_extra": 0
+              },
+              {
+                "tag": "ConstantPermeability",
+                "name": "skeletonPerm",
+                "score": 0.0,
+                "attr_score": 0.0,
+                "n_gt_children": 0,
+                "n_matched": 0,
+                "n_extra": 0
+              },
+              {
+                "tag": "ElasticIsotropic",
+                "name": "skeleton",
+                "score": 0.0,
+                "attr_score": 0.0,
+                "n_gt_children": 0,
+                "n_matched": 0,
+                "n_extra": 0
+              },
+              {
+                "tag": "PorousElasticIsotropic",
+                "name": "porousRock",
+                "score": 0.0,
+                "attr_score": 0.0,
+                "n_gt_children": 0,
+                "n_matched": 0,
+                "n_extra": 0
+              }
+            ]
+          },
+          {
+            "tag": "ElementRegions",
+            "name": "",
+            "score": 0.5333,
+            "attr_score": 1.0,
+            "n_gt_children": 1,
+            "n_matched": 1,
+            "n_extra": 0,
+            "children_score": 0.3333,
+            "children": [
+              {
+                "tag": "CellElementRegion",
+                "name": "Domain",
+                "score": 0.3333,
+                "attr_score": 0.3333,
+                "n_gt_children": 0,
+                "n_matched": 0,
+                "n_extra": 0
+              }
+            ]
+          },
+          {
+            "tag": "ElementRegions",
+            "name": "",
+            "score": 0.5333,
+            "attr_score": 1.0,
+            "n_gt_children": 1,
+            "n_matched": 1,
+            "n_extra": 0,
+            "children_score": 0.3333,
+            "children": [
+              {
+                "tag": "CellElementRegion",
+                "name": "Domain",
+                "score": 0.3333,
+                "attr_score": 0.3333,
+                "n_gt_children": 0,
+                "n_matched": 0,
+                "n_extra": 0
+              }
+            ]
+          },
+          {
+            "tag": "Events",
+            "name": "",
+            "score": 0.5662,
+            "attr_score": 1.0,
+            "n_gt_children": 7,
+            "n_matched": 6,
+            "n_extra": 1,
+            "children_score": 0.3929,
+            "children": [
+              {
+                "tag": "PeriodicEvent",
+                "name": "restarts",
+                "score": 0.6667,
+                "attr_score": 0.6667,
+                "n_gt_children": 0,
+                "n_matched": 0,
+                "n_extra": 0
+              },
+              {
+                "tag": "PeriodicEvent",
+                "name": "timeHistoryOutput",
+                "score": 0.5,
+                "attr_score": 0.5,
+                "n_gt_children": 0,
+                "n_matched": 0,
+                "n_extra": 0
+              },
+              {
+                "tag": "PeriodicEvent",
+                "name": "solverApplication2",
+                "score": 0.5,
+                "attr_score": 0.5,
+                "n_gt_children": 0,
+                "n_matched": 0,
+                "n_extra": 0
+              },
+              {
+                "tag": "PeriodicEvent",
+                "name": "solverApplication1",
+                "score": 0.5,
+                "attr_score": 0.5,
+                "n_gt_children": 0,
+                "n_matched": 0,
+                "n_extra": 0
+              },
+              {
+                "tag": "PeriodicEvent",
+                "name": "solverApplication0",
+                "score": 0.3333,
+                "attr_score": 0.3333,
+                "n_gt_children": 0,
+                "n_matched": 0,
+                "n_extra": 0
+              },
+              {
+                "tag": "PeriodicEvent",
+                "name": "timeHistoryCollection",
+                "score": 0.25,
+                "attr_score": 0.25,
+                "n_gt_children": 0,
+                "n_matched": 0,
+                "n_extra": 0
+              },
+              {
+                "tag": "PeriodicEvent",
+                "name": "outputs",
+                "score": 0.0,
+                "attr_score": 0.0,
+                "n_gt_children": 0,
+                "n_matched": 0,
+                "n_extra": 0
+              }
+            ]
+          },
+          {
+            "tag": "Events",
+            "name": "",
+            "score": 0.5631,
+            "attr_score": 1.0,
+            "n_gt_children": 4,
+            "n_matched": 4,
+            "n_extra": 1,
+            "children_score": 0.3958,
+            "children": [
+              {
+                "tag": "PeriodicEvent",
+                "name": "solverApplication2",
+                "score": 0.5,
+                "attr_score": 0.5,
+                "n_gt_children": 0,
+                "n_matched": 0,
+                "n_extra": 0
+              },
+              {
+                "tag": "PeriodicEvent",
+                "name": "solverApplication1",
+                "score": 0.5,
+                "attr_score": 0.5,
+                "n_gt_children": 0,
+                "n_matched": 0,
+                "n_extra": 0
+              },
+              {
+                "tag": "PeriodicEvent",
+                "name": "solverApplication0",
+                "score": 0.3333,
+                "attr_score": 0.3333,
+                "n_gt_children": 0,
+                "n_matched": 0,
+                "n_extra": 0
+              },
+              {
+                "tag": "PeriodicEvent",
+                "name": "outputs",
+                "score": 0.25,
+                "attr_score": 0.25,
+                "n_gt_children": 0,
+                "n_matched": 0,
+                "n_extra": 0
+              }
+            ]
+          },
+          {
+            "tag": "FieldSpecifications",
+            "name": "",
+            "score": 0.4996,
+            "attr_score": 1.0,
+            "n_gt_children": 9,
+            "n_matched": 9,
+            "n_extra": 0,
+            "children_score": 0.2852,
+            "children": [
+              {
+                "tag": "FieldSpecification",
+                "name": "initialPressure",
+                "score": 0.6667,
+                "attr_score": 0.6667,
+                "n_gt_children": 0,
+                "n_matched": 0,
+                "n_extra": 0
+              },
+              {
+                "tag": "FieldSpecification",
+                "name": "boundaryPressure",
+                "score": 0.4,
+                "attr_score": 0.4,
+                "n_gt_children": 0,
+                "n_matched": 0,
+                "n_extra": 0
+              },
+              {
+                "tag": "FieldSpecification",
+                "name": "zInitialDisplacement",
+                "score": 0.2857,
+                "attr_score": 0.2857,
+                "n_gt_children": 0,
+                "n_matched": 0,
+                "n_extra": 0
+              },
+              {
+                "tag": "FieldSpecification",
+                "name": "yInitialDisplacement",
+                "score": 0.2857,
+                "attr_score": 0.2857,
+                "n_gt_children": 0,
+                "n_matched": 0,
+                "n_extra": 0
+              },
+              {
+                "tag": "FieldSpecification",
+                "name": "xInitialDisplacement",
+                "score": 0.2857,
+                "attr_score": 0.2857,
+                "n_gt_children": 0,
+                "n_matched": 0,
+                "n_extra": 0
+              },
+              {
+                "tag": "FieldSpecification",
+                "name": "zconstraint",
+                "score": 0.1667,
+                "attr_score": 0.1667,
+                "n_gt_children": 0,
+                "n_matched": 0,
+                "n_extra": 0
+              },
+              {
+                "tag": "FieldSpecification",
+                "name": "yconstraint",
+                "score": 0.1667,
+                "attr_score": 0.1667,
+                "n_gt_children": 0,
+                "n_matched": 0,
+                "n_extra": 0
+              },
+              {
+                "tag": "FieldSpecification",
+                "name": "xnegconstraint",
+                "score": 0.1667,
+                "attr_score": 0.1667,
+                "n_gt_children": 0,
+                "n_matched": 0,
+                "n_extra": 0
+              },
+              {
+                "tag": "Traction",
+                "name": "xposconstraint",
+                "score": 0.1429,
+                "attr_score": 0.1429,
+                "n_gt_children": 0,
+                "n_matched": 0,
+                "n_extra": 0
+              }
+            ]
+          },
+          {
+            "tag": "FieldSpecifications",
+            "name": "",
+            "score": 0.4996,
+            "attr_score": 1.0,
+            "n_gt_children": 9,
+            "n_matched": 9,
+            "n_extra": 0,
+            "children_score": 0.2852,
+            "children": [
+              {
+                "tag": "FieldSpecification",
+                "name": "initialPressure",
+                "score": 0.6667,
+                "attr_score": 0.6667,
+                "n_gt_children": 0,
+                "n_matched": 0,
+                "n_extra": 0
+              },
+              {
+                "tag": "FieldSpecification",
+                "name": "boundaryPressure",
+                "score": 0.4,
+                "attr_score": 0.4,
+                "n_gt_children": 0,
+                "n_matched": 0,
+                "n_extra": 0
+              },
+              {
+                "tag": "FieldSpecification",
+                "name": "zInitialDisplacement",
+                "score": 0.2857,
+                "attr_score": 0.2857,
+                "n_gt_children": 0,
+                "n_matched": 0,
+                "n_extra": 0
+              },
+              {
+                "tag": "FieldSpecification",
+                "name": "yInitialDisplacement",
+                "score": 0.2857,
+                "attr_score": 0.2857,
+                "n_gt_children": 0,
+                "n_matched": 0,
+                "n_extra": 0
+              },
+              {
+                "tag": "FieldSpecification",
+                "name": "xInitialDisplacement",
+                "score": 0.2857,
+                "attr_score": 0.2857,
+                "n_gt_children": 0,
+                "n_matched": 0,
+                "n_extra": 0
+              },
+              {
+                "tag": "FieldSpecification",
+                "name": "zconstraint",
+                "score": 0.1667,
+                "attr_score": 0.1667,
+                "n_gt_children": 0,
+                "n_matched": 0,
+                "n_extra": 0
+              },
+              {
+                "tag": "FieldSpecification",
+                "name": "yconstraint",
+                "score": 0.1667,
+                "attr_score": 0.1667,
+                "n_gt_children": 0,
+                "n_matched": 0,
+                "n_extra": 0
+              },
+              {
+                "tag": "FieldSpecification",
+                "name": "xnegconstraint",
+                "score": 0.1667,
+                "attr_score": 0.1667,
+                "n_gt_children": 0,
+                "n_matched": 0,
+                "n_extra": 0
+              },
+              {
+                "tag": "Traction",
+                "name": "xposconstraint",
+                "score": 0.1429,
+                "attr_score": 0.1429,
+                "n_gt_children": 0,
+                "n_matched": 0,
+                "n_extra": 0
+              }
+            ]
+          },
+          {
+            "tag": "Functions",
+            "name": "",
+            "score": 0.58,
+            "attr_score": 1.0,
+            "n_gt_children": 1,
+            "n_matched": 1,
+            "n_extra": 0,
+            "children_score": 0.4,
+            "children": [
+              {
+                "tag": "TableFunction",
+                "name": "timeFunction",
+                "score": 0.4,
+                "attr_score": 0.4,
+                "n_gt_children": 0,
+                "n_matched": 0,
+                "n_extra": 0
+              }
+            ]
+          },
+          {
+            "tag": "Functions",
+            "name": "",
+            "score": 0.58,
+            "attr_score": 1.0,
+            "n_gt_children": 1,
+            "n_matched": 1,
+            "n_extra": 0,
+            "children_score": 0.4,
+            "children": [
+              {
+                "tag": "TableFunction",
+                "name": "timeFunction",
+                "score": 0.4,
+                "attr_score": 0.4,
+                "n_gt_children": 0,
+                "n_matched": 0,
+                "n_extra": 0
+              }
+            ]
+          },
+          {
+            "tag": "Mesh",
+            "name": "",
+            "score": 0.7667,
+            "attr_score": 1.0,
+            "n_gt_children": 1,
+            "n_matched": 1,
+            "n_extra": 0,
+            "children_score": 0.6667,
+            "children": [
+              {
+                "tag": "InternalMesh",
+                "name": "mesh1",
+                "score": 0.6667,
+                "attr_score": 0.6667,
+                "n_gt_children": 0,
+                "n_matched": 0,
+                "n_extra": 0
+              }
+            ]
+          },
+          {
+            "tag": "Mesh",
+            "name": "",
+            "score": 0.5333,
+            "attr_score": 1.0,
+            "n_gt_children": 1,
+            "n_matched": 1,
+            "n_extra": 0,
+            "children_score": 0.3333,
+            "children": [
+              {
+                "tag": "InternalMesh",
+                "name": "mesh1",
+                "score": 0.3333,
+                "attr_score": 0.3333,
+                "n_gt_children": 0,
+                "n_matched": 0,
+                "n_extra": 0
+              }
+            ]
+          },
+          {
+            "tag": "NumericalMethods",
+            "name": "",
+            "score": 0.3,
+            "attr_score": 1.0,
+            "n_gt_children": 2,
+            "n_matched": 0,
+            "n_extra": 2,
+            "children_score": 0.0,
+            "children": [
+              {
+                "tag": "FiniteElements",
+                "name": "",
+                "score": 0.0,
+                "attr_score": 0.0,
+                "n_gt_children": 0,
+                "n_matched": 0,
+                "n_extra": 0
+              },
+              {
+                "tag": "FiniteVolume",
+                "name": "",
+                "score": 0.0,
+                "attr_score": 0.0,
+                "n_gt_children": 0,
+                "n_matched": 0,
+                "n_extra": 0
+              }
+            ]
+          },
+          {
+            "tag": "NumericalMethods",
+            "name": "",
+            "score": 0.3,
+            "attr_score": 1.0,
+            "n_gt_children": 2,
+            "n_matched": 0,
+            "n_extra": 2,
+            "children_score": 0.0,
+            "children": [
+              {
+                "tag": "FiniteElements",
+                "name": "",
+                "score": 0.0,
+                "attr_score": 0.0,
+                "n_gt_children": 0,
+                "n_matched": 0,
+                "n_extra": 0
+              },
+              {
+                "tag": "FiniteVolume",
+                "name": "",
+                "score": 0.0,
+                "attr_score": 0.0,
+                "n_gt_children": 0,
+                "n_matched": 0,
+                "n_extra": 0
+              }
+            ]
+          },
+          {
+            "tag": "Outputs",
+            "name": "",
+            "score": 0.3992,
+            "attr_score": 1.0,
+            "n_gt_children": 3,
+            "n_matched": 1,
+            "n_extra": 1,
+            "children_score": 0.1667,
+            "children": [
+              {
+                "tag": "Restart",
+                "name": "restartOutput",
+                "score": 0.5,
+                "attr_score": 0.5,
+                "n_gt_children": 0,
+                "n_matched": 0,
+                "n_extra": 0
+              },
+              {
+                "tag": "Silo",
+                "name": "siloOutput",
+                "score": 0.0,
+                "attr_score": 0.0,
+                "n_gt_children": 0,
+                "n_matched": 0,
+                "n_extra": 0
+              },
+              {
+                "tag": "TimeHistory",
+                "name": "timeHistoryOutput",
+                "score": 0.0,
+                "attr_score": 0.0,
+                "n_gt_children": 0,
+                "n_matched": 0,
+                "n_extra": 0
+              }
+            ]
+          },
+          {
+            "tag": "Outputs",
+            "name": "",
+            "score": 0.3,
+            "attr_score": 1.0,
+            "n_gt_children": 1,
+            "n_matched": 0,
+            "n_extra": 1,
+            "children_score": 0.0,
+            "children": [
+              {
+                "tag": "Silo",
+                "name": "siloOutput",
+                "score": 0.0,
+                "attr_score": 0.0,
+                "n_gt_children": 0,
+                "n_matched": 0,
+                "n_extra": 0
+              }
+            ]
+          },
+          {
+            "tag": "Solvers",
+            "name": "",
+            "score": 0.0,
+            "attr_score": 0.0,
+            "n_gt_children": 0,
+            "n_matched": 0,
+            "n_extra": 0
+          },
+          {
+            "tag": "Solvers",
+            "name": "",
+            "score": 0.0,
+            "attr_score": 0.0,
+            "n_gt_children": 0,
+            "n_matched": 0,
+            "n_extra": 0
+          },
+          {
+            "tag": "Tasks",
+            "name": "",
+            "score": 0.0,
+            "attr_score": 0.0,
+            "n_gt_children": 0,
+            "n_matched": 0,
+            "n_extra": 0
+          }
+        ]
+      },
+      "dimension_scores": {
+        "structural_completeness": 1.0,
+        "element_type_match": 0.675,
+        "attribute_accuracy": 0.3408,
+        "tag_coverage": 0.8182
+      },
+      "ordering_score": 1.0,
+      "weights": {
+        "structural_completeness": 0.15,
+        "element_type_match": 0.35,
+        "attribute_accuracy": 0.35,
+        "tag_coverage": 0.15
+      },
+      "details": {
+        "structural_completeness": {
+          "required_present": [
+            "Constitutive",
+            "ElementRegions",
+            "Events",
+            "Mesh"
+          ],
+          "required_missing": []
+        },
+        "element_type_match": {
+          "gt_only": [
+            "FiniteElementSpace",
+            "FiniteElements",
+            "PorousElasticIsotropic",
+            "Silo",
+            "Tasks",
+            "TwoPointFluxApproximation"
+          ],
+          "gen_only": [
+            "Box",
+            "BrooksCoreyRelativePermeability",
+            "Collectors",
+            "FiniteElement",
+            "Geometry",
+            "NonlinearSolverParameters",
+            "VTK"
+          ],
+          "shared": [
+            "BiotPorosity",
+            "CellElementRegion",
+            "CompressibleSinglePhaseFluid",
+            "ConstantPermeability",
+            "Constitutive",
+            "ElasticIsotropic",
+            "ElementRegions",
+            "Events",
+            "FieldSpecification",
+            "FieldSpecifications",
+            "FiniteVolume",
+            "Functions",
+            "InternalMesh",
+            "LinearSolverParameters",
+            "Mesh",
+            "NumericalMethods",
+            "Outputs",
+            "PackCollection",
+            "PeriodicEvent",
+            "Restart",
+            "SinglePhaseFVM",
+            "SinglePhasePoromechanics",
+            "SolidMechanicsLagrangianFEM",
+            "Solvers",
+            "TableFunction",
+            "TimeHistory",
+            "Traction"
+          ]
+        },
+        "attribute_accuracy": {
+          "matched_attrs": 76,
+          "total_attrs": 223,
+          "elements_compared": 53,
+          "elements_unmatched_gt": 32,
+          "elements_unmatched_gen": 99,
+          "top_mismatches": [
+            {
+              "gt_tag": "CompressibleSinglePhaseFluid",
+              "gt_name": "fluid",
+              "gen_name": "water",
+              "similarity": 0.1333,
+              "attrs_matched": 2,
+              "attrs_total": 10,
+              "mismatches": [
+                "defaultDensity: missing in GEN",
+                "defaultViscosity: missing in GEN",
+                "referenceViscosity: missing in GEN",
+                "referenceDensity: missing in GEN",
+                "viscosity: extra in GEN",
+                "viscosibility: missing in GEN",
+                "name: GT='fluid' GEN='water'",
+                "density: extra in GEN"
+              ]
+            },
+            {
+              "gt_tag": "CompressibleSinglePhaseFluid",
+              "gt_name": "fluid",
+              "gen_name": "water",
+              "similarity": 0.1333,
+              "attrs_matched": 2,
+              "attrs_total": 10,
+              "mismatches": [
+                "defaultDensity: missing in GEN",
+                "defaultViscosity: missing in GEN",
+                "referenceViscosity: missing in GEN",
+                "referenceDensity: missing in GEN",
+                "viscosity: extra in GEN",
+                "viscosibility: missing in GEN",
+                "name: GT='fluid' GEN='water'",
+                "density: extra in GEN"
+              ]
+            },
+            {
+              "gt_tag": "Restart",
+              "gt_name": "restartOutput",
+              "gen_name": "restartOutput",
+              "similarity": 0.4,
+              "attrs_matched": 1,
+              "attrs_total": 2,
+              "mismatches": [
+                "childDirectory: extra in GEN"
+              ]
+            },
+            {
+              "gt_tag": "PeriodicEvent",
+              "gt_name": "restarts",
+              "gen_name": "restartOutput",
+              "similarity": 0.6,
+              "attrs_matched": 2,
+              "attrs_total": 3,
+              "mismatches": [
+                "name: GT='restarts' GEN='restartOutput'"
+              ]
+            },
+            {
+              "gt_tag": "PeriodicEvent",
+              "gt_name": "timeHistoryOutput",
+              "gen_name": "historyCollection",
+              "similarity": 0.4,
+              "attrs_matched": 2,
+              "attrs_total": 4,
+              "mismatches": [
+                "targetExactTimestep: GT='0' GEN='1'",
+                "name: GT='timeHistoryOutput' GEN='historyCollection'"
+              ]
+            },
+            {
+              "gt_tag": "PeriodicEvent",
+              "gt_name": "solverApplication2",
+              "gen_name": "dtForce3",
+              "similarity": 0.36,
+              "attrs_matched": 3,
+              "attrs_total": 6,
+              "mismatches": [
+                "targetExactTimestep: extra in GEN",
+                "name: GT='solverApplication2' GEN='dtForce3'",
+                "target: GT='/Solvers/PoroelasticitySolver' GEN='/Solvers/poroSolver'"
+              ]
+            },
+            {
+              "gt_tag": "PeriodicEvent",
+              "gt_name": "solverApplication1",
+              "gen_name": "dtForce2",
+              "similarity": 0.36,
+              "attrs_matched": 3,
+              "attrs_total": 6,
+              "mismatches": [
+                "targetExactTimestep: extra in GEN",
+                "name: GT='solverApplication1' GEN='dtForce2'",
+                "target: GT='/Solvers/PoroelasticitySolver' GEN='/Solvers/poroSolver'"
+              ]
+            },
+            {
+              "gt_tag": "PeriodicEvent",
+              "gt_name": "solverApplication0",
+              "gen_name": "dtForce1",
+              "similarity": 0.24,
+              "attrs_matched": 2,
+              "attrs_total": 6,
+              "mismatches": [
+                "beginTime: extra in GEN",
+                "targetExactTimestep: extra in GEN",
+                "target: GT='/Solvers/PoroelasticitySolver' GEN='/Solvers/poroSolver'",
+                "name: GT='solverApplication0' GEN='dtForce1'"
+              ]
+            },
+            {
+              "gt_tag": "PeriodicEvent",
+              "gt_name": "timeHistoryCollection",
+              "gen_name": "visualizationOutput",
+              "similarity": 0.2,
+              "attrs_matched": 1,
+              "attrs_total": 4,
+              "mismatches": [
+                "targetExactTimestep: extra in GEN",
+                "target: GT='/Tasks/pressureCollection' GEN='/Outputs/vtkOutput'",
+                "name: GT='timeHistoryCollection' GEN='visualizationOutput'"
+              ]
+            },
+            {
+              "gt_tag": "PeriodicEvent",
+              "gt_name": "solverApplication2",
+              "gen_name": "dtForce3",
+              "similarity": 0.36,
+              "attrs_matched": 3,
+              "attrs_total": 6,
+              "mismatches": [
+                "targetExactTimestep: extra in GEN",
+                "name: GT='solverApplication2' GEN='dtForce3'",
+                "target: GT='/Solvers/PoroelasticitySolver' GEN='/Solvers/poroSolver'"
+              ]
+            },
+            {
+              "gt_tag": "PeriodicEvent",
+              "gt_name": "solverApplication1",
+              "gen_name": "dtForce2",
+              "similarity": 0.36,
+              "attrs_matched": 3,
+              "attrs_total": 6,
+              "mismatches": [
+                "targetExactTimestep: extra in GEN",
+                "name: GT='solverApplication1' GEN='dtForce2'",
+                "target: GT='/Solvers/PoroelasticitySolver' GEN='/Solvers/poroSolver'"
+              ]
+            },
+            {
+              "gt_tag": "PeriodicEvent",
+              "gt_name": "solverApplication0",
+              "gen_name": "dtForce1",
+              "similarity": 0.24,
+              "attrs_matched": 2,
+              "attrs_total": 6,
+              "mismatches": [
+                "beginTime: extra in GEN",
+                "targetExactTimestep: extra in GEN",
+                "target: GT='/Solvers/PoroelasticitySolver' GEN='/Solvers/poroSolver'",
+                "name: GT='solverApplication0' GEN='dtForce1'"
+              ]
+            },
+            {
+              "gt_tag": "PeriodicEvent",
+              "gt_name": "outputs",
+              "gen_name": "visualizationOutput",
+              "similarity": 0.2,
+              "attrs_matched": 1,
+              "attrs_total": 4,
+              "mismatches": [
+                "targetExactTimestep: extra in GEN",
+                "target: GT='/Outputs/siloOutput' GEN='/Outputs/vtkOutput'",
+                "name: GT='outputs' GEN='visualizationOutput'"
+              ]
+            },
+            {
+              "gt_tag": "TableFunction",
+              "gt_name": "timeFunction",
+              "gen_name": "loadFunction",
+              "similarity": 0.3,
+              "attrs_matched": 2,
+              "attrs_total": 5,
+              "mismatches": [
+                "inputVarNames: missing in GEN",
+                "interpolation: extra in GEN",
+                "name: GT='timeFunction' GEN='loadFunction'"
+              ]
+            },
+            {
+              "gt_tag": "TableFunction",
+              "gt_name": "timeFunction",
+              "gen_name": "loadFunction",
+              "similarity": 0.3,
+              "attrs_matched": 2,
+              "attrs_total": 5,
+              "mismatches": [
+                "inputVarNames: missing in GEN",
+                "interpolation: extra in GEN",
+                "name: GT='timeFunction' GEN='loadFunction'"
+              ]
+            },
+            {
+              "gt_tag": "CellElementRegion",
+              "gt_name": "Domain",
+              "gen_name": "Domain",
+              "similarity": 0.4,
+              "attrs_matched": 1,
+              "attrs_total": 3,
+              "mismatches": [
+                "materialList: GT='{ fluid, porousRock }' GEN='{rockElastic, rockPorosity, rockPerm, water, waterRelPerm}'",
+                "cellBlocks: GT='{ * }' GEN='{mesh}'"
+              ]
+            },
+            {
+              "gt_tag": "CellElementRegion",
+              "gt_name": "Domain",
+              "gen_name": "Domain",
+              "similarity": 0.4,
+              "attrs_matched": 1,
+              "attrs_total": 3,
+              "mismatches": [
+                "materialList: GT='{ fluid, porousRock }' GEN='{rockElastic, rockPorosity, rockPerm, water, waterRelPerm}'",
+                "cellBlocks: GT='{ * }' GEN='{mesh}'"
+              ]
+            },
+            {
+              "gt_tag": "InternalMesh",
+              "gt_name": "mesh1",
+              "gen_name": "mesh",
+              "similarity": 0.45,
+              "attrs_matched": 6,
+              "attrs_total": 9,
+              "mismatches": [
+                "elementTypes: GT='{ C3D8 }' GEN='{C3D8}'",
+                "cellBlockNames: missing in GEN",
+                "name: GT='mesh1' GEN='mesh'"
+              ]
+            },
+            {
+              "gt_tag": "InternalMesh",
+              "gt_name": "mesh1",
+              "gen_name": "mesh",
+              "similarity": 0.225,
+              "attrs_matched": 3,
+              "attrs_total": 9,
+              "mismatches": [
+                "elementTypes: GT='{ C3D8 }' GEN='{C3D8}'",
+                "cellBlockNames: missing in GEN",
+                "nz: GT='{ 16 }' GEN='{1}'",
+                "name: GT='mesh1' GEN='mesh'",
+                "nx: GT='{ 400 }' GEN='{25}'",
+                "ny: GT='{ 16 }' GEN='{1}'"
+              ]
+            },
+            {
+              "gt_tag": "Traction",
+              "gt_name": "xposconstraint",
+              "gen_name": "compressiveLoad",
+              "similarity": 0.1,
+              "attrs_matched": 1,
+              "attrs_total": 7,
+              "mismatches": [
+                "tractionType: extra in GEN",
+                "objectPath: GT='faceManager' GEN='ElementRegions/Domain/cellBlock'",
+                "functionName: GT='timeFunction' GEN='loadFunction'",
+                "scale: GT='1.0e0' GEN='-1.0'",
+                "name: GT='xposconstraint' GEN='compressiveLoad'",
+                "setNames: GT='{ xneg }' GEN='{loadedFace}'"
+              ]
+            }
+          ]
+        },
+        "tag_coverage": {
+          "covered": [
+            "BiotPorosity",
+            "CellElementRegion",
+            "CompressibleSinglePhaseFluid",
+            "ConstantPermeability",
+            "Constitutive",
+            "ElasticIsotropic",
+            "ElementRegions",
+            "Events",
+            "FieldSpecification",
+            "FieldSpecifications",
+            "FiniteVolume",
+            "Functions",
+            "InternalMesh",
+            "LinearSolverParameters",
+            "Mesh",
+            "NumericalMethods",
+            "Outputs",
+            "PackCollection",
+            "PeriodicEvent",
+            "Restart",
+            "SinglePhaseFVM",
+            "SinglePhasePoromechanics",
+            "SolidMechanicsLagrangianFEM",
+            "Solvers",
+            "TableFunction",
+            "TimeHistory",
+            "Traction"
+          ],
+          "missing": [
+            "FiniteElementSpace",
+            "FiniteElements",
+            "PorousElasticIsotropic",
+            "Silo",
+            "Tasks",
+            "TwoPointFluxApproximation"
+          ]
+        },
+        "ordering": {
+          "note": "Too few matched PeriodicEvents for ordering check"
+        }
+      },
+      "match_summary": {
+        "paired_elements": 53,
+        "gt_unmatched": 32,
+        "gen_unmatched": 99
+      },
+      "gt_sections": [
+        "Constitutive",
+        "Constitutive",
+        "ElementRegions",
+        "ElementRegions",
+        "Events",
+        "Events",
+        "FieldSpecifications",
+        "FieldSpecifications",
+        "Functions",
+        "Functions",
+        "Mesh",
+        "Mesh",
+        "NumericalMethods",
+        "NumericalMethods",
+        "Outputs",
+        "Outputs",
+        "Solvers",
+        "Solvers",
+        "Tasks"
+      ],
+      "gen_sections": [
+        "Collectors",
+        "Constitutive",
+        "Constitutive",
+        "Constitutive",
+        "ElementRegions",
+        "ElementRegions",
+        "ElementRegions",
+        "Events",
+        "Events",
+        "FieldSpecifications",
+        "FieldSpecifications",
+        "FieldSpecifications",
+        "Functions",
+        "Functions",
+        "Functions",
+        "Geometry",
+        "Geometry",
+        "Geometry",
+        "Mesh",
+        "Mesh",
+        "Mesh",
+        "Mesh",
+        "Mesh",
+        "NumericalMethods",
+        "NumericalMethods",
+        "NumericalMethods",
+        "Outputs",
+        "Outputs",
+        "Solvers",
+        "Solvers",
+        "Solvers",
+        "TimeHistory"
+      ],
+      "gt_element_types": [
+        "BiotPorosity",
+        "CellElementRegion",
+        "CompressibleSinglePhaseFluid",
+        "ConstantPermeability",
+        "Constitutive",
+        "ElasticIsotropic",
+        "ElementRegions",
+        "Events",
+        "FieldSpecification",
+        "FieldSpecifications",
+        "FiniteElementSpace",
+        "FiniteElements",
+        "FiniteVolume",
+        "Functions",
+        "InternalMesh",
+        "LinearSolverParameters",
+        "Mesh",
+        "NumericalMethods",
+        "Outputs",
+        "PackCollection",
+        "PeriodicEvent",
+        "PorousElasticIsotropic",
+        "Restart",
+        "Silo",
+        "SinglePhaseFVM",
+        "SinglePhasePoromechanics",
+        "SolidMechanicsLagrangianFEM",
+        "Solvers",
+        "TableFunction",
+        "Tasks",
+        "TimeHistory",
+        "Traction",
+        "TwoPointFluxApproximation"
+      ],
+      "gen_element_types": [
+        "BiotPorosity",
+        "Box",
+        "BrooksCoreyRelativePermeability",
+        "CellElementRegion",
+        "Collectors",
+        "CompressibleSinglePhaseFluid",
+        "ConstantPermeability",
+        "Constitutive",
+        "ElasticIsotropic",
+        "ElementRegions",
+        "Events",
+        "FieldSpecification",
+        "FieldSpecifications",
+        "FiniteElement",
+        "FiniteVolume",
+        "Functions",
+        "Geometry",
+        "InternalMesh",
+        "LinearSolverParameters",
+        "Mesh",
+        "NonlinearSolverParameters",
+        "NumericalMethods",
+        "Outputs",
+        "PackCollection",
+        "PeriodicEvent",
+        "Restart",
+        "SinglePhaseFVM",
+        "SinglePhasePoromechanics",
+        "SolidMechanicsLagrangianFEM",
+        "Solvers",
+        "TableFunction",
+        "TimeHistory",
+        "Traction",
+        "VTK"
+      ],
+      "mode": "directory",
+      "gt_dir": "/data/shared/geophysics_agent_data/data/eval/experiments_gt/TutorialPoroelasticity/inputs",
+      "gen_dir": "data/eval/claude_code_repo3_plugin_m4u/mem_m4u_s3/TutorialPoroelasticity/inputs",
+      "status": "success"
+    },
+    {
+      "experiment": "TutorialSneddon",
+      "status": "error",
+      "error": "FileNotFoundError: No XML files found in data/eval/claude_code_repo3_plugin_m4u/mem_m4u_s3/TutorialSneddon/inputs"
+    },
+    {
+      "experiment": "buckleyLeverettProblem",
+      "overall_score": 3.64,
+      "overall_01": 0.3642,
+      "treesim": 0.3642,
+      "treesim_section_scores": {
+        "Constitutive": 0.3187,
+        "ElementRegions": 0.3,
+        "Events": 0.461,
+        "FieldSpecifications": 0.6204,
+        "Geometry": 0.3,
+        "Mesh": 0.6889,
+        "NumericalMethods": 0.3,
+        "Outputs": 0.3603,
+        "Solvers": 0.459,
+        "Tasks": 0.0
+      },
+      "treesim_detail": {
+        "tag": "Problem",
+        "name": "",
+        "score": 0.3642,
+        "attr_score": 1.0,
+        "n_gt_children": 10,
+        "n_matched": 9,
+        "n_extra": 2,
+        "children_score": 0.3808,
+        "children": [
+          {
+            "tag": "Constitutive",
+            "name": "",
+            "score": 0.3187,
+            "attr_score": 1.0,
+            "n_gt_children": 6,
+            "n_matched": 1,
+            "n_extra": 4,
+            "children_score": 0.0667,
+            "children": [
+              {
+                "tag": "BrooksCoreyRelativePermeability",
+                "name": "relperm",
+                "score": 0.0,
+                "attr_score": 0.0,
+                "n_gt_children": 0,
+                "n_matched": 0,
+                "n_extra": 0
+              },
+              {
+                "tag": "CompressibleSolidConstantPermeability",
+                "name": "rock",
+                "score": 0.0,
+                "attr_score": 0.0,
+                "n_gt_children": 0,
+                "n_matched": 0,
+                "n_extra": 0
+              },
+              {
+                "tag": "ConstantPermeability",
+                "name": "rockPerm",
+                "score": 0.0,
+                "attr_score": 0.0,
+                "n_gt_children": 0,
+                "n_matched": 0,
+                "n_extra": 0
+              },
+              {
+                "tag": "DeadOilFluid",
+                "name": "fluid",
+                "score": 0.0,
+                "attr_score": 0.0,
+                "n_gt_children": 0,
+                "n_matched": 0,
+                "n_extra": 0
+              },
+              {
+                "tag": "NullModel",
+                "name": "nullSolid",
+                "score": 0.0,
+                "attr_score": 0.0,
+                "n_gt_children": 0,
+                "n_matched": 0,
+                "n_extra": 0
+              },
+              {
+                "tag": "PressurePorosity",
+                "name": "rockPorosity",
+                "score": 0.4,
+                "attr_score": 0.4,
+                "n_gt_children": 0,
+                "n_matched": 0,
+                "n_extra": 0
+              }
+            ]
+          },
+          {
+            "tag": "ElementRegions",
+            "name": "",
+            "score": 0.3,
+            "attr_score": 1.0,
+            "n_gt_children": 1,
+            "n_matched": 0,
+            "n_extra": 1,
+            "children_score": 0.0,
+            "children": [
+              {
+                "tag": "CellElementRegion",
+                "name": "region",
+                "score": 0.0,
+                "attr_score": 0.0,
+                "n_gt_children": 0,
+                "n_matched": 0,
+                "n_extra": 0
+              }
+            ]
+          },
+          {
+            "tag": "Events",
+            "name": "",
+            "score": 0.461,
+            "attr_score": 1.0,
+            "n_gt_children": 4,
+            "n_matched": 2,
+            "n_extra": 1,
+            "children_score": 0.25,
+            "children": [
+              {
+                "tag": "PeriodicEvent",
+                "name": "outputs",
+                "score": 0.75,
+                "attr_score": 0.75,
+                "n_gt_children": 0,
+                "n_matched": 0,
+                "n_extra": 0
+              },
+              {
+                "tag": "PeriodicEvent",
+                "name": "timeHistoryCollection",
+                "score": 0.25,
+                "attr_score": 0.25,
+                "n_gt_children": 0,
+                "n_matched": 0,
+                "n_extra": 0
+              },
+              {
+                "tag": "PeriodicEvent",
+                "name": "timeHistoryOutput",
+                "score": 0.0,
+                "attr_score": 0.0,
+                "n_gt_children": 0,
+                "n_matched": 0,
+                "n_extra": 0
+              },
+              {
+                "tag": "PeriodicEvent",
+                "name": "solverApplications",
+                "score": 0.0,
+                "attr_score": 0.0,
+                "n_gt_children": 0,
+                "n_matched": 0,
+                "n_extra": 0
+              }
+            ]
+          },
+          {
+            "tag": "FieldSpecifications",
+            "name": "",
+            "score": 0.6204,
+            "attr_score": 1.0,
+            "n_gt_children": 8,
+            "n_matched": 7,
+            "n_extra": 0,
+            "children_score": 0.4577,
+            "children": [
+              {
+                "tag": "FieldSpecification",
+                "name": "initialComposition_water",
+                "score": 0.7143,
+                "attr_score": 0.7143,
+                "n_gt_children": 0,
+                "n_matched": 0,
+                "n_extra": 0
+              },
+              {
+                "tag": "FieldSpecification",
+                "name": "initialComposition_gas",
+                "score": 0.7143,
+                "attr_score": 0.7143,
+                "n_gt_children": 0,
+                "n_matched": 0,
+                "n_extra": 0
+              },
+              {
+                "tag": "FieldSpecification",
+                "name": "initialPressure",
+                "score": 0.6667,
+                "attr_score": 0.6667,
+                "n_gt_children": 0,
+                "n_matched": 0,
+                "n_extra": 0
+              },
+              {
+                "tag": "FieldSpecification",
+                "name": "sinkTermComposition_water",
+                "score": 0.5,
+                "attr_score": 0.5,
+                "n_gt_children": 0,
+                "n_matched": 0,
+                "n_extra": 0
+              },
+              {
+                "tag": "FieldSpecification",
+                "name": "sinkTermComposition_gas",
+                "score": 0.5,
+                "attr_score": 0.5,
+                "n_gt_children": 0,
+                "n_matched": 0,
+                "n_extra": 0
+              },
+              {
+                "tag": "FieldSpecification",
+                "name": "sinkTermPressure",
+                "score": 0.4,
+                "attr_score": 0.4,
+                "n_gt_children": 0,
+                "n_matched": 0,
+                "n_extra": 0
+              },
+              {
+                "tag": "FieldSpecification",
+                "name": "sinkTermTemperature",
+                "score": 0.0,
+                "attr_score": 0.0,
+                "n_gt_children": 0,
+                "n_matched": 0,
+                "n_extra": 0
+              },
+              {
+                "tag": "SourceFlux",
+                "name": "sourceTerm",
+                "score": 0.1667,
+                "attr_score": 0.1667,
+                "n_gt_children": 0,
+                "n_matched": 0,
+                "n_extra": 0
+              }
+            ]
+          },
+          {
+            "tag": "Geometry",
+            "name": "",
+            "score": 0.3,
+            "attr_score": 1.0,
+            "n_gt_children": 2,
+            "n_matched": 0,
+            "n_extra": 2,
+            "children_score": 0.0,
+            "children": [
+              {
+                "tag": "Box",
+                "name": "source",
+                "score": 0.0,
+                "attr_score": 0.0,
+                "n_gt_children": 0,
+                "n_matched": 0,
+                "n_extra": 0
+              },
+              {
+                "tag": "Box",
+                "name": "sink",
+                "score": 0.0,
+                "attr_score": 0.0,
+                "n_gt_children": 0,
+                "n_matched": 0,
+                "n_extra": 0
+              }
+            ]
+          },
+          {
+            "tag": "Mesh",
+            "name": "",
+            "score": 0.6889,
+            "attr_score": 1.0,
+            "n_gt_children": 1,
+            "n_matched": 1,
+            "n_extra": 0,
+            "children_score": 0.5556,
+            "children": [
+              {
+                "tag": "InternalMesh",
+                "name": "mesh",
+                "score": 0.5556,
+                "attr_score": 0.5556,
+                "n_gt_children": 0,
+                "n_matched": 0,
+                "n_extra": 0
+              }
+            ]
+          },
+          {
+            "tag": "NumericalMethods",
+            "name": "",
+            "score": 0.3,
+            "attr_score": 1.0,
+            "n_gt_children": 1,
+            "n_matched": 0,
+            "n_extra": 0,
+            "children_score": 0.0,
+            "children": [
+              {
+                "tag": "FiniteVolume",
+                "name": "",
+                "score": 0.0,
+                "attr_score": 0.0,
+                "n_gt_children": 1,
+                "n_matched": 0,
+                "n_extra": 0,
+                "children_score": 0.0,
+                "children": [
+                  {
+                    "tag": "TwoPointFluxApproximation",
+                    "name": "fluidTPFA",
+                    "score": 0.0,
+                    "attr_score": 0.0,
+                    "n_gt_children": 0,
+                    "n_matched": 0,
+                    "n_extra": 0
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "tag": "Outputs",
+            "name": "",
+            "score": 0.3603,
+            "attr_score": 1.0,
+            "n_gt_children": 3,
+            "n_matched": 1,
+            "n_extra": 1,
+            "children_score": 0.1111,
+            "children": [
+              {
+                "tag": "Restart",
+                "name": "restartOutput",
+                "score": 0.0,
+                "attr_score": 0.0,
+                "n_gt_children": 0,
+                "n_matched": 0,
+                "n_extra": 0
+              },
+              {
+                "tag": "TimeHistory",
+                "name": "timeHistoryOutput",
+                "score": 0.0,
+                "attr_score": 0.0,
+                "n_gt_children": 0,
+                "n_matched": 0,
+                "n_extra": 0
+              },
+              {
+                "tag": "VTK",
+                "name": "vtkOutput",
+                "score": 0.3333,
+                "attr_score": 0.3333,
+                "n_gt_children": 0,
+                "n_matched": 0,
+                "n_extra": 0
+              }
+            ]
+          },
+          {
+            "tag": "Solvers",
+            "name": "",
+            "score": 0.459,
+            "attr_score": 1.0,
+            "n_gt_children": 1,
+            "n_matched": 1,
+            "n_extra": 0,
+            "children_score": 0.2271,
+            "children": [
+              {
+                "tag": "CompositionalMultiphaseFVM",
+                "name": "compflow",
+                "score": 0.2271,
+                "attr_score": 0.3,
+                "n_gt_children": 2,
+                "n_matched": 2,
+                "n_extra": 1,
+                "children_score": 0.2292,
+                "children": [
+                  {
+                    "tag": "LinearSolverParameters",
+                    "name": "",
+                    "score": 0.3333,
+                    "attr_score": 0.3333,
+                    "n_gt_children": 0,
+                    "n_matched": 0,
+                    "n_extra": 0
+                  },
+                  {
+                    "tag": "NonlinearSolverParameters",
+                    "name": "",
+                    "score": 0.125,
+                    "attr_score": 0.125,
+                    "n_gt_children": 0,
+                    "n_matched": 0,
+                    "n_extra": 0
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "tag": "Tasks",
+            "name": "",
+            "score": 0.0,
+            "attr_score": 0.0,
+            "n_gt_children": 0,
+            "n_matched": 0,
+            "n_extra": 0
+          }
+        ]
+      },
+      "dimension_scores": {
+        "structural_completeness": 1.0,
+        "element_type_match": 0.561,
+        "attribute_accuracy": 0.4505,
+        "tag_coverage": 0.7419
+      },
+      "ordering_score": 1.0,
+      "weights": {
+        "structural_completeness": 0.15,
+        "element_type_match": 0.35,
+        "attribute_accuracy": 0.35,
+        "tag_coverage": 0.15
+      },
+      "details": {
+        "structural_completeness": {
+          "required_present": [
+            "Constitutive",
+            "ElementRegions",
+            "Events",
+            "Mesh"
+          ],
+          "required_missing": []
+        },
+        "element_type_match": {
+          "gt_only": [
+            "CompressibleSolidConstantPermeability",
+            "DeadOilFluid",
+            "NullModel",
+            "PackCollection",
+            "Restart",
+            "Tasks",
+            "TimeHistory",
+            "TwoPointFluxApproximation"
+          ],
+          "gen_only": [
+            "CO2BrineFluid",
+            "DerivedParameters",
+            "EOSPropertyFiles",
+            "ElasticIsotropic",
+            "FieldData",
+            "HDF5",
+            "Objectives",
+            "Point",
+            "SolverEvent",
+            "Specifications"
+          ],
+          "shared": [
+            "Box",
+            "BrooksCoreyRelativePermeability",
+            "CellElementRegion",
+            "CompositionalMultiphaseFVM",
+            "ConstantPermeability",
+            "Constitutive",
+            "ElementRegions",
+            "Events",
+            "FieldSpecification",
+            "FieldSpecifications",
+            "FiniteVolume",
+            "Geometry",
+            "InternalMesh",
+            "LinearSolverParameters",
+            "Mesh",
+            "NonlinearSolverParameters",
+            "NumericalMethods",
+            "Outputs",
+            "PeriodicEvent",
+            "PressurePorosity",
+            "Solvers",
+            "SourceFlux",
+            "VTK"
+          ]
+        },
+        "attribute_accuracy": {
+          "matched_attrs": 41,
+          "total_attrs": 91,
+          "elements_compared": 25,
+          "elements_unmatched_gt": 16,
+          "elements_unmatched_gen": 20,
+          "top_mismatches": [
+            {
+              "gt_tag": "PressurePorosity",
+              "gt_name": "rockPorosity",
+              "gen_name": "porosity",
+              "similarity": 0.3,
+              "attrs_matched": 2,
+              "attrs_total": 5,
+              "mismatches": [
+                "name: GT='rockPorosity' GEN='porosity'",
+                "defaultReferencePorosity: missing in GEN",
+                "referencePorosity: extra in GEN"
+              ]
+            },
+            {
+              "gt_tag": "VTK",
+              "gt_name": "vtkOutput",
+              "gen_name": "vtkOutput",
+              "similarity": 0.4,
+              "attrs_matched": 1,
+              "attrs_total": 3,
+              "mismatches": [
+                "parallelWrite: extra in GEN",
+                "file: extra in GEN"
+              ]
+            },
+            {
+              "gt_tag": "CompositionalMultiphaseFVM",
+              "gt_name": "compflow",
+              "gen_name": "compSolver",
+              "similarity": 0.2,
+              "attrs_matched": 3,
+              "attrs_total": 10,
+              "mismatches": [
+                "relPermNames: extra in GEN",
+                "initialDt: missing in GEN",
+                "fluidNames: extra in GEN",
+                "targetRegions: GT='{ region }' GEN='{Region}'",
+                "name: GT='compflow' GEN='compSolver'",
+                "solidNames: extra in GEN",
+                "logLevel: missing in GEN"
+              ]
+            },
+            {
+              "gt_tag": "LinearSolverParameters",
+              "gt_name": "",
+              "gen_name": "",
+              "similarity": 0.2,
+              "attrs_matched": 1,
+              "attrs_total": 3,
+              "mismatches": [
+                "directParallel: missing in GEN",
+                "logLevel: missing in GEN"
+              ]
+            },
+            {
+              "gt_tag": "NonlinearSolverParameters",
+              "gt_name": "",
+              "gen_name": "",
+              "similarity": 0.075,
+              "attrs_matched": 1,
+              "attrs_total": 8,
+              "mismatches": [
+                "lineSearchCuts: extra in GEN",
+                "newtonMaxIter: missing in GEN",
+                "maxIter: extra in GEN",
+                "timeStepCuts: extra in GEN",
+                "maxTimeStepCuts: missing in GEN",
+                "lineSearchMaxCuts: missing in GEN",
+                "lineSearchAction: extra in GEN"
+              ]
+            },
+            {
+              "gt_tag": "PeriodicEvent",
+              "gt_name": "outputs",
+              "gen_name": "vtkOutput70s",
+              "similarity": 0.6,
+              "attrs_matched": 3,
+              "attrs_total": 4,
+              "mismatches": [
+                "name: GT='outputs' GEN='vtkOutput70s'"
+              ]
+            },
+            {
+              "gt_tag": "PeriodicEvent",
+              "gt_name": "timeHistoryCollection",
+              "gen_name": "saturationHistoryOutput",
+              "similarity": 0.2,
+              "attrs_matched": 1,
+              "attrs_total": 4,
+              "mismatches": [
+                "targetExactTimestep: GT='1' GEN='0'",
+                "target: GT='/Tasks/phaseVolumeFractionCollection' GEN='/Outputs/saturationHistory'",
+                "name: GT='timeHistoryCollection' GEN='saturationHistoryOutput'"
+              ]
+            },
+            {
+              "gt_tag": "InternalMesh",
+              "gt_name": "mesh",
+              "gen_name": "mesh",
+              "similarity": 0.7,
+              "attrs_matched": 5,
+              "attrs_total": 9,
+              "mismatches": [
+                "yCoords: GT='{ 0, 0.00202683 }' GEN='{0.0, 1.0}'",
+                "elementTypes: GT='{ C3D8 }' GEN='{C3D8}'",
+                "cellBlockNames: GT='{ cellBlock }' GEN='{cellBlock}'",
+                "zCoords: GT='{ 0, 1 }' GEN='{0.0, 0.00202683}'"
+              ]
+            },
+            {
+              "gt_tag": "FiniteVolume",
+              "gt_name": "",
+              "gen_name": "fluidTPFA",
+              "similarity": 0.6,
+              "attrs_matched": 0,
+              "attrs_total": 1,
+              "mismatches": [
+                "name: extra in GEN"
+              ]
+            },
+            {
+              "gt_tag": "SourceFlux",
+              "gt_name": "sourceTerm",
+              "gen_name": "injectionSource",
+              "similarity": 0.12,
+              "attrs_matched": 1,
+              "attrs_total": 6,
+              "mismatches": [
+                "objectPath: GT='ElementRegions' GEN='ElementRegions/Region/cellBlock'",
+                "fluxName: extra in GEN",
+                "scale: GT='-0.00007' GEN='0.00007'",
+                "name: GT='sourceTerm' GEN='injectionSource'",
+                "setNames: GT='{ source }' GEN='{inlet}'"
+              ]
+            },
+            {
+              "gt_tag": "FieldSpecification",
+              "gt_name": "initialComposition_water",
+              "gen_name": "initialComposition_water",
+              "similarity": 0.8,
+              "attrs_matched": 5,
+              "attrs_total": 7,
+              "mismatches": [
+                "objectPath: GT='ElementRegions' GEN='ElementRegions/Region/cellBlock'",
+                "setNames: GT='{ all }' GEN='{all}'"
+              ]
+            },
+            {
+              "gt_tag": "FieldSpecification",
+              "gt_name": "initialComposition_gas",
+              "gen_name": "initialComposition_gas",
+              "similarity": 0.8,
+              "attrs_matched": 5,
+              "attrs_total": 7,
+              "mismatches": [
+                "objectPath: GT='ElementRegions' GEN='ElementRegions/Region/cellBlock'",
+                "setNames: GT='{ all }' GEN='{all}'"
+              ]
+            },
+            {
+              "gt_tag": "FieldSpecification",
+              "gt_name": "initialPressure",
+              "gen_name": "initialPressure",
+              "similarity": 0.76,
+              "attrs_matched": 4,
+              "attrs_total": 6,
+              "mismatches": [
+                "objectPath: GT='ElementRegions' GEN='ElementRegions/Region/cellBlock'",
+                "setNames: GT='{ all }' GEN='{all}'"
+              ]
+            },
+            {
+              "gt_tag": "FieldSpecification",
+              "gt_name": "sinkTermComposition_water",
+              "gen_name": "outletComposition_water",
+              "similarity": 0.36,
+              "attrs_matched": 3,
+              "attrs_total": 6,
+              "mismatches": [
+                "objectPath: GT='faceManager' GEN='ElementRegions/Region/cellBlock'",
+                "name: GT='sinkTermComposition_water' GEN='outletComposition_water'",
+                "setNames: GT='{ sink }' GEN='{outlet}'"
+              ]
+            },
+            {
+              "gt_tag": "FieldSpecification",
+              "gt_name": "sinkTermComposition_gas",
+              "gen_name": "outletComposition_gas",
+              "similarity": 0.36,
+              "attrs_matched": 3,
+              "attrs_total": 6,
+              "mismatches": [
+                "objectPath: GT='faceManager' GEN='ElementRegions/Region/cellBlock'",
+                "name: GT='sinkTermComposition_gas' GEN='outletComposition_gas'",
+                "setNames: GT='{ sink }' GEN='{outlet}'"
+              ]
+            },
+            {
+              "gt_tag": "FieldSpecification",
+              "gt_name": "sinkTermPressure",
+              "gen_name": "outletPressure",
+              "similarity": 0.3,
+              "attrs_matched": 2,
+              "attrs_total": 5,
+              "mismatches": [
+                "objectPath: GT='faceManager' GEN='ElementRegions/Region/cellBlock'",
+                "name: GT='sinkTermPressure' GEN='outletPressure'",
+                "setNames: GT='{ sink }' GEN='{outlet}'"
+              ]
+            }
+          ]
+        },
+        "tag_coverage": {
+          "covered": [
+            "Box",
+            "BrooksCoreyRelativePermeability",
+            "CellElementRegion",
+            "CompositionalMultiphaseFVM",
+            "ConstantPermeability",
+            "Constitutive",
+            "ElementRegions",
+            "Events",
+            "FieldSpecification",
+            "FieldSpecifications",
+            "FiniteVolume",
+            "Geometry",
+            "InternalMesh",
+            "LinearSolverParameters",
+            "Mesh",
+            "NonlinearSolverParameters",
+            "NumericalMethods",
+            "Outputs",
+            "PeriodicEvent",
+            "PressurePorosity",
+            "Solvers",
+            "SourceFlux",
+            "VTK"
+          ],
+          "missing": [
+            "CompressibleSolidConstantPermeability",
+            "DeadOilFluid",
+            "NullModel",
+            "PackCollection",
+            "Restart",
+            "Tasks",
+            "TimeHistory",
+            "TwoPointFluxApproximation"
+          ]
+        },
+        "ordering": {
+          "note": "Too few matched PeriodicEvents for ordering check"
+        }
+      },
+      "match_summary": {
+        "paired_elements": 25,
+        "gt_unmatched": 16,
+        "gen_unmatched": 20
+      },
+      "gt_sections": [
+        "Constitutive",
+        "ElementRegions",
+        "Events",
+        "FieldSpecifications",
+        "Geometry",
+        "Mesh",
+        "NumericalMethods",
+        "Outputs",
+        "Solvers",
+        "Tasks"
+      ],
+      "gen_sections": [
+        "Constitutive",
+        "ElementRegions",
+        "Events",
+        "FieldSpecifications",
+        "Geometry",
+        "Mesh",
+        "NumericalMethods",
+        "Outputs",
+        "Solvers",
+        "Specifications",
+        "Specifications"
+      ],
+      "gt_element_types": [
+        "Box",
+        "BrooksCoreyRelativePermeability",
+        "CellElementRegion",
+        "CompositionalMultiphaseFVM",
+        "CompressibleSolidConstantPermeability",
+        "ConstantPermeability",
+        "Constitutive",
+        "DeadOilFluid",
+        "ElementRegions",
+        "Events",
+        "FieldSpecification",
+        "FieldSpecifications",
+        "FiniteVolume",
+        "Geometry",
+        "InternalMesh",
+        "LinearSolverParameters",
+        "Mesh",
+        "NonlinearSolverParameters",
+        "NullModel",
+        "NumericalMethods",
+        "Outputs",
+        "PackCollection",
+        "PeriodicEvent",
+        "PressurePorosity",
+        "Restart",
+        "Solvers",
+        "SourceFlux",
+        "Tasks",
+        "TimeHistory",
+        "TwoPointFluxApproximation",
+        "VTK"
+      ],
+      "gen_element_types": [
+        "Box",
+        "BrooksCoreyRelativePermeability",
+        "CO2BrineFluid",
+        "CellElementRegion",
+        "CompositionalMultiphaseFVM",
+        "ConstantPermeability",
+        "Constitutive",
+        "DerivedParameters",
+        "EOSPropertyFiles",
+        "ElasticIsotropic",
+        "ElementRegions",
+        "Events",
+        "FieldData",
+        "FieldSpecification",
+        "FieldSpecifications",
+        "FiniteVolume",
+        "Geometry",
+        "HDF5",
+        "InternalMesh",
+        "LinearSolverParameters",
+        "Mesh",
+        "NonlinearSolverParameters",
+        "NumericalMethods",
+        "Objectives",
+        "Outputs",
+        "PeriodicEvent",
+        "Point",
+        "PressurePorosity",
+        "SolverEvent",
+        "Solvers",
+        "SourceFlux",
+        "Specifications",
+        "VTK"
+      ],
+      "mode": "directory",
+      "gt_dir": "/data/shared/geophysics_agent_data/data/eval/experiments_gt/buckleyLeverettProblem/inputs",
+      "gen_dir": "data/eval/claude_code_repo3_plugin_m4u/mem_m4u_s3/buckleyLeverettProblem/inputs",
+      "status": "success"
+    },
+    {
+      "experiment": "kgdExperimentValidation",
+      "status": "error",
+      "error": "FileNotFoundError: No XML files found in data/eval/claude_code_repo3_plugin_m4u/mem_m4u_s3/kgdExperimentValidation/inputs"
+    },
+    {
+      "experiment": "pknViscosityDominated",
+      "status": "error",
+      "error": "FileNotFoundError: No XML files found in data/eval/claude_code_repo3_plugin_m4u/mem_m4u_s3/pknViscosityDominated/inputs"
+    }
+  ]
+}

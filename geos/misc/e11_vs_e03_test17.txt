@@ -1,0 +1,42 @@
+
+==============================================================================
+  gmem vs plugin
+==============================================================================
+  tasks in both: 17
+
+  gmem
+    scored: 17/17    failed: []
+    mean: 0.638    median: 0.676    range: [0.088, 0.939]
+    pass >=0.7: 7/17
+
+  plugin
+    scored: 17/17    failed: []
+    mean: 0.831    median: 0.852    range: [0.583, 0.992]
+    pass >=0.7: 15/17
+
+  Paired on 17 tasks scored in both runs:
+    mean delta (gmem - plugin): -0.192
+    median delta: -0.126
+    wins gmem: 1
+    wins plugin: 16
+    ties: 0
+
+  Biggest wins for gmem:
+    +0.142   gmem=0.882  plugin=0.740   pknViscosityDominated
+    -0.008   gmem=0.815  plugin=0.823   AdvancedExampleDruckerPrager
+    -0.020   gmem=0.563  plugin=0.583   ExampleThermoporoelasticConsolidation
+    -0.029   gmem=0.696  plugin=0.725   buckleyLeverettProblem
+    -0.053   gmem=0.939  plugin=0.992   ExampleDPWellbore
+    -0.081   gmem=0.810  plugin=0.890   ExampleIsothermalLeakyWell
+    -0.085   gmem=0.676  plugin=0.762   AdvancedExampleViscoDruckerPrager
+    -0.106   gmem=0.761  plugin=0.866   AdvancedExampleDeviatedElasticWellbore
+
+  Biggest wins for plugin:
+    -0.716   gmem=0.088  plugin=0.804   TutorialSneddon
+    -0.669   gmem=0.279  plugin=0.948   ExampleMandel
+    -0.324   gmem=0.635  plugin=0.959   AdvancedExampleExtendedDruckerPrager
+    -0.285   gmem=0.385  plugin=0.670   TutorialPoroelasticity
+    -0.282   gmem=0.596  plugin=0.878   ExampleEDPWellbore
+    -0.268   gmem=0.585  plugin=0.852   ExampleThermalLeakyWell
+    -0.200   gmem=0.646  plugin=0.847   AdvancedExampleCasedContactThermoElasticWellbore
+    -0.161   gmem=0.757  plugin=0.918   AdvancedExampleModifiedCamClay

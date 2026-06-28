@@ -1,0 +1,42 @@
+
+==============================================================================
+  np_s2 vs np_s1
+==============================================================================
+  tasks in both: 17
+
+  np_s2
+    scored: 17/17    failed: []
+    mean: 0.597    median: 0.660    range: [0.085, 0.939]
+    pass >=0.7: 6/17
+
+  np_s1
+    scored: 17/17    failed: []
+    mean: 0.589    median: 0.660    range: [0.099, 0.861]
+    pass >=0.7: 6/17
+
+  Paired on 17 tasks scored in both runs:
+    mean delta (np_s2 - np_s1): +0.008
+    median delta: -0.007
+    wins np_s2: 7
+    wins np_s1: 9
+    ties: 1
+
+  Biggest wins for np_s2:
+    +0.206   np_s2=0.801  np_s1=0.595   AdvancedExampleDruckerPrager
+    +0.139   np_s2=0.681  np_s1=0.542   AdvancedExampleCasedContactThermoElasticWellbore
+    +0.083   np_s2=0.939  np_s1=0.856   pknViscosityDominated
+    +0.039   np_s2=0.754  np_s1=0.714   buckleyLeverettProblem
+    +0.029   np_s2=0.644  np_s1=0.615   AdvancedExampleModifiedCamClay
+    +0.009   np_s2=0.284  np_s1=0.275   ExampleMandel
+    +0.002   np_s2=0.662  np_s1=0.660   AdvancedExampleViscoDruckerPrager
+    +0.000   np_s2=0.305  np_s1=0.305   ExampleDPWellbore
+
+  Biggest wins for np_s1:
+    -0.092   np_s2=0.393  np_s1=0.484   ExampleThermoporoelasticConsolidation
+    -0.081   np_s2=0.780  np_s1=0.861   ExampleEDPWellbore
+    -0.077   np_s2=0.634  np_s1=0.711   kgdExperimentValidation
+    -0.047   np_s2=0.625  np_s1=0.672   ExampleThermalLeakyWell
+    -0.020   np_s2=0.359  np_s1=0.379   TutorialPoroelasticity
+    -0.017   np_s2=0.660  np_s1=0.676   AdvancedExampleExtendedDruckerPrager
+    -0.014   np_s2=0.085  np_s1=0.099   TutorialSneddon
+    -0.013   np_s2=0.834  np_s1=0.847   ExampleIsothermalLeakyWell

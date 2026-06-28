@@ -1,0 +1,217 @@
+{
+  "experiment": "AdvancedExampleViscoModifiedCamClay",
+  "overall_score": 1.67,
+  "overall_01": 0.1667,
+  "treesim": 0.1667,
+  "treesim_section_scores": {
+    "Constitutive": 0.0,
+    "ElementRegions": 0.0,
+    "Events": 0.0,
+    "Functions": 0.0,
+    "Mesh": 0.0,
+    "Tasks": 1.0
+  },
+  "treesim_detail": {
+    "tag": "Problem",
+    "name": "",
+    "score": 0.1667,
+    "attr_score": 1.0,
+    "n_gt_children": 6,
+    "n_matched": 1,
+    "n_extra": 0,
+    "children_score": 0.1667,
+    "children": [
+      {
+        "tag": "Constitutive",
+        "name": "",
+        "score": 0.0,
+        "attr_score": 0.0,
+        "n_gt_children": 0,
+        "n_matched": 0,
+        "n_extra": 0
+      },
+      {
+        "tag": "ElementRegions",
+        "name": "",
+        "score": 0.0,
+        "attr_score": 0.0,
+        "n_gt_children": 0,
+        "n_matched": 0,
+        "n_extra": 0
+      },
+      {
+        "tag": "Events",
+        "name": "",
+        "score": 0.0,
+        "attr_score": 0.0,
+        "n_gt_children": 0,
+        "n_matched": 0,
+        "n_extra": 0
+      },
+      {
+        "tag": "Functions",
+        "name": "",
+        "score": 0.0,
+        "attr_score": 0.0,
+        "n_gt_children": 0,
+        "n_matched": 0,
+        "n_extra": 0
+      },
+      {
+        "tag": "Mesh",
+        "name": "",
+        "score": 0.0,
+        "attr_score": 0.0,
+        "n_gt_children": 0,
+        "n_matched": 0,
+        "n_extra": 0
+      },
+      {
+        "tag": "Tasks",
+        "name": "",
+        "score": 1.0,
+        "attr_score": 1.0,
+        "n_gt_children": 1,
+        "n_matched": 1,
+        "n_extra": 0,
+        "children_score": 1.0,
+        "children": [
+          {
+            "tag": "TriaxialDriver",
+            "name": "triaxialDriver",
+            "score": 1.0,
+            "attr_score": 1.0,
+            "n_gt_children": 0,
+            "n_matched": 0,
+            "n_extra": 0
+          }
+        ]
+      }
+    ]
+  },
+  "dimension_scores": {
+    "structural_completeness": 0.0,
+    "element_type_match": 0.1176,
+    "attribute_accuracy": 1.0,
+    "tag_coverage": 0.1176
+  },
+  "ordering_score": 1.0,
+  "weights": {
+    "structural_completeness": 0.15,
+    "element_type_match": 0.35,
+    "attribute_accuracy": 0.35,
+    "tag_coverage": 0.15
+  },
+  "details": {
+    "structural_completeness": {
+      "required_present": [],
+      "required_missing": [
+        "Constitutive",
+        "ElementRegions",
+        "Events",
+        "Mesh"
+      ]
+    },
+    "element_type_match": {
+      "gt_only": [
+        "CellElementRegion",
+        "Constitutive",
+        "DruckerPrager",
+        "ElementRegions",
+        "Events",
+        "ExtendedDruckerPrager",
+        "Functions",
+        "InternalMesh",
+        "Mesh",
+        "ModifiedCamClay",
+        "SoloEvent",
+        "TableFunction",
+        "ViscoDruckerPrager",
+        "ViscoExtendedDruckerPrager",
+        "ViscoModifiedCamClay"
+      ],
+      "gen_only": [],
+      "shared": [
+        "Tasks",
+        "TriaxialDriver"
+      ]
+    },
+    "attribute_accuracy": {
+      "matched_attrs": 8,
+      "total_attrs": 8,
+      "elements_compared": 2,
+      "elements_unmatched_gt": 17,
+      "elements_unmatched_gen": 0,
+      "top_mismatches": []
+    },
+    "tag_coverage": {
+      "covered": [
+        "Tasks",
+        "TriaxialDriver"
+      ],
+      "missing": [
+        "CellElementRegion",
+        "Constitutive",
+        "DruckerPrager",
+        "ElementRegions",
+        "Events",
+        "ExtendedDruckerPrager",
+        "Functions",
+        "InternalMesh",
+        "Mesh",
+        "ModifiedCamClay",
+        "SoloEvent",
+        "TableFunction",
+        "ViscoDruckerPrager",
+        "ViscoExtendedDruckerPrager",
+        "ViscoModifiedCamClay"
+      ]
+    },
+    "ordering": {
+      "note": "No Events section to check ordering"
+    }
+  },
+  "match_summary": {
+    "paired_elements": 2,
+    "gt_unmatched": 17,
+    "gen_unmatched": 0
+  },
+  "gt_sections": [
+    "Constitutive",
+    "ElementRegions",
+    "Events",
+    "Functions",
+    "Mesh",
+    "Tasks"
+  ],
+  "gen_sections": [
+    "Tasks"
+  ],
+  "gt_element_types": [
+    "CellElementRegion",
+    "Constitutive",
+    "DruckerPrager",
+    "ElementRegions",
+    "Events",
+    "ExtendedDruckerPrager",
+    "Functions",
+    "InternalMesh",
+    "Mesh",
+    "ModifiedCamClay",
+    "SoloEvent",
+    "TableFunction",
+    "Tasks",
+    "TriaxialDriver",
+    "ViscoDruckerPrager",
+    "ViscoExtendedDruckerPrager",
+    "ViscoModifiedCamClay"
+  ],
+  "gen_element_types": [
+    "Tasks",
+    "TriaxialDriver"
+  ],
+  "mode": "directory",
+  "gt_dir": "/data/shared/geophysics_agent_data/data/eval/experiments_gt/AdvancedExampleViscoModifiedCamClay/inputs",
+  "gen_dir": "data/eval/claude_code_no_plugin/vanilla_cc_train_s1/AdvancedExampleViscoModifiedCamClay/inputs",
+  "status": "success"
+}

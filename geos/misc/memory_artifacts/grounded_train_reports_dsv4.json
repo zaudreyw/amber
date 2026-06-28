@@ -1,0 +1,758 @@
+[
+  {
+    "task_id": "AdvancedExampleViscoModifiedCamClay",
+    "final_treesim": 1.0,
+    "failure_mode": "success",
+    "section_failures": [
+      {
+        "section": "Constitutive",
+        "score": 1.0
+      },
+      {
+        "section": "ElementRegions",
+        "score": 1.0
+      },
+      {
+        "section": "Events",
+        "score": 1.0
+      },
+      {
+        "section": "Functions",
+        "score": 1.0
+      },
+      {
+        "section": "Mesh",
+        "score": 1.0
+      }
+    ],
+    "top_missed_elements": [],
+    "top_hallucinated_elements": [],
+    "dominant_dimension": "structural_completeness",
+    "attribute_accuracy": 1.0,
+    "structural_completeness": 1.0,
+    "tool_call_summary": {
+      "rag_queries": 0,
+      "reads": 38,
+      "writes": 5,
+      "edits": 0,
+      "bashes": 2,
+      "total": 89
+    },
+    "productive_rag_queries_sanitized": [],
+    "agent_response_tail": "river/<xml_filename_stripped>\n```\n\nThe TriaxialDriver will execute 200 equal steps over the 1.0 s simulation, interpolating the strain function table to apply oedometric loading/unloading cycles. Results are written to `ViscoModifiedCamClayResults.txt` with columns: time, axial strain, radial strains (1 & 2), axial stress, radial stresses (1 & 2), Newton iterations, and residual norm \u2014 which gives you the stress/strain trajectory needed for the Perzyna semi-analytical comparison."
+  },
+  {
+    "task_id": "kgdToughnessDominated",
+    "final_treesim": 0.9484,
+    "failure_mode": "success",
+    "section_failures": [
+      {
+        "section": "Functions",
+        "score": 0.767
+      },
+      {
+        "section": "NumericalMethods",
+        "score": 0.877
+      },
+      {
+        "section": "ElementRegions",
+        "score": 0.883
+      },
+      {
+        "section": "Constitutive",
+        "score": 0.956
+      },
+      {
+        "section": "Solvers",
+        "score": 0.964
+      }
+    ],
+    "top_missed_elements": [],
+    "top_hallucinated_elements": [],
+    "dominant_dimension": "structural_completeness",
+    "attribute_accuracy": 0.97,
+    "structural_completeness": 1.0,
+    "tool_call_summary": {
+      "rag_queries": 0,
+      "reads": 50,
+      "writes": 2,
+      "edits": 0,
+      "bashes": 0,
+      "total": 90
+    },
+    "productive_rag_queries_sanitized": [],
+    "agent_response_tail": "e/Benchmark pattern**: Reusable physics (solvers, materials, constitutive, outputs) in the base; case-specific mesh, geometry, and execution schedule in the benchmark\n- **Toughness-dominated regime**: Low fluid viscosity (1e-6 Pa\u00b7s) with rock toughness 1e6 Pa\u00b7m^(1/2) forces toughness-dominated propagation\n- **nz=2** for node-based SIF propagation (matching analytical solutions per specification)\n- **Symmetry half-wing**: SourceFlux scale of -5e-2 kg/s (half the total injection rate per the spec)"
+  },
+  {
+    "task_id": "triaxialDriverExample",
+    "final_treesim": 0.9336,
+    "failure_mode": "success",
+    "section_failures": [
+      {
+        "section": "ElementRegions",
+        "score": 0.767
+      },
+      {
+        "section": "Tasks",
+        "score": 0.912
+      },
+      {
+        "section": "Constitutive",
+        "score": 0.922
+      },
+      {
+        "section": "Events",
+        "score": 1.0
+      },
+      {
+        "section": "Functions",
+        "score": 1.0
+      }
+    ],
+    "top_missed_elements": [],
+    "top_hallucinated_elements": [],
+    "dominant_dimension": "structural_completeness",
+    "attribute_accuracy": 0.925,
+    "structural_completeness": 1.0,
+    "tool_call_summary": {
+      "rag_queries": 0,
+      "reads": 13,
+      "writes": 4,
+      "edits": 0,
+      "bashes": 3,
+      "total": 40
+    },
+    "productive_rag_queries_sanitized": [],
+    "agent_response_tail": "tant confining pressure: -10 MPa throughout\n\n---\n\nThe loading sequence compresses the sample axially (driving it into the plastic regime with the EDP model) then partially unloads, showing the elastoplastic response. To run:\n\n```bash\ncd /workspace/inputs\ngeosx -i <xml_filename_stripped>\n```\n\nThe output `simulationResults.txt` will contain time, axial strain, radial strains, axial stress, radial stresses, Newton iterations, and residual norm at each of the 200 steps."
+  },
+  {
+    "task_id": "kgdViscosityDominated",
+    "final_treesim": 0.9625,
+    "failure_mode": "success",
+    "section_failures": [
+      {
+        "section": "Functions",
+        "score": 0.767
+      },
+      {
+        "section": "Outputs",
+        "score": 0.942
+      },
+      {
+        "section": "Constitutive",
+        "score": 0.956
+      },
+      {
+        "section": "Solvers",
+        "score": 0.993
+      },
+      {
+        "section": "ElementRegions",
+        "score": 1.0
+      }
+    ],
+    "top_missed_elements": [],
+    "top_hallucinated_elements": [],
+    "dominant_dimension": "structural_completeness",
+    "attribute_accuracy": 0.969,
+    "structural_completeness": 1.0,
+    "tool_call_summary": {
+      "rag_queries": 0,
+      "reads": 11,
+      "writes": 3,
+      "edits": 0,
+      "bashes": 3,
+      "total": 21
+    },
+    "productive_rag_queries_sanitized": [],
+    "agent_response_tail": "- **Non-poroelastic**: No `isMatrixPoroelastic`/`isPoroelastic` flags; flow solver targets only `{ Fracture }`; Domain material list is `{ water, rock }` without porous constitutive models\n- **Zero gravity** as specified, using `gravityVector=\"{ 0.0, 0.0, 0.0 }\"`\n- **`maxEventDt=\"5.0\"`** on the smoke solver event allows the solver to adapt timesteps autonomously while capping the maximum\n- **`cycleFrequency=\"2\"`** on the smoke restart event triggers output every 2 solver cycles per specification"
+  },
+  {
+    "task_id": "pennyFracViscosityDominated",
+    "final_treesim": 0.9989,
+    "failure_mode": "success",
+    "section_failures": [
+      {
+        "section": "Events",
+        "score": 0.988
+      },
+      {
+        "section": "Constitutive",
+        "score": 1.0
+      },
+      {
+        "section": "ElementRegions",
+        "score": 1.0
+      },
+      {
+        "section": "FieldSpecifications",
+        "score": 1.0
+      },
+      {
+        "section": "Functions",
+        "score": 1.0
+      }
+    ],
+    "top_missed_elements": [],
+    "top_hallucinated_elements": [],
+    "dominant_dimension": "structural_completeness",
+    "attribute_accuracy": 1.0,
+    "structural_completeness": 1.0,
+    "tool_call_summary": {
+      "rag_queries": 0,
+      "reads": 29,
+      "writes": 2,
+      "edits": 0,
+      "bashes": 8,
+      "total": 60
+    },
+    "productive_rag_queries_sanitized": [],
+    "agent_response_tail": ", source zone (\u00b12.1m), core fracture plane (\u00b1500.1m)\n- **Events**: Forced time-step schedule (0.2s\u21920.5s\u21921s\u21922s\u21924s\u21928s\u219210s\u219220s), output every 2s, `maxTime=400.1s`\n\n### Key design decisions\n- **Non-poroelastic** (pure `ElasticIsotropic`, `targetRegions=\"{ Fracture }\"` on Hydrofracture, no `isMatrixPoroelastic`)\n- **Viscosity-storage-dominated regime**: low toughness (0.3 MPa\u00b7m\u00b9/\u00b2), fluid viscosity 1.0e-3 Pa\u00b7s\n- **Quarter-symmetry**: mesh spans positive X/Y only, roller constraints on symmetry planes"
+  },
+  {
+    "task_id": "AdvancedExampleCasedElasticWellboreImperfectInterfaces",
+    "final_treesim": 0.7048,
+    "failure_mode": "success",
+    "section_failures": [
+      {
+        "section": "Outputs",
+        "score": 0.0
+      },
+      {
+        "section": "Solvers",
+        "score": 0.0
+      },
+      {
+        "section": "Tasks",
+        "score": 0.0
+      },
+      {
+        "section": "Events",
+        "score": 0.439
+      },
+      {
+        "section": "NumericalMethods",
+        "score": 0.65
+      }
+    ],
+    "top_missed_elements": [],
+    "top_hallucinated_elements": [],
+    "dominant_dimension": "structural_completeness",
+    "attribute_accuracy": 0.761,
+    "structural_completeness": 1.0,
+    "tool_call_summary": {
+      "rag_queries": 0,
+      "reads": 32,
+      "writes": 3,
+      "edits": 0,
+      "bashes": 4,
+      "total": 85
+    },
+    "productive_rag_queries_sanitized": [],
+    "agent_response_tail": "asks/Outputs**: PackCollections for stress in each region, displacement, displacementJump; TimeHistory writers; VTK; Restart\n\n### `<xml_filename_stripped>`\nCoarse mesh quick smoke test (1.0s):\n- **Mesh**: Reduced to 2/2/2 radial elements, 4 angular elements\n- **Events**: Single 1.0s time step (forceDt=1.0), maxTime=1.0\n- **Outputs**: VTK exactly at 1.0s, restart at 0.5s frequency (no exact timestep targeting)\n- No time-history collections (Tasks block omitted entirely)"
+  },
+  {
+    "task_id": "ExampleKirschWellbore",
+    "final_treesim": 0.8685,
+    "failure_mode": "success",
+    "section_failures": [
+      {
+        "section": "Events",
+        "score": 0.533
+      },
+      {
+        "section": "ElementRegions",
+        "score": 0.767
+      },
+      {
+        "section": "Outputs",
+        "score": 0.767
+      },
+      {
+        "section": "Solvers",
+        "score": 0.843
+      },
+      {
+        "section": "FieldSpecifications",
+        "score": 0.907
+      }
+    ],
+    "top_missed_elements": [],
+    "top_hallucinated_elements": [],
+    "dominant_dimension": "tag_coverage",
+    "attribute_accuracy": 0.822,
+    "structural_completeness": 1.0,
+    "tool_call_summary": {
+      "rag_queries": 0,
+      "reads": 39,
+      "writes": 2,
+      "edits": 1,
+      "bashes": 24,
+      "total": 112
+    },
+    "productive_rag_queries_sanitized": [],
+    "agent_response_tail": "el=0` disables the parallel direct linear solver.\n- **Displacement history**: The `displacementCollection` PackCollection and its TimeHistory are not bound to any `PeriodicEvent`, making them fire only when data flows from the solver (effectively a single write at the sole timestep t=1.0).\n- **File naming conventions**: Attribute names like `Sxx`/`Syy`/`Szz` and `WellLoad` match the naming expected by the existing `kirschWellboreFigure.py` post-processing script for direct analytical comparison."
+  },
+  {
+    "task_id": "pennyFracToughnessDominated",
+    "final_treesim": 0.9867,
+    "failure_mode": "success",
+    "section_failures": [
+      {
+        "section": "Outputs",
+        "score": 0.883
+      },
+      {
+        "section": "Events",
+        "score": 0.977
+      },
+      {
+        "section": "Solvers",
+        "score": 0.993
+      },
+      {
+        "section": "Constitutive",
+        "score": 1.0
+      },
+      {
+        "section": "ElementRegions",
+        "score": 1.0
+      }
+    ],
+    "top_missed_elements": [],
+    "top_hallucinated_elements": [],
+    "dominant_dimension": "structural_completeness",
+    "attribute_accuracy": 0.979,
+    "structural_completeness": 1.0,
+    "tool_call_summary": {
+      "rag_queries": 0,
+      "reads": 6,
+      "writes": 2,
+      "edits": 0,
+      "bashes": 1,
+      "total": 9
+    },
+    "productive_rag_queries_sanitized": [],
+    "agent_response_tail": "vals, 8 solver timestep regions from 0.2 s up to 20 s, maxTime=400.1 s\n\n### Key design decisions vs. the poroelastic reference:\n1. **No poroelasticity** \u2014 the `Domain` region uses only `{ water, rock }` (omitting `porousRock` and its sub-models), `SinglePhaseFVM` targets only `{ Fracture }`, and neither `Hydrofracture` nor `SurfaceGenerator` carry poroelastic flags\n2. **Rock defined by K/G** (bulk + shear modulus) per your spec, not E/\u03bd\n3. **Zero gravity** via `gravityVector=\"{ 0.0, 0.0, 0.0 }\"`"
+  },
+  {
+    "task_id": "AdvancedExampleCasedElasticWellbore",
+    "final_treesim": 0.8582,
+    "failure_mode": "success",
+    "section_failures": [
+      {
+        "section": "Events",
+        "score": 0.0
+      },
+      {
+        "section": "Outputs",
+        "score": 0.627
+      },
+      {
+        "section": "Solvers",
+        "score": 0.8
+      },
+      {
+        "section": "FieldSpecifications",
+        "score": 0.971
+      },
+      {
+        "section": "Constitutive",
+        "score": 1.0
+      }
+    ],
+    "top_missed_elements": [],
+    "top_hallucinated_elements": [],
+    "dominant_dimension": "tag_coverage",
+    "attribute_accuracy": 0.935,
+    "structural_completeness": 1.0,
+    "tool_call_summary": {
+      "rag_queries": 0,
+      "reads": 12,
+      "writes": 3,
+      "edits": 0,
+      "bashes": 4,
+      "total": 26
+    },
+    "productive_rag_queries_sanitized": [],
+    "agent_response_tail": "ry=2`\n- **Solver**: `SolidMechanicsLagrangianFEM` with `newtonTol=1.0e-9`, `newtonMaxIter=8`, and GMRES/AMG iterative linear solver\n- **Events**: `maxTime=1.0`, `forceDt=0.1` on solver, VTK and Restart at `timeFrequency=1.0`\n\n### `<xml_filename_stripped>`\n\n- **Mesh**: `nt=32`, `nz=1`, `nr={1,1,3}`, same `autoSpaceRadialElems` and `useCartesianOuterBoundary`\n- **Solver**: Same Newton settings, but uses a **direct** linear solver (`directParallel=\"0\"`)\n- **Events**: Same timing as benchmark"
+  },
+  {
+    "task_id": "AdvancedWellboreExampleNonLinearThermalDiffusionTemperatureDependentVolumetricHeatCapacity",
+    "final_treesim": 0.9239,
+    "failure_mode": "success",
+    "section_failures": [
+      {
+        "section": "ElementRegions",
+        "score": 0.533
+      },
+      {
+        "section": "FieldSpecifications",
+        "score": 0.907
+      },
+      {
+        "section": "Constitutive",
+        "score": 0.951
+      },
+      {
+        "section": "Events",
+        "score": 1.0
+      },
+      {
+        "section": "Mesh",
+        "score": 1.0
+      }
+    ],
+    "top_missed_elements": [],
+    "top_hallucinated_elements": [],
+    "dominant_dimension": "structural_completeness",
+    "attribute_accuracy": 0.917,
+    "structural_completeness": 1.0,
+    "tool_call_summary": {
+      "rag_queries": 0,
+      "reads": 58,
+      "writes": 2,
+      "edits": 0,
+      "bashes": 12,
+      "total": 149
+    },
+    "productive_rag_queries_sanitized": [],
+    "agent_response_tail": "ng |\n| **ElementRegions** | Assigns `{ fluid, rock_nonLinear, thermalCond_linear }` \u2014 the non-linear heat capacity rock with linear conductivity |\n| **Events** | maxTime=1e5s, VTK every 1e4s, flow solver max dt 1e3s, restart at 1e5s (commented out) |\n\nThe mesh uses the `InternalWellbore` generator which automatically creates `rneg`/`rpos`/`tneg`/`tpos`/`zneg`/`zpos` face sets \u2014 the boundary conditions in the base file reference `rneg` and `rpos` for the wellbore and far-field faces respectively."
+  },
+  {
+    "task_id": "TutorialDeadOilBottomLayersSPE10",
+    "final_treesim": 0.8849,
+    "failure_mode": "success",
+    "section_failures": [
+      {
+        "section": "Tasks",
+        "score": 0.3
+      },
+      {
+        "section": "ElementRegions",
+        "score": 0.767
+      },
+      {
+        "section": "Events",
+        "score": 0.883
+      },
+      {
+        "section": "FieldSpecifications",
+        "score": 0.892
+      },
+      {
+        "section": "Solvers",
+        "score": 0.892
+      }
+    ],
+    "top_missed_elements": [],
+    "top_hallucinated_elements": [],
+    "dominant_dimension": "tag_coverage",
+    "attribute_accuracy": 0.914,
+    "structural_completeness": 1.0,
+    "tool_call_summary": {
+      "rag_queries": 0,
+      "reads": 31,
+      "writes": 2,
+      "edits": 0,
+      "bashes": 3,
+      "total": 86
+    },
+    "productive_rag_queries_sanitized": [],
+    "agent_response_tail": "box**: Central injector at (182.85\u2013189.00, 335.25\u2013338.35, -0.01\u20132.00)\n- **Sink boxes**: Four corner producers matching your specified coordinates\n\n## Property Files\n\nThe SPE10 property files (`permx.geos`, `permy.geos`, `permz.geos`, `poro.geos`, `xlin.geos`, `ylin.geos`, `zlin.geos`, `pres_pvdo.txt`, `B_o_pvdo.txt`, `visc_pvdo.txt`) are referenced via relative paths and must be accessible at runtime. They are located at:\n```\n/geos_lib/inputFiles/compositionalMultiphaseFlow/benchmarks/SPE10/\n```"
+  },
+  {
+    "task_id": "TutorialDeadOilEgg",
+    "final_treesim": 0.9464,
+    "failure_mode": "success",
+    "section_failures": [
+      {
+        "section": "Events",
+        "score": 0.825
+      },
+      {
+        "section": "FieldSpecifications",
+        "score": 0.894
+      },
+      {
+        "section": "Constitutive",
+        "score": 0.926
+      },
+      {
+        "section": "Solvers",
+        "score": 0.98
+      },
+      {
+        "section": "ElementRegions",
+        "score": 1.0
+      }
+    ],
+    "top_missed_elements": [],
+    "top_hallucinated_elements": [],
+    "dominant_dimension": "structural_completeness",
+    "attribute_accuracy": 0.947,
+    "structural_completeness": 1.0,
+    "tool_call_summary": {
+      "rag_queries": 0,
+      "reads": 33,
+      "writes": 4,
+      "edits": 0,
+      "bashes": 4,
+      "total": 92
+    },
+    "productive_rag_queries_sanitized": [],
+    "agent_response_tail": "** in the base XML using `coordinates`/`values` attributes (no separate file dependency)\n- **PERM field** imported at the VTKMesh level, mapped to `rockPerm_permeability` \u2014 overlays the constant 1e-12 m\u00b2 baseline\n- **Well regions** (`wellRegion1\u201312`) defined individually in the base file, mapped by `wellRegionName` in each benchmark\n- `VTKWell` catalog element (found via source code) used for VTK well import \u2014 equivalent to `InternalWell` but with `file` attribute instead of `polylineNodeCoords`"
+  },
+  {
+    "task_id": "relaxationTest",
+    "final_treesim": 0.8657,
+    "failure_mode": "success",
+    "section_failures": [
+      {
+        "section": "Tasks",
+        "score": 0.679
+      },
+      {
+        "section": "ElementRegions",
+        "score": 0.767
+      },
+      {
+        "section": "Events",
+        "score": 0.768
+      },
+      {
+        "section": "Solvers",
+        "score": 0.784
+      },
+      {
+        "section": "Functions",
+        "score": 0.825
+      }
+    ],
+    "top_missed_elements": [],
+    "top_hallucinated_elements": [],
+    "dominant_dimension": "structural_completeness",
+    "attribute_accuracy": 0.79,
+    "structural_completeness": 1.0,
+    "tool_call_summary": {
+      "rag_queries": 0,
+      "reads": 15,
+      "writes": 2,
+      "edits": 0,
+      "bashes": 1,
+      "total": 43
+    },
+    "productive_rag_queries_sanitized": [],
+    "agent_response_tail": " at 0.9m (9 coarse + 1 fine element per axis), 8 named cell blocks (`cb-0_0_0` through `cb-1_1_1`)\n- **Geometry**: `topPoint` box capturing corner node (0.89,0.89,0.99) to (1.01,1.01,1.01)\n- **Events**: `maxTime=172800s`, `forceDt=1000s` for solver, all outputs/collections synced at 1000s intervals with `targetExactTimestep` control\n- **Solvers**: `SolidMechanicsLagrangianFEM` with direct solver, Newton tolerance 1e-5, max 15 iterations, zero gravity\n- **NumericalMethods**: First-order FE1 space"
+  },
+  {
+    "task_id": "AdvancedExampleDeviatedPoroElasticWellbore",
+    "final_treesim": 0.9393,
+    "failure_mode": "success",
+    "section_failures": [
+      {
+        "section": "ElementRegions",
+        "score": 0.767
+      },
+      {
+        "section": "FieldSpecifications",
+        "score": 0.912
+      },
+      {
+        "section": "Events",
+        "score": 0.924
+      },
+      {
+        "section": "Constitutive",
+        "score": 1.0
+      },
+      {
+        "section": "Mesh",
+        "score": 1.0
+      }
+    ],
+    "top_missed_elements": [],
+    "top_hallucinated_elements": [],
+    "dominant_dimension": "structural_completeness",
+    "attribute_accuracy": 0.947,
+    "structural_completeness": 1.0,
+    "tool_call_summary": {
+      "rag_queries": 0,
+      "reads": 57,
+      "writes": 2,
+      "edits": 0,
+      "bashes": 7,
+      "total": 121
+    },
+    "productive_rag_queries_sanitized": [],
+    "agent_response_tail": "n` step loading, consistent with the validated vertical wellbore example. The normal traction (-10 MPa) represents the mechanical effect of the fluid pressure pushing on the formation, while the pressure BC sets the pore pressure at the wellbore wall to 10 MPa.\n- **No in-situ stresses or gravity** \u2014 as requested for the Detournay-Cheng (1988) validation comparison.\n- **Restart at exact timesteps** \u2014 `targetExactTimestep=\"1\"` ensures the 39.0s restart frequency (50 steps) lands precisely on time."
+  },
+  {
+    "task_id": "TutorialCO2FieldCase",
+    "final_treesim": 0.796,
+    "failure_mode": "success",
+    "section_failures": [
+      {
+        "section": "Outputs",
+        "score": 0.611
+      },
+      {
+        "section": "Events",
+        "score": 0.65
+      },
+      {
+        "section": "Mesh",
+        "score": 0.69
+      },
+      {
+        "section": "ElementRegions",
+        "score": 0.708
+      },
+      {
+        "section": "Functions",
+        "score": 0.72
+      }
+    ],
+    "top_missed_elements": [],
+    "top_hallucinated_elements": [],
+    "dominant_dimension": "structural_completeness",
+    "attribute_accuracy": 0.764,
+    "structural_completeness": 1.0,
+    "tool_call_summary": {
+      "rag_queries": 0,
+      "reads": 26,
+      "writes": 2,
+      "edits": 0,
+      "bashes": 0,
+      "total": 67
+    },
+    "productive_rag_queries_sanitized": [],
+    "agent_response_tail": "xEventDt`)\n- **Output events**: VTK every 1e7 s, restart every 5e7 s, well pressure collection every 1e7 s, history file write every 2e8 s\n\n### Cross-file wiring\n| Smoke \u2192 Base | Base \u2192 Smoke |\n|---|---|\n| `wellControlsName=\"wellControls1\"` \u2192 `WellControls` block | `<Included>` imports smoke file |\n| `wellRegionName=\"injectorWell\"` \u2192 `WellElementRegion` | |\n| `cellBlockNames=\"{ reservoirBlock }\"` \u2192 `cellBlocks=\"{ reservoirBlock }\"` | |\n\nLaunch with: `GEOS -i inputs/<xml_filename_stripped>`"
+  },
+  {
+    "task_id": "faultVerification",
+    "final_treesim": 0.7669,
+    "failure_mode": "success",
+    "section_failures": [
+      {
+        "section": "ElementRegions",
+        "score": 0.498
+      },
+      {
+        "section": "Events",
+        "score": 0.743
+      },
+      {
+        "section": "FieldSpecifications",
+        "score": 0.754
+      },
+      {
+        "section": "Mesh",
+        "score": 0.767
+      },
+      {
+        "section": "Solvers",
+        "score": 0.792
+      }
+    ],
+    "top_missed_elements": [],
+    "top_hallucinated_elements": [],
+    "dominant_dimension": "structural_completeness",
+    "attribute_accuracy": 0.697,
+    "structural_completeness": 1.0,
+    "tool_call_summary": {
+      "rag_queries": 0,
+      "reads": 51,
+      "writes": 3,
+      "edits": 0,
+      "bashes": 1,
+      "total": 89
+    },
+    "productive_rag_queries_sanitized": [],
+    "agent_response_tail": "s are applied without `initialCondition`, so the initial state retains 35 MPa and the solver enforces the pressure increase during the time step, capturing the poroelastic transient\n- **Run execution**: `geosx -i <xml_filename_stripped>` for the impermeable case; `geosx -i <xml_filename_stripped>` for the permeable case. The mesh file `faultMesh.vtu` must be in the working directory (or provide a path). Outputs (`faultModel_*.vtu`, restart files) are written to the current directory."
+  },
+  {
+    "task_id": "ExampleTFrac",
+    "final_treesim": 0.8275,
+    "failure_mode": "success",
+    "section_failures": [
+      {
+        "section": "Solvers",
+        "score": 0.0
+      },
+      {
+        "section": "FieldSpecifications",
+        "score": 0.74
+      },
+      {
+        "section": "Geometry",
+        "score": 0.767
+      },
+      {
+        "section": "ElementRegions",
+        "score": 0.796
+      },
+      {
+        "section": "Events",
+        "score": 0.816
+      }
+    ],
+    "top_missed_elements": [],
+    "top_hallucinated_elements": [],
+    "dominant_dimension": "structural_completeness",
+    "attribute_accuracy": 0.78,
+    "structural_completeness": 1.0,
+    "tool_call_summary": {
+      "rag_queries": 0,
+      "reads": 20,
+      "writes": 3,
+      "edits": 0,
+      "bashes": 5,
+      "total": 37
+    },
+    "productive_rag_queries_sanitized": [],
+    "agent_response_tail": ", preFracture solo, solver steps at forceDt=0.2 s, all outputs synchronized every 0.2 s\n\n**`<xml_filename_stripped>`** \u2014 simply includes both files; run GEOS with this file as the argument.\n\n### Key geometric specs\n| Fracture | Normal | Origin (m) | Extent |\n|---|---|---|---|\n| Vertical | X={1,0,0} | (0, -50, 0) | 100 m along Y \u00d7 200 m along Z |\n| Horizontal | Y={0,1,0} | (-25, 50, 0) | 50 m along X \u00d7 200 m along Z |\n\nThe two fractures intersect at (X=0, Y=50) \u2014 a T-shaped junction."
+  },
+  {
+    "task_id": "AdvancedExampleWellboreNonLinearThermalDiffusionTemperatureDependentSinglePhaseThermalConductivity",
+    "final_treesim": 0.8967,
+    "failure_mode": "success",
+    "section_failures": [
+      {
+        "section": "ElementRegions",
+        "score": 0.533
+      },
+      {
+        "section": "Constitutive",
+        "score": 0.769
+      },
+      {
+        "section": "FieldSpecifications",
+        "score": 0.907
+      },
+      {
+        "section": "Solvers",
+        "score": 0.965
+      },
+      {
+        "section": "Events",
+        "score": 1.0
+      }
+    ],
+    "top_missed_elements": [],
+    "top_hallucinated_elements": [],
+    "dominant_dimension": "structural_completeness",
+    "attribute_accuracy": 0.905,
+    "structural_completeness": 1.0,
+    "tool_call_summary": {
+      "rag_queries": 0,
+      "reads": 13,
+      "writes": 3,
+      "edits": 0,
+      "bashes": 5,
+      "total": 36
+    },
+    "productive_rag_queries_sanitized": [],
+    "agent_response_tail": "tputs to `outputs/wellbore_cooling_temperature_profiles.png`.\n\n---\n\n## Physical Interpretation\n\nThe **temperature-dependent thermal conductivity** is:\n\u03bb(T) = 1.5 \u2212 0.0012\u00b7(T \u2212 20)\n\nAt the cold wellbore (T = -20\u00b0C): \u03bb \u2248 1.548 W/(m\u00b7K)  \nAt the warm far-field (T = 100\u00b0C): \u03bb \u2248 1.404 W/(m\u00b7K)\n\nThe negative gradient means heat diffuses slightly faster near the cooled wellbore, which enhances the cooling penetration relative to the constant-\u03bb case -- this is the non-linear effect the benchmark captures."
+  }
+]

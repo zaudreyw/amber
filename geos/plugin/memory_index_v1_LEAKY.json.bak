@@ -1,0 +1,833 @@
+// WARNING: Leaky memory index. See RN-003 for details. Archived 2026-04-22.
+{
+  "schema_version": 1,
+  "generated_from": "/data/shared/geophysics_agent_data/data/eval/claude_code_repo3_plugin/repo3_eval_run4",
+  "n_tasks": 18,
+  "tasks": [
+    {
+      "task_id": "AdvancedExampleViscoModifiedCamClay",
+      "instructions_excerpt": "**Specification for Visco Modified CamClay Triaxial Driver Validation XML Configuration**\n\n**1. Simulation Type and Physical Problem**\nCreate an XML configuration for a visco-elasto-plastic oedometric compression test using the Triaxial Driver solver. The simulation models a Visco Modified CamClay solid subjected to oedometric boundary conditions (zero lateral strain) with cyclic loading and unloa",
+      "final_treesim": 0.9983,
+      "reference_xmls": [
+        "/geos_lib/inputFiles/triaxialDriver/triaxialDriver_ModifiedCamClay.xml",
+        "/geos_lib/inputFiles/triaxialDriver/triaxialDriver_ExtendedDruckerPrager_basicExample.xml",
+        "/geos_lib/inputFiles/triaxialDriver/triaxialDriver_ViscoDruckerPrager.xml",
+        "/geos_lib/inputFiles/poromechanics/PoroViscoDruckerPrager_base.xml",
+        "/geos_lib/inputFiles/triaxialDriver/triaxialDriver_ViscoExtendedDruckerPrager.xml"
+      ],
+      "written_xmls": [
+        "/workspace/inputs/triaxialDriver_base.xml",
+        "/workspace/inputs/triaxialDriver_ViscoModifiedCamClay.xml"
+      ],
+      "productive_rag_queries": [
+        "triaxial driver strain control oedometric compression single element",
+        "triaxialDriver_base.xml",
+        "ViscoplasticModifiedCamClay",
+        "DruckerPrager",
+        "ViscoDruckerPrager",
+        "ViscoDruckerPrager",
+        "TriaxialDriver solver material attribute",
+        "TriaxialDriver"
+      ],
+      "topic_keywords": [
+        "visco",
+        "modified",
+        "clay",
+        "triaxial",
+        "driver",
+        "configuration",
+        "simulation",
+        "oedometric",
+        "advanced",
+        "example",
+        "specification",
+        "validation"
+      ],
+      "section_strengths": {
+        "ElementRegions": 1.0,
+        "Events": 1.0,
+        "Functions": 1.0
+      },
+      "solver_family": "triaxialDriver"
+    },
+    {
+      "task_id": "kgdToughnessDominated",
+      "instructions_excerpt": "**Natural Language Specification for Toughness-Dominated KGD Hydraulic Fracture Simulation**\n\n**1. Simulation Type and Physical Problem**\nCreate an XML configuration for a plane-strain hydraulic fracture propagation simulation modeling a toughness-dominated KGD (Kristianovich-Geertsma-de Klerk) fracture. The simulation models fluid injection into a vertical fracture with rectangular cross-section",
+      "final_treesim": 0.9695,
+      "reference_xmls": [
+        "/geos_lib/inputFiles/hydraulicFracturing/kgdViscosityDominated_base.xml",
+        "/geos_lib/inputFiles/hydraulicFracturing/kgdViscosityDominated_benchmark.xml"
+      ],
+      "written_xmls": [
+        "/workspace/inputs/kgdToughnessDominated_base.xml",
+        "/workspace/inputs/kgdToughnessDominated_benchmark.xml"
+      ],
+      "productive_rag_queries": [
+        "hydrofracture solver hydraulic fracture propagation KGD toughness dominated",
+        "Hydrofracture solver XML",
+        "Hydrofracture example XML mesh boundary conditions",
+        "InternalMesh bias element geometric",
+        "fracture flow parallel plates permeability model",
+        "FractureFlowPermeability",
+        "cubic law fracture permeability",
+        "kgdViscosityDominated_base.xml"
+      ],
+      "topic_keywords": [
+        "fracture",
+        "simulation",
+        "toughness",
+        "dominated",
+        "hydraulic",
+        "natural",
+        "language",
+        "specification",
+        "type",
+        "physical",
+        "problem",
+        "create"
+      ],
+      "section_strengths": {
+        "ElementRegions": 1.0,
+        "FieldSpecifications": 1.0,
+        "Mesh": 1.0
+      },
+      "solver_family": "hydraulicFracturing"
+    },
+    {
+      "task_id": "triaxialDriverExample",
+      "instructions_excerpt": "Specification for XML Configuration: Triaxial Driver Extended Drucker-Prager Example (basic/triaxialDriver)\n\n**1. Simulation Type and Physical Problem**\nCreate an XML configuration for a GEOS TriaxialDriver simulation that models a conventional triaxial compression test on a rock specimen. The simulation investigates the elastoplastic deformation behavior of a confined, homogeneous rock sample us",
+      "final_treesim": 0.9572,
+      "reference_xmls": [
+        "/geos_lib/inputFiles/triaxialDriver/triaxialDriver_ExtendedDruckerPrager.xml",
+        "/geos_lib/inputFiles/triaxialDriver/triaxialDriver_base.xml",
+        "/geos_lib/inputFiles/triaxialDriver/triaxialDriver_DruckerPrager.xml"
+      ],
+      "written_xmls": [
+        "/workspace/inputs/triaxialDriver_ExtendedDruckerPrager_basicExample.xml"
+      ],
+      "productive_rag_queries": [
+        "triaxial driver example Extended Drucker Prager",
+        "ExtendedDruckerPrager",
+        "triaxialDriver_base.xml",
+        "ExtendedDruckerPrager",
+        "TriaxialDriver",
+        "TriaxialDriver name",
+        "CellElementRegion materialList"
+      ],
+      "topic_keywords": [
+        "triaxial",
+        "driver",
+        "simulation",
+        "example",
+        "configuration",
+        "rock",
+        "specification",
+        "extended",
+        "drucker",
+        "prager",
+        "basic",
+        "type"
+      ],
+      "section_strengths": {
+        "Constitutive": 1.0,
+        "Events": 1.0,
+        "Mesh": 1.0
+      },
+      "solver_family": "triaxialDriver"
+    },
+    {
+      "task_id": "kgdViscosityDominated",
+      "instructions_excerpt": "Here is the comprehensive natural language specification for generating the XML configuration file:\n\n**1. Simulation Type and Physical Problem**\n\nCreate an XML configuration for a viscosity-dominated KGD (Khristianovich-Geertsma-de Klerk) hydraulic fracturing simulation. The problem models a single plane strain fracture propagating in an infinite elastic domain under viscosity-dominated conditions",
+      "final_treesim": 0.9317,
+      "reference_xmls": [
+        "/geos_lib/inputFiles/hydraulicFracturing/kgdToughnessDominated_base.xml",
+        "/geos_lib/inputFiles/hydraulicFracturing/kgdToughnessDominated_benchmark.xml",
+        "/geos_lib/inputFiles/hydraulicFracturing/kgdValidation_benchmark.xml"
+      ],
+      "written_xmls": [
+        "/workspace/inputs/kgdViscosityDominated_base.xml",
+        "/workspace/inputs/kgdViscosityDominated_benchmark.xml",
+        "/workspace/inputs/kgdViscosityDominated_smoke.xml"
+      ],
+      "productive_rag_queries": [
+        "hydraulic fracture KGD viscosity dominated simulation setup",
+        "Hydrofracture solver XML example",
+        "CompressibleSinglePhaseFluid",
+        "ElasticIsotropic",
+        "CompressibleSolidParallelPlatesPermeability",
+        "ParallelPlatesPermeability",
+        "PressurePorosity",
+        "frictionless contact"
+      ],
+      "topic_keywords": [
+        "viscosity",
+        "dominated",
+        "configuration",
+        "simulation",
+        "problem",
+        "here",
+        "comprehensive",
+        "natural",
+        "language",
+        "specification",
+        "generating",
+        "file"
+      ],
+      "section_strengths": {
+        "ElementRegions": 1.0,
+        "Events": 1.0,
+        "FieldSpecifications": 1.0
+      },
+      "solver_family": "hydraulicFracturing"
+    },
+    {
+      "task_id": "pennyFracViscosityDominated",
+      "instructions_excerpt": "Here is the comprehensive natural language specification for creating the XML configuration file:\n\n**1. Simulation Type and Physical Problem**\n\nCreate a configuration for a viscosity-storage-dominated penny-shaped hydraulic fracture simulation. The model simulates the propagation of a radial hydraulic fracture emerging from a point source in an infinite, isotropic, homogeneous elastic domain. The",
+      "final_treesim": 0.8978,
+      "reference_xmls": [
+        "/geos_lib/inputFiles/hydraulicFracturing/kgdViscosityDominated_base.xml",
+        "/geos_lib/inputFiles/hydraulicFracturing/kgdViscosityDominated_benchmark.xml",
+        "/geos_lib/inputFiles/hydraulicFracturing/kgdToughnessDominated_base.xml"
+      ],
+      "written_xmls": [
+        "/workspace/inputs/pennyShapedViscosityDominated_base.xml",
+        "/workspace/inputs/pennyShapedViscosityDominated_benchmark.xml"
+      ],
+      "productive_rag_queries": [
+        "hydrofracture solver configuration radial penny-shaped fracture benchmark",
+        "Hydrofracture solver XML example",
+        "ParallelPlatesPermeability",
+        "SourceFlux",
+        "SourceFlux scale",
+        "HydraulicApertureTable",
+        "Hydrofracture",
+        "&lt;Hydrofracture"
+      ],
+      "topic_keywords": [
+        "penny",
+        "viscosity",
+        "dominated",
+        "configuration",
+        "simulation",
+        "hydraulic",
+        "fracture",
+        "frac",
+        "here",
+        "comprehensive",
+        "natural",
+        "language"
+      ],
+      "section_strengths": {
+        "ElementRegions": 1.0,
+        "FieldSpecifications": 1.0,
+        "NumericalMethods": 1.0
+      },
+      "solver_family": "hydraulicFracturing"
+    },
+    {
+      "task_id": "AdvancedExampleCasedElasticWellboreImperfectInterfaces",
+      "instructions_excerpt": "You are generating an XML configuration for a GEOS solid mechanics simulation of a **cased elastic wellbore with imperfect contact interfaces**. This is a three-body contact problem involving a steel casing, cement sheath, and rock formation, all modeled as isotropic linear elastic materials. The simulation uses the `LagrangianContact` solver to handle imperfect interfaces that debond under radial",
+      "final_treesim": 0.8804,
+      "reference_xmls": [
+        "/geos_lib/inputFiles/wellbore/CasedThermoElasticWellbore_ImperfectInterfaces_base.xml",
+        "/geos_lib/inputFiles/wellbore/CasedThermoElasticWellbore_ImperfectInterfaces_benchmark.xml",
+        "/geos_lib/inputFiles/wellbore/CasedElasticWellbore_base.xml",
+        "/geos_lib/inputFiles/wellbore/CasedElasticWellbore_benchmark.xml",
+        "/geos_lib/inputFiles/hydraulicFracturing/kgdToughnessDominated_base.xml",
+        "/geos_lib/inputFiles/lagrangianContactMechanics/Sneddon_base.xml",
+        "/geos_lib/inputFiles/lagrangianContactMechanics/Sneddon_benchmark.xml"
+      ],
+      "written_xmls": [
+        "/workspace/inputs/CasedElasticWellbore_ImperfectInterfaces_base.xml",
+        "/workspace/inputs/CasedElasticWellbore_ImperfectInterfaces_benchmark.xml",
+        "/workspace/inputs/CasedElasticWellbore_ImperfectInterfaces_smoke.xml"
+      ],
+      "productive_rag_queries": [
+        "Lagrangian contact surface generation Coulomb friction solid mechanics wellbore casing cement rock interfaces",
+        "CasedElasticWellbore",
+        "SolidMechanicsLagrangeContact",
+        "SurfaceGenerator",
+        "SurfaceGenerator name",
+        "ConstantAperture",
+        "Coulomb",
+        "SolidMechanicsLagrangeContact targetRegions"
+      ],
+      "topic_keywords": [
+        "elastic",
+        "imperfect",
+        "interfaces",
+        "contact",
+        "cased",
+        "wellbore",
+        "simulation",
+        "advanced",
+        "example",
+        "generating",
+        "configuration",
+        "solid"
+      ],
+      "section_strengths": {
+        "Functions": 1.0,
+        "Geometry": 1.0,
+        "Mesh": 1.0
+      },
+      "solver_family": "wellbore"
+    },
+    {
+      "task_id": "ExampleKirschWellbore",
+      "instructions_excerpt": "Here is the comprehensive natural language specification for generating the GEOS XML configuration files:\n\n**1. Simulation Type and Physical Problem**\nCreate a quasi-static solid mechanics simulation of a drained vertical elastic wellbore subjected to anisotropic horizontal in-situ stresses. The physical problem models the elastic deformation of an infinite, homogeneous, isotropic rock formation a",
+      "final_treesim": 0.8671,
+      "reference_xmls": [
+        "/geos_lib/inputFiles/wellbore/CasedElasticWellbore_base.xml",
+        "/geos_lib/inputFiles/wellbore/CasedElasticWellbore_benchmark.xml",
+        "/geos_lib/inputFiles/solidMechanics/viscoExtendedDruckerPrager_relaxation_base.xml",
+        "/geos_lib/inputFiles/wellbore/ThermoPoroElasticWellbore_base.xml"
+      ],
+      "written_xmls": [
+        "/workspace/inputs/KirschProblem_base.xml",
+        "/workspace/inputs/KirschProblem_benchmark.xml"
+      ],
+      "productive_rag_queries": [
+        "solid mechanics Lagrangian FEM solver configuration",
+        "wellbore mesh generator internal mesh radial",
+        "InternalWellbore mesh attribute",
+        "SolidMechanicsLagrangianFEM solver attributes",
+        "ElasticIsotropic constitutive model",
+        "ElasticIsotropic constitutive model bulk modulus shear modulus",
+        "ElasticIsotropic defaultBulkModulus defaultShearModulus",
+        "FieldSpecification fieldName stress initialCondition"
+      ],
+      "topic_keywords": [
+        "wellbore",
+        "simulation",
+        "physical",
+        "problem",
+        "elastic",
+        "example",
+        "kirsch",
+        "here",
+        "comprehensive",
+        "natural",
+        "language",
+        "specification"
+      ],
+      "section_strengths": {
+        "Constitutive": 1.0,
+        "Mesh": 1.0,
+        "NumericalMethods": 1.0
+      },
+      "solver_family": "wellbore"
+    },
+    {
+      "task_id": "pennyFracToughnessDominated",
+      "instructions_excerpt": "**1. Simulation Type and Physical Problem**\n\nCreate an XML configuration for a toughness-storage-dominated penny-shaped hydraulic fracture simulation using GEOS. The model simulates the growth of a radial hydraulic fracture emerging from a point source in an infinite, isotropic, homogeneous elastic domain. The fracture is assumed to be planar with an elliptical cross-section perpendicular to the f",
+      "final_treesim": 0.866,
+      "reference_xmls": [
+        "/geos_lib/inputFiles/hydraulicFracturing/kgdToughnessDominated_base.xml",
+        "/geos_lib/inputFiles/hydraulicFracturing/kgdToughnessDominated_benchmark.xml"
+      ],
+      "written_xmls": [
+        "/workspace/inputs/pennyShapedToughnessDominated_base.xml",
+        "/workspace/inputs/pennyShapedToughnessDominated_benchmark.xml"
+      ],
+      "productive_rag_queries": [
+        "hydrofracture solver XML example hydraulic fracture benchmark",
+        "Hydrofracture solver attributes",
+        "InternalMesh xCoords yCoords zCoords nx ny nz",
+        "fracture surface region element regions hydraulic aperture",
+        "kgdToughnessDominated benchmark xml",
+        "penny shaped fracture radial hydraulic",
+        "pennyFracViscosityDominated",
+        "xneg Box geometry"
+      ],
+      "topic_keywords": [
+        "fracture",
+        "penny",
+        "toughness",
+        "dominated",
+        "simulation",
+        "hydraulic",
+        "frac",
+        "type",
+        "physical",
+        "problem",
+        "create",
+        "configuration"
+      ],
+      "section_strengths": {
+        "Constitutive": 1.0,
+        "ElementRegions": 1.0,
+        "NumericalMethods": 1.0
+      },
+      "solver_family": "hydraulicFracturing"
+    },
+    {
+      "task_id": "AdvancedExampleCasedElasticWellbore",
+      "instructions_excerpt": "**1. Simulation Type and Physical Problem**\n\nCreate an XML configuration for a static solid mechanics simulation of a cased elastic wellbore subjected to an internal pressure test. The physical system consists of three concentric cylindrical domains: an inner steel casing, an intermediate cement sheath, and an outer rock formation. The model assumes isotropic linear elastic behavior for all three",
+      "final_treesim": 0.8569,
+      "reference_xmls": [
+        "/geos_lib/inputFiles/solidMechanics/ExtendedDruckerPragerWellbore_benchmark.xml",
+        "/geos_lib/inputFiles/wellbore/CasedThermoElasticWellbore_benchmark.xml",
+        "/geos_lib/inputFiles/wellbore/CasedThermoElasticWellbore_base.xml",
+        "/geos_lib/inputFiles/wellbore/DeviatedElasticWellbore_benchmark.xml",
+        "/geos_lib/inputFiles/wellbore/DeviatedElasticWellbore_base.xml",
+        "/geos_lib/inputFiles/solidMechanics/ExtendedDruckerPragerWellbore_base.xml",
+        "/geos_lib/inputFiles/wellbore/CasedElasticWellbore_ImperfectInterfaces_benchmark.xml",
+        "/geos_lib/inputFiles/wellbore/CasedElasticWellbore_ImperfectInterfaces_base.xml"
+      ],
+      "written_xmls": [
+        "/workspace/inputs/CasedElasticWellbore_base.xml",
+        "/workspace/inputs/CasedElasticWellbore_benchmark.xml",
+        "/workspace/inputs/CasedElasticWellbore_smoke.xml"
+      ],
+      "productive_rag_queries": [
+        "SolidMechanicsLagrangianFEM solid mechanics finite element",
+        "InternalMesh radial elementTypes C3D8",
+        "InternalWellbore",
+        "cellBlockNames InternalWellbore",
+        "traction FieldSpecification",
+        "FieldSpecification fieldName traction",
+        "traction boundary condition solid mechanics",
+        "DeviatedElasticWellbore"
+      ],
+      "topic_keywords": [
+        "elastic",
+        "cased",
+        "wellbore",
+        "simulation",
+        "physical",
+        "three",
+        "advanced",
+        "example",
+        "type",
+        "problem",
+        "create",
+        "configuration"
+      ],
+      "section_strengths": {
+        "Mesh": 1.0,
+        "NumericalMethods": 1.0,
+        "Outputs": 0.866
+      },
+      "solver_family": "wellbore"
+    },
+    {
+      "task_id": "AdvancedWellboreExampleNonLinearThermalDiffusionTemperatureDependentVolumetricHeatCapacity",
+      "instructions_excerpt": "**1. Simulation Type and Physical Problem**\nConfigure a non-linear thermal diffusion simulation modeling heat transfer around a wellbore using the thermal single-phase flow solver. The physical problem represents an extension of linear thermal diffusion where the rock matrix exhibits temperature-dependent thermal properties\u2014specifically, the volumetric heat capacity of the solid rock depends linea",
+      "final_treesim": 0.8508,
+      "reference_xmls": [
+        "/geos_lib/inputFiles/wellbore/ThermoPoroElasticWellbore_base.xml",
+        "/geos_lib/inputFiles/singlePhaseFlow/thermalCompressible_2d_base.xml",
+        "/geos_lib/inputFiles/singlePhaseFlow/thermalCompressible_temperatureDependentSinglePhaseThermalConductivity_benchmark.xml",
+        "/geos_lib/inputFiles/singlePhaseFlow/thermalCompressibleWell_base.xml"
+      ],
+      "written_xmls": [
+        "/workspace/inputs/thermalCompressible_2d_base.xml",
+        "/workspace/inputs/thermalCompressible_temperatureDependentVolumetricHeatCapacity_benchmark.xml"
+      ],
+      "productive_rag_queries": [
+        "thermal compressible flow single phase thermal",
+        "SinglePhaseThermalFVM",
+        "SinglePhaseThermalFVM",
+        "thermal fluid constitutive model volumetric heat capacity",
+        "SolidInternalEnergy",
+        "SolidInternalEnergy",
+        "SinglePhaseThermalConductivity",
+        "ThermalCompressibleSinglePhaseFluid"
+      ],
+      "topic_keywords": [
+        "thermal",
+        "linear",
+        "diffusion",
+        "heat",
+        "wellbore",
+        "temperature",
+        "dependent",
+        "volumetric",
+        "capacity",
+        "simulation",
+        "physical",
+        "problem"
+      ],
+      "section_strengths": {
+        "Events": 1.0,
+        "Mesh": 1.0,
+        "NumericalMethods": 1.0
+      },
+      "solver_family": "singlePhaseFlow"
+    },
+    {
+      "task_id": "TutorialDeadOilBottomLayersSPE10",
+      "instructions_excerpt": "Here is the comprehensive natural language specification for generating the XML configuration file:\n\n**1. Simulation Type and Physical Problem**\nCreate a multiphase, multicomponent flow simulation using an immiscible two-phase Dead-Oil fluid model. The simulation models fluid flow in the two bottom layers (layers 84 and 85) of the SPE10 test case permeability field. The physical problem involves s",
+      "final_treesim": 0.8441,
+      "reference_xmls": [
+        "/geos_lib/inputFiles/compositionalMultiphaseWell/benchmarks/Egg/deadOilEgg_base_iterative.xml",
+        "/geos_lib/inputFiles/compositionalMultiphaseFlow/benchmarks/isothermalLeakyWell/isothermalLeakyWell_base_iterative.xml",
+        "/geos_lib/inputFiles/hydraulicFracturing/heterogeneousInSitu_benchmark.xml",
+        "/geos_lib/inputFiles/compositionalMultiphaseWell/simpleCo2InjTutorial_base.xml"
+      ],
+      "written_xmls": [
+        "/workspace/inputs/deadOilSpe10Layers84_85_base_iterative.xml",
+        "/workspace/inputs/deadOilSpe10Layers84_85_benchmark.xml"
+      ],
+      "productive_rag_queries": [
+        "compositional multiphase flow dead oil fluid example",
+        "DeadOilFluid",
+        "CompositionalMultiphaseFVM well source flux sink pressure",
+        "SourceFlux",
+        "SourceFlux injection water",
+        "Box geometry",
+        "Permeability table function",
+        "voxelFile permeability"
+      ],
+      "topic_keywords": [
+        "layers",
+        "simulation",
+        "dead",
+        "bottom",
+        "physical",
+        "problem",
+        "flow",
+        "fluid",
+        "tutorial",
+        "here",
+        "comprehensive",
+        "natural"
+      ],
+      "section_strengths": {
+        "ElementRegions": 1.0,
+        "Geometry": 1.0,
+        "NumericalMethods": 1.0
+      },
+      "solver_family": "compositionalMultiphaseWell"
+    },
+    {
+      "task_id": "TutorialDeadOilEgg",
+      "instructions_excerpt": "Based on the RST documentation for the Egg model multiphase flow example, here is the comprehensive natural language specification for the XML configuration file:\n\n**1. Simulation Type and Physical Problem**\nConfigure a three-dimensional multiphase water injection simulation using a dead-oil fluid model in the Egg reservoir model. The simulation must couple reservoir flow with well dynamics, mode",
+      "final_treesim": 0.8043,
+      "reference_xmls": [
+        "/geos_lib/inputFiles/compositionalMultiphaseWell/simpleCo2InjTutorial_base.xml",
+        "/geos_lib/inputFiles/compositionalMultiphaseFlow/benchmarks/SPE10/deadOilSpe10Layers84_85_base_iterative.xml",
+        "/geos_lib/inputFiles/compositionalMultiphaseWell/benchmarks/Egg/deadOilEgg_smoke_3d.xml",
+        "/geos_lib/inputFiles/hydraulicFracturing/heterogeneousInSitu_benchmark.xml",
+        "/geos_lib/inputFiles/singlePhaseFlow/vtk/3D_10x10x10_compressible_hex_gravity_smoke.xml",
+        "/geos_lib/inputFiles/singlePhaseFlow/vtk/3D_10x10x10_compressible_hex_gravity_base.xml",
+        "/geos_lib/inputFiles/singlePhaseFlow/FieldCaseTutorial3_smoke.xml",
+        "/geos_lib/inputFiles/compositionalMultiphaseWell/staircase_co2_wells_hybrid_3d.xml",
+        "/geos_lib/inputFiles/compositionalMultiphaseWell/benchmarks/Class09Pb3/class09_pb3_benchmark.xml"
+      ],
+      "written_xmls": [
+        "/workspace/inputs/deadOilEgg_base_iterative.xml",
+        "/workspace/inputs/deadOilEggVTK_benchmark.xml",
+        "/workspace/inputs/deadOilEgg_benchmark.xml"
+      ],
+      "productive_rag_queries": [
+        "dead oil two phase flow well simulation XML example",
+        "DeadOilFluid well XML example",
+        "CompositionalMultiphaseWell",
+        "DeadOilFluid",
+        "CompositionalMultiphaseFVM CompositionalMultiphaseWell",
+        "VTKMesh",
+        "fieldNamesInGEOS fieldsToImport permeability",
+        "InternalWellbore"
+      ],
+      "topic_keywords": [
+        "model",
+        "simulation",
+        "dead",
+        "multiphase",
+        "flow",
+        "reservoir",
+        "tutorial",
+        "based",
+        "documentation",
+        "example",
+        "here",
+        "comprehensive"
+      ],
+      "section_strengths": {
+        "ElementRegions": 1.0,
+        "NumericalMethods": 1.0,
+        "Constitutive": 0.942
+      },
+      "solver_family": "compositionalMultiphaseWell"
+    },
+    {
+      "task_id": "relaxationTest",
+      "instructions_excerpt": "**Simulation Type and Physical Problem**\n\nCreate an XML configuration for a quasi-static solid mechanics simulation modeling a viscoplastic relaxation test. The problem simulates a homogeneous, isotropic, isothermal viscoplastic slab subject to displacement-controlled uniaxial loading with constant confining stress. The simulation employs a viscoplastic solver to predict time-dependent deformation",
+      "final_treesim": 0.8023,
+      "reference_xmls": [
+        "/geos_lib/inputFiles/triaxialDriver/triaxialDriver_ExtendedDruckerPrager_basicExample.xml",
+        "/geos_lib/inputFiles/poromechanics/PoroElastic_Terzaghi_benchmark.xml",
+        "/geos_lib/inputFiles/compositionalMultiphaseFlow/benchmarks/isothermalLeakyWell/isothermalLeakyWell_benchmark.xml",
+        "/geos_lib/inputFiles/hydraulicFracturing/kgdToughnessDominated_base.xml",
+        "/geos_lib/inputFiles/lagrangianContactMechanics/SingleFracCompression_base.xml",
+        "/geos_lib/inputFiles/solidMechanics/plasticCubeReset.xml",
+        "/geos_lib/inputFiles/solidMechanics/KirschProblem_base.xml"
+      ],
+      "written_xmls": [
+        "/workspace/inputs/viscoExtendedDruckerPrager_relaxation_base.xml",
+        "/workspace/inputs/viscoExtendedDruckerPrager_relaxation_benchmark.xml"
+      ],
+      "productive_rag_queries": [
+        "Visco Extended Drucker Prager constitutive model parameters",
+        "ViscoExtendedDruckerPrager constitutive",
+        "InternalMesh elementBlocks segment xCoords yCoords zCoords",
+        "cellBlockNames InternalMesh",
+        "SolidMechanicsLagrangianFEM",
+        "xCoords=\"{0, 10, 20}\"",
+        "InternalMesh segmentation multiple nx ny nz",
+        "InternalMesh"
+      ],
+      "topic_keywords": [
+        "simulation",
+        "viscoplastic",
+        "relaxation",
+        "test",
+        "problem",
+        "type",
+        "physical",
+        "create",
+        "configuration",
+        "quasi",
+        "static",
+        "solid"
+      ],
+      "section_strengths": {
+        "Constitutive": 1.0,
+        "ElementRegions": 1.0,
+        "NumericalMethods": 1.0
+      },
+      "solver_family": "solidMechanics"
+    },
+    {
+      "task_id": "AdvancedExampleDeviatedPoroElasticWellbore",
+      "instructions_excerpt": "Here is the comprehensive natural language specification for generating the XML configuration file:\n\n**1. Simulation Type and Physical Problem**\n\nCreate a coupled poroelastic simulation modeling fluid injection into a deviated wellbore with open-hole completion. The problem involves a poroelastic deformation analysis where fluid pressure is applied at the wellbore wall. The wellbore is deviated at",
+      "final_treesim": 0.7564,
+      "reference_xmls": [
+        "/geos_lib/inputFiles/poromechanics/PoroElasticWellbore_base.xml",
+        "/geos_lib/inputFiles/wellbore/DeviatedElasticWellbore_benchmark.xml",
+        "/geos_lib/inputFiles/wellbore/DeviatedElasticWellbore_base.xml",
+        "/geos_lib/inputFiles/wellbore/ThermoPoroElasticWellbore_base.xml"
+      ],
+      "written_xmls": [
+        "/workspace/inputs/DeviatedPoroElasticWellbore_Injection_base.xml",
+        "/workspace/inputs/DeviatedPoroElasticWellbore_Injection_benchmark.xml"
+      ],
+      "productive_rag_queries": [
+        "poromechanics coupled single phase flow solid mechanics internal wellbore mesh",
+        "InternalMesh wellbore radial tangential z elements",
+        "SinglePhasePoromechanics",
+        "SinglePhasePoromechanics flowSolverName solidSolverName",
+        "InternalWellbore",
+        "rpos",
+        "FieldSpecification",
+        "direction totalDisplacement"
+      ],
+      "topic_keywords": [
+        "wellbore",
+        "deviated",
+        "simulation",
+        "problem",
+        "poroelastic",
+        "fluid",
+        "advanced",
+        "example",
+        "poro",
+        "elastic",
+        "here",
+        "comprehensive"
+      ],
+      "section_strengths": {
+        "Mesh": 1.0,
+        "NumericalMethods": 1.0,
+        "Constitutive": 0.895
+      },
+      "solver_family": "wellbore"
+    },
+    {
+      "task_id": "TutorialCO2FieldCase",
+      "instructions_excerpt": "Here is the comprehensive natural language specification for generating the XML configuration file for the CO2 injection simulation:\n\n**1. Simulation Type and Physical Problem**\n\nCreate a multiphase compositional simulation modeling CO2 injection into a subsurface reservoir. The physical problem involves injecting pure CO2 through a central vertical well into a heterogeneous porous medium, modelin",
+      "final_treesim": 0.7347,
+      "reference_xmls": [
+        "/geos_lib/inputFiles/compositionalMultiphaseWell/benchmarks/Class09Pb3/class09_pb3_drainageOnly_iterative_base.xml",
+        "/geos_lib/inputFiles/compositionalMultiphaseWell/benchmarks/Egg/deadOilEggVTK_benchmark.xml",
+        "/geos_lib/inputFiles/wellbore/ThermoPoroElasticWellbore_benchmark.xml",
+        "/geos_lib/inputFiles/wellbore/ThermoPoroElasticWellbore_base.xml",
+        "/geos_lib/inputFiles/singlePhaseFlow/FieldCaseTutorial3_base.xml",
+        "/geos_lib/inputFiles/thermoPoromechanics/ThermoPoroElastic_consolidation_base.xml"
+      ],
+      "written_xmls": [
+        "/workspace/inputs/simpleCo2InjTutorial_base.xml",
+        "/workspace/inputs/simpleCo2InjTutorial_smoke.xml"
+      ],
+      "productive_rag_queries": [
+        "compositional multiphase flow well injection CO2",
+        "TableFunction nearest neighbor permeability interpolation",
+        "external table function voxel permeability interpolation",
+        "FieldCaseTutorial table function perm.geos",
+        "TableFunction voxelFile coordinateFile",
+        "CompressibleSolidConstantPermeability table function",
+        "WellElementRegion perforation",
+        "InternalWellbore"
+      ],
+      "topic_keywords": [
+        "simulation",
+        "injection",
+        "physical",
+        "problem",
+        "tutorial",
+        "field",
+        "case",
+        "here",
+        "comprehensive",
+        "natural",
+        "language",
+        "specification"
+      ],
+      "section_strengths": {
+        "ElementRegions": 1.0,
+        "NumericalMethods": 1.0,
+        "FieldSpecifications": 0.923
+      },
+      "solver_family": "compositionalMultiphaseWell"
+    },
+    {
+      "task_id": "faultVerification",
+      "instructions_excerpt": "Based on the GEOS documentation for the fault verification validation study, here is the comprehensive natural language specification for generating the required XML configuration files:\n\n**Simulation Overview**\nCreate a poroelastic simulation to model induced stresses along a normal fault in a pressurized reservoir, solving for stress perturbations along the fault plane under plane strain condit",
+      "final_treesim": 0.712,
+      "reference_xmls": [
+        "/geos_lib/inputFiles/poromechanics/PoroElasticWellbore_base.xml",
+        "/geos_lib/inputFiles/lagrangianContactMechanics/SingleFracCompression_benchmark.xml",
+        "/geos_lib/inputFiles/compositionalMultiphaseFlow/benchmarks/SPE10/deadOilSpe10Layers84_85_base_iterative.xml"
+      ],
+      "written_xmls": [
+        "/workspace/inputs/faultPoroelastic_base.xml",
+        "/workspace/inputs/impermeableFault_benchmark.xml",
+        "/workspace/inputs/permeableFault_benchmark.xml"
+      ],
+      "productive_rag_queries": [
+        "poromechanics coupled single phase poromechanics example XML",
+        "SinglePhasePoromechanics",
+        "SinglePhasePoromechanics",
+        "VTKMesh",
+        "CellElementRegion",
+        "ElasticIsotropic",
+        "BiotPorosity",
+        "ConstantPermeability"
+      ],
+      "topic_keywords": [
+        "fault",
+        "verification",
+        "simulation",
+        "along",
+        "plane",
+        "based",
+        "documentation",
+        "validation",
+        "study",
+        "here",
+        "comprehensive",
+        "natural"
+      ],
+      "section_strengths": {
+        "NumericalMethods": 1.0,
+        "Outputs": 1.0,
+        "Solvers": 0.873
+      },
+      "solver_family": "poromechanics"
+    },
+    {
+      "task_id": "ExampleTFrac",
+      "instructions_excerpt": "**Simulation Type and Physical Problem**\n\nCreate an XML configuration for a quasi-static Lagrangian contact mechanics simulation modeling two perpendicular intersecting fractures (forming a T-shape) in a 2D infinite domain under plane strain conditions. The physical problem involves a vertical fracture of length 100.0 meters that is internally pressurized and perpendicularly intersects the middle",
+      "final_treesim": 0.5964,
+      "reference_xmls": [
+        "/geos_lib/inputFiles/solidMechanics/casedWellbore.xml",
+        "/geos_lib/inputFiles/efemFractureMechanics/Sneddon_embeddedFrac_verification.xml",
+        "/geos_lib/inputFiles/lagrangianContactMechanics/SingleFracCompression_base.xml",
+        "/geos_lib/inputFiles/lagrangianContactMechanics/SingleFracCompression_benchmark.xml",
+        "/geos_lib/inputFiles/lagrangianContactMechanics/ContactMechanics_SingleFracCompression_benchmark.xml"
+      ],
+      "written_xmls": [
+        "/workspace/inputs/TFrac_base.xml",
+        "/workspace/inputs/TFrac_benchmark.xml",
+        "/workspace/inputs/ContactMechanics_TFrac_benchmark.xml"
+      ],
+      "productive_rag_queries": [
+        "contact mechanics intersecting fractures solid mechanics Lagrangian contact solver",
+        "contact solver Lagrangian",
+        "InternalMesh refinement transition elements",
+        "Lagrangian contact solver fracture Coulomb friction",
+        "EmbeddedSurface fracture region",
+        "EmbeddedSurface",
+        "SolidMechanicsEmbeddedFractures",
+        "SolidMechanicsEmbeddedFractures"
+      ],
+      "topic_keywords": [
+        "simulation",
+        "physical",
+        "problem",
+        "example",
+        "frac",
+        "type",
+        "create",
+        "configuration",
+        "quasi",
+        "static",
+        "lagrangian",
+        "contact"
+      ],
+      "section_strengths": {
+        "Constitutive": 1.0,
+        "Mesh": 1.0,
+        "ElementRegions": 0.772
+      },
+      "solver_family": "lagrangianContactMechanics"
+    },
+    {
+      "task_id": "AdvancedExampleWellboreNonLinearThermalDiffusionTemperatureDependentSinglePhaseThermalConductivity",
+      "instructions_excerpt": "Create an XML configuration file for GEOS that configures a non-linear thermal diffusion simulation around a wellbore modeling wellbore cooling during CO2 injection. The simulation must use the thermal single-phase flow solver to capture the effects of temperature-dependent thermal conductivity in porous rock.\n\n**1. Simulation Type and Physical Problem**\nConfigure a transient non-linear thermal di",
+      "final_treesim": 0.5371,
+      "reference_xmls": [
+        "/geos_lib/inputFiles/wellbore/ThermoPoroElasticWellbore_base.xml",
+        "/geos_lib/inputFiles/wellbore/ThermoPoroElasticWellbore_benchmark.xml",
+        "/geos_lib/inputFiles/solidMechanics/ExtendedDruckerPragerWellbore_benchmark.xml",
+        "/geos_lib/inputFiles/wellbore/CasedThermoElasticWellbore_benchmark.xml"
+      ],
+      "written_xmls": [
+        "/workspace/inputs/thermalCompressible_2d_base.xml",
+        "/workspace/inputs/thermalCompressible_temperatureDependentSinglePhaseThermalConductivity_benchmark.xml"
+      ],
+      "productive_rag_queries": [
+        "temperature dependent thermal conductivity isotropic gradient linear temperature dependence",
+        "ThermalConductivity constitutive model temperature dependent",
+        "single phase thermal flow solver finite volume thermal",
+        "SinglePhaseThermalFVM solver",
+        "SinglePhaseThermalFVM",
+        "radial mesh InternalMesh wellbore",
+        "InternalWellbore mesh",
+        "ThermalCompressibleSinglePhaseFluid"
+      ],
+      "topic_keywords": [
+        "thermal",
+        "wellbore",
+        "linear",
+        "simulation",
+        "diffusion",
+        "temperature",
+        "dependent",
+        "single",
+        "phase",
+        "conductivity",
+        "advanced",
+        "example"
+      ],
+      "section_strengths": {
+        "Outputs": 0.965,
+        "Mesh": 0.809,
+        "FieldSpecifications": 0.802
+      },
+      "solver_family": "wellbore"
+    }
+  ]
+}

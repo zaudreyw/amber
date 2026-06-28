@@ -1,0 +1,43 @@
+
+==============================================================================
+  mm_noplug vs mm_plugin_E02
+==============================================================================
+  tasks in both: 15
+  only in mm_plugin_E02: ['AdvancedExampleCasedElasticWellbore', 'AdvancedExampleCasedElasticWellboreImperfectInterfaces', 'AdvancedExampleViscoModifiedCamClay', 'AdvancedExampleWellboreNonLinearThermalDiffusionTemperatureDependentSinglePhaseThermalConductivity', 'AdvancedWellboreExampleNonLinearThermalDiffusionTemperatureDependentVolumetricHeatCapacity', 'ExampleKirschWellbore', 'ExampleSPE11b', 'ExampleTFrac', 'TutorialCO2FieldCase', 'TutorialDeadOilBottomLayersSPE10', 'TutorialDeadOilEgg', 'TutorialPoroelasticity', 'faultVerification', 'kgdToughnessDominated', 'pennyFracToughnessDominated', 'pennyFracViscosityDominated', 'relaxationTest', 'triaxialDriverExample']
+
+  mm_noplug
+    scored: 15/15    failed: []
+    mean: 0.694    median: 0.770    range: [0.280, 0.912]
+    pass >=0.7: 8/15
+
+  mm_plugin_E02
+    scored: 33/33    failed: []
+    mean: 0.809    median: 0.857    range: [0.264, 1.000]
+    pass >=0.7: 28/33
+
+  Paired on 15 tasks scored in both runs:
+    mean delta (mm_noplug - mm_plugin_E02): -0.102
+    median delta: -0.079
+    wins mm_noplug: 4
+    wins mm_plugin_E02: 11
+    ties: 0
+
+  Biggest wins for mm_noplug:
+    +0.218   mm_noplug=0.493  mm_plugin_E02=0.275   TutorialSneddon
+    +0.144   mm_noplug=0.662  mm_plugin_E02=0.518   ExampleThermoporoelasticConsolidation
+    +0.063   mm_noplug=0.770  mm_plugin_E02=0.707   ExampleIsothermalLeakyWell
+    +0.013   mm_noplug=0.911  mm_plugin_E02=0.899   ExampleDPWellbore
+    -0.039   mm_noplug=0.692  mm_plugin_E02=0.731   buckleyLeverettProblem
+    -0.054   mm_noplug=0.803  mm_plugin_E02=0.857   AdvancedExampleExtendedDruckerPrager
+    -0.078   mm_noplug=0.780  mm_plugin_E02=0.857   AdvancedExampleModifiedCamClay
+    -0.079   mm_noplug=0.912  mm_plugin_E02=0.991   pknViscosityDominated
+
+  Biggest wins for mm_plugin_E02:
+    -0.659   mm_noplug=0.280  mm_plugin_E02=0.939   ExampleMandel
+    -0.322   mm_noplug=0.331  mm_plugin_E02=0.654   AdvancedExampleDeviatedElasticWellbore
+    -0.235   mm_noplug=0.652  mm_plugin_E02=0.886   AdvancedExampleViscoDruckerPrager
+    -0.183   mm_noplug=0.815  mm_plugin_E02=0.998   AdvancedExampleDruckerPrager
+    -0.140   mm_noplug=0.670  mm_plugin_E02=0.810   AdvancedExampleCasedContactThermoElasticWellbore
+    -0.105   mm_noplug=0.850  mm_plugin_E02=0.955   ExampleEDPWellbore
+    -0.080   mm_noplug=0.785  mm_plugin_E02=0.865   kgdExperimentValidation
+    -0.079   mm_noplug=0.912  mm_plugin_E02=0.991   pknViscosityDominated

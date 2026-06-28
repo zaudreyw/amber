@@ -1,0 +1,45 @@
+[93mWarning: --ground-truth-dir '/home/matt/sci/repo3/data/eval/experiments_gt' does not exist; GT XML blocking disabled.[0m
+
+[1m[95m======================================================================[0m
+[1m[95m  GEOS Eval Harness[0m
+[1m[95m======================================================================[0m
+  Run name       : noplug_mm_v2_s2
+  Experiments dir: /data/shared/geophysics_agent_data/data/eval/experiments_test36_template
+  Tasks          : 17
+  Agents         : ['claude_code_no_plugin']
+  Combos         : 17
+  Timeout        : 1200s per task
+  Workers        : 12
+  Pseudo retries : 1
+  Dry run        : False
+  GT XML blocking: disabled
+  Results root   : /home/matt/sci/repo3/data/eval
+  Temp GEOS dir  : /data/matt/geos_eval_tmp
+  GEOS lib dir   : /data/shared/geophysics_agent_data/data/GEOS
+  GEOS primer    : /home/brianliu/geophys-embodied-agent-framework/modules/profile/GEOS_PRIMER.md
+  Plugin dir     : /home/matt/sci/repo3/plugin
+  Vector DB dir  : /data/shared/geophysics_agent_data/data/vector_db
+  Claude model   : minimax/minimax-m2.7
+  Results (claude_code_no_plugin): /home/matt/sci/repo3/data/eval/claude_code_no_plugin/noplug_mm_v2_s2
+  Started        : 2026-04-22T09:47:39.550730
+[1m[95m======================================================================[0m
+
+[  1/17] [92msuccess       [0m  claude_code_no_plugin         kgdExperimentValidation
+[  2/17] [92msuccess       [0m  claude_code_no_plugin         AdvancedExampleDeviatedElasticWellbore
+[  3/17] [92msuccess       [0m  claude_code_no_plugin         AdvancedExampleCasedContactThermoElasticWellbore
+[  4/17] [92msuccess       [0m  claude_code_no_plugin         ExampleMandel
+[  5/17] [92msuccess       [0m  claude_code_no_plugin         TutorialSneddon
+[  6/17] [92msuccess       [0m  claude_code_no_plugin         ExampleDPWellbore
+[  7/17] [92msuccess       [0m  claude_code_no_plugin         AdvancedExampleViscoDruckerPrager
+[  8/17] [92msuccess       [0m  claude_code_no_plugin         TutorialPoroelasticity
+[  9/17] [92msuccess       [0m  claude_code_no_plugin         ExampleThermalLeakyWell
+[ 10/17] [92msuccess       [0m  claude_code_no_plugin         AdvancedExampleExtendedDruckerPrager
+[ 11/17] [92msuccess       [0m  claude_code_no_plugin         AdvancedExampleModifiedCamClay
+[ 12/17] [92msuccess       [0m  claude_code_no_plugin         AdvancedExampleDruckerPrager
+[ 13/17] [92msuccess       [0m  claude_code_no_plugin         ExampleEDPWellbore
+[ 14/17] [92msuccess       [0m  claude_code_no_plugin         ExampleIsothermalLeakyWell
+[ 15/17] [92msuccess       [0m  claude_code_no_plugin         pknViscosityDominated
+[ 16/17] [92msuccess       [0m  claude_code_no_plugin         buckleyLeverettProblem
+[ 17/17] [92msuccess       [0m  claude_code_no_plugin         ExampleThermoporoelasticConsolidation
+
+[1mDone[0m: [92m17 succeeded[0m, [91m0 failed[0m / 17 total

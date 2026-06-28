@@ -1,0 +1,43 @@
+
+==============================================================================
+  gmem_mm_v2 vs noplug_mm_v2
+==============================================================================
+  tasks in both: 12
+  only in gmem_mm_v2: ['AdvancedExampleDeviatedElasticWellbore', 'AdvancedExampleExtendedDruckerPrager', 'AdvancedExampleModifiedCamClay', 'ExampleThermalLeakyWell', 'ExampleThermoporoelasticConsolidation']
+
+  gmem_mm_v2
+    scored: 17/17    failed: []
+    mean: 0.725    median: 0.847    range: [0.301, 0.998]
+    pass >=0.7: 11/17
+
+  noplug_mm_v2
+    scored: 12/12    failed: []
+    mean: 0.566    median: 0.750    range: [0.021, 0.932]
+    pass >=0.7: 7/12
+
+  Paired on 12 tasks scored in both runs:
+    mean delta (gmem_mm_v2 - noplug_mm_v2): +0.117
+    median delta: +0.081
+    wins gmem_mm_v2: 8
+    wins noplug_mm_v2: 4
+    ties: 0
+
+  Biggest wins for gmem_mm_v2:
+    +0.870   gmem_mm_v2=0.998  noplug_mm_v2=0.129   AdvancedExampleViscoDruckerPrager
+    +0.701   gmem_mm_v2=0.847  noplug_mm_v2=0.146   AdvancedExampleCasedContactThermoElasticWellbore
+    +0.517   gmem_mm_v2=0.865  noplug_mm_v2=0.348   ExampleIsothermalLeakyWell
+    +0.383   gmem_mm_v2=0.404  noplug_mm_v2=0.021   pknViscosityDominated
+    +0.177   gmem_mm_v2=0.965  noplug_mm_v2=0.788   AdvancedExampleDruckerPrager
+    +0.106   gmem_mm_v2=0.301  noplug_mm_v2=0.195   TutorialSneddon
+    +0.056   gmem_mm_v2=0.978  noplug_mm_v2=0.922   ExampleDPWellbore
+    +0.016   gmem_mm_v2=0.903  noplug_mm_v2=0.887   kgdExperimentValidation
+
+  Biggest wins for noplug_mm_v2:
+    -0.576   gmem_mm_v2=0.349  noplug_mm_v2=0.925   ExampleMandel
+    -0.464   gmem_mm_v2=0.468  noplug_mm_v2=0.932   ExampleEDPWellbore
+    -0.383   gmem_mm_v2=0.393  noplug_mm_v2=0.775   buckleyLeverettProblem
+    -0.002   gmem_mm_v2=0.723  noplug_mm_v2=0.725   TutorialPoroelasticity
+    +0.016   gmem_mm_v2=0.903  noplug_mm_v2=0.887   kgdExperimentValidation
+    +0.056   gmem_mm_v2=0.978  noplug_mm_v2=0.922   ExampleDPWellbore
+    +0.106   gmem_mm_v2=0.301  noplug_mm_v2=0.195   TutorialSneddon
+    +0.177   gmem_mm_v2=0.965  noplug_mm_v2=0.788   AdvancedExampleDruckerPrager

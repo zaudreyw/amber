@@ -1,0 +1,42 @@
+
+==============================================================================
+  minprimer vs fullprimer
+==============================================================================
+  tasks in both: 17
+
+  minprimer
+    scored: 17/17    failed: []
+    mean: 0.596    median: 0.671    range: [0.080, 0.839]
+    pass >=0.7: 7/17
+
+  fullprimer
+    scored: 17/17    failed: []
+    mean: 0.831    median: 0.852    range: [0.583, 0.992]
+    pass >=0.7: 15/17
+
+  Paired on 17 tasks scored in both runs:
+    mean delta (minprimer - fullprimer): -0.235
+    median delta: -0.168
+    wins minprimer: 1
+    wins fullprimer: 16
+    ties: 0
+
+  Biggest wins for minprimer:
+    +0.016   minprimer=0.839  fullprimer=0.823   AdvancedExampleDruckerPrager
+    -0.021   minprimer=0.741  fullprimer=0.762   AdvancedExampleViscoDruckerPrager
+    -0.024   minprimer=0.559  fullprimer=0.583   ExampleThermoporoelasticConsolidation
+    -0.030   minprimer=0.710  fullprimer=0.740   pknViscosityDominated
+    -0.054   minprimer=0.671  fullprimer=0.725   buckleyLeverettProblem
+    -0.063   minprimer=0.815  fullprimer=0.878   ExampleEDPWellbore
+    -0.076   minprimer=0.814  fullprimer=0.890   ExampleIsothermalLeakyWell
+    -0.146   minprimer=0.717  fullprimer=0.864   kgdExperimentValidation
+
+  Biggest wins for fullprimer:
+    -0.723   minprimer=0.080  fullprimer=0.804   TutorialSneddon
+    -0.688   minprimer=0.304  fullprimer=0.992   ExampleDPWellbore
+    -0.677   minprimer=0.271  fullprimer=0.948   ExampleMandel
+    -0.324   minprimer=0.635  fullprimer=0.959   AdvancedExampleExtendedDruckerPrager
+    -0.303   minprimer=0.366  fullprimer=0.670   TutorialPoroelasticity
+    -0.254   minprimer=0.598  fullprimer=0.852   ExampleThermalLeakyWell
+    -0.254   minprimer=0.613  fullprimer=0.866   AdvancedExampleDeviatedElasticWellbore
+    -0.199   minprimer=0.719  fullprimer=0.918   AdvancedExampleModifiedCamClay

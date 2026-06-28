@@ -1,0 +1,48 @@
+[  1/17] AdvancedExampleCasedContactThermoElasticWellbore  1.23/10
+[  2/17] AdvancedExampleDeviatedElasticWellbore  1.49/10
+[  3/17] AdvancedExampleDruckerPrager  3.63/10
+[  4/17] AdvancedExampleExtendedDruckerPrager  4.35/10
+[  5/17] AdvancedExampleModifiedCamClay  5.33/10
+[  6/17] AdvancedExampleViscoDruckerPrager  FAILED: FileNotFoundError: No XML files found in data/eval/claude_code_repo3_plugin_m4g/mem_m4g_s3/AdvancedExampleViscoDruckerPrager/inputs
+[  7/17] ExampleDPWellbore  2.32/10
+[  8/17] ExampleEDPWellbore  3.65/10
+[  9/17] ExampleIsothermalLeakyWell  3.69/10
+[ 10/17] ExampleMandel  4.70/10
+[ 11/17] ExampleThermalLeakyWell  3.11/10
+[ 12/17] ExampleThermoporoelasticConsolidation  2.16/10
+[ 13/17] TutorialPoroelasticity  2.77/10
+[ 14/17] TutorialSneddon  1.81/10
+[ 15/17] buckleyLeverettProblem  5.37/10
+[ 16/17] kgdExperimentValidation  2.07/10
+[ 17/17] pknViscosityDominated  FAILED: FileNotFoundError: No XML files found in data/eval/claude_code_repo3_plugin_m4g/mem_m4g_s3/pknViscosityDominated/inputs
+
+============================================================
+  Batch evaluation: 15/17 succeeded
+============================================================
+  Scored-only     overall_score mean: 3.179  (median 3.110, range 1.23-5.37)
+  Failures-as-0   overall_score mean: 2.805
+  Scored-only     treesim       mean: 0.318
+  Failures-as-0   treesim       mean: 0.280
+  Pass ≥7: 0/15 (of scored)
+
+   5.37/10  buckleyLeverettProblem  treesim=0.537
+   5.33/10  AdvancedExampleModifiedCamClay  treesim=0.533
+   4.70/10  ExampleMandel  treesim=0.470
+   4.35/10  AdvancedExampleExtendedDruckerPrager  treesim=0.435
+   3.69/10  ExampleIsothermalLeakyWell  treesim=0.369
+   3.65/10  ExampleEDPWellbore  treesim=0.364
+   3.63/10  AdvancedExampleDruckerPrager  treesim=0.363
+   3.11/10  ExampleThermalLeakyWell  treesim=0.311
+   2.77/10  TutorialPoroelasticity  treesim=0.277
+   2.32/10  ExampleDPWellbore  treesim=0.232
+   2.16/10  ExampleThermoporoelasticConsolidation  treesim=0.216
+   2.07/10  kgdExperimentValidation  treesim=0.207
+   1.81/10  TutorialSneddon  treesim=0.181
+   1.49/10  AdvancedExampleDeviatedElasticWellbore  treesim=0.149
+   1.23/10  AdvancedExampleCasedContactThermoElasticWellbore  treesim=0.123
+
+  Failed (2) — counted as 0 in failures-as-zero mean:
+    AdvancedExampleViscoDruckerPrager: FileNotFoundError: No XML files found in data/eval/claude_code_repo3_plugin_m4g/mem_m4g_s3/AdvancedExampleViscoDruckerPrager/inputs
+    pknViscosityDominated: FileNotFoundError: No XML files found in data/eval/claude_code_repo3_plugin_m4g/mem_m4g_s3/pknViscosityDominated/inputs
+
+Wrote misc/memory_artifacts/scores/mem_m4g_s3_summary.json

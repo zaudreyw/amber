@@ -1,0 +1,43 @@
+
+==============================================================================
+  plugin+ds vs noplugin+ds
+==============================================================================
+  tasks in both: 35
+  only in noplugin+ds: ['ExampleSPE11b']
+
+  plugin+ds
+    scored: 35/35    failed: []
+    mean: 0.828    median: 0.852    range: [0.537, 0.998]
+    pass >=0.7: 31/35
+
+  noplugin+ds
+    scored: 36/36    failed: []
+    mean: 0.643    median: 0.706    range: [0.099, 0.954]
+    pass >=0.7: 19/36
+
+  Paired on 35 tasks scored in both runs:
+    mean delta (plugin+ds - noplugin+ds): +0.175
+    median delta: +0.118
+    wins plugin+ds: 29
+    wins noplugin+ds: 6
+    ties: 0
+
+  Biggest wins for plugin+ds:
+    +0.705   plugin+ds=0.804  noplugin+ds=0.099   TutorialSneddon
+    +0.686   plugin+ds=0.992  noplugin+ds=0.305   ExampleDPWellbore
+    +0.673   plugin+ds=0.948  noplugin+ds=0.275   ExampleMandel
+    +0.657   plugin+ds=0.880  noplugin+ds=0.224   AdvancedExampleCasedElasticWellboreImperfectInterfaces
+    +0.560   plugin+ds=0.804  noplugin+ds=0.244   TutorialDeadOilEgg
+    +0.345   plugin+ds=0.998  noplugin+ds=0.653   AdvancedExampleViscoModifiedCamClay
+    +0.304   plugin+ds=0.847  noplugin+ds=0.542   AdvancedExampleCasedContactThermoElasticWellbore
+    +0.303   plugin+ds=0.918  noplugin+ds=0.615   AdvancedExampleModifiedCamClay
+
+  Biggest wins for noplugin+ds:
+    -0.171   plugin+ds=0.537  noplugin+ds=0.708   AdvancedExampleWellboreNonLinearThermalDiffusionTemperatureDependentSinglePhaseThermalConductivity
+    -0.151   plugin+ds=0.756  noplugin+ds=0.907   AdvancedExampleDeviatedPoroElasticWellbore
+    -0.116   plugin+ds=0.740  noplugin+ds=0.856   pknViscosityDominated
+    -0.107   plugin+ds=0.596  noplugin+ds=0.704   ExampleTFrac
+    -0.088   plugin+ds=0.866  noplugin+ds=0.954   pennyFracToughnessDominated
+    -0.039   plugin+ds=0.898  noplugin+ds=0.937   pennyFracViscosityDominated
+    +0.011   plugin+ds=0.725  noplugin+ds=0.714   buckleyLeverettProblem
+    +0.015   plugin+ds=0.851  noplugin+ds=0.835   AdvancedWellboreExampleNonLinearThermalDiffusionTemperatureDependentVolumetricHeatCapacity

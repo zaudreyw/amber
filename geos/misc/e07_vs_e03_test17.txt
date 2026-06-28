@@ -1,0 +1,42 @@
+
+==============================================================================
+  filetree vs plugin-only
+==============================================================================
+  tasks in both: 17
+
+  filetree
+    scored: 17/17    failed: []
+    mean: 0.604    median: 0.639    range: [0.085, 0.960]
+    pass >=0.7: 6/17
+
+  plugin-only
+    scored: 17/17    failed: []
+    mean: 0.831    median: 0.852    range: [0.583, 0.992]
+    pass >=0.7: 15/17
+
+  Paired on 17 tasks scored in both runs:
+    mean delta (filetree - plugin-only): -0.227
+    median delta: -0.163
+    wins filetree: 2
+    wins plugin-only: 15
+    ties: 0
+
+  Biggest wins for filetree:
+    +0.220   filetree=0.960  plugin-only=0.740   pknViscosityDominated
+    +0.014   filetree=0.739  plugin-only=0.725   buckleyLeverettProblem
+    -0.010   filetree=0.572  plugin-only=0.583   ExampleThermoporoelasticConsolidation
+    -0.030   filetree=0.848  plugin-only=0.878   ExampleEDPWellbore
+    -0.082   filetree=0.808  plugin-only=0.890   ExampleIsothermalLeakyWell
+    -0.099   filetree=0.765  plugin-only=0.864   kgdExperimentValidation
+    -0.123   filetree=0.743  plugin-only=0.866   AdvancedExampleDeviatedElasticWellbore
+    -0.156   filetree=0.667  plugin-only=0.823   AdvancedExampleDruckerPrager
+
+  Biggest wins for plugin-only:
+    -0.719   filetree=0.085  plugin-only=0.804   TutorialSneddon
+    -0.687   filetree=0.305  plugin-only=0.992   ExampleDPWellbore
+    -0.637   filetree=0.311  plugin-only=0.948   ExampleMandel
+    -0.323   filetree=0.594  plugin-only=0.918   AdvancedExampleModifiedCamClay
+    -0.296   filetree=0.664  plugin-only=0.959   AdvancedExampleExtendedDruckerPrager
+    -0.291   filetree=0.379  plugin-only=0.670   TutorialPoroelasticity
+    -0.265   filetree=0.587  plugin-only=0.852   ExampleThermalLeakyWell
+    -0.208   filetree=0.639  plugin-only=0.847   AdvancedExampleCasedContactThermoElasticWellbore

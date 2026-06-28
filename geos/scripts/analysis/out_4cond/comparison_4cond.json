@@ -1,0 +1,377 @@
+{
+  "CC (vanilla)": {
+    "agent": "claude_code_no_plugin",
+    "runs": [
+      "mm_noplug_run1",
+      "noplug_mm_v2",
+      "noplug_mm_v2_s2"
+    ],
+    "file_access": {
+      "n_seeds": 3,
+      "n_task_runs": 51,
+      "uniq_files": 597,
+      "rst_sphinx": 79,
+      "rst_nonsphinx": 28,
+      "xml_inputfiles": 415,
+      "xml_workspace": 105,
+      "xsd_schema": 39,
+      "bash_total": 573,
+      "bash_xmllint": 3,
+      "bash_read_xml": 95,
+      "glob_calls": 157,
+      "grep_calls": 151,
+      "rst_sphinx_per_task": 1.5490196078431373,
+      "rst_nonsphinx_per_task": 0.5490196078431373,
+      "xml_inputfiles_per_task": 8.137254901960784,
+      "xmllint_per_task": 0.058823529411764705,
+      "glob_per_task": 3.0784313725490198
+    },
+    "tool_usage_summary": {
+      "n_task_runs": 51,
+      "tool_calls_total_attempted": 1940,
+      "tool_calls_total_succeeded": 1894,
+      "tool_calls_per_task_attempted": 38.0,
+      "tool_calls_per_task_succeeded": 37.1
+    },
+    "tool_usage_top_tools": [
+      {
+        "tool_name": "Read",
+        "attempted_count": 658,
+        "succeeded_count": 633,
+        "error_rate": 0.038
+      },
+      {
+        "tool_name": "Bash",
+        "attempted_count": 573,
+        "succeeded_count": 560,
+        "error_rate": 0.023
+      },
+      {
+        "tool_name": "Write",
+        "attempted_count": 230,
+        "succeeded_count": 229,
+        "error_rate": 0.004
+      },
+      {
+        "tool_name": "Glob",
+        "attempted_count": 157,
+        "succeeded_count": 157,
+        "error_rate": 0.0
+      },
+      {
+        "tool_name": "Grep",
+        "attempted_count": 151,
+        "succeeded_count": 150,
+        "error_rate": 0.007
+      },
+      {
+        "tool_name": "TodoWrite",
+        "attempted_count": 68,
+        "succeeded_count": 68,
+        "error_rate": 0.0
+      },
+      {
+        "tool_name": "WebSearch",
+        "attempted_count": 55,
+        "succeeded_count": 55,
+        "error_rate": 0.0
+      },
+      {
+        "tool_name": "Agent",
+        "attempted_count": 27,
+        "succeeded_count": 27,
+        "error_rate": 0.0
+      },
+      {
+        "tool_name": "Edit",
+        "attempted_count": 18,
+        "succeeded_count": 13,
+        "error_rate": 0.278
+      },
+      {
+        "tool_name": "WebFetch",
+        "attempted_count": 3,
+        "succeeded_count": 2,
+        "error_rate": 0.333
+      }
+    ]
+  },
+  "CC + RAG": {
+    "agent": "claude_code_repo3_plugin_nohook",
+    "runs": [
+      "plug_mm_v2_s2"
+    ],
+    "file_access": {
+      "n_seeds": 1,
+      "n_task_runs": 17,
+      "uniq_files": 34,
+      "rst_sphinx": 0,
+      "rst_nonsphinx": 0,
+      "xml_inputfiles": 2,
+      "xml_workspace": 42,
+      "xsd_schema": 0,
+      "bash_total": 50,
+      "bash_xmllint": 1,
+      "bash_read_xml": 2,
+      "glob_calls": 0,
+      "grep_calls": 0,
+      "rst_sphinx_per_task": 0.0,
+      "rst_nonsphinx_per_task": 0.0,
+      "xml_inputfiles_per_task": 0.11764705882352941,
+      "xmllint_per_task": 0.058823529411764705,
+      "glob_per_task": 0.0
+    },
+    "tool_usage_summary": {
+      "n_task_runs": 17,
+      "tool_calls_total_attempted": 535,
+      "tool_calls_total_succeeded": 529,
+      "tool_calls_per_task_attempted": 31.5,
+      "tool_calls_per_task_succeeded": 31.1
+    },
+    "tool_usage_top_tools": [
+      {
+        "tool_name": "mcp__geos-rag__search_schema",
+        "attempted_count": 133,
+        "succeeded_count": 133,
+        "error_rate": 0.0
+      },
+      {
+        "tool_name": "mcp__geos-rag__search_technical",
+        "attempted_count": 128,
+        "succeeded_count": 128,
+        "error_rate": 0.0
+      },
+      {
+        "tool_name": "Write",
+        "attempted_count": 116,
+        "succeeded_count": 115,
+        "error_rate": 0.009
+      },
+      {
+        "tool_name": "Bash",
+        "attempted_count": 50,
+        "succeeded_count": 48,
+        "error_rate": 0.04
+      },
+      {
+        "tool_name": "Read",
+        "attempted_count": 41,
+        "succeeded_count": 41,
+        "error_rate": 0.0
+      },
+      {
+        "tool_name": "TodoWrite",
+        "attempted_count": 32,
+        "succeeded_count": 32,
+        "error_rate": 0.0
+      },
+      {
+        "tool_name": "mcp__geos-rag__search_navigator",
+        "attempted_count": 30,
+        "succeeded_count": 30,
+        "error_rate": 0.0
+      },
+      {
+        "tool_name": "Edit",
+        "attempted_count": 5,
+        "succeeded_count": 2,
+        "error_rate": 0.6
+      }
+    ]
+  },
+  "CC + RAG + hook": {
+    "agent": "claude_code_repo3_plugin",
+    "runs": [
+      "pac1_plug_hook_s1",
+      "pac1_plug_hook_s2",
+      "pac1_plug_hook_s3",
+      "plug_mm_v2_seed2"
+    ],
+    "file_access": {
+      "n_seeds": 4,
+      "n_task_runs": 68,
+      "uniq_files": 200,
+      "rst_sphinx": 1,
+      "rst_nonsphinx": 0,
+      "xml_inputfiles": 75,
+      "xml_workspace": 150,
+      "xsd_schema": 0,
+      "bash_total": 125,
+      "bash_xmllint": 5,
+      "bash_read_xml": 4,
+      "glob_calls": 26,
+      "grep_calls": 3,
+      "rst_sphinx_per_task": 0.014705882352941176,
+      "rst_nonsphinx_per_task": 0.0,
+      "xml_inputfiles_per_task": 1.1029411764705883,
+      "xmllint_per_task": 0.07352941176470588,
+      "glob_per_task": 0.38235294117647056
+    },
+    "tool_usage_summary": {
+      "n_task_runs": 68,
+      "tool_calls_total_attempted": 1918,
+      "tool_calls_total_succeeded": 1897,
+      "tool_calls_per_task_attempted": 28.2,
+      "tool_calls_per_task_succeeded": 27.9
+    },
+    "tool_usage_top_tools": [
+      {
+        "tool_name": "mcp__geos-rag__search_schema",
+        "attempted_count": 457,
+        "succeeded_count": 455,
+        "error_rate": 0.004
+      },
+      {
+        "tool_name": "mcp__geos-rag__search_technical",
+        "attempted_count": 440,
+        "succeeded_count": 440,
+        "error_rate": 0.0
+      },
+      {
+        "tool_name": "Write",
+        "attempted_count": 334,
+        "succeeded_count": 330,
+        "error_rate": 0.012
+      },
+      {
+        "tool_name": "Read",
+        "attempted_count": 230,
+        "succeeded_count": 228,
+        "error_rate": 0.009
+      },
+      {
+        "tool_name": "Bash",
+        "attempted_count": 125,
+        "succeeded_count": 120,
+        "error_rate": 0.04
+      },
+      {
+        "tool_name": "mcp__geos-rag__search_navigator",
+        "attempted_count": 123,
+        "succeeded_count": 122,
+        "error_rate": 0.008
+      },
+      {
+        "tool_name": "Edit",
+        "attempted_count": 99,
+        "succeeded_count": 93,
+        "error_rate": 0.061
+      },
+      {
+        "tool_name": "TodoWrite",
+        "attempted_count": 80,
+        "succeeded_count": 80,
+        "error_rate": 0.0
+      },
+      {
+        "tool_name": "Glob",
+        "attempted_count": 26,
+        "succeeded_count": 26,
+        "error_rate": 0.0
+      },
+      {
+        "tool_name": "Grep",
+        "attempted_count": 3,
+        "succeeded_count": 3,
+        "error_rate": 0.0
+      },
+      {
+        "tool_name": "WebFetch",
+        "attempted_count": 1,
+        "succeeded_count": 0,
+        "error_rate": 1.0
+      }
+    ]
+  },
+  "CC + RAG + hook + memory (M1-u)": {
+    "agent": "claude_code_repo3_plugin_m1u",
+    "runs": [
+      "mem_m1u_s1",
+      "mem_m1u_s2",
+      "mem_m1u_s3"
+    ],
+    "file_access": {
+      "n_seeds": 3,
+      "n_task_runs": 51,
+      "uniq_files": 185,
+      "rst_sphinx": 1,
+      "rst_nonsphinx": 0,
+      "xml_inputfiles": 120,
+      "xml_workspace": 114,
+      "xsd_schema": 0,
+      "bash_total": 151,
+      "bash_xmllint": 4,
+      "bash_read_xml": 9,
+      "glob_calls": 35,
+      "grep_calls": 0,
+      "rst_sphinx_per_task": 0.0196078431372549,
+      "rst_nonsphinx_per_task": 0.0,
+      "xml_inputfiles_per_task": 2.3529411764705883,
+      "xmllint_per_task": 0.0784313725490196,
+      "glob_per_task": 0.6862745098039216
+    },
+    "tool_usage_summary": {
+      "n_task_runs": 51,
+      "tool_calls_total_attempted": 1226,
+      "tool_calls_total_succeeded": 1218,
+      "tool_calls_per_task_attempted": 24.0,
+      "tool_calls_per_task_succeeded": 23.9
+    },
+    "tool_usage_top_tools": [
+      {
+        "tool_name": "mcp__geos-rag__search_schema",
+        "attempted_count": 258,
+        "succeeded_count": 258,
+        "error_rate": 0.0
+      },
+      {
+        "tool_name": "mcp__geos-rag__search_technical",
+        "attempted_count": 230,
+        "succeeded_count": 230,
+        "error_rate": 0.0
+      },
+      {
+        "tool_name": "Read",
+        "attempted_count": 205,
+        "succeeded_count": 203,
+        "error_rate": 0.01
+      },
+      {
+        "tool_name": "Write",
+        "attempted_count": 205,
+        "succeeded_count": 205,
+        "error_rate": 0.0
+      },
+      {
+        "tool_name": "Bash",
+        "attempted_count": 151,
+        "succeeded_count": 146,
+        "error_rate": 0.033
+      },
+      {
+        "tool_name": "mcp__geos-rag__search_navigator",
+        "attempted_count": 79,
+        "succeeded_count": 79,
+        "error_rate": 0.0
+      },
+      {
+        "tool_name": "TodoWrite",
+        "attempted_count": 47,
+        "succeeded_count": 47,
+        "error_rate": 0.0
+      },
+      {
+        "tool_name": "Glob",
+        "attempted_count": 35,
+        "succeeded_count": 35,
+        "error_rate": 0.0
+      },
+      {
+        "tool_name": "Edit",
+        "attempted_count": 16,
+        "succeeded_count": 15,
+        "error_rate": 0.062
+      }
+    ]
+  }
+}

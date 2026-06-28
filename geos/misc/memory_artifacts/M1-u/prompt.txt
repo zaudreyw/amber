@@ -1,0 +1,100 @@
+You are a memory curator for an LLM agent that converts natural-language physics simulation specs into GEOS XML. The agent has access to RAG over GEOS documentation. Your job is to distill a single "cheatsheet" — a markdown document — that the agent will see in its system prompt at every task.
+
+The cheatsheet must:
+- Consolidate cross-task patterns observed across multiple past tasks.
+- Emphasize solver-family routing rules ("when task involves X, use solver Y").
+- Include a short "common anti-patterns" section listing hallucinated element names to avoid (be specific about what NOT to use).
+- Be actionable by an agent that has not seen the past tasks.
+
+**Critical abstraction rules** (the output will be automatically audited; any violation fails the artifact):
+
+1. NEVER include raw XML element content (no `<ElementName ...>` snippets).
+2. NEVER include any filename of the form `*.xml`. Reference element names and attribute names only.
+3. NEVER name a specific past task as "task X used these files." Instead, phrase as conditional rules: "When a task describes physics Y, the solver hierarchy is Z." This allows transfer to new tasks.
+4. Include anti-patterns as explicit "do NOT" statements when they help avoid known hallucination classes (e.g., "do NOT use `<FractureModel>` — that is invented vocabulary; use `<SurfaceGenerator>` for hydraulic fracture tasks.").
+5. Keep content terse and information-dense. Each item must be independently actionable by an agent that has not seen any training trajectory.
+6. Use physics-family tags where relevant: `hydrofracture`, `triaxial`, `poromechanics`, `thermal`, `contact`, `wellbore`, `multiphase`, etc.
+
+
+**Strict token budget**: the final cheatsheet must be under 1500 tokens.
+
+
+You are given trajectory summaries only (no ground-truth feedback). Infer useful rules from the productive RAG queries and solver patterns alone. Anti-patterns should only target clearly-invented names (e.g., `<FractureModel>`, `<HydraulicFractureSolver>`); do NOT flag real GEOS schema elements.
+
+Below are observations from training tasks the agent has previously attempted. Produce a single markdown cheatsheet that distills cross-task patterns and anti-patterns to help future tasks succeed.
+
+## Training trajectory observations (18 tasks)
+
+### Training task #1
+- final_treesim: 1.0
+- tool call summary: rag=0 reads=38 writes=5
+
+### Training task #2
+- final_treesim: 0.9484
+- tool call summary: rag=0 reads=50 writes=2
+
+### Training task #3
+- final_treesim: 0.9336
+- tool call summary: rag=0 reads=13 writes=4
+
+### Training task #4
+- final_treesim: 0.9625
+- tool call summary: rag=0 reads=11 writes=3
+
+### Training task #5
+- final_treesim: 0.9989
+- tool call summary: rag=0 reads=29 writes=2
+
+### Training task #6
+- final_treesim: 0.7048
+- tool call summary: rag=0 reads=32 writes=3
+
+### Training task #7
+- final_treesim: 0.8685
+- tool call summary: rag=0 reads=39 writes=2
+
+### Training task #8
+- final_treesim: 0.9867
+- tool call summary: rag=0 reads=6 writes=2
+
+### Training task #9
+- final_treesim: 0.8582
+- tool call summary: rag=0 reads=12 writes=3
+
+### Training task #10
+- final_treesim: 0.9239
+- tool call summary: rag=0 reads=58 writes=2
+
+### Training task #11
+- final_treesim: 0.8849
+- tool call summary: rag=0 reads=31 writes=2
+
+### Training task #12
+- final_treesim: 0.9464
+- tool call summary: rag=0 reads=33 writes=4
+
+### Training task #13
+- final_treesim: 0.8657
+- tool call summary: rag=0 reads=15 writes=2
+
+### Training task #14
+- final_treesim: 0.9393
+- tool call summary: rag=0 reads=57 writes=2
+
+### Training task #15
+- final_treesim: 0.796
+- tool call summary: rag=0 reads=26 writes=2
+
+### Training task #16
+- final_treesim: 0.7669
+- tool call summary: rag=0 reads=51 writes=3
+
+### Training task #17
+- final_treesim: 0.8275
+- tool call summary: rag=0 reads=20 writes=3
+
+### Training task #18
+- final_treesim: 0.8967
+- tool call summary: rag=0 reads=13 writes=3
+
+Now produce the cheatsheet.

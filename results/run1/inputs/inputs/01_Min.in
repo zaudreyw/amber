@@ -1,0 +1,24 @@
+Alanine dipeptide - Energy Minimization
+ &cntrl
+  ! Run type: minimization
+  imin=1,
+
+  ! Minimization settings:
+  ! 2000 total cycles; first 1000 steepest descent, then conjugate gradient
+  maxcyc=2000,
+  ncyc=1000,
+
+  ! Non-bonded cutoff (Angstrom)
+  cut=8.0,
+
+  ! Periodic boundary: constant volume
+  ntb=1,
+
+  ! No SHAKE during minimization
+  ntc=1,
+  ntf=1,
+
+  ! Output: print every 100 steps, no trajectory written
+  ntpr=100,
+  ntwx=0,
+ /

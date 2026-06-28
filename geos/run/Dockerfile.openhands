@@ -1,0 +1,86 @@
+FROM ubuntu:24.04
+
+ENV DEBIAN_FRONTEND=noninteractive
+
+RUN apt-get update && apt-get install -y \
+    curl \
+    git \
+    python3.12 \
+    python3.12-venv \
+    python3-pip \
+    ca-certificates \
+    gnupg \
+    && rm -rf /var/lib/apt/lists/*
+
+ENV UV_INSTALL_DIR=/usr/local/bin
+RUN curl -LsSf https://astral.sh/uv/install.sh | sh
+
+# Install OpenHands to a world-readable path so the container can run as
+# a non-root --user (which is required to keep workspace files owned by
+# the host user, matching the vanilla-CC runner's pattern).
+# Pin to v1.15.0 — the version this baseline was built and reviewed against
+# (RN-004). Bump deliberately and re-smoketest before changing this.
+ENV UV_TOOL_DIR=/opt/uv/tools
+ENV UV_TOOL_BIN_DIR=/usr/local/bin
+RUN mkdir -p /opt/uv/tools \
+    && uv tool install 'openhands==1.15.0' --python 3.12 \
+    && chmod -R a+rX /opt/uv \
+    && chmod a+rX /usr/local/bin/openhands /usr/local/bin/openhands-acp
+
+# Disable user-skills + public-skills auto-loading (RN-004 P0 #2).
+# The CLI hardcodes load_user_skills=True / load_public_skills=True in
+# `_build_agent_context`. Patch to False at image-build so the agent's
+# system context is not contaminated by keyword-matched public skills
+# (e.g. Linear API GraphQL injected for the substring "linear elastic").
+# Project-level skill loading via load_project_skills() is left intact —
+# but for parity-safety the runner does NOT rely on it; the primer is
+# injected inline into the user message.
+RUN sed -i \
+        -e 's/load_user_skills=True/load_user_skills=False/' \
+        -e 's/load_public_skills=True/load_public_skills=False/' \
+        /opt/uv/tools/openhands/lib/python3.12/site-packages/openhands_cli/stores/agent_store.py \
+    && grep -n 'load_user_skills\|load_public_skills' \
+        /opt/uv/tools/openhands/lib/python3.12/site-packages/openhands_cli/stores/agent_store.py
+
+# Add deepseek-v4-flash / deepseek-chat (the legacy alias for non-thinking
+# v4-flash) to SEND_REASONING_CONTENT_MODELS. Per DeepSeek's API contract
+# (https://api-docs.deepseek.com/guides/thinking_mode), if the API returns
+# `reasoning_content` in an assistant turn that performs tool calls, the
+# client MUST pass it back on the next request or DeepSeek raises 400
+# "The reasoning_content in the thinking mode must be passed back to the
+# API". OpenHands only flags `deepseek/deepseek-reasoner` here, but in
+# practice both `deepseek-v4-flash` and even `deepseek-chat` return
+# reasoning_content, so they need the same round-trip handling.
+RUN python3 - <<'PY'
+import pathlib, re
+p = pathlib.Path('/opt/uv/tools/openhands/lib/python3.12/site-packages/openhands/sdk/llm/utils/model_features.py')
+src = p.read_text()
+needle = '"deepseek/deepseek-reasoner",'
+addition = '"deepseek/deepseek-reasoner",\n    "deepseek/deepseek-chat",\n    "deepseek/deepseek-v4-flash",\n    "deepseek/deepseek-v4-pro",'
+assert needle in src, 'expected deepseek-reasoner needle'
+src = src.replace(needle, addition, 1)
+p.write_text(src)
+print('PATCHED:', [l.strip() for l in src.splitlines() if 'deepseek' in l])
+PY
+
+# Disable the LLMSecurityAnalyzer that the headless CLI installs by default.
+# It requires every tool call to carry a `security_risk` field; weaker models
+# (notably deepseek-v4-flash) omit it and OpenHands raises ValueError, which
+# fast-fails the conversation after 2 errors. We don't need risk classification
+# for XML authoring — when the analyzer is None, `_extract_security_risk`
+# returns `risk.SecurityRisk.UNKNOWN` safely. Patch the single call site in
+# setup.py so headless invocations skip the install. (See matt 2026-04-28
+# DSv4-flash integration.)
+RUN sed -i \
+        's|conversation.set_security_analyzer(LLMSecurityAnalyzer())|pass  # security_analyzer disabled (parity with CC harness)|' \
+        /opt/uv/tools/openhands/lib/python3.12/site-packages/openhands_cli/setup.py \
+    && grep -n 'security_analyzer\|LLMSecurityAnalyzer' \
+        /opt/uv/tools/openhands/lib/python3.12/site-packages/openhands_cli/setup.py
+
+# Suppress the SDK banner so JSONL stdout stays clean.
+ENV OPENHANDS_SUPPRESS_BANNER=1
+
+# Headless mode invokes Rich; without a TTY this is fine but emits a warning.
+ENV TTY_INTERACTIVE=1
+
+WORKDIR /workspace

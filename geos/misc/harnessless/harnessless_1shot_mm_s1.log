@@ -1,0 +1,71 @@
+[  1/17] AdvancedExampleCasedContactThermoElasticWellbore  2.45/10
+[  2/17] AdvancedExampleDeviatedElasticWellbore  3.83/10
+[  3/17] AdvancedExampleDruckerPrager  3.27/10
+[  4/17] AdvancedExampleExtendedDruckerPrager  4.00/10
+[  5/17] AdvancedExampleModifiedCamClay  2.76/10
+[  6/17] AdvancedExampleViscoDruckerPrager  3.64/10
+[  7/17] ExampleDPWellbore  3.37/10
+[  8/17] ExampleEDPWellbore  FAILED: FileNotFoundError: No XML files found in /home/matt/sci/repo3/data/eval/harnessless/harnessless_1shot_mm_s1/ExampleEDPWellbore/inputs
+[  9/17] ExampleIsothermalLeakyWell  3.50/10
+[ 10/17] ExampleMandel  3.31/10
+[ 11/17] ExampleThermalLeakyWell  4.44/10
+[ 12/17] ExampleThermoporoelasticConsolidation  1.82/10
+[ 13/17] TutorialPoroelasticity  4.14/10
+[ 14/17] TutorialSneddon  3.32/10
+[ 15/17] buckleyLeverettProblem  5.16/10
+[ 16/17] kgdExperimentValidation  3.74/10
+[ 17/17] pknViscosityDominated  3.79/10
+
+============================================================
+  Batch evaluation: 16/17 succeeded
+============================================================
+  Scored-only     overall_score mean: 3.534  (median 3.570, range 1.82-5.16)
+  Failures-as-0   overall_score mean: 3.326
+  Scored-only     treesim       mean: 0.353
+  Failures-as-0   treesim       mean: 0.333
+  Pass ≥7: 0/16 (of scored)
+
+   5.16/10  buckleyLeverettProblem  treesim=0.516
+   4.44/10  ExampleThermalLeakyWell  treesim=0.444
+   4.14/10  TutorialPoroelasticity  treesim=0.414
+   4.00/10  AdvancedExampleExtendedDruckerPrager  treesim=0.400
+   3.83/10  AdvancedExampleDeviatedElasticWellbore  treesim=0.383
+   3.79/10  pknViscosityDominated  treesim=0.379
+   3.74/10  kgdExperimentValidation  treesim=0.374
+   3.64/10  AdvancedExampleViscoDruckerPrager  treesim=0.364
+   3.50/10  ExampleIsothermalLeakyWell  treesim=0.350
+   3.37/10  ExampleDPWellbore  treesim=0.337
+   3.32/10  TutorialSneddon  treesim=0.332
+   3.31/10  ExampleMandel  treesim=0.331
+   3.27/10  AdvancedExampleDruckerPrager  treesim=0.327
+   2.76/10  AdvancedExampleModifiedCamClay  treesim=0.276
+   2.45/10  AdvancedExampleCasedContactThermoElasticWellbore  treesim=0.245
+   1.82/10  ExampleThermoporoelasticConsolidation  treesim=0.182
+
+  Failed (1) — counted as 0 in failures-as-zero mean:
+    ExampleEDPWellbore: FileNotFoundError: No XML files found in /home/matt/sci/repo3/data/eval/harnessless/harnessless_1shot_mm_s1/ExampleEDPWellbore/inputs
+
+Wrote /home/matt/sci/repo3/data/eval/results/harnessless_1shot_mm_s1/_aggregate.json
+[info] ICL task: ExampleProppantTest (assistant message ~8076 chars)
+[info] Launching 17 tasks x 8 workers against minimax/minimax-m2.7
+  [ok            ] AdvancedExampleViscoDruckerPrager                            21.8s  OK
+  [ok            ] buckleyLeverettProblem                                       28.7s  OK
+  [ok            ] AdvancedExampleDruckerPrager                                 47.4s  OK
+  [ok            ] AdvancedExampleExtendedDruckerPrager                         57.7s  OK
+  [ok            ] AdvancedExampleModifiedCamClay                               72.9s  OK
+  [ok            ] ExampleDPWellbore                                            83.4s  OK
+  [ok            ] AdvancedExampleCasedContactThermoElasticWellbore             144.7s  OK
+  [ok            ] ExampleMandel                                                107.4s  OK
+  [ok            ] ExampleIsothermalLeakyWell                                   126.4s  OK
+  [ok            ] ExampleThermalLeakyWell                                      97.7s  OK
+  [ok            ] ExampleThermoporoelasticConsolidation                        110.0s  OK
+  [ok            ] AdvancedExampleDeviatedElasticWellbore                       197.8s  OK
+  [ok            ] kgdExperimentValidation                                      133.0s  OK
+  [ok            ] pknViscosityDominated                                        113.9s  OK
+  [ok            ] TutorialPoroelasticity                                       181.9s  OK
+  [ok            ] TutorialSneddon                                              238.0s  OK
+  [missing_files ] ExampleEDPWellbore                                           515.6s  missing=['ExtendedDruckerPragerWellbore_base.xml', 'ExtendedDruckerPragerWellbore_benchmark.xml']
+
+[info] Generation done in 537.4s. ok=16 missing=1 api_err=0 crash=0
+[info] Scoring against GT at /data/shared/geophysics_agent_data/data/eval/experiments_gt
+[info] Writing per-task eval JSON to /home/matt/sci/repo3/data/eval/results/harnessless_1shot_mm_s1

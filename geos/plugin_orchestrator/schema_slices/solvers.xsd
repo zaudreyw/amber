@@ -1,0 +1,1072 @@
+<!-- Extracted from GEOS schema.xsd. -->
+<!-- Authoritative: attribute names, types, defaults. -->
+<xsd:complexType name="SolversType">
+		<xsd:choice minOccurs="0" maxOccurs="unbounded">
+			<xsd:element name="AcousticDG" type="AcousticDGType" />
+			<xsd:element name="AcousticElasticSEM" type="AcousticElasticSEMType" />
+			<xsd:element name="AcousticFirstOrderSEM" type="AcousticFirstOrderSEMType" />
+			<xsd:element name="AcousticSEM" type="AcousticSEMType" />
+			<xsd:element name="AcousticVTISEM" type="AcousticVTISEMType" />
+			<xsd:element name="CompositionalMultiphaseFVM" type="CompositionalMultiphaseFVMType" />
+			<xsd:element name="CompositionalMultiphaseHybridFVM" type="CompositionalMultiphaseHybridFVMType" />
+			<xsd:element name="CompositionalMultiphaseReservoir" type="CompositionalMultiphaseReservoirType" />
+			<xsd:element name="CompositionalMultiphaseReservoirPoromechanics" type="CompositionalMultiphaseReservoirPoromechanicsType" />
+			<xsd:element name="CompositionalMultiphaseReservoirPoromechanicsConformingFractures" type="CompositionalMultiphaseReservoirPoromechanicsConformingFracturesType" />
+			<xsd:element name="CompositionalMultiphaseReservoirPoromechanicsConformingFracturesALM" type="CompositionalMultiphaseReservoirPoromechanicsConformingFracturesALMType" />
+			<xsd:element name="CompositionalMultiphaseWell" type="CompositionalMultiphaseWellType">
+				<xsd:unique name="SolversCompositionalMultiphaseWellWellControlsUniqueName">
+					<xsd:selector xpath="WellControls" />
+					<xsd:field xpath="@name" />
+				</xsd:unique>
+			</xsd:element>
+			<xsd:element name="ElasticFirstOrderSEM" type="ElasticFirstOrderSEMType" />
+			<xsd:element name="ElasticSEM" type="ElasticSEMType" />
+			<xsd:element name="EmbeddedSurfaceGenerator" type="EmbeddedSurfaceGeneratorType" />
+			<xsd:element name="ExplicitQuasiDynamicEQ" type="ExplicitQuasiDynamicEQType" />
+			<xsd:element name="ExplicitSpringSlider" type="ExplicitSpringSliderType" />
+			<xsd:element name="FlowProppantTransport" type="FlowProppantTransportType" />
+			<xsd:element name="Hydrofracture" type="HydrofractureType" />
+			<xsd:element name="ImmiscibleMultiphaseFlow" type="ImmiscibleMultiphaseFlowType" />
+			<xsd:element name="ImplicitQuasiDynamicEQ" type="ImplicitQuasiDynamicEQType" />
+			<xsd:element name="ImplicitSpringSlider" type="ImplicitSpringSliderType" />
+			<xsd:element name="LaplaceFEM" type="LaplaceFEMType" />
+			<xsd:element name="MultiphasePoromechanics" type="MultiphasePoromechanicsType" />
+			<xsd:element name="MultiphasePoromechanicsConformingFractures" type="MultiphasePoromechanicsConformingFracturesType" />
+			<xsd:element name="MultiphasePoromechanicsConformingFracturesALM" type="MultiphasePoromechanicsConformingFracturesALMType" />
+			<xsd:element name="MultiphasePoromechanicsReservoir" type="MultiphasePoromechanicsReservoirType" />
+			<xsd:element name="OneWayCoupledFractureFlowContactMechanics" type="OneWayCoupledFractureFlowContactMechanicsType" />
+			<xsd:element name="PhaseFieldDamageFEM" type="PhaseFieldDamageFEMType" />
+			<xsd:element name="PhaseFieldFracture" type="PhaseFieldFractureType" />
+			<xsd:element name="PhaseFieldPoromechanics" type="PhaseFieldPoromechanicsType" />
+			<xsd:element name="ProppantTransport" type="ProppantTransportType" />
+			<xsd:element name="ReactiveCompositionalMultiphaseOBL" type="ReactiveCompositionalMultiphaseOBLType" />
+			<xsd:element name="SeismicityRate" type="SeismicityRateType" />
+			<xsd:element name="SinglePhaseFVM" type="SinglePhaseFVMType" />
+			<xsd:element name="SinglePhaseHybridFVM" type="SinglePhaseHybridFVMType" />
+			<xsd:element name="SinglePhasePoromechanics" type="SinglePhasePoromechanicsType" />
+			<xsd:element name="SinglePhasePoromechanicsConformingFractures" type="SinglePhasePoromechanicsConformingFracturesType" />
+			<xsd:element name="SinglePhasePoromechanicsConformingFracturesALM" type="SinglePhasePoromechanicsConformingFracturesALMType" />
+			<xsd:element name="SinglePhasePoromechanicsConformingFracturesReservoir" type="SinglePhasePoromechanicsConformingFracturesReservoirType" />
+			<xsd:element name="SinglePhasePoromechanicsEmbeddedFractures" type="SinglePhasePoromechanicsEmbeddedFracturesType" />
+			<xsd:element name="SinglePhasePoromechanicsReservoir" type="SinglePhasePoromechanicsReservoirType" />
+			<xsd:element name="SinglePhaseProppantFVM" type="SinglePhaseProppantFVMType" />
+			<xsd:element name="SinglePhaseReactiveTransport" type="SinglePhaseReactiveTransportType" />
+			<xsd:element name="SinglePhaseReservoir" type="SinglePhaseReservoirType" />
+			<xsd:element name="SinglePhaseReservoirPoromechanics" type="SinglePhaseReservoirPoromechanicsType" />
+			<xsd:element name="SinglePhaseReservoirPoromechanicsConformingFractures" type="SinglePhaseReservoirPoromechanicsConformingFracturesType" />
+			<xsd:element name="SinglePhaseReservoirPoromechanicsConformingFracturesALM" type="SinglePhaseReservoirPoromechanicsConformingFracturesALMType" />
+			<xsd:element name="SinglePhaseWell" type="SinglePhaseWellType">
+				<xsd:unique name="SolversSinglePhaseWellWellControlsUniqueName">
+					<xsd:selector xpath="WellControls" />
+					<xsd:field xpath="@name" />
+				</xsd:unique>
+			</xsd:element>
+			<xsd:element name="SolidMechanicsAugmentedLagrangianContact" type="SolidMechanicsAugmentedLagrangianContactType" />
+			<xsd:element name="SolidMechanicsEmbeddedFractures" type="SolidMechanicsEmbeddedFracturesType" />
+			<xsd:element name="SolidMechanicsLagrangeContact" type="SolidMechanicsLagrangeContactType" />
+			<xsd:element name="SolidMechanicsLagrangeContactBubbleStab" type="SolidMechanicsLagrangeContactBubbleStabType" />
+			<xsd:element name="SolidMechanicsLagrangianFEM" type="SolidMechanicsLagrangianFEMType" />
+			<xsd:element name="SolidMechanics_MPM" type="SolidMechanics_MPMType" />
+			<xsd:element name="SurfaceGenerator" type="SurfaceGeneratorType" />
+		</xsd:choice>
+		<!--gravityVector => Gravity vector used in the physics solvers-->
+		<xsd:attribute name="gravityVector" type="R1Tensor" default="{0,0,-9.81}" />
+	</xsd:complexType>
+
+<xsd:complexType name="NumericalMethodsType">
+		<xsd:choice minOccurs="0" maxOccurs="unbounded">
+			<xsd:element name="FiniteElements" type="FiniteElementsType" maxOccurs="1">
+				<xsd:unique name="NumericalMethodsFiniteElementsFiniteElementSpaceUniqueName">
+					<xsd:selector xpath="FiniteElementSpace" />
+					<xsd:field xpath="@name" />
+				</xsd:unique>
+			</xsd:element>
+			<xsd:element name="FiniteVolume" type="FiniteVolumeType" maxOccurs="1">
+				<xsd:unique name="NumericalMethodsFiniteVolumeHybridMimeticDiscretizationUniqueName">
+					<xsd:selector xpath="HybridMimeticDiscretization" />
+					<xsd:field xpath="@name" />
+				</xsd:unique>
+				<xsd:unique name="NumericalMethodsFiniteVolumeTwoPointFluxApproximationUniqueName">
+					<xsd:selector xpath="TwoPointFluxApproximation" />
+					<xsd:field xpath="@name" />
+				</xsd:unique>
+			</xsd:element>
+		</xsd:choice>
+	</xsd:complexType>
+
+<xsd:complexType name="SolidMechanicsLagrangianFEMType">
+		<xsd:choice minOccurs="0" maxOccurs="unbounded">
+			<xsd:element name="LinearSolverParameters" type="LinearSolverParametersType" maxOccurs="1" />
+			<xsd:element name="NonlinearSolverParameters" type="NonlinearSolverParametersType" maxOccurs="1" />
+		</xsd:choice>
+		<!--allowNonConvergedLinearSolverSolution => Cut time step if linear solution fail without going until max nonlinear iterations.-->
+		<xsd:attribute name="allowNonConvergedLinearSolverSolution" type="integer" default="1" />
+		<!--cflFactor => Factor to apply to the `CFL condition <http://en.wikipedia.org/wiki/Courant-Friedrichs-Lewy_condition>`_ when calculating the maximum allowable time step. Values should be in the interval (0,1] -->
+		<xsd:attribute name="cflFactor" type="real64" default="0.5" />
+		<!--contactPenaltyStiffness => Value of the penetration penalty stiffness. Units of Pressure/length-->
+		<xsd:attribute name="contactPenaltyStiffness" type="real64" default="0" />
+		<!--contactRelationName => Name of contact relation to enforce constraints on fracture boundary.-->
+		<xsd:attribute name="contactRelationName" type="groupNameRef" default="NOCONTACT" />
+		<!--discretization => Name of discretization object (defined in the :ref:`NumericalMethodsManager`) to use for this solver. For instance, if this is a Finite Element Solver, the name of a :ref:`FiniteElement` should be specified. If this is a Finite Volume Method, the name of a :ref:`FiniteVolume` discretization should be specified.-->
+		<xsd:attribute name="discretization" type="groupNameRef" use="required" />
+		<!--initialDt => Initial time-step value required by the solver to the event manager.-->
+		<xsd:attribute name="initialDt" type="real64" default="1e+99" />
+		<!--logLevel => Sets the level of information to write in the standard output (the console typically).
+Information output from lower logLevels is added with the desired log level
+1
+ - Convergence information
+ - Linear solver information
+ - Output residual norm
+ - Solution information (scaling, maximum changes, quality check)
+ - Time step information
+ - Solver timers information
+2
+ - The summary of declared fields and coupling-->
+		<xsd:attribute name="logLevel" type="integer" default="0" />
+		<!--massDamping => Value of mass based damping coefficient. -->
+		<xsd:attribute name="massDamping" type="real64" default="0" />
+		<!--maxNumResolves => Value to indicate how many resolves may be executed after some other event is executed. For example, if a SurfaceGenerator is specified, it will be executed after the mechanics solve. However if a new surface is generated, then the mechanics solve must be executed again due to the change in topology.-->
+		<xsd:attribute name="maxNumResolves" type="integer" default="10" />
+		<!--newmarkBeta => Value of :math:`\beta` in the Newmark Method for Implicit Dynamic time integration option. This should be pow(newmarkGamma+0.5,2.0)/4.0 unless you know what you are doing.-->
+		<xsd:attribute name="newmarkBeta" type="real64" default="0.25" />
+		<!--newmarkGamma => Value of :math:`\gamma` in the Newmark Method for Implicit Dynamic time integration option-->
+		<xsd:attribute name="newmarkGamma" type="real64" default="0.5" />
+		<!--stiffnessDamping => Value of stiffness based damping coefficient. -->
+		<xsd:attribute name="stiffnessDamping" type="real64" default="0" />
+		<!--strainTheory => Indicates whether or not to use `Infinitesimal Strain Theory <https://en.wikipedia.org/wiki/Infinitesimal_strain_theory>`_, or `Finite Strain Theory <https://en.wikipedia.org/wiki/Finite_strain_theory>`_. Valid Inputs are:
+ 0 - Infinitesimal Strain 
+ 1 - Finite Strain-->
+		<xsd:attribute name="strainTheory" type="integer" default="0" />
+		<!--surfaceGeneratorName => Name of the surface generator to use-->
+		<xsd:attribute name="surfaceGeneratorName" type="string" default="" />
+		<!--targetRegions => Allowable regions that the solver may be applied to. Note that this does not indicate that the solver will be applied to these regions, only that allocation will occur such that the solver may be applied to these regions. The decision about what regions this solver will beapplied to rests in the EventManager.-->
+		<xsd:attribute name="targetRegions" type="groupNameRef_array" use="required" />
+		<!--timeIntegrationOption => Time integration method. Options are:
+* QuasiStatic
+* ImplicitDynamic
+* ExplicitDynamic-->
+		<xsd:attribute name="timeIntegrationOption" type="geos_SolidMechanicsLagrangianFEM_TimeIntegrationOption" default="QuasiStatic" />
+		<!--usePhysicsScaling => Enable physics-based scaling of the linear system. Default: true.-->
+		<xsd:attribute name="usePhysicsScaling" type="integer" default="1" />
+		<!--writeLinearSystem => Write matrix, rhs, solution to screen ( = 1) or file ( = 2).-->
+		<xsd:attribute name="writeLinearSystem" type="integer" default="0" />
+		<!--writeStatistics => When set to `iteration`, output iterations information to a csv
+When set to `convergence`, output convergence information to a csv
+When set to `all` output both convergence & iteration information to a csv.-->
+		<xsd:attribute name="writeStatistics" type="geos_PhysicsSolverBase_StatsOutputType" default="none" />
+		<!--name => A name is required for any non-unique nodes-->
+		<xsd:attribute name="name" type="groupName" use="required" />
+	</xsd:complexType>
+
+<xsd:complexType name="SolidMechanicsEmbeddedFracturesType">
+		<xsd:choice minOccurs="0" maxOccurs="unbounded">
+			<xsd:element name="LinearSolverParameters" type="LinearSolverParametersType" maxOccurs="1" />
+			<xsd:element name="NonlinearSolverParameters" type="NonlinearSolverParametersType" maxOccurs="1" />
+		</xsd:choice>
+		<!--allowNonConvergedLinearSolverSolution => Cut time step if linear solution fail without going until max nonlinear iterations.-->
+		<xsd:attribute name="allowNonConvergedLinearSolverSolution" type="integer" default="1" />
+		<!--cflFactor => Factor to apply to the `CFL condition <http://en.wikipedia.org/wiki/Courant-Friedrichs-Lewy_condition>`_ when calculating the maximum allowable time step. Values should be in the interval (0,1] -->
+		<xsd:attribute name="cflFactor" type="real64" default="0.5" />
+		<!--contactPenaltyStiffness => Value of the penetration penalty stiffness. Units of Pressure/length-->
+		<xsd:attribute name="contactPenaltyStiffness" type="real64" use="required" />
+		<!--discretization => Name of discretization object (defined in the :ref:`NumericalMethodsManager`) to use for this solver. For instance, if this is a Finite Element Solver, the name of a :ref:`FiniteElement` should be specified. If this is a Finite Volume Method, the name of a :ref:`FiniteVolume` discretization should be specified.-->
+		<xsd:attribute name="discretization" type="groupNameRef" use="required" />
+		<!--initialDt => Initial time-step value required by the solver to the event manager.-->
+		<xsd:attribute name="initialDt" type="real64" default="1e+99" />
+		<!--logLevel => Sets the level of information to write in the standard output (the console typically).
+Information output from lower logLevels is added with the desired log level
+1
+ - Convergence information
+ - Linear solver information
+ - Output residual norm
+ - Solution information (scaling, maximum changes, quality check)
+ - Time step information
+ - Solver timers information
+ - Output configuration statistics
+2
+ - The summary of declared fields and coupling
+ - Output tolerance computed the given fracture element-->
+		<xsd:attribute name="logLevel" type="integer" default="0" />
+		<!--massDamping => Value of mass based damping coefficient. -->
+		<xsd:attribute name="massDamping" type="real64" default="0" />
+		<!--maxNumResolves => Value to indicate how many resolves may be executed after some other event is executed. For example, if a SurfaceGenerator is specified, it will be executed after the mechanics solve. However if a new surface is generated, then the mechanics solve must be executed again due to the change in topology.-->
+		<xsd:attribute name="maxNumResolves" type="integer" default="10" />
+		<!--newmarkBeta => Value of :math:`\beta` in the Newmark Method for Implicit Dynamic time integration option. This should be pow(newmarkGamma+0.5,2.0)/4.0 unless you know what you are doing.-->
+		<xsd:attribute name="newmarkBeta" type="real64" default="0.25" />
+		<!--newmarkGamma => Value of :math:`\gamma` in the Newmark Method for Implicit Dynamic time integration option-->
+		<xsd:attribute name="newmarkGamma" type="real64" default="0.5" />
+		<!--stiffnessDamping => Value of stiffness based damping coefficient. -->
+		<xsd:attribute name="stiffnessDamping" type="real64" default="0" />
+		<!--strainTheory => Indicates whether or not to use `Infinitesimal Strain Theory <https://en.wikipedia.org/wiki/Infinitesimal_strain_theory>`_, or `Finite Strain Theory <https://en.wikipedia.org/wiki/Finite_strain_theory>`_. Valid Inputs are:
+ 0 - Infinitesimal Strain 
+ 1 - Finite Strain-->
+		<xsd:attribute name="strainTheory" type="integer" default="0" />
+		<!--targetRegions => Allowable regions that the solver may be applied to. Note that this does not indicate that the solver will be applied to these regions, only that allocation will occur such that the solver may be applied to these regions. The decision about what regions this solver will beapplied to rests in the EventManager.-->
+		<xsd:attribute name="targetRegions" type="groupNameRef_array" use="required" />
+		<!--timeIntegrationOption => Time integration method. Options are:
+* QuasiStatic
+* ImplicitDynamic
+* ExplicitDynamic-->
+		<xsd:attribute name="timeIntegrationOption" type="geos_SolidMechanicsLagrangianFEM_TimeIntegrationOption" default="QuasiStatic" />
+		<!--usePhysicsScaling => Enable physics-based scaling of the linear system. Default: true.-->
+		<xsd:attribute name="usePhysicsScaling" type="integer" default="1" />
+		<!--useStaticCondensation => Defines whether to use static condensation or not.-->
+		<xsd:attribute name="useStaticCondensation" type="integer" default="0" />
+		<!--writeLinearSystem => Write matrix, rhs, solution to screen ( = 1) or file ( = 2).-->
+		<xsd:attribute name="writeLinearSystem" type="integer" default="0" />
+		<!--writeStatistics => When set to `iteration`, output iterations information to a csv
+When set to `convergence`, output convergence information to a csv
+When set to `all` output both convergence & iteration information to a csv.-->
+		<xsd:attribute name="writeStatistics" type="geos_PhysicsSolverBase_StatsOutputType" default="none" />
+		<!--name => A name is required for any non-unique nodes-->
+		<xsd:attribute name="name" type="groupName" use="required" />
+	</xsd:complexType>
+
+<xsd:complexType name="SinglePhaseFVMType">
+		<xsd:choice minOccurs="0" maxOccurs="unbounded">
+			<xsd:element name="LinearSolverParameters" type="LinearSolverParametersType" maxOccurs="1" />
+			<xsd:element name="NonlinearSolverParameters" type="NonlinearSolverParametersType" maxOccurs="1" />
+		</xsd:choice>
+		<!--allowNegativePressure => Flag indicating if negative pressure is allowed-->
+		<xsd:attribute name="allowNegativePressure" type="integer" default="0" />
+		<!--allowNonConvergedLinearSolverSolution => Cut time step if linear solution fail without going until max nonlinear iterations.-->
+		<xsd:attribute name="allowNonConvergedLinearSolverSolution" type="integer" default="1" />
+		<!--cflFactor => Factor to apply to the `CFL condition <http://en.wikipedia.org/wiki/Courant-Friedrichs-Lewy_condition>`_ when calculating the maximum allowable time step. Values should be in the interval (0,1] -->
+		<xsd:attribute name="cflFactor" type="real64" default="0.5" />
+		<!--discretization => Name of discretization object (defined in the :ref:`NumericalMethodsManager`) to use for this solver. For instance, if this is a Finite Element Solver, the name of a :ref:`FiniteElement` should be specified. If this is a Finite Volume Method, the name of a :ref:`FiniteVolume` discretization should be specified.-->
+		<xsd:attribute name="discretization" type="groupNameRef" use="required" />
+		<!--initialDt => Initial time-step value required by the solver to the event manager.-->
+		<xsd:attribute name="initialDt" type="real64" default="1e+99" />
+		<!--isThermal => Flag indicating whether the problem is thermal or not.
+SourceFluxes application if isThermal is enabled :
+- negative value (injection): the mass balance equation is modified to considered the additional source term,
+- positive value (production): both the mass balance and the energy balance equations are modified to considered the additional source term.
+For the energy balance equation, the mass flux is multiplied by the enthalpy in the cell from which the fluid is being produced.-->
+		<xsd:attribute name="isThermal" type="integer" default="0" />
+		<!--logLevel => Sets the level of information to write in the standard output (the console typically).
+Information output from lower logLevels is added with the desired log level
+1
+ - Convergence information
+ - Linear solver information
+ - Output residual norm
+ - Solution information (scaling, maximum changes, quality check)
+ - Time step information
+ - Solver timers information
+ - Boundary conditions information (incl. source flux)
+2
+ - The summary of declared fields and coupling-->
+		<xsd:attribute name="logLevel" type="integer" default="0" />
+		<!--maxAbsolutePressureChange => Maximum (absolute) pressure change in a Newton iteration-->
+		<xsd:attribute name="maxAbsolutePressureChange" type="real64" default="-1" />
+		<!--maxSequentialPressureChange => Maximum (absolute) pressure change in a sequential iteration, used for outer loop convergence check-->
+		<xsd:attribute name="maxSequentialPressureChange" type="real64" default="100000" />
+		<!--maxSequentialTemperatureChange => Maximum (absolute) temperature change in a sequential iteration, used for outer loop convergence check-->
+		<xsd:attribute name="maxSequentialTemperatureChange" type="real64" default="0.1" />
+		<!--targetRegions => Allowable regions that the solver may be applied to. Note that this does not indicate that the solver will be applied to these regions, only that allocation will occur such that the solver may be applied to these regions. The decision about what regions this solver will beapplied to rests in the EventManager.-->
+		<xsd:attribute name="targetRegions" type="groupNameRef_array" use="required" />
+		<!--temperature => Temperature-->
+		<xsd:attribute name="temperature" type="real64" default="0" />
+		<!--usePhysicsScaling => Enable physics-based scaling of the linear system. Default: true.-->
+		<xsd:attribute name="usePhysicsScaling" type="integer" default="1" />
+		<!--writeLinearSystem => Write matrix, rhs, solution to screen ( = 1) or file ( = 2).-->
+		<xsd:attribute name="writeLinearSystem" type="integer" default="0" />
+		<!--writeStatistics => When set to `iteration`, output iterations information to a csv
+When set to `convergence`, output convergence information to a csv
+When set to `all` output both convergence & iteration information to a csv.-->
+		<xsd:attribute name="writeStatistics" type="geos_PhysicsSolverBase_StatsOutputType" default="none" />
+		<!--name => A name is required for any non-unique nodes-->
+		<xsd:attribute name="name" type="groupName" use="required" />
+	</xsd:complexType>
+
+<xsd:complexType name="SinglePhaseHybridFVMType">
+		<xsd:choice minOccurs="0" maxOccurs="unbounded">
+			<xsd:element name="LinearSolverParameters" type="LinearSolverParametersType" maxOccurs="1" />
+			<xsd:element name="NonlinearSolverParameters" type="NonlinearSolverParametersType" maxOccurs="1" />
+		</xsd:choice>
+		<!--allowNegativePressure => Flag indicating if negative pressure is allowed-->
+		<xsd:attribute name="allowNegativePressure" type="integer" default="0" />
+		<!--allowNonConvergedLinearSolverSolution => Cut time step if linear solution fail without going until max nonlinear iterations.-->
+		<xsd:attribute name="allowNonConvergedLinearSolverSolution" type="integer" default="1" />
+		<!--cflFactor => Factor to apply to the `CFL condition <http://en.wikipedia.org/wiki/Courant-Friedrichs-Lewy_condition>`_ when calculating the maximum allowable time step. Values should be in the interval (0,1] -->
+		<xsd:attribute name="cflFactor" type="real64" default="0.5" />
+		<!--discretization => Name of discretization object (defined in the :ref:`NumericalMethodsManager`) to use for this solver. For instance, if this is a Finite Element Solver, the name of a :ref:`FiniteElement` should be specified. If this is a Finite Volume Method, the name of a :ref:`FiniteVolume` discretization should be specified.-->
+		<xsd:attribute name="discretization" type="groupNameRef" use="required" />
+		<!--initialDt => Initial time-step value required by the solver to the event manager.-->
+		<xsd:attribute name="initialDt" type="real64" default="1e+99" />
+		<!--isThermal => Flag indicating whether the problem is thermal or not.
+SourceFluxes application if isThermal is enabled :
+- negative value (injection): the mass balance equation is modified to considered the additional source term,
+- positive value (production): both the mass balance and the energy balance equations are modified to considered the additional source term.
+For the energy balance equation, the mass flux is multiplied by the enthalpy in the cell from which the fluid is being produced.-->
+		<xsd:attribute name="isThermal" type="integer" default="0" />
+		<!--logLevel => Sets the level of information to write in the standard output (the console typically).
+Information output from lower logLevels is added with the desired log level
+1
+ - Convergence information
+ - Linear solver information
+ - Output residual norm
+ - Solution information (scaling, maximum changes, quality check)
+ - Time step information
+ - Solver timers information
+ - Boundary conditions information (incl. source flux)
+2
+ - The summary of declared fields and coupling-->
+		<xsd:attribute name="logLevel" type="integer" default="0" />
+		<!--maxAbsolutePressureChange => Maximum (absolute) pressure change in a Newton iteration-->
+		<xsd:attribute name="maxAbsolutePressureChange" type="real64" default="-1" />
+		<!--maxSequentialPressureChange => Maximum (absolute) pressure change in a sequential iteration, used for outer loop convergence check-->
+		<xsd:attribute name="maxSequentialPressureChange" type="real64" default="100000" />
+		<!--maxSequentialTemperatureChange => Maximum (absolute) temperature change in a sequential iteration, used for outer loop convergence check-->
+		<xsd:attribute name="maxSequentialTemperatureChange" type="real64" default="0.1" />
+		<!--targetRegions => Allowable regions that the solver may be applied to. Note that this does not indicate that the solver will be applied to these regions, only that allocation will occur such that the solver may be applied to these regions. The decision about what regions this solver will beapplied to rests in the EventManager.-->
+		<xsd:attribute name="targetRegions" type="groupNameRef_array" use="required" />
+		<!--temperature => Temperature-->
+		<xsd:attribute name="temperature" type="real64" default="0" />
+		<!--usePhysicsScaling => Enable physics-based scaling of the linear system. Default: true.-->
+		<xsd:attribute name="usePhysicsScaling" type="integer" default="1" />
+		<!--writeLinearSystem => Write matrix, rhs, solution to screen ( = 1) or file ( = 2).-->
+		<xsd:attribute name="writeLinearSystem" type="integer" default="0" />
+		<!--writeStatistics => When set to `iteration`, output iterations information to a csv
+When set to `convergence`, output convergence information to a csv
+When set to `all` output both convergence & iteration information to a csv.-->
+		<xsd:attribute name="writeStatistics" type="geos_PhysicsSolverBase_StatsOutputType" default="none" />
+		<!--name => A name is required for any non-unique nodes-->
+		<xsd:attribute name="name" type="groupName" use="required" />
+	</xsd:complexType>
+
+<xsd:complexType name="CompositionalMultiphaseFVMType">
+		<xsd:choice minOccurs="0" maxOccurs="unbounded">
+			<xsd:element name="LinearSolverParameters" type="LinearSolverParametersType" maxOccurs="1" />
+			<xsd:element name="NonlinearSolverParameters" type="NonlinearSolverParametersType" maxOccurs="1" />
+		</xsd:choice>
+		<!--allowLocalCompDensityChopping => Flag indicating whether local (cell-wise) chopping of negative compositions is allowed-->
+		<xsd:attribute name="allowLocalCompDensityChopping" type="integer" default="1" />
+		<!--allowNegativePressure => Flag indicating if negative pressure is allowed-->
+		<xsd:attribute name="allowNegativePressure" type="integer" default="0" />
+		<!--allowNonConvergedLinearSolverSolution => Cut time step if linear solution fail without going until max nonlinear iterations.-->
+		<xsd:attribute name="allowNonConvergedLinearSolverSolution" type="integer" default="1" />
+		<!--cflFactor => Factor to apply to the `CFL condition <http://en.wikipedia.org/wiki/Courant-Friedrichs-Lewy_condition>`_ when calculating the maximum allowable time step. Values should be in the interval (0,1] -->
+		<xsd:attribute name="cflFactor" type="real64" default="0.5" />
+		<!--contMultiplierDBC => Factor by which continuation parameter is changed every newton when DBC is used-->
+		<xsd:attribute name="contMultiplierDBC" type="real64" default="0.5" />
+		<!--continuationDBC => Flag for enabling continuation parameter-->
+		<xsd:attribute name="continuationDBC" type="integer" default="1" />
+		<!--discretization => Name of discretization object (defined in the :ref:`NumericalMethodsManager`) to use for this solver. For instance, if this is a Finite Element Solver, the name of a :ref:`FiniteElement` should be specified. If this is a Finite Volume Method, the name of a :ref:`FiniteVolume` discretization should be specified.-->
+		<xsd:attribute name="discretization" type="groupNameRef" use="required" />
+		<!--formulationType => Type of formulation used.-->
+		<xsd:attribute name="formulationType" type="geos_CompositionalMultiphaseFormulationType" default="ComponentDensities" />
+		<!--gravityDensityScheme => Scheme for density treatment in gravity-->
+		<xsd:attribute name="gravityDensityScheme" type="geos_GravityDensityScheme" default="ArithmeticAverage" />
+		<!--initialDt => Initial time-step value required by the solver to the event manager.-->
+		<xsd:attribute name="initialDt" type="real64" default="1e+99" />
+		<!--isThermal => Flag indicating whether the problem is thermal or not.-->
+		<xsd:attribute name="isThermal" type="integer" default="0" />
+		<!--kappaminDBC => Factor that controls how much dissipation is kept in the system when continuation is used-->
+		<xsd:attribute name="kappaminDBC" type="real64" default="1e-20" />
+		<!--logLevel => Sets the level of information to write in the standard output (the console typically).
+Information output from lower logLevels is added with the desired log level
+1
+ - Convergence information
+ - Linear solver information
+ - Output residual norm
+ - Solution information (scaling, maximum changes, quality check)
+ - Time step information
+ - Solver timers information
+ - Boundary conditions information (incl. source flux)
+2
+ - The summary of declared fields and coupling-->
+		<xsd:attribute name="logLevel" type="integer" default="0" />
+		<!--maxAbsolutePressureChange => Maximum (absolute) pressure change in a Newton iteration-->
+		<xsd:attribute name="maxAbsolutePressureChange" type="real64" default="-1" />
+		<!--maxCompFractionChange => Maximum (absolute) allowed change in the composition fraction of any component within a single time step, in a Newton iteration-->
+		<xsd:attribute name="maxCompFractionChange" type="real64" default="0.5" />
+		<!--maxRelativeCompDensChange => Maximum (relative) change in a component density in a Newton iteration-->
+		<xsd:attribute name="maxRelativeCompDensChange" type="real64" default="1.79769e+208" />
+		<!--maxRelativePressureChange => Maximum (relative) change in pressure in a Newton iteration-->
+		<xsd:attribute name="maxRelativePressureChange" type="real64" default="0.5" />
+		<!--maxRelativeTemperatureChange => Maximum (relative) change in temperature in a Newton iteration-->
+		<xsd:attribute name="maxRelativeTemperatureChange" type="real64" default="0.5" />
+		<!--maxSequentialCompDensChange => Maximum (absolute) component density change in a sequential iteration, used for outer loop convergence check-->
+		<xsd:attribute name="maxSequentialCompDensChange" type="real64" default="1" />
+		<!--maxSequentialPressureChange => Maximum (absolute) pressure change in a sequential iteration, used for outer loop convergence check-->
+		<xsd:attribute name="maxSequentialPressureChange" type="real64" default="100000" />
+		<!--maxSequentialTemperatureChange => Maximum (absolute) temperature change in a sequential iteration, used for outer loop convergence check-->
+		<xsd:attribute name="maxSequentialTemperatureChange" type="real64" default="0.1" />
+		<!--minCompDens => Minimum allowed global component density-->
+		<xsd:attribute name="minCompDens" type="real64" default="1e-10" />
+		<!--minCompFrac => Minimum allowed global component fraction-->
+		<xsd:attribute name="minCompFrac" type="real64" default="0" />
+		<!--minScalingFactor => Minimum value for solution scaling factor-->
+		<xsd:attribute name="minScalingFactor" type="real64" default="0.01" />
+		<!--miscibleDBC => Flag for enabling DBC formulation with/without miscibility-->
+		<xsd:attribute name="miscibleDBC" type="integer" default="0" />
+		<!--omegaDBC => Factor by which DBC flux is multiplied-->
+		<xsd:attribute name="omegaDBC" type="real64" default="1" />
+		<!--scalingType => Solution scaling type.Valid options:
+* Global
+* Local-->
+		<xsd:attribute name="scalingType" type="geos_compositionalMultiphaseUtilities_ScalingType" default="Global" />
+		<!--solutionChangeScalingFactor => Damping factor for solution change targets-->
+		<xsd:attribute name="solutionChangeScalingFactor" type="real64" default="0.5" />
+		<!--targetCompFracChangeInTimeStep => Target change in component fraction in a time step-->
+		<xsd:attribute name="targetCompFracChangeInTimeStep" type="real64" default="1.79769e+308" />
+		<!--targetFlowCFL => Target CFL condition `CFL condition <http://en.wikipedia.org/wiki/Courant-Friedrichs-Lewy_condition>`_ when computing the next timestep.-->
+		<xsd:attribute name="targetFlowCFL" type="real64" default="-1" />
+		<!--targetPhaseVolFractionChangeInTimeStep => Target (absolute) change in the phase volume fraction within a single time step.-->
+		<xsd:attribute name="targetPhaseVolFractionChangeInTimeStep" type="real64" default="0.2" />
+		<!--targetRegions => Allowable regions that the solver may be applied to. Note that this does not indicate that the solver will be applied to these regions, only that allocation will occur such that the solver may be applied to these regions. The decision about what regions this solver will beapplied to rests in the EventManager.-->
+		<xsd:attribute name="targetRegions" type="groupNameRef_array" use="required" />
+		<!--targetRelativeCompDensChangeInTimeStep => Target (relative) change in component density in a time step-->
+		<xsd:attribute name="targetRelativeCompDensChangeInTimeStep" type="real64" default="1.79769e+308" />
+		<!--targetRelativePressureChangeInTimeStep => Target (relative) change in pressure in a time step (expected value between 0 and 1)-->
+		<xsd:attribute name="targetRelativePressureChangeInTimeStep" type="real64" default="0.2" />
+		<!--targetRelativeTemperatureChangeInTimeStep => Target (relative) change in temperature in a time step (expected value between 0 and 1)-->
+		<xsd:attribute name="targetRelativeTemperatureChangeInTimeStep" type="real64" default="0.2" />
+		<!--temperature => Temperature-->
+		<xsd:attribute name="temperature" type="real64" use="required" />
+		<!--useDBC => Enable Dissipation-based continuation flux-->
+		<xsd:attribute name="useDBC" type="integer" default="0" />
+		<!--useMass => Use mass formulation instead of molar. Warning : Affects SourceFlux rates units.-->
+		<xsd:attribute name="useMass" type="integer" default="0" />
+		<!--usePhysicsScaling => Enable physics-based scaling of the linear system. Default: true.-->
+		<xsd:attribute name="usePhysicsScaling" type="integer" default="1" />
+		<!--useSimpleAccumulation => Flag indicating whether simple accumulation form is used-->
+		<xsd:attribute name="useSimpleAccumulation" type="integer" default="1" />
+		<!--useTotalMassEquation => Flag indicating whether total mass equation is used-->
+		<xsd:attribute name="useTotalMassEquation" type="integer" default="1" />
+		<!--writeLinearSystem => Write matrix, rhs, solution to screen ( = 1) or file ( = 2).-->
+		<xsd:attribute name="writeLinearSystem" type="integer" default="0" />
+		<!--writeStatistics => When set to `iteration`, output iterations information to a csv
+When set to `convergence`, output convergence information to a csv
+When set to `all` output both convergence & iteration information to a csv.-->
+		<xsd:attribute name="writeStatistics" type="geos_PhysicsSolverBase_StatsOutputType" default="none" />
+		<!--name => A name is required for any non-unique nodes-->
+		<xsd:attribute name="name" type="groupName" use="required" />
+	</xsd:complexType>
+
+<xsd:complexType name="CompositionalMultiphaseHybridFVMType">
+		<xsd:choice minOccurs="0" maxOccurs="unbounded">
+			<xsd:element name="LinearSolverParameters" type="LinearSolverParametersType" maxOccurs="1" />
+			<xsd:element name="NonlinearSolverParameters" type="NonlinearSolverParametersType" maxOccurs="1" />
+		</xsd:choice>
+		<!--allowLocalCompDensityChopping => Flag indicating whether local (cell-wise) chopping of negative compositions is allowed-->
+		<xsd:attribute name="allowLocalCompDensityChopping" type="integer" default="1" />
+		<!--allowNegativePressure => Flag indicating if negative pressure is allowed-->
+		<xsd:attribute name="allowNegativePressure" type="integer" default="0" />
+		<!--allowNonConvergedLinearSolverSolution => Cut time step if linear solution fail without going until max nonlinear iterations.-->
+		<xsd:attribute name="allowNonConvergedLinearSolverSolution" type="integer" default="1" />
+		<!--cflFactor => Factor to apply to the `CFL condition <http://en.wikipedia.org/wiki/Courant-Friedrichs-Lewy_condition>`_ when calculating the maximum allowable time step. Values should be in the interval (0,1] -->
+		<xsd:attribute name="cflFactor" type="real64" default="0.5" />
+		<!--discretization => Name of discretization object (defined in the :ref:`NumericalMethodsManager`) to use for this solver. For instance, if this is a Finite Element Solver, the name of a :ref:`FiniteElement` should be specified. If this is a Finite Volume Method, the name of a :ref:`FiniteVolume` discretization should be specified.-->
+		<xsd:attribute name="discretization" type="groupNameRef" use="required" />
+		<!--formulationType => Type of formulation used.-->
+		<xsd:attribute name="formulationType" type="geos_CompositionalMultiphaseFormulationType" default="ComponentDensities" />
+		<!--initialDt => Initial time-step value required by the solver to the event manager.-->
+		<xsd:attribute name="initialDt" type="real64" default="1e+99" />
+		<!--isThermal => Flag indicating whether the problem is thermal or not.-->
+		<xsd:attribute name="isThermal" type="integer" default="0" />
+		<!--logLevel => Sets the level of information to write in the standard output (the console typically).
+Information output from lower logLevels is added with the desired log level
+1
+ - Convergence information
+ - Linear solver information
+ - Output residual norm
+ - Solution information (scaling, maximum changes, quality check)
+ - Time step information
+ - Solver timers information
+ - Boundary conditions information (incl. source flux)
+2
+ - The summary of declared fields and coupling-->
+		<xsd:attribute name="logLevel" type="integer" default="0" />
+		<!--maxAbsolutePressureChange => Maximum (absolute) pressure change in a Newton iteration-->
+		<xsd:attribute name="maxAbsolutePressureChange" type="real64" default="-1" />
+		<!--maxCompFractionChange => Maximum (absolute) allowed change in the composition fraction of any component within a single time step, in a Newton iteration-->
+		<xsd:attribute name="maxCompFractionChange" type="real64" default="0.5" />
+		<!--maxRelativeCompDensChange => Maximum (relative) change in a component density in a Newton iteration-->
+		<xsd:attribute name="maxRelativeCompDensChange" type="real64" default="1.79769e+208" />
+		<!--maxRelativePressureChange => Maximum (relative) change in pressure in a Newton iteration-->
+		<xsd:attribute name="maxRelativePressureChange" type="real64" default="0.5" />
+		<!--maxRelativeTemperatureChange => Maximum (relative) change in temperature in a Newton iteration-->
+		<xsd:attribute name="maxRelativeTemperatureChange" type="real64" default="0.5" />
+		<!--maxSequentialCompDensChange => Maximum (absolute) component density change in a sequential iteration, used for outer loop convergence check-->
+		<xsd:attribute name="maxSequentialCompDensChange" type="real64" default="1" />
+		<!--maxSequentialPressureChange => Maximum (absolute) pressure change in a sequential iteration, used for outer loop convergence check-->
+		<xsd:attribute name="maxSequentialPressureChange" type="real64" default="100000" />
+		<!--maxSequentialTemperatureChange => Maximum (absolute) temperature change in a sequential iteration, used for outer loop convergence check-->
+		<xsd:attribute name="maxSequentialTemperatureChange" type="real64" default="0.1" />
+		<!--minCompDens => Minimum allowed global component density-->
+		<xsd:attribute name="minCompDens" type="real64" default="1e-10" />
+		<!--minCompFrac => Minimum allowed global component fraction-->
+		<xsd:attribute name="minCompFrac" type="real64" default="0" />
+		<!--minScalingFactor => Minimum value for solution scaling factor-->
+		<xsd:attribute name="minScalingFactor" type="real64" default="0.01" />
+		<!--solutionChangeScalingFactor => Damping factor for solution change targets-->
+		<xsd:attribute name="solutionChangeScalingFactor" type="real64" default="0.5" />
+		<!--targetCompFracChangeInTimeStep => Target change in component fraction in a time step-->
+		<xsd:attribute name="targetCompFracChangeInTimeStep" type="real64" default="1.79769e+308" />
+		<!--targetPhaseVolFractionChangeInTimeStep => Target (absolute) change in the phase volume fraction within a single time step.-->
+		<xsd:attribute name="targetPhaseVolFractionChangeInTimeStep" type="real64" default="0.2" />
+		<!--targetRegions => Allowable regions that the solver may be applied to. Note that this does not indicate that the solver will be applied to these regions, only that allocation will occur such that the solver may be applied to these regions. The decision about what regions this solver will beapplied to rests in the EventManager.-->
+		<xsd:attribute name="targetRegions" type="groupNameRef_array" use="required" />
+		<!--targetRelativeCompDensChangeInTimeStep => Target (relative) change in component density in a time step-->
+		<xsd:attribute name="targetRelativeCompDensChangeInTimeStep" type="real64" default="1.79769e+308" />
+		<!--targetRelativePressureChangeInTimeStep => Target (relative) change in pressure in a time step (expected value between 0 and 1)-->
+		<xsd:attribute name="targetRelativePressureChangeInTimeStep" type="real64" default="0.2" />
+		<!--targetRelativeTemperatureChangeInTimeStep => Target (relative) change in temperature in a time step (expected value between 0 and 1)-->
+		<xsd:attribute name="targetRelativeTemperatureChangeInTimeStep" type="real64" default="0.2" />
+		<!--temperature => Temperature-->
+		<xsd:attribute name="temperature" type="real64" use="required" />
+		<!--useMass => Use mass formulation instead of molar. Warning : Affects SourceFlux rates units.-->
+		<xsd:attribute name="useMass" type="integer" default="0" />
+		<!--usePhysicsScaling => Enable physics-based scaling of the linear system. Default: true.-->
+		<xsd:attribute name="usePhysicsScaling" type="integer" default="1" />
+		<!--useSimpleAccumulation => Flag indicating whether simple accumulation form is used-->
+		<xsd:attribute name="useSimpleAccumulation" type="integer" default="1" />
+		<!--useTotalMassEquation => Flag indicating whether total mass equation is used-->
+		<xsd:attribute name="useTotalMassEquation" type="integer" default="1" />
+		<!--writeLinearSystem => Write matrix, rhs, solution to screen ( = 1) or file ( = 2).-->
+		<xsd:attribute name="writeLinearSystem" type="integer" default="0" />
+		<!--writeStatistics => When set to `iteration`, output iterations information to a csv
+When set to `convergence`, output convergence information to a csv
+When set to `all` output both convergence & iteration information to a csv.-->
+		<xsd:attribute name="writeStatistics" type="geos_PhysicsSolverBase_StatsOutputType" default="none" />
+		<!--name => A name is required for any non-unique nodes-->
+		<xsd:attribute name="name" type="groupName" use="required" />
+	</xsd:complexType>
+
+<xsd:complexType name="ImmiscibleMultiphaseFlowType">
+		<xsd:choice minOccurs="0" maxOccurs="unbounded">
+			<xsd:element name="LinearSolverParameters" type="LinearSolverParametersType" maxOccurs="1" />
+			<xsd:element name="NonlinearSolverParameters" type="NonlinearSolverParametersType" maxOccurs="1" />
+		</xsd:choice>
+		<!--allowNegativePressure => Flag indicating if negative pressure is allowed-->
+		<xsd:attribute name="allowNegativePressure" type="integer" default="0" />
+		<!--allowNonConvergedLinearSolverSolution => Cut time step if linear solution fail without going until max nonlinear iterations.-->
+		<xsd:attribute name="allowNonConvergedLinearSolverSolution" type="integer" default="1" />
+		<!--cflFactor => Factor to apply to the `CFL condition <http://en.wikipedia.org/wiki/Courant-Friedrichs-Lewy_condition>`_ when calculating the maximum allowable time step. Values should be in the interval (0,1] -->
+		<xsd:attribute name="cflFactor" type="real64" default="0.5" />
+		<!--discretization => Name of discretization object (defined in the :ref:`NumericalMethodsManager`) to use for this solver. For instance, if this is a Finite Element Solver, the name of a :ref:`FiniteElement` should be specified. If this is a Finite Volume Method, the name of a :ref:`FiniteVolume` discretization should be specified.-->
+		<xsd:attribute name="discretization" type="groupNameRef" use="required" />
+		<!--gravityDensityScheme => Scheme for density treatment in gravity-->
+		<xsd:attribute name="gravityDensityScheme" type="geos_GravityDensityScheme" default="ArithmeticAverage" />
+		<!--initialDt => Initial time-step value required by the solver to the event manager.-->
+		<xsd:attribute name="initialDt" type="real64" default="1e+99" />
+		<!--isThermal => Flag indicating whether the problem is thermal or not.-->
+		<xsd:attribute name="isThermal" type="integer" default="0" />
+		<!--logLevel => Sets the level of information to write in the standard output (the console typically).
+Information output from lower logLevels is added with the desired log level
+1
+ - Convergence information
+ - Linear solver information
+ - Output residual norm
+ - Solution information (scaling, maximum changes, quality check)
+ - Time step information
+ - Solver timers information
+2
+ - The summary of declared fields and coupling-->
+		<xsd:attribute name="logLevel" type="integer" default="0" />
+		<!--maxAbsolutePressureChange => Maximum (absolute) pressure change in a Newton iteration-->
+		<xsd:attribute name="maxAbsolutePressureChange" type="real64" default="-1" />
+		<!--maxSequentialPressureChange => Maximum (absolute) pressure change in a sequential iteration, used for outer loop convergence check-->
+		<xsd:attribute name="maxSequentialPressureChange" type="real64" default="100000" />
+		<!--maxSequentialTemperatureChange => Maximum (absolute) temperature change in a sequential iteration, used for outer loop convergence check-->
+		<xsd:attribute name="maxSequentialTemperatureChange" type="real64" default="0.1" />
+		<!--solutionChangeScalingFactor => Damping factor for solution change targets-->
+		<xsd:attribute name="solutionChangeScalingFactor" type="real64" default="0.5" />
+		<!--targetPhaseVolFractionChangeInTimeStep => Target (absolute) change in the phase volume fraction within a single time step.-->
+		<xsd:attribute name="targetPhaseVolFractionChangeInTimeStep" type="real64" default="0.2" />
+		<!--targetRegions => Allowable regions that the solver may be applied to. Note that this does not indicate that the solver will be applied to these regions, only that allocation will occur such that the solver may be applied to these regions. The decision about what regions this solver will beapplied to rests in the EventManager.-->
+		<xsd:attribute name="targetRegions" type="groupNameRef_array" use="required" />
+		<!--targetRelativePressureChangeInTimeStep => Target (relative) change in pressure in a time step (expected value between 0 and 1)-->
+		<xsd:attribute name="targetRelativePressureChangeInTimeStep" type="real64" default="0.2" />
+		<!--temperature => Temperature-->
+		<xsd:attribute name="temperature" type="real64" use="required" />
+		<!--usePhysicsScaling => Enable physics-based scaling of the linear system. Default: true.-->
+		<xsd:attribute name="usePhysicsScaling" type="integer" default="1" />
+		<!--useTotalMassEquation => Flag indicating whether total mass equation is used-->
+		<xsd:attribute name="useTotalMassEquation" type="integer" default="1" />
+		<!--writeLinearSystem => Write matrix, rhs, solution to screen ( = 1) or file ( = 2).-->
+		<xsd:attribute name="writeLinearSystem" type="integer" default="0" />
+		<!--writeStatistics => When set to `iteration`, output iterations information to a csv
+When set to `convergence`, output convergence information to a csv
+When set to `all` output both convergence & iteration information to a csv.-->
+		<xsd:attribute name="writeStatistics" type="geos_PhysicsSolverBase_StatsOutputType" default="none" />
+		<!--name => A name is required for any non-unique nodes-->
+		<xsd:attribute name="name" type="groupName" use="required" />
+	</xsd:complexType>
+
+<xsd:complexType name="SinglePhasePoromechanicsType">
+		<xsd:choice minOccurs="0" maxOccurs="unbounded">
+			<xsd:element name="LinearSolverParameters" type="LinearSolverParametersType" maxOccurs="1" />
+			<xsd:element name="NonlinearSolverParameters" type="NonlinearSolverParametersType" maxOccurs="1" />
+		</xsd:choice>
+		<!--allowNonConvergedLinearSolverSolution => Cut time step if linear solution fail without going until max nonlinear iterations.-->
+		<xsd:attribute name="allowNonConvergedLinearSolverSolution" type="integer" default="1" />
+		<!--cflFactor => Factor to apply to the `CFL condition <http://en.wikipedia.org/wiki/Courant-Friedrichs-Lewy_condition>`_ when calculating the maximum allowable time step. Values should be in the interval (0,1] -->
+		<xsd:attribute name="cflFactor" type="real64" default="0.5" />
+		<!--damageFlag => The flag to indicate whether a damage solid model is used-->
+		<xsd:attribute name="damageFlag" type="integer" default="0" />
+		<!--flowSolverName => Name of the flow solver used by the coupled solver-->
+		<xsd:attribute name="flowSolverName" type="groupNameRef" use="required" />
+		<!--initialDt => Initial time-step value required by the solver to the event manager.-->
+		<xsd:attribute name="initialDt" type="real64" default="1e+99" />
+		<!--isThermal => Flag indicating whether the problem is thermal or not. Set isThermal="1" to enable the thermal coupling-->
+		<xsd:attribute name="isThermal" type="integer" default="0" />
+		<!--logLevel => Sets the level of information to write in the standard output (the console typically).
+Information output from lower logLevels is added with the desired log level
+1
+ - Convergence information
+ - Linear solver information
+ - Output residual norm
+ - Solution information (scaling, maximum changes, quality check)
+ - Time step information
+ - Solver timers information
+ - Coupling information
+2
+ - The summary of declared fields and coupling-->
+		<xsd:attribute name="logLevel" type="integer" default="0" />
+		<!--solidSolverName => Name of the solid solver used by the coupled solver-->
+		<xsd:attribute name="solidSolverName" type="groupNameRef" use="required" />
+		<!--stabilizationMultiplier => Constant multiplier of stabilization strength-->
+		<xsd:attribute name="stabilizationMultiplier" type="real64" default="1" />
+		<!--stabilizationRegionNames => Regions where stabilization is applied.-->
+		<xsd:attribute name="stabilizationRegionNames" type="groupNameRef_array" default="{}" />
+		<!--stabilizationType => StabilizationType. Options are:
+None- Add no stabilization to mass equation 
+Global- Add jump stabilization to all faces 
+Local- Add jump stabilization on interior of macro elements-->
+		<xsd:attribute name="stabilizationType" type="geos_stabilization_StabilizationType" default="None" />
+		<!--targetRegions => Allowable regions that the solver may be applied to. Note that this does not indicate that the solver will be applied to these regions, only that allocation will occur such that the solver may be applied to these regions. The decision about what regions this solver will beapplied to rests in the EventManager.-->
+		<xsd:attribute name="targetRegions" type="groupNameRef_array" use="required" />
+		<!--usePhysicsScaling => Enable physics-based scaling of the linear system. Default: true.-->
+		<xsd:attribute name="usePhysicsScaling" type="integer" default="1" />
+		<!--writeLinearSystem => Write matrix, rhs, solution to screen ( = 1) or file ( = 2).-->
+		<xsd:attribute name="writeLinearSystem" type="integer" default="0" />
+		<!--writeStatistics => When set to `iteration`, output iterations information to a csv
+When set to `convergence`, output convergence information to a csv
+When set to `all` output both convergence & iteration information to a csv.-->
+		<xsd:attribute name="writeStatistics" type="geos_PhysicsSolverBase_StatsOutputType" default="none" />
+		<!--name => A name is required for any non-unique nodes-->
+		<xsd:attribute name="name" type="groupName" use="required" />
+	</xsd:complexType>
+
+<xsd:complexType name="MultiphasePoromechanicsType">
+		<xsd:choice minOccurs="0" maxOccurs="unbounded">
+			<xsd:element name="LinearSolverParameters" type="LinearSolverParametersType" maxOccurs="1" />
+			<xsd:element name="NonlinearSolverParameters" type="NonlinearSolverParametersType" maxOccurs="1" />
+		</xsd:choice>
+		<!--allowNonConvergedLinearSolverSolution => Cut time step if linear solution fail without going until max nonlinear iterations.-->
+		<xsd:attribute name="allowNonConvergedLinearSolverSolution" type="integer" default="1" />
+		<!--cflFactor => Factor to apply to the `CFL condition <http://en.wikipedia.org/wiki/Courant-Friedrichs-Lewy_condition>`_ when calculating the maximum allowable time step. Values should be in the interval (0,1] -->
+		<xsd:attribute name="cflFactor" type="real64" default="0.5" />
+		<!--flowSolverName => Name of the flow solver used by the coupled solver-->
+		<xsd:attribute name="flowSolverName" type="groupNameRef" use="required" />
+		<!--initialDt => Initial time-step value required by the solver to the event manager.-->
+		<xsd:attribute name="initialDt" type="real64" default="1e+99" />
+		<!--isThermal => Flag indicating whether the problem is thermal or not. Set isThermal="1" to enable the thermal coupling-->
+		<xsd:attribute name="isThermal" type="integer" default="0" />
+		<!--logLevel => Sets the level of information to write in the standard output (the console typically).
+Information output from lower logLevels is added with the desired log level
+1
+ - Convergence information
+ - Linear solver information
+ - Output residual norm
+ - Solution information (scaling, maximum changes, quality check)
+ - Time step information
+ - Solver timers information
+ - Coupling information
+2
+ - The summary of declared fields and coupling-->
+		<xsd:attribute name="logLevel" type="integer" default="0" />
+		<!--solidSolverName => Name of the solid solver used by the coupled solver-->
+		<xsd:attribute name="solidSolverName" type="groupNameRef" use="required" />
+		<!--stabilizationMultiplier => Constant multiplier of stabilization strength-->
+		<xsd:attribute name="stabilizationMultiplier" type="real64" default="1" />
+		<!--stabilizationRegionNames => Regions where stabilization is applied.-->
+		<xsd:attribute name="stabilizationRegionNames" type="groupNameRef_array" default="{}" />
+		<!--stabilizationType => StabilizationType. Options are:
+None- Add no stabilization to mass equation 
+Global- Add jump stabilization to all faces 
+Local- Add jump stabilization on interior of macro elements-->
+		<xsd:attribute name="stabilizationType" type="geos_stabilization_StabilizationType" default="None" />
+		<!--targetRegions => Allowable regions that the solver may be applied to. Note that this does not indicate that the solver will be applied to these regions, only that allocation will occur such that the solver may be applied to these regions. The decision about what regions this solver will beapplied to rests in the EventManager.-->
+		<xsd:attribute name="targetRegions" type="groupNameRef_array" use="required" />
+		<!--usePhysicsScaling => Enable physics-based scaling of the linear system. Default: true.-->
+		<xsd:attribute name="usePhysicsScaling" type="integer" default="1" />
+		<!--writeLinearSystem => Write matrix, rhs, solution to screen ( = 1) or file ( = 2).-->
+		<xsd:attribute name="writeLinearSystem" type="integer" default="0" />
+		<!--writeStatistics => When set to `iteration`, output iterations information to a csv
+When set to `convergence`, output convergence information to a csv
+When set to `all` output both convergence & iteration information to a csv.-->
+		<xsd:attribute name="writeStatistics" type="geos_PhysicsSolverBase_StatsOutputType" default="none" />
+		<!--name => A name is required for any non-unique nodes-->
+		<xsd:attribute name="name" type="groupName" use="required" />
+	</xsd:complexType>
+
+<xsd:complexType name="ProppantTransportType">
+		<xsd:choice minOccurs="0" maxOccurs="unbounded">
+			<xsd:element name="LinearSolverParameters" type="LinearSolverParametersType" maxOccurs="1" />
+			<xsd:element name="NonlinearSolverParameters" type="NonlinearSolverParametersType" maxOccurs="1" />
+		</xsd:choice>
+		<!--allowNegativePressure => Flag indicating if negative pressure is allowed-->
+		<xsd:attribute name="allowNegativePressure" type="integer" default="0" />
+		<!--allowNonConvergedLinearSolverSolution => Cut time step if linear solution fail without going until max nonlinear iterations.-->
+		<xsd:attribute name="allowNonConvergedLinearSolverSolution" type="integer" default="1" />
+		<!--bridgingFactor => Bridging factor used for bridging/screen-out calculation-->
+		<xsd:attribute name="bridgingFactor" type="real64" default="0" />
+		<!--cflFactor => Factor to apply to the `CFL condition <http://en.wikipedia.org/wiki/Courant-Friedrichs-Lewy_condition>`_ when calculating the maximum allowable time step. Values should be in the interval (0,1] -->
+		<xsd:attribute name="cflFactor" type="real64" default="0.5" />
+		<!--criticalShieldsNumber => Critical Shields number-->
+		<xsd:attribute name="criticalShieldsNumber" type="real64" default="0" />
+		<!--discretization => Name of discretization object (defined in the :ref:`NumericalMethodsManager`) to use for this solver. For instance, if this is a Finite Element Solver, the name of a :ref:`FiniteElement` should be specified. If this is a Finite Volume Method, the name of a :ref:`FiniteVolume` discretization should be specified.-->
+		<xsd:attribute name="discretization" type="groupNameRef" use="required" />
+		<!--frictionCoefficient => Friction coefficient-->
+		<xsd:attribute name="frictionCoefficient" type="real64" default="0.03" />
+		<!--initialDt => Initial time-step value required by the solver to the event manager.-->
+		<xsd:attribute name="initialDt" type="real64" default="1e+99" />
+		<!--isThermal => Flag indicating whether the problem is thermal or not.-->
+		<xsd:attribute name="isThermal" type="integer" default="0" />
+		<!--logLevel => Sets the level of information to write in the standard output (the console typically).
+Information output from lower logLevels is added with the desired log level
+1
+ - Convergence information
+ - Linear solver information
+ - Output residual norm
+ - Solution information (scaling, maximum changes, quality check)
+ - Time step information
+ - Solver timers information
+2
+ - The summary of declared fields and coupling-->
+		<xsd:attribute name="logLevel" type="integer" default="0" />
+		<!--maxAbsolutePressureChange => Maximum (absolute) pressure change in a Newton iteration-->
+		<xsd:attribute name="maxAbsolutePressureChange" type="real64" default="-1" />
+		<!--maxProppantConcentration => Maximum proppant concentration-->
+		<xsd:attribute name="maxProppantConcentration" type="real64" default="0.6" />
+		<!--maxSequentialPressureChange => Maximum (absolute) pressure change in a sequential iteration, used for outer loop convergence check-->
+		<xsd:attribute name="maxSequentialPressureChange" type="real64" default="100000" />
+		<!--maxSequentialTemperatureChange => Maximum (absolute) temperature change in a sequential iteration, used for outer loop convergence check-->
+		<xsd:attribute name="maxSequentialTemperatureChange" type="real64" default="0.1" />
+		<!--proppantDensity => Proppant density-->
+		<xsd:attribute name="proppantDensity" type="real64" default="2500" />
+		<!--proppantDiameter => Proppant diameter-->
+		<xsd:attribute name="proppantDiameter" type="real64" default="0.0004" />
+		<!--targetRegions => Allowable regions that the solver may be applied to. Note that this does not indicate that the solver will be applied to these regions, only that allocation will occur such that the solver may be applied to these regions. The decision about what regions this solver will beapplied to rests in the EventManager.-->
+		<xsd:attribute name="targetRegions" type="groupNameRef_array" use="required" />
+		<!--updateProppantPacking => Flag that enables/disables proppant-packing update-->
+		<xsd:attribute name="updateProppantPacking" type="integer" default="0" />
+		<!--usePhysicsScaling => Enable physics-based scaling of the linear system. Default: true.-->
+		<xsd:attribute name="usePhysicsScaling" type="integer" default="1" />
+		<!--writeLinearSystem => Write matrix, rhs, solution to screen ( = 1) or file ( = 2).-->
+		<xsd:attribute name="writeLinearSystem" type="integer" default="0" />
+		<!--writeStatistics => When set to `iteration`, output iterations information to a csv
+When set to `convergence`, output convergence information to a csv
+When set to `all` output both convergence & iteration information to a csv.-->
+		<xsd:attribute name="writeStatistics" type="geos_PhysicsSolverBase_StatsOutputType" default="none" />
+		<!--name => A name is required for any non-unique nodes-->
+		<xsd:attribute name="name" type="groupName" use="required" />
+	</xsd:complexType>
+
+<xsd:complexType name="FiniteElementsType">
+		<xsd:choice minOccurs="0" maxOccurs="unbounded">
+			<xsd:element name="FiniteElementSpace" type="FiniteElementSpaceType" />
+			<xsd:element name="LinearSolverParameters" type="LinearSolverParametersType" maxOccurs="1" />
+			<xsd:element name="NonlinearSolverParameters" type="NonlinearSolverParametersType" maxOccurs="1" />
+		</xsd:choice>
+	</xsd:complexType>
+
+<xsd:complexType name="FiniteVolumeType">
+		<xsd:choice minOccurs="0" maxOccurs="unbounded">
+			<xsd:element name="HybridMimeticDiscretization" type="HybridMimeticDiscretizationType" />
+			<xsd:element name="TwoPointFluxApproximation" type="TwoPointFluxApproximationType" />
+		</xsd:choice>
+	</xsd:complexType>
+
+<xsd:complexType name="TwoPointFluxApproximationType">
+		<!--areaRelTol => Relative tolerance for area calculations.-->
+		<xsd:attribute name="areaRelTol" type="real64" default="1e-08" />
+		<!--meanPermCoefficient => (no description available)-->
+		<xsd:attribute name="meanPermCoefficient" type="real64" default="1" />
+		<!--upwindingScheme => Type of upwinding scheme. Valid options:
+* PPU
+* C1PPU
+* IHU
+* HU2PH-->
+		<xsd:attribute name="upwindingScheme" type="geos_UpwindingScheme" default="PPU" />
+		<!--usePEDFM => (no description available)-->
+		<xsd:attribute name="usePEDFM" type="integer" default="0" />
+		<!--name => A name is required for any non-unique nodes-->
+		<xsd:attribute name="name" type="groupName" use="required" />
+	</xsd:complexType>
+
+<xsd:complexType name="FiniteElementSpaceType">
+		<!--formulation => Specifier to indicate any specialized formuations. For instance, one of the many enhanced assumed strain methods of the Hexahedron parent shape would be indicated here-->
+		<xsd:attribute name="formulation" type="geos_FiniteElementDiscretization_Formulation" default="default" />
+		<!--order => The order of the finite element basis.-->
+		<xsd:attribute name="order" type="integer" use="required" />
+		<!--useHighOrderQuadratureRule => Specifier to indicate whether to use a high order quadrature rule-->
+		<xsd:attribute name="useHighOrderQuadratureRule" type="integer" default="0" />
+		<!--useVirtualElements => Specifier to indicate whether to force the use of VEM-->
+		<xsd:attribute name="useVirtualElements" type="integer" default="0" />
+		<!--name => A name is required for any non-unique nodes-->
+		<xsd:attribute name="name" type="groupName" use="required" />
+	</xsd:complexType>
+
+<xsd:complexType name="SolidMechanicsAugmentedLagrangianContactType">
+		<xsd:choice minOccurs="0" maxOccurs="unbounded">
+			<xsd:element name="LinearSolverParameters" type="LinearSolverParametersType" maxOccurs="1" />
+			<xsd:element name="NonlinearSolverParameters" type="NonlinearSolverParametersType" maxOccurs="1" />
+		</xsd:choice>
+		<!--allowNonConvergedLinearSolverSolution => Cut time step if linear solution fail without going until max nonlinear iterations.-->
+		<xsd:attribute name="allowNonConvergedLinearSolverSolution" type="integer" default="1" />
+		<!--cflFactor => Factor to apply to the `CFL condition <http://en.wikipedia.org/wiki/Courant-Friedrichs-Lewy_condition>`_ when calculating the maximum allowable time step. Values should be in the interval (0,1] -->
+		<xsd:attribute name="cflFactor" type="real64" default="0.5" />
+		<!--contactPenaltyStiffness => Value of the penetration penalty stiffness. Units of Pressure/length-->
+		<xsd:attribute name="contactPenaltyStiffness" type="real64" default="0" />
+		<!--discretization => Name of discretization object (defined in the :ref:`NumericalMethodsManager`) to use for this solver. For instance, if this is a Finite Element Solver, the name of a :ref:`FiniteElement` should be specified. If this is a Finite Volume Method, the name of a :ref:`FiniteVolume` discretization should be specified.-->
+		<xsd:attribute name="discretization" type="groupNameRef" use="required" />
+		<!--initialDt => Initial time-step value required by the solver to the event manager.-->
+		<xsd:attribute name="initialDt" type="real64" default="1e+99" />
+		<!--iterPenaltyN => Factor for tuning the iterative penalty coefficient for normal traction-->
+		<xsd:attribute name="iterPenaltyN" type="real64" default="10" />
+		<!--iterPenaltyT => Factor for tuning the iterative penalty coefficient for tangential traction-->
+		<xsd:attribute name="iterPenaltyT" type="real64" default="0.1" />
+		<!--logLevel => Sets the level of information to write in the standard output (the console typically).
+Information output from lower logLevels is added with the desired log level
+1
+ - Convergence information
+ - Linear solver information
+ - Output residual norm
+ - Solution information (scaling, maximum changes, quality check)
+ - Time step information
+ - Solver timers information
+ - Output configuration statistics
+2
+ - The summary of declared fields and coupling
+ - Output tolerance computed the given fracture element-->
+		<xsd:attribute name="logLevel" type="integer" default="0" />
+		<!--massDamping => Value of mass based damping coefficient. -->
+		<xsd:attribute name="massDamping" type="real64" default="0" />
+		<!--maxNumResolves => Value to indicate how many resolves may be executed after some other event is executed. For example, if a SurfaceGenerator is specified, it will be executed after the mechanics solve. However if a new surface is generated, then the mechanics solve must be executed again due to the change in topology.-->
+		<xsd:attribute name="maxNumResolves" type="integer" default="10" />
+		<!--newmarkBeta => Value of :math:`\beta` in the Newmark Method for Implicit Dynamic time integration option. This should be pow(newmarkGamma+0.5,2.0)/4.0 unless you know what you are doing.-->
+		<xsd:attribute name="newmarkBeta" type="real64" default="0.25" />
+		<!--newmarkGamma => Value of :math:`\gamma` in the Newmark Method for Implicit Dynamic time integration option-->
+		<xsd:attribute name="newmarkGamma" type="real64" default="0.5" />
+		<!--simultaneous => Flag to update the Lagrange multiplier at each Newton iteration (true), or only after the Newton loop has converged (false)-->
+		<xsd:attribute name="simultaneous" type="integer" default="1" />
+		<!--stiffnessDamping => Value of stiffness based damping coefficient. -->
+		<xsd:attribute name="stiffnessDamping" type="real64" default="0" />
+		<!--strainTheory => Indicates whether or not to use `Infinitesimal Strain Theory <https://en.wikipedia.org/wiki/Infinitesimal_strain_theory>`_, or `Finite Strain Theory <https://en.wikipedia.org/wiki/Finite_strain_theory>`_. Valid Inputs are:
+ 0 - Infinitesimal Strain 
+ 1 - Finite Strain-->
+		<xsd:attribute name="strainTheory" type="integer" default="0" />
+		<!--symmetric => Flag to neglect the non-symmetric contribution in the tangential matrix-->
+		<xsd:attribute name="symmetric" type="integer" default="1" />
+		<!--targetRegions => Allowable regions that the solver may be applied to. Note that this does not indicate that the solver will be applied to these regions, only that allocation will occur such that the solver may be applied to these regions. The decision about what regions this solver will beapplied to rests in the EventManager.-->
+		<xsd:attribute name="targetRegions" type="groupNameRef_array" use="required" />
+		<!--timeIntegrationOption => Time integration method. Options are:
+* QuasiStatic
+* ImplicitDynamic
+* ExplicitDynamic-->
+		<xsd:attribute name="timeIntegrationOption" type="geos_SolidMechanicsLagrangianFEM_TimeIntegrationOption" default="QuasiStatic" />
+		<!--tolJumpN => Factor to adjust the tolerance for normal jump-->
+		<xsd:attribute name="tolJumpN" type="real64" default="1e-07" />
+		<!--tolJumpT => Factor to adjust the tolerance for tangential jump-->
+		<xsd:attribute name="tolJumpT" type="real64" default="1e-05" />
+		<!--tolNormalTrac => Factor to adjust the tolerance for normal traction-->
+		<xsd:attribute name="tolNormalTrac" type="real64" default="0.5" />
+		<!--tolTauLimit => Tolerance for the sliding check-->
+		<xsd:attribute name="tolTauLimit" type="real64" default="0.05" />
+		<!--usePhysicsScaling => Enable physics-based scaling of the linear system. Default: true.-->
+		<xsd:attribute name="usePhysicsScaling" type="integer" default="1" />
+		<!--writeLinearSystem => Write matrix, rhs, solution to screen ( = 1) or file ( = 2).-->
+		<xsd:attribute name="writeLinearSystem" type="integer" default="0" />
+		<!--writeStatistics => When set to `iteration`, output iterations information to a csv
+When set to `convergence`, output convergence information to a csv
+When set to `all` output both convergence & iteration information to a csv.-->
+		<xsd:attribute name="writeStatistics" type="geos_PhysicsSolverBase_StatsOutputType" default="none" />
+		<!--name => A name is required for any non-unique nodes-->
+		<xsd:attribute name="name" type="groupName" use="required" />
+	</xsd:complexType>
+
+<xsd:complexType name="LinearSolverParametersType">
+		<xsd:choice minOccurs="0" maxOccurs="unbounded">
+			<xsd:element name="Block" type="BlockType" maxOccurs="1" />
+			<xsd:element name="Multiscale" type="MultiscaleType" maxOccurs="1" />
+		</xsd:choice>
+		<!--adaptiveExponent => Exponent parameter for adaptive method-->
+		<xsd:attribute name="adaptiveExponent" type="real64" default="1" />
+		<!--adaptiveGamma => Gamma parameter for adaptive method-->
+		<xsd:attribute name="adaptiveGamma" type="real64" default="0.1" />
+		<!--amgAggressiveCoarseningLevels => AMG number of levels for aggressive coarsening-->
+		<xsd:attribute name="amgAggressiveCoarseningLevels" type="integer" default="0" />
+		<!--amgAggressiveCoarseningPaths => AMG number of paths for aggressive coarsening-->
+		<xsd:attribute name="amgAggressiveCoarseningPaths" type="integer" default="1" />
+		<!--amgAggressiveInterpType => AMG aggressive interpolation algorithm. Available options are: ``default|extendedIStage2|standardStage2|extendedStage2|multipass|modifiedExtended|modifiedExtendedI|modifiedExtendedE|modifiedMultipass``-->
+		<xsd:attribute name="amgAggressiveInterpType" type="geos_LinearSolverParameters_AMG_AggInterpType" default="multipass" />
+		<!--amgCoarseSolver => AMG coarsest level solver/smoother type. Available options are: ``default``, ``jacobi``, ``l1jacobi``, ``fgs``, ``sgs``, ``l1sgs``, ``chebyshev``, ``direct``, ``bgs``, ``gsElimWPivoting``, ``gsElimWInverse``-->
+		<xsd:attribute name="amgCoarseSolver" type="geos_LinearSolverParameters_AMG_CoarseType" default="direct" />
+		<!--amgCoarseningType => AMG coarsening algorithm. Available options are: ``default|CLJP|RugeStueben|Falgout|PMIS|HMIS``-->
+		<xsd:attribute name="amgCoarseningType" type="geos_LinearSolverParameters_AMG_CoarseningType" default="HMIS" />
+		<!--amgInterpolationMaxNonZeros => AMG interpolation maximum number of nonzeros per row-->
+		<xsd:attribute name="amgInterpolationMaxNonZeros" type="integer" default="4" />
+		<!--amgInterpolationType => AMG interpolation algorithm. Available options are: ``default|modifiedClassical|direct|multipass|extendedI|standard|extended|directBAMG|modifiedExtended|modifiedExtendedI|modifiedExtendedE``-->
+		<xsd:attribute name="amgInterpolationType" type="geos_LinearSolverParameters_AMG_InterpType" default="extendedI" />
+		<!--amgMaxCoarseSize => AMG threshold for coarse grid size-->
+		<xsd:attribute name="amgMaxCoarseSize" type="integer" default="9" />
+		<!--amgNullSpaceType => AMG near null space approximation. Available options are: ``constantModes``, ``rigidBodyModes``-->
+		<xsd:attribute name="amgNullSpaceType" type="geos_LinearSolverParameters_AMG_NullSpaceType" default="constantModes" />
+		<!--amgNumCycles => AMG number of cycles-->
+		<xsd:attribute name="amgNumCycles" type="integer" default="1" />
+		<!--amgNumFunctions => AMG number of functions-->
+		<xsd:attribute name="amgNumFunctions" type="integer" default="1" />
+		<!--amgNumSweeps => AMG smoother sweeps-->
+		<xsd:attribute name="amgNumSweeps" type="integer" default="1" />
+		<!--amgRelaxWeight => AMG relaxation factor for the smoother-->
+		<xsd:attribute name="amgRelaxWeight" type="real64" default="1" />
+		<!--amgSeparateComponents => AMG apply separate component filter for multi-variable problems-->
+		<xsd:attribute name="amgSeparateComponents" type="integer" default="0" />
+		<!--amgSmootherType => AMG smoother type. Available options are: ``default``, ``jacobi``, ``l1jacobi``, ``fgs``, ``bgs``, ``sgs``, ``l1sgs``, ``chebyshev``, ``iluk``, ``ilut``, ``ick``, ``ict``-->
+		<xsd:attribute name="amgSmootherType" type="geos_LinearSolverParameters_AMG_SmootherType" default="l1sgs" />
+		<!--amgThreshold => AMG strength-of-connection threshold-->
+		<xsd:attribute name="amgThreshold" type="real64" default="0" />
+		<!--chebyshevEigNumIter => Number of eigenvalue estimation CG iterations-->
+		<xsd:attribute name="chebyshevEigNumIter" type="integer" default="10" />
+		<!--chebyshevOrder => Chebyshev order-->
+		<xsd:attribute name="chebyshevOrder" type="integer" default="2" />
+		<!--directCheckResidual => Whether to check the linear system solution residual-->
+		<xsd:attribute name="directCheckResidual" type="integer" default="0" />
+		<!--directColPerm => How to permute the columns. Available options are: ``none``, ``MMD_AtplusA``, ``MMD_AtA``, ``colAMD``, ``metis``, ``parmetis``-->
+		<xsd:attribute name="directColPerm" type="geos_LinearSolverParameters_Direct_ColPerm" default="metis" />
+		<!--directEquil => Whether to scale the rows and columns of the matrix-->
+		<xsd:attribute name="directEquil" type="integer" default="1" />
+		<!--directIterRef => Whether to perform iterative refinement-->
+		<xsd:attribute name="directIterRef" type="integer" default="1" />
+		<!--directParallel => Whether to use a parallel solver (instead of a serial one)-->
+		<xsd:attribute name="directParallel" type="integer" default="1" />
+		<!--directReplTinyPivot => Whether to replace tiny pivots by sqrt(epsilon)*norm(A)-->
+		<xsd:attribute name="directReplTinyPivot" type="integer" default="1" />
+		<!--directRowPerm => How to permute the rows. Available options are: ``none``, ``mc64``-->
+		<xsd:attribute name="directRowPerm" type="geos_LinearSolverParameters_Direct_RowPerm" default="mc64" />
+		<!--iluFill => ILU(K) fill factor-->
+		<xsd:attribute name="iluFill" type="integer" default="0" />
+		<!--iluThreshold => ILU(T) threshold factor-->
+		<xsd:attribute name="iluThreshold" type="real64" default="0" />
+		<!--krylovAdaptiveTol => Use Eisenstat-Walker adaptive linear tolerance-->
+		<xsd:attribute name="krylovAdaptiveTol" type="integer" default="0" />
+		<!--krylovMaxIter => Maximum iterations allowed for an iterative solver-->
+		<xsd:attribute name="krylovMaxIter" type="integer" default="200" />
+		<!--krylovMaxRestart => Maximum iterations before restart (GMRES only)-->
+		<xsd:attribute name="krylovMaxRestart" type="integer" default="200" />
+		<!--krylovStrongestTol => Strongest-allowed tolerance for adaptive method-->
+		<xsd:attribute name="krylovStrongestTol" type="real64" default="1e-08" />
+		<!--krylovTol => Relative convergence tolerance of the iterative method
+If the method converges, the iterative solution :math:`\mathsf{x}_k` is such that
+the relative residual norm satisfies:
+:math:`\left\lVert \mathsf{b} - \mathsf{A} \mathsf{x}_k \right\rVert_2` < ``krylovTol`` * :math:`\left\lVert\mathsf{b}\right\rVert_2`-->
+		<xsd:attribute name="krylovTol" type="real64" default="1e-06" />
+		<!--krylovWeakestTol => Weakest-allowed tolerance for adaptive method-->
+		<xsd:attribute name="krylovWeakestTol" type="real64" default="0.001" />
+		<!--logLevel => Sets the level of information to write in the standard output (the console typically).
+Information output from lower logLevels is added with the desired log level
+1
+ - Linear solver information-->
+		<xsd:attribute name="logLevel" type="integer" default="0" />
+		<!--preconditionerType => Preconditioner type. Available options are: ``none``, ``jacobi``, ``l1jacobi``, ``fgs``, ``sgs``, ``l1sgs``, ``chebyshev``, ``iluk``, ``ilut``, ``ick``, ``ict``, ``amg``, ``mgr``, ``block``, ``direct``, ``bgs``, ``multiscale``-->
+		<xsd:attribute name="preconditionerType" type="geos_LinearSolverParameters_PreconditionerType" default="iluk" />
+		<!--relaxationWeight => Relaxation weight (omega) for stationary iterations-->
+		<xsd:attribute name="relaxationWeight" type="real64" default="0.666667" />
+		<!--reuseFactorization => Whether to reuse the LU factorization (experimental)-->
+		<xsd:attribute name="reuseFactorization" type="integer" default="0" />
+		<!--solverType => Linear solver type. Available options are: ``direct``, ``cg``, ``gmres``, ``fgmres``, ``bicgstab``, ``richardson``, ``preconditioner``-->
+		<xsd:attribute name="solverType" type="geos_LinearSolverParameters_SolverType" default="direct" />
+		<!--stopIfError => Whether to stop the simulation if the linear solver reports an error-->
+		<xsd:attribute name="stopIfError" type="integer" default="1" />
+	</xsd:complexType>
+
+<xsd:complexType name="NonlinearSolverParametersType">
+		<!--allowNonConverged => Allow non-converged solution to be accepted. (i.e. exit from the Newton loop without achieving the desired tolerance)-->
+		<xsd:attribute name="allowNonConverged" type="integer" default="0" />
+		<!--configurationTolerance => Configuration tolerance-->
+		<xsd:attribute name="configurationTolerance" type="real64" default="0" />
+		<!--couplingType => Type of coupling. Valid options:
+* FullyImplicit
+* Sequential-->
+		<xsd:attribute name="couplingType" type="geos_NonlinearSolverParameters_CouplingType" default="FullyImplicit" />
+		<!--lineSearchAction => How the line search is to be used. Options are: 
+ * None    - Do not use line search.
+* Attempt - Use line search. Allow exit from line search without achieving smaller residual than starting residual.
+* Require - Use line search. If smaller residual than starting resdual is not achieved, cut time-step.-->
+		<xsd:attribute name="lineSearchAction" type="geos_NonlinearSolverParameters_LineSearchAction" default="Attempt" />
+		<!--lineSearchCutFactor => Line search cut factor. For instance, a value of 0.5 will result in the effective application of the last solution by a factor of (0.5, 0.25, 0.125, ...)-->
+		<xsd:attribute name="lineSearchCutFactor" type="real64" default="0.5" />
+		<!--lineSearchInterpolationType => Strategy to cut the solution update during the line search. Options are: 
+ * Linear
+* Parabolic-->
+		<xsd:attribute name="lineSearchInterpolationType" type="geos_NonlinearSolverParameters_LineSearchInterpolationType" default="Linear" />
+		<!--lineSearchMaxCuts => Maximum number of line search cuts.-->
+		<xsd:attribute name="lineSearchMaxCuts" type="integer" default="4" />
+		<!--lineSearchResidualFactor => Factor to determine residual increase (recommended values: 1.1 (conservative), 2.0 (relaxed), 10.0 (aggressive)).-->
+		<xsd:attribute name="lineSearchResidualFactor" type="real64" default="1" />
+		<!--lineSearchStartingIteration => Iteration when line search starts.-->
+		<xsd:attribute name="lineSearchStartingIteration" type="integer" default="0" />
+		<!--logLevel => Sets the level of information to write in the standard output (the console typically).
+Information output from lower logLevels is added with the desired log level
+1
+ - Convergence information
+ - Nonlinear solver information
+ - Line search information
+ - Time step information-->
+		<xsd:attribute name="logLevel" type="integer" default="0" />
+		<!--maxAllowedResidualNorm => Maximum value of residual norm that is allowed in a Newton loop-->
+		<xsd:attribute name="maxAllowedResidualNorm" type="real64" default="1e+09" />
+		<!--maxNumConfigurationAttempts => Max number of times that the configuration can be changed-->
+		<xsd:attribute name="maxNumConfigurationAttempts" type="integer" default="10" />
+		<!--maxSubSteps => Maximum number of time sub-steps allowed for the solver-->
+		<xsd:attribute name="maxSubSteps" type="integer" default="10" />
+		<!--maxTimeStepCuts => Max number of time-step cuts-->
+		<xsd:attribute name="maxTimeStepCuts" type="integer" default="2" />
+		<!--minNormalizer => Value used to make sure that residual normalizers are not too small when computing residual norm.-->
+		<xsd:attribute name="minNormalizer" type="real64" default="1e-12" />
+		<!--minTimeStepIncreaseInterval => Minimum number of steps since the last time-step cut for increasing the time-step again.-->
+		<xsd:attribute name="minTimeStepIncreaseInterval" type="integer" default="10" />
+		<!--newtonMaxIter => Maximum number of iterations that are allowed in a Newton loop.-->
+		<xsd:attribute name="newtonMaxIter" type="integer" default="5" />
+		<!--newtonMinIter => Minimum number of iterations that are required before exiting the Newton loop.-->
+		<xsd:attribute name="newtonMinIter" type="integer" default="1" />
+		<!--newtonTol => The required tolerance in order to exit the Newton iteration loop.-->
+		<xsd:attribute name="newtonTol" type="real64" default="1e-06" />
+		<!--nonlinearAccelerationType => Nonlinear acceleration type for sequential solver.-->
+		<xsd:attribute name="nonlinearAccelerationType" type="geos_NonlinearSolverParameters_NonlinearAccelerationType" default="None" />
+		<!--oscillationCheckDepth => Depth in solution history to check for oscillations.-->
+		<xsd:attribute name="oscillationCheckDepth" type="integer" default="3" />
+		<!--oscillationFraction => Fraction of dofs oscillating to declare oscillation.-->
+		<xsd:attribute name="oscillationFraction" type="real64" default="0.05" />
+		<!--oscillationScaling => Flag to enable oscillation detection and scaling. If set to 1, oscillation detection is enabled and the solution will be scaled if oscillations are detected.-->
+		<xsd:attribute name="oscillationScaling" type="integer" default="0" />
+		<!--oscillationScalingFactor => Scaling factor to dump solution oscillations.-->
+		<xsd:attribute name="oscillationScalingFactor" type="real64" default="0.5" />
+		<!--oscillationTolerance => Tolerance for oscillation detection.-->
+		<xsd:attribute name="oscillationTolerance" type="real64" default="0.01" />
+		<!--sequentialConvergenceCriterion => Criterion used to check outer-loop convergence in sequential schemes. Valid options:
+* ResidualNorm
+* NumberOfNonlinearIterations
+* SolutionIncrements-->
+		<xsd:attribute name="sequentialConvergenceCriterion" type="geos_NonlinearSolverParameters_SequentialConvergenceCriterion" default="ResidualNorm" />
+		<!--subcycling => Flag to decide whether to iterate between sequentially coupled solvers or not.-->
+		<xsd:attribute name="subcycling" type="integer" default="0" />
+		<!--timeStepCutFactor => Factor by which the time-step will be cut if a time-step cut is required.-->
+		<xsd:attribute name="timeStepCutFactor" type="real64" default="0.5" />
+		<!--timeStepDecreaseFactor => Factor by which the time-step is decreased when the number of Newton iterations is large.-->
+		<xsd:attribute name="timeStepDecreaseFactor" type="real64" default="0.5" />
+		<!--timeStepDecreaseIterLimit => Fraction of the max Newton iterations above which the solver asks for the time-step to be decreased for the next time-step.-->
+		<xsd:attribute name="timeStepDecreaseIterLimit" type="real64" default="0.7" />
+		<!--timeStepIncreaseFactor => Factor by which the time-step is increased when the number of Newton iterations is small.-->
+		<xsd:attribute name="timeStepIncreaseFactor" type="real64" default="2" />
+		<!--timeStepIncreaseIterLimit => Fraction of the max Newton iterations below which the solver asks for the time-step to be increased for the next time-step.-->
+		<xsd:attribute name="timeStepIncreaseIterLimit" type="real64" default="0.4" />
+		<!--normType => Norm used by the flow solver to check nonlinear convergence. Valid options:
+* Linfinity
+* L2-->
+		<xsd:attribute name="normType" type="geos_physicsSolverBaseKernels_NormType" default="Linfinity" />
+	</xsd:complexType>

@@ -1,0 +1,674 @@
+[
+  {
+    "task_id": "AdvancedExampleViscoModifiedCamClay",
+    "final_treesim": 0.1667,
+    "failure_mode": "F3_missing_components",
+    "section_failures": [
+      {
+        "section": "Constitutive",
+        "score": 0.0
+      },
+      {
+        "section": "ElementRegions",
+        "score": 0.0
+      },
+      {
+        "section": "Events",
+        "score": 0.0
+      },
+      {
+        "section": "Functions",
+        "score": 0.0
+      },
+      {
+        "section": "Mesh",
+        "score": 0.0
+      }
+    ],
+    "top_missed_elements": [],
+    "top_hallucinated_elements": [],
+    "dominant_dimension": "structural_completeness",
+    "attribute_accuracy": 1.0,
+    "structural_completeness": 0.0,
+    "tool_call_summary": {
+      "rag_queries": 0,
+      "reads": 27,
+      "writes": 7,
+      "edits": 6,
+      "bashes": 6,
+      "total": 61
+    },
+    "productive_rag_queries_sanitized": [],
+    "agent_response_tail": "gures the specific test:\n- Uses **ViscoModifiedCamClay** material\n- Strain-control mode with `strainFunction` for axial loading\n- Zero lateral strain via `zeroStrain` radial control (oedometric)\n- Initial isotropic stress: -1\u00d710\u2075 Pa\n- 200 time steps\n- Output: `ViscoModifiedCamClayResults.txt`\n\n### 3. Table Files (`tables/`)\n- `time.geos`: Time coordinates (0, 1, 2, 3, 4, 5)\n- `axialStrain.geos`: Axial strain values for loading/unloading cycles\n- `radialStress.geos`: Radial stress boundary values"
+  },
+  {
+    "task_id": "kgdToughnessDominated",
+    "final_treesim": 0.0,
+    "failure_mode": "F1_schema_hallucination",
+    "section_failures": [
+      {
+        "section": "Constitutive",
+        "score": 0.0
+      },
+      {
+        "section": "ElementRegions",
+        "score": 0.0
+      },
+      {
+        "section": "FieldSpecifications",
+        "score": 0.0
+      },
+      {
+        "section": "Functions",
+        "score": 0.0
+      },
+      {
+        "section": "Geometry",
+        "score": 0.0
+      }
+    ],
+    "top_missed_elements": [],
+    "top_hallucinated_elements": [],
+    "dominant_dimension": "tag_coverage",
+    "attribute_accuracy": 0.5,
+    "structural_completeness": 0.5,
+    "tool_call_summary": {
+      "rag_queries": 0,
+      "reads": 0,
+      "writes": 3,
+      "edits": 0,
+      "bashes": 1,
+      "total": 4
+    },
+    "productive_rag_queries_sanitized": [],
+    "agent_response_tail": "ounds from -100 to 100 m (X), 0 to 50 m (Y), 0 to 1 m (Z)\n   - Predefined fracture plane and initial fracture box\n   - Zero displacement boundary conditions on all outer faces\n   - Gravity disabled (0.0 in all directions)\n   - Rock toughness initialized to 1.0e6 Pa\u00b7m^(1/2)\n   - Mass flux injection source at -5.0e-2 kg/s (half-wing symmetry)\n   - Dynamic time stepping schedule (0.25s \u2192 0.5s \u2192 1.0s)\n   - Output configuration for VTK (\"zeroViscosity\"), HDF5 history, source curves, and restart files"
+  },
+  {
+    "task_id": "triaxialDriverExample",
+    "final_treesim": null,
+    "failure_mode": "success",
+    "section_failures": [],
+    "top_missed_elements": [],
+    "top_hallucinated_elements": [],
+    "dominant_dimension": "unknown",
+    "attribute_accuracy": null,
+    "structural_completeness": null,
+    "tool_call_summary": {
+      "rag_queries": 0,
+      "reads": 1,
+      "writes": 10,
+      "edits": 0,
+      "bashes": 8,
+      "total": 19
+    },
+    "productive_rag_queries_sanitized": [],
+    "agent_response_tail": " with strain hardening\n  - Bulk modulus: 10.0 GPa, Shear modulus: 6.0 GPa\n  - Cohesion: 6.0 MPa, Friction angles: 16\u00b0 (initial) / 20\u00b0 (residual)\n  - Associated flow (dilation ratio = 1.0), hardening rate = 0.0001\n- **Initial State**: Isotropic -10 MPa stress (compression-negative convention)\n- **Loading**: Axial strain control (Z) + radial stress control (X, Y)\n- **Time stepping**: 200 load steps, max time = 1.0\n- **Output**: `simulationResults.txt` with stress/strain/iterations at each timestep"
+  },
+  {
+    "task_id": "kgdViscosityDominated",
+    "final_treesim": null,
+    "failure_mode": "success",
+    "section_failures": [],
+    "top_missed_elements": [],
+    "top_hallucinated_elements": [],
+    "dominant_dimension": "unknown",
+    "attribute_accuracy": null,
+    "structural_completeness": null,
+    "tool_call_summary": {
+      "rag_queries": 0,
+      "reads": 0,
+      "writes": 4,
+      "edits": 0,
+      "bashes": 4,
+      "total": 12
+    },
+    "productive_rag_queries_sanitized": [],
+    "agent_response_tail": "ias above\n- **Fracture plane**: X:[-0.01,0.01], Y:[-0.01,1e6], Z:[-0.01,1.01]\n- **Initial fracture**: X:[-0.01,0.01], Y:[-0.01,1.01], Z:[-0.01,1.01]\n- **Injection**: X:[-0.01,0.01], Y:[-0.01,0.51], Z:[-0.01,1.01]\n- **Timestep**: Adaptive, max \u0394t=5.0s\n- **Outputs**: 3D fields every step, pressure + hydraulic aperture every 0.1s from 0.1s, restart every 2 cycles\n\nThe configuration hierarchy uses XML includes so that child files inherit all base settings and override only what is scenario-specific."
+  },
+  {
+    "task_id": "pennyFracViscosityDominated",
+    "final_treesim": 1.0,
+    "failure_mode": "success",
+    "section_failures": [
+      {
+        "section": "Constitutive",
+        "score": 1.0
+      },
+      {
+        "section": "ElementRegions",
+        "score": 1.0
+      },
+      {
+        "section": "Events",
+        "score": 1.0
+      },
+      {
+        "section": "FieldSpecifications",
+        "score": 1.0
+      },
+      {
+        "section": "Functions",
+        "score": 1.0
+      }
+    ],
+    "top_missed_elements": [],
+    "top_hallucinated_elements": [],
+    "dominant_dimension": "structural_completeness",
+    "attribute_accuracy": 1.0,
+    "structural_completeness": 1.0,
+    "tool_call_summary": {
+      "rag_queries": 0,
+      "reads": 19,
+      "writes": 4,
+      "edits": 3,
+      "bashes": 22,
+      "total": 54
+    },
+    "productive_rag_queries_sanitized": [],
+    "agent_response_tail": " - SurfaceGenerator (nodeBasedSIF, K_IC=0.3 MPa\u00b7m^0.5)\n- **Mesh**: 400\u00d7400\u00d7800 m domain with refined near-fracture grid (50\u00d750\u00d710 cells near origin)\n- **Geometry**: Initial fracture seed (-4.1 to 4.1 m), injection source (-2.1 to 2.1 m), fracture plane (-500.1 to 500.1 m)\n- **Events**: \n  - Surface generation at start\n  - Outputs every 2.0 seconds\n  - Forced timestep schedule: 0.2s (0-1s), 0.5s (1-3s), 1.0s (3-8s), 2.0s (8-20s), 4.0s (20-60s), 8.0s (60-100s), 10.0s (100-200s), 20.0s (200-400.1s)"
+  },
+  {
+    "task_id": "AdvancedExampleCasedElasticWellboreImperfectInterfaces",
+    "final_treesim": 0.9968,
+    "failure_mode": "success",
+    "section_failures": [
+      {
+        "section": "Constitutive",
+        "score": 1.0
+      },
+      {
+        "section": "ElementRegions",
+        "score": 1.0
+      },
+      {
+        "section": "Events",
+        "score": 1.0
+      },
+      {
+        "section": "FieldSpecifications",
+        "score": 1.0
+      },
+      {
+        "section": "Functions",
+        "score": 1.0
+      }
+    ],
+    "top_missed_elements": [],
+    "top_hallucinated_elements": [],
+    "dominant_dimension": "structural_completeness",
+    "attribute_accuracy": 1.0,
+    "structural_completeness": 1.0,
+    "tool_call_summary": {
+      "rag_queries": 0,
+      "reads": 34,
+      "writes": 7,
+      "edits": 0,
+      "bashes": 31,
+      "total": 77
+    },
+    "productive_rag_queries_sanitized": [],
+    "agent_response_tail": " Design Decisions\n- The base file includes all reusable components (solvers, materials, boundary conditions, geometry definitions, Tasks/Outputs)\n- Benchmark and smoke test use XML inclusion (`<File name=\"./<xml_filename_stripped>\"/>`) for clean inheritance\n- Interface cylinder geometries use small overlaps (\u00b10.0001\u20130.0002m) past the vertical bounds to ensure proper node identification by the surface generator\n- Coulomb friction coefficient of 0.5 with zero cohesion matches the \"imperfect interface\" assumption"
+  },
+  {
+    "task_id": "ExampleKirschWellbore",
+    "final_treesim": 0.13,
+    "failure_mode": "F1_schema_hallucination",
+    "section_failures": [
+      {
+        "section": "ElementRegions",
+        "score": 0.0
+      },
+      {
+        "section": "Events",
+        "score": 0.0
+      },
+      {
+        "section": "NumericalMethods",
+        "score": 0.0
+      },
+      {
+        "section": "Outputs",
+        "score": 0.0
+      },
+      {
+        "section": "Solvers",
+        "score": 0.0
+      }
+    ],
+    "top_missed_elements": [],
+    "top_hallucinated_elements": [],
+    "dominant_dimension": "tag_coverage",
+    "attribute_accuracy": 0.577,
+    "structural_completeness": 0.5,
+    "tool_call_summary": {
+      "rag_queries": 0,
+      "reads": 0,
+      "writes": 2,
+      "edits": 0,
+      "bashes": 2,
+      "total": 4
+    },
+    "productive_rag_queries_sanitized": [],
+    "agent_response_tail": "<xml_filename_stripped>`** (benchmark \u2014 mesh execution & schedule):\n- Includes `<xml_filename_stripped>`\n- Gravity explicitly set to `{0,0,0}` (deactivated)\n- **Periodic VTK output** (`plot`, freq=1, exact timestep)\n- **Periodic HDF5 history** of `averageStress` for `cb1` \u2192 `stress_history` (freq=1)\n- **Single-shot HDF5 history** of `totalDisplacement` on all nodes \u2192 `displacement_history`\n- **Restart output** enabled by default (periodic at freq=1)\n- `fixDt` configuration for exact 1.0 s timestep scheduling"
+  },
+  {
+    "task_id": "pennyFracToughnessDominated",
+    "final_treesim": 0.1613,
+    "failure_mode": "F1_schema_hallucination",
+    "section_failures": [
+      {
+        "section": "Events",
+        "score": 0.0
+      },
+      {
+        "section": "NumericalMethods",
+        "score": 0.0
+      },
+      {
+        "section": "Solvers",
+        "score": 0.0
+      },
+      {
+        "section": "Tasks",
+        "score": 0.0
+      },
+      {
+        "section": "ElementRegions",
+        "score": 0.3
+      }
+    ],
+    "top_missed_elements": [],
+    "top_hallucinated_elements": [],
+    "dominant_dimension": "tag_coverage",
+    "attribute_accuracy": 0.286,
+    "structural_completeness": 1.0,
+    "tool_call_summary": {
+      "rag_queries": 0,
+      "reads": 0,
+      "writes": 2,
+      "edits": 0,
+      "bashes": 2,
+      "total": 7
+    },
+    "productive_rag_queries_sanitized": [],
+    "agent_response_tail": " **Mesh refinement:** Finer near origin (50\u00d750 cells near origin \u2192 10\u219220 cells outward)\n- **Box regions:** Initial fracture, injection source, and core regions\n- **Initial/boundary conditions:** Roller symmetry, separable/ruptured face indicators, mass flux injection (-6.625 kg/s)\n- **SIF criterion:** Rock toughness=3.0 MPa\u00b7\u221am\n- **Time history:** Two periodic trackers (every 2s starting at 2s) for fracture and source data\n- **Timestep schedule:** Dynamic dt from 0.2s \u2192 20s over 400.1s simulation"
+  },
+  {
+    "task_id": "AdvancedExampleCasedElasticWellbore",
+    "final_treesim": 0.0185,
+    "failure_mode": "F1_schema_hallucination",
+    "section_failures": [
+      {
+        "section": "Constitutive",
+        "score": 0.0
+      },
+      {
+        "section": "Events",
+        "score": 0.0
+      },
+      {
+        "section": "Mesh",
+        "score": 0.0
+      },
+      {
+        "section": "NumericalMethods",
+        "score": 0.0
+      },
+      {
+        "section": "Outputs",
+        "score": 0.0
+      }
+    ],
+    "top_missed_elements": [],
+    "top_hallucinated_elements": [],
+    "dominant_dimension": "element_type_match",
+    "attribute_accuracy": 1.0,
+    "structural_completeness": 0.25,
+    "tool_call_summary": {
+      "rag_queries": 0,
+      "reads": 0,
+      "writes": 3,
+      "edits": 0,
+      "bashes": 4,
+      "total": 11
+    },
+    "productive_rag_queries_sanitized": [],
+    "agent_response_tail": "GPa | 4.17 GPa |\n\n**Solver Settings:**\n- Time step: 0.1 s (constant), total: 1.0 s\n- Newton: tolerance 1e-9, max 8 iterations\n- Benchmark: GMRES with LU preconditioner\n- Smoke-test: Direct solver (preonly)\n\n**Boundary Conditions:**\n- Roller constraints on top/bottom z-planes\n- Roller constraints on all four far-field square boundaries\n- Internal pressure: -10 MPa (compressive) on casing inner face\n\n**Output:**\n- Plot/restart files to `sub/plot` every 1.0 s\n- Displacement and stress field reports"
+  },
+  {
+    "task_id": "AdvancedWellboreExampleNonLinearThermalDiffusionTemperatureDependentVolumetricHeatCapacity",
+    "final_treesim": null,
+    "failure_mode": "success",
+    "section_failures": [],
+    "top_missed_elements": [],
+    "top_hallucinated_elements": [],
+    "dominant_dimension": "unknown",
+    "attribute_accuracy": null,
+    "structural_completeness": null,
+    "tool_call_summary": {
+      "rag_queries": 0,
+      "reads": 0,
+      "writes": 0,
+      "edits": 0,
+      "bashes": 1,
+      "total": 1
+    },
+    "productive_rag_queries_sanitized": [],
+    "agent_response_tail": "I'll create the two GEOS XML configuration files for the non-linear thermal diffusion wellbore simulation. Let me write them to the specified directory."
+  },
+  {
+    "task_id": "TutorialDeadOilBottomLayersSPE10",
+    "final_treesim": 0.1599,
+    "failure_mode": "F1_schema_hallucination",
+    "section_failures": [
+      {
+        "section": "Constitutive",
+        "score": 0.0
+      },
+      {
+        "section": "Events",
+        "score": 0.0
+      },
+      {
+        "section": "Geometry",
+        "score": 0.0
+      },
+      {
+        "section": "NumericalMethods",
+        "score": 0.0
+      },
+      {
+        "section": "ElementRegions",
+        "score": 0.3
+      }
+    ],
+    "top_missed_elements": [],
+    "top_hallucinated_elements": [],
+    "dominant_dimension": "attribute_accuracy",
+    "attribute_accuracy": 0.067,
+    "structural_completeness": 0.75,
+    "tool_call_summary": {
+      "rag_queries": 0,
+      "reads": 2,
+      "writes": 2,
+      "edits": 0,
+      "bashes": 2,
+      "total": 6
+    },
+    "productive_rag_queries_sanitized": [],
+    "agent_response_tail": ".56m \u00d7 1.22m)\n- **Well Bounding Boxes**: Central injection source + 4 corner sinks\n- **Boundary Conditions**: \n  - Injection: Water mass flux -0.07279 kg/s\n  - Production: 4 pressure-controlled sinks at 27.579 MPa with 99.95% oil / 0.05% water\n- **Time Management**: Max 2,000,000s, initial dt 1000s, max dt 500,000s\n- **Outputs**:\n  - VTK visualization every 500,000s (forced period matching)\n  - Restart files every 1,000,000s\n  - Source flux statistics to `sourceFluxStatistics.csv` every 500,000s"
+  },
+  {
+    "task_id": "TutorialDeadOilEgg",
+    "final_treesim": 0.0,
+    "failure_mode": "F1_schema_hallucination",
+    "section_failures": [
+      {
+        "section": "Constitutive",
+        "score": 0.0
+      },
+      {
+        "section": "ElementRegions",
+        "score": 0.0
+      },
+      {
+        "section": "Events",
+        "score": 0.0
+      },
+      {
+        "section": "FieldSpecifications",
+        "score": 0.0
+      },
+      {
+        "section": "Mesh",
+        "score": 0.0
+      }
+    ],
+    "top_missed_elements": [],
+    "top_hallucinated_elements": [],
+    "dominant_dimension": "element_type_match",
+    "attribute_accuracy": 1.0,
+    "structural_completeness": 0.5,
+    "tool_call_summary": {
+      "rag_queries": 0,
+      "reads": 4,
+      "writes": 9,
+      "edits": 0,
+      "bashes": 2,
+      "total": 19
+    },
+    "productive_rag_queries_sanitized": [],
+    "agent_response_tail": ",6,10,14,18,22,26] m, BHP=3.9e7 Pa, refZ=28 m\n- Injectors: r=0.1 m, 8 elements/seg, 7 perforations at [6,10,14,18,22,26,30] m, rate=8e-3 m\u00b3/s, BHP=9e7 Pa; Injector 3 refElevation=40 m (all others 20 m)\n\n**`<xml_filename_stripped>`**:\n- Same well controls as VTK benchmark, but with internal vertical polyline geometry\n- Producers at {124,340}, {276,316}, {180,124}, {340,140} \u2014 all z: 28\u21920\n- Injectors at {36,452}, {236,420}, {12,276}, {212,228}, {396,276}, {60,68}, {252,12}, {452,44} \u2014 all z: 32\u21920"
+  },
+  {
+    "task_id": "relaxationTest",
+    "final_treesim": 0.1285,
+    "failure_mode": "F2_attr_drift",
+    "section_failures": [
+      {
+        "section": "Events",
+        "score": 0.0
+      },
+      {
+        "section": "Geometry",
+        "score": 0.0
+      },
+      {
+        "section": "NumericalMethods",
+        "score": 0.0
+      },
+      {
+        "section": "Outputs",
+        "score": 0.0
+      },
+      {
+        "section": "Solvers",
+        "score": 0.0
+      }
+    ],
+    "top_missed_elements": [],
+    "top_hallucinated_elements": [],
+    "dominant_dimension": "attribute_accuracy",
+    "attribute_accuracy": 0.206,
+    "structural_completeness": 0.75,
+    "tool_call_summary": {
+      "rag_queries": 0,
+      "reads": 2,
+      "writes": 5,
+      "edits": 0,
+      "bashes": 3,
+      "total": 13
+    },
+    "productive_rag_queries_sanitized": [],
+    "agent_response_tail": "n (15 iters, tol 1e-5)\n- **Timestepping**: Constant 1000 s steps, 172800 s total duration\n- **Outputs**: VTK at 1000 s intervals, restart files\n- **Time History**: `stress_history` (cb-1_1_1) and `displacement_history` (topPoint nodes)\n\n## Key Parameters\n| Parameter | Value |\n|-----------|-------|\n| Domain | [0,1]\u00b3 m\u00b3 |\n| Elements | 10\u00d710\u00d710 (1000 total) |\n| Total Time | 172800 s (2 days) |\n| Timestep | 1000 s |\n| Max Displacement | -0.001 m (z-direction) |\n| Lateral Confining Stress | -10 MPa |"
+  },
+  {
+    "task_id": "AdvancedExampleDeviatedPoroElasticWellbore",
+    "final_treesim": 0.0,
+    "failure_mode": "F1_schema_hallucination",
+    "section_failures": [
+      {
+        "section": "Constitutive",
+        "score": 0.0
+      },
+      {
+        "section": "ElementRegions",
+        "score": 0.0
+      },
+      {
+        "section": "Events",
+        "score": 0.0
+      },
+      {
+        "section": "FieldSpecifications",
+        "score": 0.0
+      },
+      {
+        "section": "NumericalMethods",
+        "score": 0.0
+      }
+    ],
+    "top_missed_elements": [],
+    "top_hallucinated_elements": [],
+    "dominant_dimension": "element_type_match",
+    "attribute_accuracy": 1.0,
+    "structural_completeness": 0.25,
+    "tool_call_summary": {
+      "rag_queries": 0,
+      "reads": 0,
+      "writes": 2,
+      "edits": 0,
+      "bashes": 1,
+      "total": 5
+    },
+    "productive_rag_queries_sanitized": [],
+    "agent_response_tail": " 0.3, Permeability: 1.0e-17 m\u00b2\n- Water: density 1000 kg/m\u00b3, viscosity 0.001 Pa\u00b7s, compressibility 1.78e-10 Pa\u207b\u00b9\n\n**Boundary Conditions:**\n- Roller constraints on all outer faces (zero normal displacement)\n- 10 MPa injection pressure on inner radial face (wellbore wall)\n- Zero initial pore pressure throughout domain\n\n**Execution Parameters:**\n- Total time: 78.0 s, constant timestep: 0.78 s\n- Output to parallel Silo files (32 threads) every 7.8 s\n- Restart files every 39.0 s (at t=39.0 and t=78.0)"
+  },
+  {
+    "task_id": "TutorialCO2FieldCase",
+    "final_treesim": 0.9642,
+    "failure_mode": "success",
+    "section_failures": [
+      {
+        "section": "Functions",
+        "score": 0.72
+      },
+      {
+        "section": "Outputs",
+        "score": 0.922
+      },
+      {
+        "section": "Constitutive",
+        "score": 1.0
+      },
+      {
+        "section": "ElementRegions",
+        "score": 1.0
+      },
+      {
+        "section": "Events",
+        "score": 1.0
+      }
+    ],
+    "top_missed_elements": [],
+    "top_hallucinated_elements": [],
+    "dominant_dimension": "structural_completeness",
+    "attribute_accuracy": 0.959,
+    "structural_completeness": 1.0,
+    "tool_call_summary": {
+      "rag_queries": 0,
+      "reads": 14,
+      "writes": 2,
+      "edits": 0,
+      "bashes": 8,
+      "total": 33
+    },
+    "productive_rag_queries_sanitized": [],
+    "agent_response_tail": "y 1e7 s\n\n### `<xml_filename_stripped>` (75 lines)\nThe specific benchmark case defining the mesh and event schedule:\n- **Included**: References the base file\n- **Mesh**: 50\u00d71\u00d7150 Cartesian grid (1000m \u00d7 100m \u00d7 1200m) with vertical `InternalWell` at (525,525,6650\u20136600), radius 0.1 m, 2 elements/segment, single perforation at 45 m from wellhead\n- **Events**: VTK output every 1e7 s, restart every 5e7 s, well pressure collection every 1e7 s, history output every 2e8 s, solver with max dt=5e5 s"
+  },
+  {
+    "task_id": "faultVerification",
+    "final_treesim": null,
+    "failure_mode": "success",
+    "section_failures": [],
+    "top_missed_elements": [],
+    "top_hallucinated_elements": [],
+    "dominant_dimension": "unknown",
+    "attribute_accuracy": null,
+    "structural_completeness": null,
+    "tool_call_summary": {
+      "rag_queries": 0,
+      "reads": 0,
+      "writes": 3,
+      "edits": 0,
+      "bashes": 1,
+      "total": 8
+    },
+    "productive_rag_queries_sanitized": [],
+    "agent_response_tail": "ompartments\n\n## Key Solver Settings\n- **Coupled Solver**: GMRES with MGR preconditioner, adaptive Krylov tolerance=1, max 40 Newton iterations\n- **Mechanics Solver**: GMRES with ILU0, tolerance=1e-10, max 15 Newton iterations\n- **Flow Solver**: GMRES with ILU0, tolerance=1e-12, max 8 Newton iterations\n\n## Output Configuration\n- **Simulation Time**: 10.0 seconds, fixed time steps of 10.0 s\n- **VTK Output**: Every 2.0 seconds, root name `faultModel`\n- **Restart**: Enabled for simulation resumption"
+  },
+  {
+    "task_id": "ExampleTFrac",
+    "final_treesim": 0.9966,
+    "failure_mode": "success",
+    "section_failures": [
+      {
+        "section": "Outputs",
+        "score": 0.956
+      },
+      {
+        "section": "Constitutive",
+        "score": 1.0
+      },
+      {
+        "section": "ElementRegions",
+        "score": 1.0
+      },
+      {
+        "section": "Events",
+        "score": 1.0
+      },
+      {
+        "section": "FieldSpecifications",
+        "score": 1.0
+      }
+    ],
+    "top_missed_elements": [],
+    "top_hallucinated_elements": [],
+    "dominant_dimension": "structural_completeness",
+    "attribute_accuracy": 0.994,
+    "structural_completeness": 1.0,
+    "tool_call_summary": {
+      "rag_queries": 0,
+      "reads": 23,
+      "writes": 4,
+      "edits": 0,
+      "bashes": 22,
+      "total": 55
+    },
+    "productive_rag_queries_sanitized": [],
+    "agent_response_tail": "al fracture | Y=50m, 50m length, 200m Z-extent |\n| Bulk modulus | 38.89 GPa |\n| Shear modulus | 29.17 GPa |\n| Friction coefficient | 0.577350269 (30\u00b0) |\n| Initial aperture | 1.0e-6 m |\n| Remote stress | -100 MPa (Y-direction) |\n| Internal pressure | -100 MPa (ramped 0\u21921s) |\n| Solver timestep | 0.2 s |\n| Krylov tolerance | 1e-8 |\n| Newton tolerance | 1e-5 |\n| Output interval | 0.2 s |\n\nThe files are linked via XML inclusion (`<Included>`), with the base \u2192 benchmark \u2192 main hierarchy you requested."
+  },
+  {
+    "task_id": "AdvancedExampleWellboreNonLinearThermalDiffusionTemperatureDependentSinglePhaseThermalConductivity",
+    "final_treesim": 0.8813,
+    "failure_mode": "success",
+    "section_failures": [
+      {
+        "section": "Outputs",
+        "score": 0.65
+      },
+      {
+        "section": "Constitutive",
+        "score": 0.727
+      },
+      {
+        "section": "ElementRegions",
+        "score": 0.767
+      },
+      {
+        "section": "FieldSpecifications",
+        "score": 0.907
+      },
+      {
+        "section": "Events",
+        "score": 1.0
+      }
+    ],
+    "top_missed_elements": [],
+    "top_hallucinated_elements": [],
+    "dominant_dimension": "tag_coverage",
+    "attribute_accuracy": 0.904,
+    "structural_completeness": 1.0,
+    "tool_call_summary": {
+      "rag_queries": 0,
+      "reads": 5,
+      "writes": 5,
+      "edits": 0,
+      "bashes": 9,
+      "total": 25
+    },
+    "productive_rag_queries_sanitized": [],
+    "agent_response_tail": "itions**:\n  - Wellbore (rneg): T=-20\u00b0C, P=0\n  - Far-field (rpos): T=100\u00b0C, P=0\n\n- **Numerics**: TPFA discretization, Newton solver (tol=1e-6, max=100 iter), no direct parallel linear solver\n\n- **Events**: Max time 1e5s, max timestep 1e3s, VTK output every 1e4s\n\n### 2. `<xml_filename_stripped>`\nThis file includes the base file and overrides the thermal conductivity model with the non-linear temperature-dependent properties as specified."
+  }
+]

@@ -1,0 +1,99 @@
+{
+  "a_name": "C3_rag_no_sr",
+  "b_name": "C4_rag_sr",
+  "mean_a": 0.861635294117647,
+  "mean_b": 0.8761441176470588,
+  "per_task": {
+    "AdvancedExampleCasedContactThermoElasticWellbore": {
+      "a": 0.8553,
+      "b": 0.81585,
+      "delta": -0.039449999999999985
+    },
+    "AdvancedExampleDeviatedElasticWellbore": {
+      "a": 0.8889,
+      "b": 0.8915500000000001,
+      "delta": 0.002650000000000041
+    },
+    "AdvancedExampleDruckerPrager": {
+      "a": 0.9659,
+      "b": 0.974,
+      "delta": 0.008099999999999996
+    },
+    "AdvancedExampleExtendedDruckerPrager": {
+      "a": 0.9653,
+      "b": 0.9450000000000001,
+      "delta": -0.020299999999999985
+    },
+    "AdvancedExampleModifiedCamClay": {
+      "a": 0.95705,
+      "b": 0.94975,
+      "delta": -0.007299999999999973
+    },
+    "AdvancedExampleViscoDruckerPrager": {
+      "a": 0.9724,
+      "b": 0.98135,
+      "delta": 0.008949999999999902
+    },
+    "ExampleDPWellbore": {
+      "a": 0.9934499999999999,
+      "b": 0.9674499999999999,
+      "delta": -0.026000000000000023
+    },
+    "ExampleEDPWellbore": {
+      "a": 0.9754,
+      "b": 0.9733,
+      "delta": -0.0020999999999999908
+    },
+    "ExampleIsothermalLeakyWell": {
+      "a": 0.8412,
+      "b": 0.83735,
+      "delta": -0.003849999999999909
+    },
+    "ExampleMandel": {
+      "a": 0.8309,
+      "b": 0.76535,
+      "delta": -0.06555
+    },
+    "ExampleThermalLeakyWell": {
+      "a": 0.50855,
+      "b": 0.85955,
+      "delta": 0.3510000000000001
+    },
+    "ExampleThermoporoelasticConsolidation": {
+      "a": 0.72105,
+      "b": 0.7051000000000001,
+      "delta": -0.01594999999999991
+    },
+    "TutorialPoroelasticity": {
+      "a": 0.73305,
+      "b": 0.7412,
+      "delta": 0.00814999999999999
+    },
+    "TutorialSneddon": {
+      "a": 0.8181499999999999,
+      "b": 0.8855999999999999,
+      "delta": 0.06745000000000001
+    },
+    "buckleyLeverettProblem": {
+      "a": 0.75685,
+      "b": 0.7113,
+      "delta": -0.04554999999999998
+    },
+    "kgdExperimentValidation": {
+      "a": 0.9371499999999999,
+      "b": 0.9329000000000001,
+      "delta": -0.004249999999999865
+    },
+    "pknViscosityDominated": {
+      "a": 0.9272,
+      "b": 0.95785,
+      "delta": 0.030649999999999955
+    }
+  },
+  "big_swing": [
+    "ExampleThermalLeakyWell"
+  ],
+  "patterns": [
+    "(no strong cross-task pattern detected; per-task analyses likely tell different stories)"
+  ]
+}

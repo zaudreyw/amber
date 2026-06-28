@@ -1,0 +1,24 @@
+[openhands_eval] run_name=oh_dsv4_vanilla_s2  tasks=17  workers=4
+[openhands_eval] model=deepseek/deepseek-v4-flash  base_url=<unset>
+[openhands_eval] primer=GEOS_PRIMER_minimal.md (1876 chars, 5 fingerprints)
+[openhands_eval] plugin=False  memory_primer=None  self_refine=0
+[openhands_eval] extra_llm_envs=['LLM_LITELLM_EXTRA_BODY']
+[openhands_eval] output_dir=/home/matt/sci/repo3/data/eval/openhands_no_plugin/oh_dsv4_vanilla_s2
+[openhands_eval] <- AdvancedExampleDruckerPrager: failed_no_outputs  elapsed=53.1s
+[openhands_eval] <- AdvancedExampleExtendedDruckerPrager: failed_no_outputs  elapsed=68.2s
+[openhands_eval] <- AdvancedExampleCasedContactThermoElasticWellbore: failed_no_outputs  elapsed=85.9s
+[openhands_eval] <- AdvancedExampleDeviatedElasticWellbore: success  elapsed=141.6s
+[openhands_eval] <- buckleyLeverettProblem: failed_no_outputs  elapsed=66.6s
+[openhands_eval] <- AdvancedExampleViscoDruckerPrager: failed_no_outputs  elapsed=85.2s
+[openhands_eval] <- AdvancedExampleModifiedCamClay: success  elapsed=204.7s
+[openhands_eval] <- ExampleDPWellbore: success  elapsed=168.5s
+[openhands_eval] <- ExampleEDPWellbore: success  elapsed=177.5s
+[openhands_eval] <- ExampleThermoporoelasticConsolidation: success  elapsed=258.3s
+[openhands_eval] <- ExampleMandel: success  elapsed=347.4s
+[openhands_eval] <- ExampleThermalLeakyWell: success  elapsed=383.5s
+[openhands_eval] <- ExampleIsothermalLeakyWell: success  elapsed=570.6s
+[openhands_eval] <- TutorialPoroelasticity: failed_no_outputs  elapsed=116.6s
+[openhands_eval] <- pknViscosityDominated: success  elapsed=231.8s
+[openhands_eval] <- kgdExperimentValidation: success  elapsed=256.0s
+[openhands_eval] <- TutorialSneddon: success  elapsed=337.0s
+[openhands_eval] summary -> /home/matt/sci/repo3/data/eval/openhands_no_plugin/oh_dsv4_vanilla_s2/_summary.json

@@ -1,0 +1,28 @@
+{
+  "name": "geos-orchestrator",
+  "version": "0.1.0",
+  "description": "Sub-agent orchestrator for GEOS XML authoring. Decomposes <Problem> into per-segment subagents (mesh, regions+constitutive, solvers, drivers, events). Each carries a focused doc primer + schema slice. Distributes via plugin agents/.",
+  "author": {
+    "name": "Matt Ho"
+  },
+  "license": "MIT",
+  "keywords": [
+    "claude-code",
+    "plugin",
+    "agents",
+    "geos"
+  ],
+  "mcpServers": {
+    "geos-rag": {
+      "command": "uv",
+      "args": [
+        "run",
+        "--script",
+        "${CLAUDE_PLUGIN_ROOT}/scripts/geos_rag_mcp.py"
+      ],
+      "env": {
+        "GEOS_VECTOR_DB_DIR": "/data/shared/geophysics_agent_data/data/vector_db"
+      }
+    }
+  }
+}

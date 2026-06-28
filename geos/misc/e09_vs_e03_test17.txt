@@ -1,0 +1,43 @@
+
+==============================================================================
+  memws vs plugin
+==============================================================================
+  tasks in both: 15
+  only in plugin: ['AdvancedExampleViscoDruckerPrager', 'ExampleThermalLeakyWell']
+
+  memws
+    scored: 15/15    failed: []
+    mean: 0.622    median: 0.709    range: [0.071, 0.865]
+    pass >=0.7: 8/15
+
+  plugin
+    scored: 17/17    failed: []
+    mean: 0.831    median: 0.852    range: [0.583, 0.992]
+    pass >=0.7: 15/17
+
+  Paired on 15 tasks scored in both runs:
+    mean delta (memws - plugin): -0.212
+    median delta: -0.139
+    wins memws: 2
+    wins plugin: 13
+    ties: 0
+
+  Biggest wins for memws:
+    +0.075   memws=0.658  plugin=0.583   ExampleThermoporoelasticConsolidation
+    +0.028   memws=0.768  plugin=0.740   pknViscosityDominated
+    -0.013   memws=0.865  plugin=0.878   ExampleEDPWellbore
+    -0.016   memws=0.709  plugin=0.725   buckleyLeverettProblem
+    -0.050   memws=0.841  plugin=0.890   ExampleIsothermalLeakyWell
+    -0.061   memws=0.806  plugin=0.866   AdvancedExampleDeviatedElasticWellbore
+    -0.113   memws=0.804  plugin=0.918   AdvancedExampleModifiedCamClay
+    -0.139   memws=0.725  plugin=0.864   kgdExperimentValidation
+
+  Biggest wins for plugin:
+    -0.733   memws=0.071  plugin=0.804   TutorialSneddon
+    -0.696   memws=0.296  plugin=0.992   ExampleDPWellbore
+    -0.618   memws=0.330  plugin=0.948   ExampleMandel
+    -0.308   memws=0.361  plugin=0.670   TutorialPoroelasticity
+    -0.228   memws=0.619  plugin=0.847   AdvancedExampleCasedContactThermoElasticWellbore
+    -0.156   memws=0.803  plugin=0.959   AdvancedExampleExtendedDruckerPrager
+    -0.150   memws=0.673  plugin=0.823   AdvancedExampleDruckerPrager
+    -0.139   memws=0.725  plugin=0.864   kgdExperimentValidation

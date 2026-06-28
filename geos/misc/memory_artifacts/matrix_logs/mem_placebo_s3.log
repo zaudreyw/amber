@@ -1,0 +1,45 @@
+[93mWarning: --ground-truth-dir '/home/matt/sci/repo3/data/eval/experiments_gt' does not exist; GT XML blocking disabled.[0m
+
+[1m[95m======================================================================[0m
+[1m[95m  GEOS Eval Harness[0m
+[1m[95m======================================================================[0m
+  Run name       : mem_placebo_s3
+  Experiments dir: /data/shared/geophysics_agent_data/data/eval/experiments_test36_template
+  Tasks          : 17
+  Agents         : ['claude_code_repo3_plugin_m_placebo']
+  Combos         : 17
+  Timeout        : 1200s per task
+  Workers        : 12
+  Pseudo retries : 1
+  Dry run        : False
+  GT XML blocking: disabled
+  Results root   : /home/matt/sci/repo3/data/eval
+  Temp GEOS dir  : /data/matt/geos_eval_tmp
+  GEOS lib dir   : /data/shared/geophysics_agent_data/data/GEOS
+  GEOS primer    : /home/brianliu/geophys-embodied-agent-framework/modules/profile/GEOS_PRIMER.md
+  Plugin dir     : /home/matt/sci/repo3/plugin
+  Vector DB dir  : /data/shared/geophysics_agent_data/data/vector_db
+  Claude model   : minimax/minimax-m2.7
+  Results (claude_code_repo3_plugin_m_placebo): /home/matt/sci/repo3/data/eval/claude_code_repo3_plugin_m_placebo/mem_placebo_s3
+  Started        : 2026-04-22T04:57:57.328417
+[1m[95m======================================================================[0m
+
+[  1/17] [92msuccess       [0m  claude_code_repo3_plugin_m_placebo  AdvancedExampleDruckerPrager
+[  2/17] [92msuccess       [0m  claude_code_repo3_plugin_m_placebo  AdvancedExampleModifiedCamClay
+[  3/17] [92msuccess       [0m  claude_code_repo3_plugin_m_placebo  ExampleEDPWellbore
+[  4/17] [92msuccess       [0m  claude_code_repo3_plugin_m_placebo  ExampleIsothermalLeakyWell
+[  5/17] [92msuccess       [0m  claude_code_repo3_plugin_m_placebo  AdvancedExampleExtendedDruckerPrager
+[  6/17] [92msuccess       [0m  claude_code_repo3_plugin_m_placebo  AdvancedExampleViscoDruckerPrager
+[  7/17] [92msuccess       [0m  claude_code_repo3_plugin_m_placebo  TutorialSneddon
+[  8/17] [92msuccess       [0m  claude_code_repo3_plugin_m_placebo  AdvancedExampleDeviatedElasticWellbore
+[  9/17] [92msuccess       [0m  claude_code_repo3_plugin_m_placebo  AdvancedExampleCasedContactThermoElasticWellbore
+[ 10/17] [92msuccess       [0m  claude_code_repo3_plugin_m_placebo  buckleyLeverettProblem
+[ 11/17] [92msuccess       [0m  claude_code_repo3_plugin_m_placebo  ExampleThermalLeakyWell
+[ 12/17] [92msuccess       [0m  claude_code_repo3_plugin_m_placebo  ExampleMandel
+[ 13/17] [92msuccess       [0m  claude_code_repo3_plugin_m_placebo  kgdExperimentValidation
+[ 14/17] [92msuccess       [0m  claude_code_repo3_plugin_m_placebo  ExampleThermoporoelasticConsolidation
+[ 15/17] [92msuccess       [0m  claude_code_repo3_plugin_m_placebo  TutorialPoroelasticity
+[ 16/17] [92msuccess       [0m  claude_code_repo3_plugin_m_placebo  pknViscosityDominated
+[ 17/17] [92msuccess       [0m  claude_code_repo3_plugin_m_placebo  ExampleDPWellbore
+
+[1mDone[0m: [92m17 succeeded[0m, [91m0 failed[0m / 17 total

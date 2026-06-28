@@ -1,0 +1,46 @@
+[  1/17] AdvancedExampleCasedContactThermoElasticWellbore  0.46/10
+[  2/17] AdvancedExampleDeviatedElasticWellbore  1.01/10
+[  3/17] AdvancedExampleDruckerPrager  4.50/10
+[  4/17] AdvancedExampleExtendedDruckerPrager  3.11/10
+[  5/17] AdvancedExampleModifiedCamClay  5.92/10
+[  6/17] AdvancedExampleViscoDruckerPrager  4.69/10
+[  7/17] ExampleDPWellbore  3.02/10
+[  8/17] ExampleEDPWellbore  9.94/10
+[  9/17] ExampleIsothermalLeakyWell  2.70/10
+[ 10/17] ExampleMandel  1.08/10
+[ 11/17] ExampleThermalLeakyWell  2.61/10
+[ 12/17] ExampleThermoporoelasticConsolidation  2.52/10
+[ 13/17] TutorialPoroelasticity  3.86/10
+[ 14/17] TutorialSneddon  1.39/10
+[ 15/17] buckleyLeverettProblem  3.49/10
+[ 16/17] kgdExperimentValidation  2.07/10
+[ 17/17] pknViscosityDominated  0.88/10
+
+============================================================
+  Batch evaluation: 17/17 succeeded
+============================================================
+  Scored-only     overall_score mean: 3.132  (median 2.700, range 0.46-9.94)
+  Failures-as-0   overall_score mean: 3.132
+  Scored-only     treesim       mean: 0.313
+  Failures-as-0   treesim       mean: 0.313
+  Pass ≥7: 1/17 (of scored)
+
+   9.94/10  ExampleEDPWellbore  treesim=0.994
+   5.92/10  AdvancedExampleModifiedCamClay  treesim=0.592
+   4.69/10  AdvancedExampleViscoDruckerPrager  treesim=0.469
+   4.50/10  AdvancedExampleDruckerPrager  treesim=0.450
+   3.86/10  TutorialPoroelasticity  treesim=0.386
+   3.49/10  buckleyLeverettProblem  treesim=0.349
+   3.11/10  AdvancedExampleExtendedDruckerPrager  treesim=0.311
+   3.02/10  ExampleDPWellbore  treesim=0.302
+   2.70/10  ExampleIsothermalLeakyWell  treesim=0.270
+   2.61/10  ExampleThermalLeakyWell  treesim=0.261
+   2.52/10  ExampleThermoporoelasticConsolidation  treesim=0.252
+   2.07/10  kgdExperimentValidation  treesim=0.207
+   1.39/10  TutorialSneddon  treesim=0.139
+   1.08/10  ExampleMandel  treesim=0.108
+   1.01/10  AdvancedExampleDeviatedElasticWellbore  treesim=0.101
+   0.88/10  pknViscosityDominated  treesim=0.088
+   0.46/10  AdvancedExampleCasedContactThermoElasticWellbore  treesim=0.046
+
+Wrote misc/memory_artifacts/scores/mem_m4g_s2_summary.json

@@ -1,0 +1,42 @@
+
+==============================================================================
+  silent vs plugin
+==============================================================================
+  tasks in both: 17
+
+  silent
+    scored: 17/17    failed: []
+    mean: 0.651    median: 0.680    range: [0.290, 0.961]
+    pass >=0.7: 7/17
+
+  plugin
+    scored: 17/17    failed: []
+    mean: 0.831    median: 0.852    range: [0.583, 0.992]
+    pass >=0.7: 15/17
+
+  Paired on 17 tasks scored in both runs:
+    mean delta (silent - plugin): -0.180
+    median delta: -0.142
+    wins silent: 4
+    wins plugin: 13
+    ties: 0
+
+  Biggest wins for silent:
+    +0.221   silent=0.961  plugin=0.740   pknViscosityDominated
+    +0.039   silent=0.801  plugin=0.762   AdvancedExampleViscoDruckerPrager
+    +0.013   silent=0.596  plugin=0.583   ExampleThermoporoelasticConsolidation
+    +0.006   silent=0.829  plugin=0.823   AdvancedExampleDruckerPrager
+    -0.040   silent=0.850  plugin=0.890   ExampleIsothermalLeakyWell
+    -0.051   silent=0.674  plugin=0.725   buckleyLeverettProblem
+    -0.098   silent=0.780  plugin=0.878   ExampleEDPWellbore
+    -0.099   silent=0.765  plugin=0.864   kgdExperimentValidation
+
+  Biggest wins for plugin:
+    -0.688   silent=0.304  plugin=0.992   ExampleDPWellbore
+    -0.658   silent=0.290  plugin=0.948   ExampleMandel
+    -0.371   silent=0.432  plugin=0.804   TutorialSneddon
+    -0.324   silent=0.635  plugin=0.959   AdvancedExampleExtendedDruckerPrager
+    -0.318   silent=0.351  plugin=0.670   TutorialPoroelasticity
+    -0.193   silent=0.653  plugin=0.847   AdvancedExampleCasedContactThermoElasticWellbore
+    -0.178   silent=0.688  plugin=0.866   AdvancedExampleDeviatedElasticWellbore
+    -0.172   silent=0.680  plugin=0.852   ExampleThermalLeakyWell

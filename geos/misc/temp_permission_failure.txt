@@ -1,0 +1,128 @@
+(base) matt@sn4622122387:~/sci/repo3$ python scripts/run_experiment.py \
+    --run ablation_deepseek \
+    --agents claude_code_no_plugin \
+    --claude-model deepseek/deepseek-v3.2 \
+    --experiments-dir /data/shared/geophysics_agent_data/data/eval/experiments \
+    --ground-truth-dir /data/shared/geophysics_agent_data/data/eval/experiments_gt \
+    --tmp-geos-parent /data/shared/geophysics_agent_data/data/eval/tmp_geos
+
+======================================================================
+  GEOS Eval Harness
+======================================================================
+  Run name       : ablation_deepseek
+  Experiments dir: /data/shared/geophysics_agent_data/data/eval/experiments
+  Tasks          : 46
+  Agents         : ['claude_code_no_plugin']
+  Combos         : 46
+  Timeout        : 600s per task
+  Workers        : 2
+  Pseudo retries : 1
+  Dry run        : False
+  GT XML blocking: /data/shared/geophysics_agent_data/data/eval/experiments_gt
+  Results root   : /home/matt/sci/repo3/data/eval
+  Temp GEOS dir  : /data/shared/geophysics_agent_data/data/eval/tmp_geos
+  GEOS primer    : /home/brianliu/geophys-embodied-agent-framework/modules/profile/GEOS_PRIMER.md
+  Plugin dir     : /home/matt/sci/repo3/plugin
+  Vector DB dir  : /data/shared/geophysics_agent_data/data/vector_db
+  Claude model   : deepseek/deepseek-v3.2
+  Results (claude_code_no_plugin): /home/matt/sci/repo3/data/eval/claude_code_no_plugin/ablation_deepseek
+  Started        : 2026-04-19T03:59:13.912306
+======================================================================
+
+[  1/46] ERROR           claude_code_no_plugin         AdvancedExampleCasedElasticWellbore  ([Errno 13] Permission denied: '/data/shared/geophysics_agent_data/data/eval/tmp_geos/geos_eval_hjto91wk')
+[  2/46] ERROR           claude_code_no_plugin         AdvancedExampleCasedContactThermoElasticWellbore  ([Errno 13] Permission denied: '/data/shared/geophysics_agent_data/data/eval/tmp_geos/geos_eval_pby_mi7z')
+[  3/46] ERROR           claude_code_no_plugin         AdvancedExampleCasedElasticWellboreImperfectInterfaces  ([Errno 13] Permission denied: '/data/shared/geophysics_agent_data/data/eval/tmp_geos/geos_eval_cycwiu7d')
+[  4/46] ERROR           claude_code_no_plugin         AdvancedExampleCasedThermoElasticWellbore  ([Errno 13] Permission denied: '/data/shared/geophysics_agent_data/data/eval/tmp_geos/geos_eval_ksosoquo')
+[  5/46] ERROR           claude_code_no_plugin         AdvancedExampleDeviatedElasticWellbore  ([Errno 13] Permission denied: '/data/shared/geophysics_agent_data/data/eval/tmp_geos/geos_eval_ukvdbo_q')
+[  6/46] ERROR           claude_code_no_plugin         AdvancedExampleDeviatedPoroElasticWellbore  ([Errno 13] Permission denied: '/data/shared/geophysics_agent_data/data/eval/tmp_geos/geos_eval_jh8vpu5x')
+[  7/46] ERROR           claude_code_no_plugin         AdvancedExampleDruckerPrager  ([Errno 13] Permission denied: '/data/shared/geophysics_agent_data/data/eval/tmp_geos/geos_eval_wu3gmp3l')
+[  8/46] ERROR           claude_code_no_plugin         AdvancedExampleModifiedCamClay  ([Errno 13] Permission denied: '/data/shared/geophysics_agent_data/data/eval/tmp_geos/geos_eval_w4iif6zx')
+[  9/46] ERROR           claude_code_no_plugin         AdvancedExampleExtendedDruckerPrager  ([Errno 13] Permission denied: '/data/shared/geophysics_agent_data/data/eval/tmp_geos/geos_eval_l7mdjyt0')
+[ 10/46] ERROR           claude_code_no_plugin         AdvancedExamplePureThermalDiffusionWellbore  ([Errno 13] Permission denied: '/data/shared/geophysics_agent_data/data/eval/tmp_geos/geos_eval_o03wkik9')
+[ 11/46] ERROR           claude_code_no_plugin         AdvancedExampleThermoPoroElasticWellbore  ([Errno 13] Permission denied: '/data/shared/geophysics_agent_data/data/eval/tmp_geos/geos_eval_k2hq000i')
+[ 12/46] ERROR           claude_code_no_plugin         AdvancedExampleViscoDruckerPrager  ([Errno 13] Permission denied: '/data/shared/geophysics_agent_data/data/eval/tmp_geos/geos_eval_h_tcrvy8')
+[ 13/46] ERROR           claude_code_no_plugin         AdvancedExampleViscoExtendedDruckerPrager  ([Errno 13] Permission denied: '/data/shared/geophysics_agent_data/data/eval/tmp_geos/geos_eval_lexgyym5')
+[ 14/46] ERROR           claude_code_no_plugin         AdvancedExampleViscoModifiedCamClay  ([Errno 13] Permission denied: '/data/shared/geophysics_agent_data/data/eval/tmp_geos/geos_eval_j_q7q2cc')
+[ 15/46] ERROR           claude_code_no_plugin         AdvancedWellboreExampleNonLinearThermalDiffusionTemperatureDependentVolumetricHeatCapacity  ([Errno 13] Permission denied: '/data/shared/geophysics_agent_data/data/eval/tmp_geos/geos_eval_kliq0l0c')
+[ 16/46] ERROR           claude_code_no_plugin         AdvancedExampleWellboreNonLinearThermalDiffusionTemperatureDependentSinglePhaseThermalConductivity  ([Errno 13] Permission denied: '/data/shared/geophysics_agent_data/data/eval/tmp_geos/geos_eval_u9v11t_q')
+[ 17/46] ERROR           claude_code_no_plugin         ExampleDPWellbore  ([Errno 13] Permission denied: '/data/shared/geophysics_agent_data/data/eval/tmp_geos/geos_eval_7_hntk6x')
+[ 18/46] ERROR           claude_code_no_plugin         ExampleEDPWellbore  ([Errno 13] Permission denied: '/data/shared/geophysics_agent_data/data/eval/tmp_geos/geos_eval_kgq1hhxw')
+[ 19/46] ERROR           claude_code_no_plugin         ExampleIsothermalLeakyWell  ([Errno 13] Permission denied: '/data/shared/geophysics_agent_data/data/eval/tmp_geos/geos_eval_nnosyas3')
+[ 20/46] ERROR           claude_code_no_plugin         ExampleIsothermalHystInjection  ([Errno 13] Permission denied: '/data/shared/geophysics_agent_data/data/eval/tmp_geos/geos_eval_7ydhlblg')
+[ 21/46] ERROR           claude_code_no_plugin         ExampleKirschWellbore  ([Errno 13] Permission denied: '/data/shared/geophysics_agent_data/data/eval/tmp_geos/geos_eval_25roxrgv')
+[ 22/46] ERROR           claude_code_no_plugin         ExampleMCCWellbore  ([Errno 13] Permission denied: '/data/shared/geophysics_agent_data/data/eval/tmp_geos/geos_eval_ve_qdnw4')
+[ 23/46] ERROR           claude_code_no_plugin         ExampleMandel  ([Errno 13] Permission denied: '/data/shared/geophysics_agent_data/data/eval/tmp_geos/geos_eval_suwe18iv')
+[ 24/46] ERROR           claude_code_no_plugin         ExampleProppantTest  ([Errno 13] Permission denied: '/data/shared/geophysics_agent_data/data/eval/tmp_geos/geos_eval_07ud_zee')
+[ 25/46] ERROR           claude_code_no_plugin         ExampleSPE11b  ([Errno 13] Permission denied: '/data/shared/geophysics_agent_data/data/eval/tmp_geos/geos_eval_5fx5uasl')
+[ 26/46] ERROR           claude_code_no_plugin         ExampleTFrac  ([Errno 13] Permission denied: '/data/shared/geophysics_agent_data/data/eval/tmp_geos/geos_eval_ax85tlur')
+[ 27/46] ERROR           claude_code_no_plugin         ExampleThermalLeakyWell  ([Errno 13] Permission denied: '/data/shared/geophysics_agent_data/data/eval/tmp_geos/geos_eval_j05okdqa')
+[ 28/46] ERROR           claude_code_no_plugin         ExampleThermoporoelasticConsolidation  ([Errno 13] Permission denied: '/data/shared/geophysics_agent_data/data/eval/tmp_geos/geos_eval_06kbqdp2')
+[ 29/46] ERROR           claude_code_no_plugin         ExampleVerticalPoroElastoPlasticWellbore  ([Errno 13] Permission denied: '/data/shared/geophysics_agent_data/data/eval/tmp_geos/geos_eval_lz_ukbsg')
+[ 30/46] ERROR           claude_code_no_plugin         TutorialCO2FieldCase  ([Errno 13] Permission denied: '/data/shared/geophysics_agent_data/data/eval/tmp_geos/geos_eval_v_8x0cuq')
+[ 31/46] ERROR           claude_code_no_plugin         ExamplesingleFracCompression  ([Errno 13] Permission denied: '/data/shared/geophysics_agent_data/data/eval/tmp_geos/geos_eval_xveivajg')
+[ 32/46] ERROR           claude_code_no_plugin         TutorialDeadOilBottomLayersSPE10  ([Errno 13] Permission denied: '/data/shared/geophysics_agent_data/data/eval/tmp_geos/geos_eval_8r7qsux7')
+[ 33/46] ERROR           claude_code_no_plugin         TutorialDeadOilEgg  ([Errno 13] Permission denied: '/data/shared/geophysics_agent_data/data/eval/tmp_geos/geos_eval_glvbccmk')
+[ 34/46] ERROR           claude_code_no_plugin         TutorialPoroelasticity  ([Errno 13] Permission denied: '/data/shared/geophysics_agent_data/data/eval/tmp_geos/geos_eval__db3iso4')
+[ 35/46] ERROR           claude_code_no_plugin         TutorialSneddon  ([Errno 13] Permission denied: '/data/shared/geophysics_agent_data/data/eval/tmp_geos/geos_eval_qweejdut')
+[ 36/46] ERROR           claude_code_no_plugin         TutorialHydraulicFractureWithAdvancedXML  ([Errno 13] Permission denied: '/data/shared/geophysics_agent_data/data/eval/tmp_geos/geos_eval_nolc10fg')
+[ 37/46] ERROR           claude_code_no_plugin         buckleyLeverettProblem  ([Errno 13] Permission denied: '/data/shared/geophysics_agent_data/data/eval/tmp_geos/geos_eval_nv7o_g50')
+[ 38/46] ERROR           claude_code_no_plugin         faultVerification  ([Errno 13] Permission denied: '/data/shared/geophysics_agent_data/data/eval/tmp_geos/geos_eval_fwrrnjrt')
+[ 39/46] ERROR           claude_code_no_plugin         kgdExperimentValidation  ([Errno 13] Permission denied: '/data/shared/geophysics_agent_data/data/eval/tmp_geos/geos_eval_ebx1efsa')
+[ 40/46] ERROR           claude_code_no_plugin         kgdToughnessDominated  ([Errno 13] Permission denied: '/data/shared/geophysics_agent_data/data/eval/tmp_geos/geos_eval_aoixcb7c')
+[ 41/46] ERROR           claude_code_no_plugin         kgdViscosityDominated  ([Errno 13] Permission denied: '/data/shared/geophysics_agent_data/data/eval/tmp_geos/geos_eval_nuf4jedo')
+[ 42/46] ERROR           claude_code_no_plugin         pennyFracToughnessDominated  ([Errno 13] Permission denied: '/data/shared/geophysics_agent_data/data/eval/tmp_geos/geos_eval_culun1gc')
+[ 43/46] ERROR           claude_code_no_plugin         pennyFracViscosityDominated  ([Errno 13] Permission denied: '/data/shared/geophysics_agent_data/data/eval/tmp_geos/geos_eval_qzktuozk')
+[ 44/46] ERROR           claude_code_no_plugin         pknViscosityDominated  ([Errno 13] Permission denied: '/data/shared/geophysics_agent_data/data/eval/tmp_geos/geos_eval_ncz45uap')
+[ 45/46] ERROR           claude_code_no_plugin         relaxationTest  ([Errno 13] Permission denied: '/data/shared/geophysics_agent_data/data/eval/tmp_geos/geos_eval_w1vciqth')
+[ 46/46] ERROR           claude_code_no_plugin         triaxialDriverExample  ([Errno 13] Permission denied: '/data/shared/geophysics_agent_data/data/eval/tmp_geos/geos_eval_tatomv31')
+
+Done: 0 succeeded, 46 failed / 46 total
+
+Failed tasks:
+  [error] claude_code_no_plugin / AdvancedExampleCasedElasticWellbore: [Errno 13] Permission denied: '/data/shared/geophysics_agent_data/data/eval/tmp_geos/geos_eval_hjto91wk'
+  [error] claude_code_no_plugin / AdvancedExampleCasedContactThermoElasticWellbore: [Errno 13] Permission denied: '/data/shared/geophysics_agent_data/data/eval/tmp_geos/geos_eval_pby_mi7z'
+  [error] claude_code_no_plugin / AdvancedExampleCasedElasticWellboreImperfectInterfaces: [Errno 13] Permission denied: '/data/shared/geophysics_agent_data/data/eval/tmp_geos/geos_eval_cycwiu7d'
+  [error] claude_code_no_plugin / AdvancedExampleCasedThermoElasticWellbore: [Errno 13] Permission denied: '/data/shared/geophysics_agent_data/data/eval/tmp_geos/geos_eval_ksosoquo'
+  [error] claude_code_no_plugin / AdvancedExampleDeviatedElasticWellbore: [Errno 13] Permission denied: '/data/shared/geophysics_agent_data/data/eval/tmp_geos/geos_eval_ukvdbo_q'
+  [error] claude_code_no_plugin / AdvancedExampleDeviatedPoroElasticWellbore: [Errno 13] Permission denied: '/data/shared/geophysics_agent_data/data/eval/tmp_geos/geos_eval_jh8vpu5x'
+  [error] claude_code_no_plugin / AdvancedExampleDruckerPrager: [Errno 13] Permission denied: '/data/shared/geophysics_agent_data/data/eval/tmp_geos/geos_eval_wu3gmp3l'
+  [error] claude_code_no_plugin / AdvancedExampleModifiedCamClay: [Errno 13] Permission denied: '/data/shared/geophysics_agent_data/data/eval/tmp_geos/geos_eval_w4iif6zx'
+  [error] claude_code_no_plugin / AdvancedExampleExtendedDruckerPrager: [Errno 13] Permission denied: '/data/shared/geophysics_agent_data/data/eval/tmp_geos/geos_eval_l7mdjyt0'
+  [error] claude_code_no_plugin / AdvancedExamplePureThermalDiffusionWellbore: [Errno 13] Permission denied: '/data/shared/geophysics_agent_data/data/eval/tmp_geos/geos_eval_o03wkik9'
+  [error] claude_code_no_plugin / AdvancedExampleThermoPoroElasticWellbore: [Errno 13] Permission denied: '/data/shared/geophysics_agent_data/data/eval/tmp_geos/geos_eval_k2hq000i'
+  [error] claude_code_no_plugin / AdvancedExampleViscoDruckerPrager: [Errno 13] Permission denied: '/data/shared/geophysics_agent_data/data/eval/tmp_geos/geos_eval_h_tcrvy8'
+  [error] claude_code_no_plugin / AdvancedExampleViscoExtendedDruckerPrager: [Errno 13] Permission denied: '/data/shared/geophysics_agent_data/data/eval/tmp_geos/geos_eval_lexgyym5'
+  [error] claude_code_no_plugin / AdvancedExampleViscoModifiedCamClay: [Errno 13] Permission denied: '/data/shared/geophysics_agent_data/data/eval/tmp_geos/geos_eval_j_q7q2cc'
+  [error] claude_code_no_plugin / AdvancedWellboreExampleNonLinearThermalDiffusionTemperatureDependentVolumetricHeatCapacity: [Errno 13] Permission denied: '/data/shared/geophysics_agent_data/data/eval/tmp_geos/geos_eval_kliq0l0c'
+  [error] claude_code_no_plugin / AdvancedExampleWellboreNonLinearThermalDiffusionTemperatureDependentSinglePhaseThermalConductivity: [Errno 13] Permission denied: '/data/shared/geophysics_agent_data/data/eval/tmp_geos/geos_eval_u9v11t_q'
+  [error] claude_code_no_plugin / ExampleDPWellbore: [Errno 13] Permission denied: '/data/shared/geophysics_agent_data/data/eval/tmp_geos/geos_eval_7_hntk6x'
+  [error] claude_code_no_plugin / ExampleEDPWellbore: [Errno 13] Permission denied: '/data/shared/geophysics_agent_data/data/eval/tmp_geos/geos_eval_kgq1hhxw'
+  [error] claude_code_no_plugin / ExampleIsothermalLeakyWell: [Errno 13] Permission denied: '/data/shared/geophysics_agent_data/data/eval/tmp_geos/geos_eval_nnosyas3'
+  [error] claude_code_no_plugin / ExampleIsothermalHystInjection: [Errno 13] Permission denied: '/data/shared/geophysics_agent_data/data/eval/tmp_geos/geos_eval_7ydhlblg'
+  [error] claude_code_no_plugin / ExampleKirschWellbore: [Errno 13] Permission denied: '/data/shared/geophysics_agent_data/data/eval/tmp_geos/geos_eval_25roxrgv'
+  [error] claude_code_no_plugin / ExampleMCCWellbore: [Errno 13] Permission denied: '/data/shared/geophysics_agent_data/data/eval/tmp_geos/geos_eval_ve_qdnw4'
+  [error] claude_code_no_plugin / ExampleMandel: [Errno 13] Permission denied: '/data/shared/geophysics_agent_data/data/eval/tmp_geos/geos_eval_suwe18iv'
+  [error] claude_code_no_plugin / ExampleProppantTest: [Errno 13] Permission denied: '/data/shared/geophysics_agent_data/data/eval/tmp_geos/geos_eval_07ud_zee'
+  [error] claude_code_no_plugin / ExampleSPE11b: [Errno 13] Permission denied: '/data/shared/geophysics_agent_data/data/eval/tmp_geos/geos_eval_5fx5uasl'
+  [error] claude_code_no_plugin / ExampleTFrac: [Errno 13] Permission denied: '/data/shared/geophysics_agent_data/data/eval/tmp_geos/geos_eval_ax85tlur'
+  [error] claude_code_no_plugin / ExampleThermalLeakyWell: [Errno 13] Permission denied: '/data/shared/geophysics_agent_data/data/eval/tmp_geos/geos_eval_j05okdqa'
+  [error] claude_code_no_plugin / ExampleThermoporoelasticConsolidation: [Errno 13] Permission denied: '/data/shared/geophysics_agent_data/data/eval/tmp_geos/geos_eval_06kbqdp2'
+  [error] claude_code_no_plugin / ExampleVerticalPoroElastoPlasticWellbore: [Errno 13] Permission denied: '/data/shared/geophysics_agent_data/data/eval/tmp_geos/geos_eval_lz_ukbsg'
+  [error] claude_code_no_plugin / TutorialCO2FieldCase: [Errno 13] Permission denied: '/data/shared/geophysics_agent_data/data/eval/tmp_geos/geos_eval_v_8x0cuq'
+  [error] claude_code_no_plugin / ExamplesingleFracCompression: [Errno 13] Permission denied: '/data/shared/geophysics_agent_data/data/eval/tmp_geos/geos_eval_xveivajg'
+  [error] claude_code_no_plugin / TutorialDeadOilBottomLayersSPE10: [Errno 13] Permission denied: '/data/shared/geophysics_agent_data/data/eval/tmp_geos/geos_eval_8r7qsux7'
+  [error] claude_code_no_plugin / TutorialDeadOilEgg: [Errno 13] Permission denied: '/data/shared/geophysics_agent_data/data/eval/tmp_geos/geos_eval_glvbccmk'
+  [error] claude_code_no_plugin / TutorialPoroelasticity: [Errno 13] Permission denied: '/data/shared/geophysics_agent_data/data/eval/tmp_geos/geos_eval__db3iso4'
+  [error] claude_code_no_plugin / TutorialSneddon: [Errno 13] Permission denied: '/data/shared/geophysics_agent_data/data/eval/tmp_geos/geos_eval_qweejdut'
+  [error] claude_code_no_plugin / TutorialHydraulicFractureWithAdvancedXML: [Errno 13] Permission denied: '/data/shared/geophysics_agent_data/data/eval/tmp_geos/geos_eval_nolc10fg'
+  [error] claude_code_no_plugin / buckleyLeverettProblem: [Errno 13] Permission denied: '/data/shared/geophysics_agent_data/data/eval/tmp_geos/geos_eval_nv7o_g50'
+  [error] claude_code_no_plugin / faultVerification: [Errno 13] Permission denied: '/data/shared/geophysics_agent_data/data/eval/tmp_geos/geos_eval_fwrrnjrt'
+  [error] claude_code_no_plugin / kgdExperimentValidation: [Errno 13] Permission denied: '/data/shared/geophysics_agent_data/data/eval/tmp_geos/geos_eval_ebx1efsa'
+  [error] claude_code_no_plugin / kgdToughnessDominated: [Errno 13] Permission denied: '/data/shared/geophysics_agent_data/data/eval/tmp_geos/geos_eval_aoixcb7c'
+  [error] claude_code_no_plugin / kgdViscosityDominated: [Errno 13] Permission denied: '/data/shared/geophysics_agent_data/data/eval/tmp_geos/geos_eval_nuf4jedo'
+  [error] claude_code_no_plugin / pennyFracToughnessDominated: [Errno 13] Permission denied: '/data/shared/geophysics_agent_data/data/eval/tmp_geos/geos_eval_culun1gc'
+  [error] claude_code_no_plugin / pennyFracViscosityDominated: [Errno 13] Permission denied: '/data/shared/geophysics_agent_data/data/eval/tmp_geos/geos_eval_qzktuozk'
+  [error] claude_code_no_plugin / pknViscosityDominated: [Errno 13] Permission denied: '/data/shared/geophysics_agent_data/data/eval/tmp_geos/geos_eval_ncz45uap'
+  [error] claude_code_no_plugin / relaxationTest: [Errno 13] Permission denied: '/data/shared/geophysics_agent_data/data/eval/tmp_geos/geos_eval_w1vciqth'
+  [error] claude_code_no_plugin / triaxialDriverExample: [Errno 13] Permission denied: '/data/shared/geophysics_agent_data/data/eval/tmp_geos/geos_eval_tatomv31'
+

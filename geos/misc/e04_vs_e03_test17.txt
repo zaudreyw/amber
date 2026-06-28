@@ -1,0 +1,43 @@
+
+==============================================================================
+  memory vs plugin
+==============================================================================
+  tasks in both: 14
+  only in plugin: ['AdvancedExampleModifiedCamClay', 'ExampleThermoporoelasticConsolidation', 'TutorialPoroelasticity']
+
+  memory
+    scored: 14/14    failed: []
+    mean: 0.532    median: 0.643    range: [0.089, 0.870]
+    pass >=0.7: 4/14
+
+  plugin
+    scored: 17/17    failed: []
+    mean: 0.831    median: 0.852    range: [0.583, 0.992]
+    pass >=0.7: 15/17
+
+  Paired on 14 tasks scored in both runs:
+    mean delta (memory - plugin): -0.322
+    median delta: -0.214
+    wins memory: 1
+    wins plugin: 13
+    ties: 0
+
+  Biggest wins for memory:
+    +0.130   memory=0.870  plugin=0.740   pknViscosityDominated
+    -0.013   memory=0.810  plugin=0.823   AdvancedExampleDruckerPrager
+    -0.073   memory=0.817  plugin=0.890   ExampleIsothermalLeakyWell
+    -0.085   memory=0.640  plugin=0.725   buckleyLeverettProblem
+    -0.169   memory=0.790  plugin=0.959   AdvancedExampleExtendedDruckerPrager
+    -0.174   memory=0.690  plugin=0.864   kgdExperimentValidation
+    -0.206   memory=0.646  plugin=0.852   ExampleThermalLeakyWell
+    -0.223   memory=0.656  plugin=0.878   ExampleEDPWellbore
+
+  Biggest wins for plugin:
+    -0.714   memory=0.089  plugin=0.804   TutorialSneddon
+    -0.699   memory=0.293  plugin=0.992   ExampleDPWellbore
+    -0.651   memory=0.298  plugin=0.948   ExampleMandel
+    -0.636   memory=0.211  plugin=0.847   AdvancedExampleCasedContactThermoElasticWellbore
+    -0.625   memory=0.241  plugin=0.866   AdvancedExampleDeviatedElasticWellbore
+    -0.370   memory=0.391  plugin=0.762   AdvancedExampleViscoDruckerPrager
+    -0.223   memory=0.656  plugin=0.878   ExampleEDPWellbore
+    -0.206   memory=0.646  plugin=0.852   ExampleThermalLeakyWell

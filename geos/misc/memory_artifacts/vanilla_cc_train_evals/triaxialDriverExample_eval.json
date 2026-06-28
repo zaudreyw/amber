@@ -1,0 +1,5 @@
+{
+  "experiment": "triaxialDriverExample",
+  "status": "error",
+  "error": "ValueError: Failed to parse XMLs in data/eval/claude_code_no_plugin/vanilla_cc_train_s1/triaxialDriverExample/inputs: triaxialDriver_ExtendedDruckerPrager_basicExample.xml: not well-formed (invalid token): line 29, column 60"
+}

@@ -1,0 +1,56 @@
+[
+  {
+    "title": "Hydrofracture Solver Hierarchy",
+    "description": "Correct nesting and solver selection for hydraulic fracturing simulations.",
+    "solver_family": "hydrofracture",
+    "kind": "structural_pattern",
+    "abstraction_level": "high",
+    "applies_when": "Physics involves fluid-driven fracture propagation (KGD, radial, or penny-shaped).",
+    "content": "Use Hydrofracture as the top-level solver. It must reference a flowSolverName (typically SinglePhaseFVM) and a solidSolverName (typically SolidMechanicsLagrangianFEM). Ensure the fracture surface is defined in the Geometry section and referenced by the solver to handle aperture and propagation."
+  },
+  {
+    "title": "Avoid Fracture Vocabulary Hallucinations",
+    "description": "Prevents the use of non-existent fracture-related tags.",
+    "solver_family": "hydrofracture",
+    "kind": "anti_pattern",
+    "abstraction_level": "medium",
+    "applies_when": "Defining fracture geometry or propagation logic.",
+    "content": "Do NOT use <FractureModel>, <FractureProperties>, or <PropagationCriteria>. These are not valid GEOS elements. Use SurfaceGenerator within the Geometry section to define the fracture plane and use the Hydrofracture solver attributes to control propagation logic."
+  },
+  {
+    "title": "Poromechanics Coupling Structure",
+    "description": "Mandatory attributes for coupled poromechanical simulations.",
+    "solver_family": "poromechanics",
+    "kind": "attribute_rule",
+    "abstraction_level": "medium",
+    "applies_when": "Simulating coupled fluid flow and solid deformation.",
+    "content": "The SinglePhasePoromechanics solver requires explicit mapping of sub-solvers. Use the attributes solidSolverName and flowSolverName to link to the respective Lagrangian mechanics and finite volume flow solvers. Ensure the ElementRegions reference a constitutive model that supports poromechanics, such as those involving Biot coefficients."
+  },
+  {
+    "title": "Avoid Generic Boundary Condition Hallucinations",
+    "description": "Prevents the use of standard FEA BC tags that do not exist in GEOS.",
+    "solver_family": "all",
+    "kind": "anti_pattern",
+    "abstraction_level": "high",
+    "applies_when": "Defining boundary conditions or initial loads.",
+    "content": "Do NOT use <BoundaryCondition>, <FixedConstraint>, or <PressureLoad>. GEOS uses FieldSpecifications for all spatial and temporal field assignments. Within FieldSpecifications, use specific types like BoxFieldSpecification or ComponentFieldSpecification to apply values to sets or regions."
+  },
+  {
+    "title": "Triaxial Test Driver Configuration",
+    "description": "Pattern for single-element or laboratory-scale geomechanics tests.",
+    "solver_family": "triaxial",
+    "kind": "section_skeleton",
+    "abstraction_level": "medium",
+    "applies_when": "Task specifies strain-controlled or stress-controlled compression (e.g., Cam-Clay or Drucker-Prager validation).",
+    "content": "Use the TriaxialDriver element. It requires a Constitutive section defining the soil/rock model (e.g., ViscoplasticModifiedCamClay). The driver must specify control parameters for axial and lateral loading, often referencing specific strain rates or confining pressures directly in its attributes rather than via FieldSpecifications."
+  },
+  {
+    "title": "Thermal-Fluid Coupling Requirements",
+    "description": "Rules for thermal transport in porous media.",
+    "solver_family": "thermal",
+    "kind": "attribute_rule",
+    "abstraction_level": "medium",
+    "applies_when": "Simulating heat transfer in fluid-filled rock.",
+    "content": "Use SinglePhaseThermalFVM. This solver requires a fluid constitutive model that defines heat capacity and thermal conductivity. In the ElementRegions, you must link the thermal solver to a CellElementRegion that specifies both the solid and fluid phase thermal properties."
+  }
+]

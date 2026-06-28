@@ -1,0 +1,270 @@
+{
+  "union_xml": [
+    "buckleyleverett_base.xml",
+    "buckleyleverett_benchmark.xml",
+    "buckleyleverett_smoke.xml",
+    "casedthermoelasticwellbore_imperfectinterfaces_base.xml",
+    "casedthermoelasticwellbore_imperfectinterfaces_benchmark.xml",
+    "casedthermoelasticwellbore_imperfectinterfaces_smoke.xml",
+    "contactmechanics_sneddon_benchmark.xml",
+    "contactmechanics_sneddon_smoke.xml",
+    "deviatedelasticwellbore_base.xml",
+    "deviatedelasticwellbore_benchmark.xml",
+    "deviatedelasticwellbore_smoke.xml",
+    "druckerpragerwellbore_base.xml",
+    "druckerpragerwellbore_benchmark.xml",
+    "druckerpragerwellbore_smoke.xml",
+    "extendeddruckerpragerwellbore_base.xml",
+    "extendeddruckerpragerwellbore_benchmark.xml",
+    "extendeddruckerpragerwellbore_smoke.xml",
+    "isothermalleakywell_base_direct.xml",
+    "isothermalleakywell_base_iterative.xml",
+    "isothermalleakywell_benchmark.xml",
+    "kgdvalidation_base.xml",
+    "kgdvalidation_benchmark.xml",
+    "kgdvalidation_smoke.xml",
+    "pknviscositydominated_base.xml",
+    "pknviscositydominated_benchmark.xml",
+    "pknviscositydominated_smoke.xml",
+    "poroelastic_mandel_base.xml",
+    "poroelastic_mandel_benchmark_fim.xml",
+    "poroelastic_mandel_smoke_sequential.xml",
+    "poroelastic_terzaghi_base_direct.xml",
+    "poroelastic_terzaghi_base_iterative.xml",
+    "poroelastic_terzaghi_benchmark.xml",
+    "poroelastic_terzaghi_smoke.xml",
+    "sneddon_base.xml",
+    "sneddon_benchmark.xml",
+    "sneddon_embeddedfrac_base.xml",
+    "sneddon_embeddedfrac_benchmark.xml",
+    "sneddon_embeddedfrac_smoke.xml",
+    "sneddon_embeddedfrac_verification.xml",
+    "sneddon_hydrofrac_base.xml",
+    "sneddon_hydrofrac_benchmark.xml",
+    "sneddon_hydrofrac_smoke.xml",
+    "thermalleakywell_base.xml",
+    "thermalleakywell_base_iterative.xml",
+    "thermalleakywell_benchmark.xml",
+    "thermoporoelastic_consolidation_base.xml",
+    "thermoporoelastic_consolidation_benchmark_base.xml",
+    "thermoporoelastic_consolidation_benchmark_fim.xml",
+    "thermoporoelastic_consolidation_smoke_base.xml",
+    "thermoporoelastic_consolidation_smoke_fim.xml",
+    "triaxialdriver_base.xml",
+    "triaxialdriver_druckerprager.xml",
+    "triaxialdriver_extendeddruckerprager.xml",
+    "triaxialdriver_modifiedcamclay.xml",
+    "triaxialdriver_viscodruckerprager.xml"
+  ],
+  "per_task_xml": {
+    "ExampleDPWellbore": [
+      "druckerpragerwellbore_base.xml",
+      "druckerpragerwellbore_benchmark.xml",
+      "druckerpragerwellbore_smoke.xml"
+    ],
+    "AdvancedExampleExtendedDruckerPrager": [
+      "triaxialdriver_base.xml",
+      "triaxialdriver_extendeddruckerprager.xml"
+    ],
+    "ExampleMandel": [
+      "poroelastic_mandel_base.xml",
+      "poroelastic_mandel_benchmark_fim.xml",
+      "poroelastic_mandel_smoke_sequential.xml"
+    ],
+    "AdvancedExampleModifiedCamClay": [
+      "triaxialdriver_base.xml",
+      "triaxialdriver_modifiedcamclay.xml"
+    ],
+    "ExampleIsothermalLeakyWell": [
+      "isothermalleakywell_base_direct.xml",
+      "isothermalleakywell_base_iterative.xml",
+      "isothermalleakywell_benchmark.xml"
+    ],
+    "ExampleEDPWellbore": [
+      "extendeddruckerpragerwellbore_base.xml",
+      "extendeddruckerpragerwellbore_benchmark.xml",
+      "extendeddruckerpragerwellbore_smoke.xml"
+    ],
+    "AdvancedExampleDeviatedElasticWellbore": [
+      "deviatedelasticwellbore_base.xml",
+      "deviatedelasticwellbore_benchmark.xml",
+      "deviatedelasticwellbore_smoke.xml"
+    ],
+    "kgdExperimentValidation": [
+      "kgdvalidation_base.xml",
+      "kgdvalidation_benchmark.xml",
+      "kgdvalidation_smoke.xml"
+    ],
+    "ExampleThermalLeakyWell": [
+      "thermalleakywell_base.xml",
+      "thermalleakywell_base_iterative.xml",
+      "thermalleakywell_benchmark.xml"
+    ],
+    "AdvancedExampleCasedContactThermoElasticWellbore": [
+      "casedthermoelasticwellbore_imperfectinterfaces_base.xml",
+      "casedthermoelasticwellbore_imperfectinterfaces_benchmark.xml",
+      "casedthermoelasticwellbore_imperfectinterfaces_smoke.xml"
+    ],
+    "AdvancedExampleDruckerPrager": [
+      "triaxialdriver_base.xml",
+      "triaxialdriver_druckerprager.xml"
+    ],
+    "TutorialSneddon": [
+      "contactmechanics_sneddon_benchmark.xml",
+      "contactmechanics_sneddon_smoke.xml",
+      "sneddon_base.xml",
+      "sneddon_benchmark.xml",
+      "sneddon_embeddedfrac_base.xml",
+      "sneddon_embeddedfrac_benchmark.xml",
+      "sneddon_embeddedfrac_smoke.xml",
+      "sneddon_embeddedfrac_verification.xml",
+      "sneddon_hydrofrac_base.xml",
+      "sneddon_hydrofrac_benchmark.xml",
+      "sneddon_hydrofrac_smoke.xml"
+    ],
+    "AdvancedExampleViscoDruckerPrager": [
+      "triaxialdriver_base.xml",
+      "triaxialdriver_viscodruckerprager.xml"
+    ],
+    "pknViscosityDominated": [
+      "pknviscositydominated_base.xml",
+      "pknviscositydominated_benchmark.xml",
+      "pknviscositydominated_smoke.xml"
+    ],
+    "buckleyLeverettProblem": [
+      "buckleyleverett_base.xml",
+      "buckleyleverett_benchmark.xml",
+      "buckleyleverett_smoke.xml"
+    ],
+    "TutorialPoroelasticity": [
+      "poroelastic_terzaghi_base_direct.xml",
+      "poroelastic_terzaghi_base_iterative.xml",
+      "poroelastic_terzaghi_benchmark.xml",
+      "poroelastic_terzaghi_smoke.xml"
+    ],
+    "ExampleThermoporoelasticConsolidation": [
+      "thermoporoelastic_consolidation_base.xml",
+      "thermoporoelastic_consolidation_benchmark_base.xml",
+      "thermoporoelastic_consolidation_benchmark_fim.xml",
+      "thermoporoelastic_consolidation_smoke_base.xml",
+      "thermoporoelastic_consolidation_smoke_fim.xml"
+    ]
+  },
+  "union_rst_relpaths": [
+    "src/docs/sphinx/advancedExamples/validationStudies/carbonStorage/buckleyLeverett/Example.rst",
+    "src/docs/sphinx/advancedExamples/validationStudies/carbonStorage/isothermalLeakyWell/Example.rst",
+    "src/docs/sphinx/advancedExamples/validationStudies/carbonStorage/thermalLeakyWell/Example.rst",
+    "src/docs/sphinx/advancedExamples/validationStudies/faultMechanics/sneddon/Example.rst",
+    "src/docs/sphinx/advancedExamples/validationStudies/hydraulicFracture/kgdValidation/Example.rst",
+    "src/docs/sphinx/advancedExamples/validationStudies/hydraulicFracture/pknFracViscosityDominated/Example.rst",
+    "src/docs/sphinx/advancedExamples/validationStudies/poromechanics/mandel/Example.rst",
+    "src/docs/sphinx/advancedExamples/validationStudies/thermoPoromechanics/thermalConsolidation/Example.rst",
+    "src/docs/sphinx/advancedExamples/validationStudies/viscoplasticity/DruckerPrager/Example.rst",
+    "src/docs/sphinx/advancedExamples/validationStudies/viscoplasticity/ExtendedDruckerPrager/Example.rst",
+    "src/docs/sphinx/advancedExamples/validationStudies/viscoplasticity/ModifiedCamClay/Example.rst",
+    "src/docs/sphinx/advancedExamples/validationStudies/viscoplasticity/ViscoDruckerPrager/Example.rst",
+    "src/docs/sphinx/advancedExamples/validationStudies/wellboreProblems/casedContactThermoElasticWellbore/Example.rst",
+    "src/docs/sphinx/advancedExamples/validationStudies/wellboreProblems/deviatedElasticWellbore/Example.rst",
+    "src/docs/sphinx/advancedExamples/validationStudies/wellboreProblems/dpWellbore/Example.rst",
+    "src/docs/sphinx/advancedExamples/validationStudies/wellboreProblems/edpWellbore/Example.rst",
+    "src/docs/sphinx/basicExamples/poromechanics/Example.rst"
+  ],
+  "train_per_task_xml": {
+    "AdvancedExampleViscoModifiedCamClay": [
+      "triaxialdriver_base.xml",
+      "triaxialdriver_viscomodifiedcamclay.xml"
+    ],
+    "kgdToughnessDominated": [
+      "kgdtoughnessdominated_base.xml",
+      "kgdtoughnessdominated_benchmark.xml",
+      "kgdtoughnessdominated_smoke.xml"
+    ],
+    "triaxialDriverExample": [
+      "triaxialdriver_extendeddruckerprager_basicexample.xml"
+    ],
+    "kgdViscosityDominated": [
+      "kgdviscositydominated_base.xml",
+      "kgdviscositydominated_benchmark.xml",
+      "kgdviscositydominated_smoke.xml"
+    ],
+    "pennyFracViscosityDominated": [
+      "pennyshapedviscositydominated_base.xml",
+      "pennyshapedviscositydominated_benchmark.xml",
+      "pennyshapedviscositydominated_smoke.xml"
+    ],
+    "AdvancedExampleCasedElasticWellboreImperfectInterfaces": [
+      "casedelasticwellbore_imperfectinterfaces_base.xml",
+      "casedelasticwellbore_imperfectinterfaces_benchmark.xml",
+      "casedelasticwellbore_imperfectinterfaces_smoke.xml"
+    ],
+    "ExampleKirschWellbore": [
+      "kirschproblem_base.xml",
+      "kirschproblem_benchmark.xml",
+      "kirschproblem_smoke.xml"
+    ],
+    "pennyFracToughnessDominated": [
+      "pennyshapedtoughnessdominated_base.xml",
+      "pennyshapedtoughnessdominated_benchmark.xml",
+      "pennyshapedtoughnessdominated_smoke.xml"
+    ],
+    "AdvancedExampleCasedElasticWellbore": [
+      "casedelasticwellbore_base.xml",
+      "casedelasticwellbore_benchmark.xml",
+      "casedelasticwellbore_smoke.xml"
+    ],
+    "AdvancedWellboreExampleNonLinearThermalDiffusionTemperatureDependentVolumetricHeatCapacity": [
+      "thermalcompressible_2d_base.xml",
+      "thermalcompressible_2d_benchmark.xml",
+      "thermalcompressible_2d_smoke.xml",
+      "thermalcompressible_temperaturedependentvolumetricheatcapacity_benchmark.xml",
+      "thermalcompressible_temperaturedependentvolumetricheatcapacity_smoke.xml"
+    ],
+    "TutorialDeadOilBottomLayersSPE10": [
+      "deadoilspe10layers84_85_base_direct.xml",
+      "deadoilspe10layers84_85_base_iterative.xml",
+      "deadoilspe10layers84_85_benchmark.xml"
+    ],
+    "TutorialDeadOilEgg": [
+      "deadoilegg_base_direct.xml",
+      "deadoilegg_base_iterative.xml",
+      "deadoilegg_benchmark.xml",
+      "deadoileggvtk_benchmark.xml"
+    ],
+    "relaxationTest": [
+      "viscoextendeddruckerprager_relaxation_base.xml",
+      "viscoextendeddruckerprager_relaxation_benchmark.xml",
+      "viscoextendeddruckerprager_relaxation_smoke.xml"
+    ],
+    "AdvancedExampleDeviatedPoroElasticWellbore": [
+      "deviatedporoelasticwellbore_injection_base.xml",
+      "deviatedporoelasticwellbore_injection_benchmark.xml",
+      "deviatedporoelasticwellbore_injection_smoke.xml"
+    ],
+    "TutorialCO2FieldCase": [
+      "simpleco2injtutorial_base.xml",
+      "simpleco2injtutorial_smoke.xml"
+    ],
+    "faultVerification": [
+      "faultporoelastic_base.xml",
+      "impermeablefault_benchmark.xml",
+      "impermeablefault_smoke.xml",
+      "permeablefault_benchmark.xml",
+      "permeablefault_smoke.xml"
+    ],
+    "ExampleTFrac": [
+      "contactmechanics_tfrac_benchmark.xml",
+      "contactmechanics_tfrac_smoke.xml",
+      "tfrac_base.xml",
+      "tfrac_benchmark.xml"
+    ],
+    "AdvancedExampleWellboreNonLinearThermalDiffusionTemperatureDependentSinglePhaseThermalConductivity": [
+      "thermalcompressible_2d_base.xml",
+      "thermalcompressible_2d_benchmark.xml",
+      "thermalcompressible_2d_smoke.xml",
+      "thermalcompressible_temperaturedependentsinglephasethermalconductivity_benchmark.xml",
+      "thermalcompressible_temperaturedependentsinglephasethermalconductivity_smoke.xml"
+    ]
+  },
+  "generated": "2026-04-22",
+  "source": "get_blocked_files_for_task(experiments_gt, GEOS=/data/shared/.../data/GEOS)"
+}

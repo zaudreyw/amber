@@ -1,0 +1,795 @@
+{
+  "artifact": "plugin/memory_index.json",
+  "artifact_size_chars": 23262,
+  "n_strings_checked": 538,
+  "regex_hits": [
+    {
+      "path": "$.tasks[0].reference_xmls[0]",
+      "matched": "triaxialDriver_ModifiedCamClay.xml",
+      "context": "lib/inputFiles/triaxialDriver/triaxialDriver_ModifiedCamClay.xml"
+    },
+    {
+      "path": "$.tasks[0].reference_xmls[1]",
+      "matched": "triaxialDriver_ExtendedDruckerPrager_basicExample.xml",
+      "context": "lib/inputFiles/triaxialDriver/triaxialDriver_ExtendedDruckerPrager_basicExample.xml"
+    },
+    {
+      "path": "$.tasks[0].reference_xmls[2]",
+      "matched": "triaxialDriver_ViscoDruckerPrager.xml",
+      "context": "lib/inputFiles/triaxialDriver/triaxialDriver_ViscoDruckerPrager.xml"
+    },
+    {
+      "path": "$.tasks[0].reference_xmls[3]",
+      "matched": "PoroViscoDruckerPrager_base.xml",
+      "context": "_lib/inputFiles/poromechanics/PoroViscoDruckerPrager_base.xml"
+    },
+    {
+      "path": "$.tasks[0].reference_xmls[4]",
+      "matched": "triaxialDriver_ViscoExtendedDruckerPrager.xml",
+      "context": "lib/inputFiles/triaxialDriver/triaxialDriver_ViscoExtendedDruckerPrager.xml"
+    },
+    {
+      "path": "$.tasks[0].written_xmls[0]",
+      "matched": "triaxialDriver_base.xml",
+      "context": "/workspace/inputs/triaxialDriver_base.xml"
+    },
+    {
+      "path": "$.tasks[0].written_xmls[1]",
+      "matched": "triaxialDriver_ViscoModifiedCamClay.xml",
+      "context": "/workspace/inputs/triaxialDriver_ViscoModifiedCamClay.xml"
+    },
+    {
+      "path": "$.tasks[0].productive_rag_queries[1]",
+      "matched": "triaxialDriver_base.xml",
+      "context": "triaxialDriver_base.xml"
+    },
+    {
+      "path": "$.tasks[1].reference_xmls[0]",
+      "matched": "kgdViscosityDominated_base.xml",
+      "context": "nputFiles/hydraulicFracturing/kgdViscosityDominated_base.xml"
+    },
+    {
+      "path": "$.tasks[1].reference_xmls[1]",
+      "matched": "kgdViscosityDominated_benchmark.xml",
+      "context": "nputFiles/hydraulicFracturing/kgdViscosityDominated_benchmark.xml"
+    },
+    {
+      "path": "$.tasks[1].written_xmls[0]",
+      "matched": "kgdToughnessDominated_base.xml",
+      "context": "/workspace/inputs/kgdToughnessDominated_base.xml"
+    },
+    {
+      "path": "$.tasks[1].written_xmls[1]",
+      "matched": "kgdToughnessDominated_benchmark.xml",
+      "context": "/workspace/inputs/kgdToughnessDominated_benchmark.xml"
+    },
+    {
+      "path": "$.tasks[1].productive_rag_queries[7]",
+      "matched": "kgdViscosityDominated_base.xml",
+      "context": "kgdViscosityDominated_base.xml"
+    },
+    {
+      "path": "$.tasks[2].reference_xmls[0]",
+      "matched": "triaxialDriver_ExtendedDruckerPrager.xml",
+      "context": "lib/inputFiles/triaxialDriver/triaxialDriver_ExtendedDruckerPrager.xml"
+    },
+    {
+      "path": "$.tasks[2].reference_xmls[1]",
+      "matched": "triaxialDriver_base.xml",
+      "context": "lib/inputFiles/triaxialDriver/triaxialDriver_base.xml"
+    },
+    {
+      "path": "$.tasks[2].reference_xmls[2]",
+      "matched": "triaxialDriver_DruckerPrager.xml",
+      "context": "lib/inputFiles/triaxialDriver/triaxialDriver_DruckerPrager.xml"
+    },
+    {
+      "path": "$.tasks[2].written_xmls[0]",
+      "matched": "triaxialDriver_ExtendedDruckerPrager_basicExample.xml",
+      "context": "/workspace/inputs/triaxialDriver_ExtendedDruckerPrager_basicExample.xml"
+    },
+    {
+      "path": "$.tasks[2].productive_rag_queries[2]",
+      "matched": "triaxialDriver_base.xml",
+      "context": "triaxialDriver_base.xml"
+    },
+    {
+      "path": "$.tasks[3].reference_xmls[0]",
+      "matched": "kgdToughnessDominated_base.xml",
+      "context": "nputFiles/hydraulicFracturing/kgdToughnessDominated_base.xml"
+    },
+    {
+      "path": "$.tasks[3].reference_xmls[1]",
+      "matched": "kgdToughnessDominated_benchmark.xml",
+      "context": "nputFiles/hydraulicFracturing/kgdToughnessDominated_benchmark.xml"
+    },
+    {
+      "path": "$.tasks[3].reference_xmls[2]",
+      "matched": "kgdValidation_benchmark.xml",
+      "context": "nputFiles/hydraulicFracturing/kgdValidation_benchmark.xml"
+    },
+    {
+      "path": "$.tasks[3].written_xmls[0]",
+      "matched": "kgdViscosityDominated_base.xml",
+      "context": "/workspace/inputs/kgdViscosityDominated_base.xml"
+    },
+    {
+      "path": "$.tasks[3].written_xmls[1]",
+      "matched": "kgdViscosityDominated_benchmark.xml",
+      "context": "/workspace/inputs/kgdViscosityDominated_benchmark.xml"
+    },
+    {
+      "path": "$.tasks[3].written_xmls[2]",
+      "matched": "kgdViscosityDominated_smoke.xml",
+      "context": "/workspace/inputs/kgdViscosityDominated_smoke.xml"
+    },
+    {
+      "path": "$.tasks[4].reference_xmls[0]",
+      "matched": "kgdViscosityDominated_base.xml",
+      "context": "nputFiles/hydraulicFracturing/kgdViscosityDominated_base.xml"
+    },
+    {
+      "path": "$.tasks[4].reference_xmls[1]",
+      "matched": "kgdViscosityDominated_benchmark.xml",
+      "context": "nputFiles/hydraulicFracturing/kgdViscosityDominated_benchmark.xml"
+    },
+    {
+      "path": "$.tasks[4].reference_xmls[2]",
+      "matched": "kgdToughnessDominated_base.xml",
+      "context": "nputFiles/hydraulicFracturing/kgdToughnessDominated_base.xml"
+    },
+    {
+      "path": "$.tasks[4].written_xmls[0]",
+      "matched": "pennyShapedViscosityDominated_base.xml",
+      "context": "/workspace/inputs/pennyShapedViscosityDominated_base.xml"
+    },
+    {
+      "path": "$.tasks[4].written_xmls[1]",
+      "matched": "pennyShapedViscosityDominated_benchmark.xml",
+      "context": "/workspace/inputs/pennyShapedViscosityDominated_benchmark.xml"
+    },
+    {
+      "path": "$.tasks[5].reference_xmls[0]",
+      "matched": "CasedThermoElasticWellbore_ImperfectInterfaces_base.xml",
+      "context": "/geos_lib/inputFiles/wellbore/CasedThermoElasticWellbore_ImperfectInterfaces_base.xml"
+    },
+    {
+      "path": "$.tasks[5].reference_xmls[1]",
+      "matched": "CasedThermoElasticWellbore_ImperfectInterfaces_benchmark.xml",
+      "context": "/geos_lib/inputFiles/wellbore/CasedThermoElasticWellbore_ImperfectInterfaces_benchmark.xml"
+    },
+    {
+      "path": "$.tasks[5].reference_xmls[2]",
+      "matched": "CasedElasticWellbore_base.xml",
+      "context": "/geos_lib/inputFiles/wellbore/CasedElasticWellbore_base.xml"
+    },
+    {
+      "path": "$.tasks[5].reference_xmls[3]",
+      "matched": "CasedElasticWellbore_benchmark.xml",
+      "context": "/geos_lib/inputFiles/wellbore/CasedElasticWellbore_benchmark.xml"
+    },
+    {
+      "path": "$.tasks[5].reference_xmls[4]",
+      "matched": "kgdToughnessDominated_base.xml",
+      "context": "nputFiles/hydraulicFracturing/kgdToughnessDominated_base.xml"
+    },
+    {
+      "path": "$.tasks[5].reference_xmls[5]",
+      "matched": "Sneddon_base.xml",
+      "context": "es/lagrangianContactMechanics/Sneddon_base.xml"
+    },
+    {
+      "path": "$.tasks[5].reference_xmls[6]",
+      "matched": "Sneddon_benchmark.xml",
+      "context": "es/lagrangianContactMechanics/Sneddon_benchmark.xml"
+    },
+    {
+      "path": "$.tasks[5].written_xmls[0]",
+      "matched": "CasedElasticWellbore_ImperfectInterfaces_base.xml",
+      "context": "/workspace/inputs/CasedElasticWellbore_ImperfectInterfaces_base.xml"
+    },
+    {
+      "path": "$.tasks[5].written_xmls[1]",
+      "matched": "CasedElasticWellbore_ImperfectInterfaces_benchmark.xml",
+      "context": "/workspace/inputs/CasedElasticWellbore_ImperfectInterfaces_benchmark.xml"
+    },
+    {
+      "path": "$.tasks[5].written_xmls[2]",
+      "matched": "CasedElasticWellbore_ImperfectInterfaces_smoke.xml",
+      "context": "/workspace/inputs/CasedElasticWellbore_ImperfectInterfaces_smoke.xml"
+    },
+    {
+      "path": "$.tasks[6].reference_xmls[0]",
+      "matched": "CasedElasticWellbore_base.xml",
+      "context": "/geos_lib/inputFiles/wellbore/CasedElasticWellbore_base.xml"
+    },
+    {
+      "path": "$.tasks[6].reference_xmls[1]",
+      "matched": "CasedElasticWellbore_benchmark.xml",
+      "context": "/geos_lib/inputFiles/wellbore/CasedElasticWellbore_benchmark.xml"
+    },
+    {
+      "path": "$.tasks[6].reference_xmls[2]",
+      "matched": "viscoExtendedDruckerPrager_relaxation_base.xml",
+      "context": "lib/inputFiles/solidMechanics/viscoExtendedDruckerPrager_relaxation_base.xml"
+    },
+    {
+      "path": "$.tasks[6].reference_xmls[3]",
+      "matched": "ThermoPoroElasticWellbore_base.xml",
+      "context": "/geos_lib/inputFiles/wellbore/ThermoPoroElasticWellbore_base.xml"
+    },
+    {
+      "path": "$.tasks[6].written_xmls[0]",
+      "matched": "KirschProblem_base.xml",
+      "context": "/workspace/inputs/KirschProblem_base.xml"
+    },
+    {
+      "path": "$.tasks[6].written_xmls[1]",
+      "matched": "KirschProblem_benchmark.xml",
+      "context": "/workspace/inputs/KirschProblem_benchmark.xml"
+    },
+    {
+      "path": "$.tasks[7].reference_xmls[0]",
+      "matched": "kgdToughnessDominated_base.xml",
+      "context": "nputFiles/hydraulicFracturing/kgdToughnessDominated_base.xml"
+    },
+    {
+      "path": "$.tasks[7].reference_xmls[1]",
+      "matched": "kgdToughnessDominated_benchmark.xml",
+      "context": "nputFiles/hydraulicFracturing/kgdToughnessDominated_benchmark.xml"
+    },
+    {
+      "path": "$.tasks[7].written_xmls[0]",
+      "matched": "pennyShapedToughnessDominated_base.xml",
+      "context": "/workspace/inputs/pennyShapedToughnessDominated_base.xml"
+    },
+    {
+      "path": "$.tasks[7].written_xmls[1]",
+      "matched": "pennyShapedToughnessDominated_benchmark.xml",
+      "context": "/workspace/inputs/pennyShapedToughnessDominated_benchmark.xml"
+    },
+    {
+      "path": "$.tasks[8].reference_xmls[0]",
+      "matched": "ExtendedDruckerPragerWellbore_benchmark.xml",
+      "context": "lib/inputFiles/solidMechanics/ExtendedDruckerPragerWellbore_benchmark.xml"
+    },
+    {
+      "path": "$.tasks[8].reference_xmls[1]",
+      "matched": "CasedThermoElasticWellbore_benchmark.xml",
+      "context": "/geos_lib/inputFiles/wellbore/CasedThermoElasticWellbore_benchmark.xml"
+    },
+    {
+      "path": "$.tasks[8].reference_xmls[2]",
+      "matched": "CasedThermoElasticWellbore_base.xml",
+      "context": "/geos_lib/inputFiles/wellbore/CasedThermoElasticWellbore_base.xml"
+    },
+    {
+      "path": "$.tasks[8].reference_xmls[3]",
+      "matched": "DeviatedElasticWellbore_benchmark.xml",
+      "context": "/geos_lib/inputFiles/wellbore/DeviatedElasticWellbore_benchmark.xml"
+    },
+    {
+      "path": "$.tasks[8].reference_xmls[4]",
+      "matched": "DeviatedElasticWellbore_base.xml",
+      "context": "/geos_lib/inputFiles/wellbore/DeviatedElasticWellbore_base.xml"
+    },
+    {
+      "path": "$.tasks[8].reference_xmls[5]",
+      "matched": "ExtendedDruckerPragerWellbore_base.xml",
+      "context": "lib/inputFiles/solidMechanics/ExtendedDruckerPragerWellbore_base.xml"
+    },
+    {
+      "path": "$.tasks[8].reference_xmls[6]",
+      "matched": "CasedElasticWellbore_ImperfectInterfaces_benchmark.xml",
+      "context": "/geos_lib/inputFiles/wellbore/CasedElasticWellbore_ImperfectInterfaces_benchmark.xml"
+    },
+    {
+      "path": "$.tasks[8].reference_xmls[7]",
+      "matched": "CasedElasticWellbore_ImperfectInterfaces_base.xml",
+      "context": "/geos_lib/inputFiles/wellbore/CasedElasticWellbore_ImperfectInterfaces_base.xml"
+    },
+    {
+      "path": "$.tasks[8].written_xmls[0]",
+      "matched": "CasedElasticWellbore_base.xml",
+      "context": "/workspace/inputs/CasedElasticWellbore_base.xml"
+    },
+    {
+      "path": "$.tasks[8].written_xmls[1]",
+      "matched": "CasedElasticWellbore_benchmark.xml",
+      "context": "/workspace/inputs/CasedElasticWellbore_benchmark.xml"
+    },
+    {
+      "path": "$.tasks[8].written_xmls[2]",
+      "matched": "CasedElasticWellbore_smoke.xml",
+      "context": "/workspace/inputs/CasedElasticWellbore_smoke.xml"
+    },
+    {
+      "path": "$.tasks[9].reference_xmls[0]",
+      "matched": "ThermoPoroElasticWellbore_base.xml",
+      "context": "/geos_lib/inputFiles/wellbore/ThermoPoroElasticWellbore_base.xml"
+    },
+    {
+      "path": "$.tasks[9].reference_xmls[1]",
+      "matched": "thermalCompressible_2d_base.xml",
+      "context": "ib/inputFiles/singlePhaseFlow/thermalCompressible_2d_base.xml"
+    },
+    {
+      "path": "$.tasks[9].reference_xmls[2]",
+      "matched": "thermalCompressible_temperatureDependentSinglePhaseThermalConductivity_benchmark.xml",
+      "context": "ib/inputFiles/singlePhaseFlow/thermalCompressible_temperatureDependentSinglePhaseThermalConductivity_benchmark.xml"
+    },
+    {
+      "path": "$.tasks[9].reference_xmls[3]",
+      "matched": "thermalCompressibleWell_base.xml",
+      "context": "ib/inputFiles/singlePhaseFlow/thermalCompressibleWell_base.xml"
+    },
+    {
+      "path": "$.tasks[9].written_xmls[0]",
+      "matched": "thermalCompressible_2d_base.xml",
+      "context": "/workspace/inputs/thermalCompressible_2d_base.xml"
+    },
+    {
+      "path": "$.tasks[9].written_xmls[1]",
+      "matched": "thermalCompressible_temperatureDependentVolumetricHeatCapacity_benchmark.xml",
+      "context": "/workspace/inputs/thermalCompressible_temperatureDependentVolumetricHeatCapacity_benchmark.xml"
+    },
+    {
+      "path": "$.tasks[10].reference_xmls[0]",
+      "matched": "deadOilEgg_base_iterative.xml",
+      "context": "MultiphaseWell/benchmarks/Egg/deadOilEgg_base_iterative.xml"
+    },
+    {
+      "path": "$.tasks[10].reference_xmls[1]",
+      "matched": "isothermalLeakyWell_base_iterative.xml",
+      "context": "enchmarks/isothermalLeakyWell/isothermalLeakyWell_base_iterative.xml"
+    },
+    {
+      "path": "$.tasks[10].reference_xmls[2]",
+      "matched": "heterogeneousInSitu_benchmark.xml",
+      "context": "nputFiles/hydraulicFracturing/heterogeneousInSitu_benchmark.xml"
+    },
+    {
+      "path": "$.tasks[10].reference_xmls[3]",
+      "matched": "simpleCo2InjTutorial_base.xml",
+      "context": "s/compositionalMultiphaseWell/simpleCo2InjTutorial_base.xml"
+    },
+    {
+      "path": "$.tasks[10].written_xmls[0]",
+      "matched": "deadOilSpe10Layers84_85_base_iterative.xml",
+      "context": "/workspace/inputs/deadOilSpe10Layers84_85_base_iterative.xml"
+    },
+    {
+      "path": "$.tasks[10].written_xmls[1]",
+      "matched": "deadOilSpe10Layers84_85_benchmark.xml",
+      "context": "/workspace/inputs/deadOilSpe10Layers84_85_benchmark.xml"
+    },
+    {
+      "path": "$.tasks[11].reference_xmls[0]",
+      "matched": "simpleCo2InjTutorial_base.xml",
+      "context": "s/compositionalMultiphaseWell/simpleCo2InjTutorial_base.xml"
+    },
+    {
+      "path": "$.tasks[11].reference_xmls[1]",
+      "matched": "deadOilSpe10Layers84_85_base_iterative.xml",
+      "context": "ltiphaseFlow/benchmarks/SPE10/deadOilSpe10Layers84_85_base_iterative.xml"
+    },
+    {
+      "path": "$.tasks[11].reference_xmls[2]",
+      "matched": "deadOilEgg_smoke_3d.xml",
+      "context": "MultiphaseWell/benchmarks/Egg/deadOilEgg_smoke_3d.xml"
+    },
+    {
+      "path": "$.tasks[11].reference_xmls[3]",
+      "matched": "heterogeneousInSitu_benchmark.xml",
+      "context": "nputFiles/hydraulicFracturing/heterogeneousInSitu_benchmark.xml"
+    },
+    {
+      "path": "$.tasks[11].reference_xmls[4]",
+      "matched": "3D_10x10x10_compressible_hex_gravity_smoke.xml",
+      "context": "nputFiles/singlePhaseFlow/vtk/3D_10x10x10_compressible_hex_gravity_smoke.xml"
+    },
+    {
+      "path": "$.tasks[11].reference_xmls[5]",
+      "matched": "3D_10x10x10_compressible_hex_gravity_base.xml",
+      "context": "nputFiles/singlePhaseFlow/vtk/3D_10x10x10_compressible_hex_gravity_base.xml"
+    },
+    {
+      "path": "$.tasks[11].reference_xmls[6]",
+      "matched": "FieldCaseTutorial3_smoke.xml",
+      "context": "ib/inputFiles/singlePhaseFlow/FieldCaseTutorial3_smoke.xml"
+    },
+    {
+      "path": "$.tasks[11].reference_xmls[7]",
+      "matched": "staircase_co2_wells_hybrid_3d.xml",
+      "context": "s/compositionalMultiphaseWell/staircase_co2_wells_hybrid_3d.xml"
+    },
+    {
+      "path": "$.tasks[11].reference_xmls[8]",
+      "matched": "class09_pb3_benchmark.xml",
+      "context": "aseWell/benchmarks/Class09Pb3/class09_pb3_benchmark.xml"
+    },
+    {
+      "path": "$.tasks[11].written_xmls[0]",
+      "matched": "deadOilEgg_base_iterative.xml",
+      "context": "/workspace/inputs/deadOilEgg_base_iterative.xml"
+    },
+    {
+      "path": "$.tasks[11].written_xmls[1]",
+      "matched": "deadOilEggVTK_benchmark.xml",
+      "context": "/workspace/inputs/deadOilEggVTK_benchmark.xml"
+    },
+    {
+      "path": "$.tasks[11].written_xmls[2]",
+      "matched": "deadOilEgg_benchmark.xml",
+      "context": "/workspace/inputs/deadOilEgg_benchmark.xml"
+    },
+    {
+      "path": "$.tasks[12].reference_xmls[0]",
+      "matched": "triaxialDriver_ExtendedDruckerPrager_basicExample.xml",
+      "context": "lib/inputFiles/triaxialDriver/triaxialDriver_ExtendedDruckerPrager_basicExample.xml"
+    },
+    {
+      "path": "$.tasks[12].reference_xmls[1]",
+      "matched": "PoroElastic_Terzaghi_benchmark.xml",
+      "context": "_lib/inputFiles/poromechanics/PoroElastic_Terzaghi_benchmark.xml"
+    },
+    {
+      "path": "$.tasks[12].reference_xmls[2]",
+      "matched": "isothermalLeakyWell_benchmark.xml",
+      "context": "enchmarks/isothermalLeakyWell/isothermalLeakyWell_benchmark.xml"
+    },
+    {
+      "path": "$.tasks[12].reference_xmls[3]",
+      "matched": "kgdToughnessDominated_base.xml",
+      "context": "nputFiles/hydraulicFracturing/kgdToughnessDominated_base.xml"
+    },
+    {
+      "path": "$.tasks[12].reference_xmls[4]",
+      "matched": "SingleFracCompression_base.xml",
+      "context": "es/lagrangianContactMechanics/SingleFracCompression_base.xml"
+    },
+    {
+      "path": "$.tasks[12].reference_xmls[5]",
+      "matched": "plasticCubeReset.xml",
+      "context": "lib/inputFiles/solidMechanics/plasticCubeReset.xml"
+    },
+    {
+      "path": "$.tasks[12].reference_xmls[6]",
+      "matched": "KirschProblem_base.xml",
+      "context": "lib/inputFiles/solidMechanics/KirschProblem_base.xml"
+    },
+    {
+      "path": "$.tasks[12].written_xmls[0]",
+      "matched": "viscoExtendedDruckerPrager_relaxation_base.xml",
+      "context": "/workspace/inputs/viscoExtendedDruckerPrager_relaxation_base.xml"
+    },
+    {
+      "path": "$.tasks[12].written_xmls[1]",
+      "matched": "viscoExtendedDruckerPrager_relaxation_benchmark.xml",
+      "context": "/workspace/inputs/viscoExtendedDruckerPrager_relaxation_benchmark.xml"
+    },
+    {
+      "path": "$.tasks[13].reference_xmls[0]",
+      "matched": "PoroElasticWellbore_base.xml",
+      "context": "_lib/inputFiles/poromechanics/PoroElasticWellbore_base.xml"
+    },
+    {
+      "path": "$.tasks[13].reference_xmls[1]",
+      "matched": "DeviatedElasticWellbore_benchmark.xml",
+      "context": "/geos_lib/inputFiles/wellbore/DeviatedElasticWellbore_benchmark.xml"
+    },
+    {
+      "path": "$.tasks[13].reference_xmls[2]",
+      "matched": "DeviatedElasticWellbore_base.xml",
+      "context": "/geos_lib/inputFiles/wellbore/DeviatedElasticWellbore_base.xml"
+    },
+    {
+      "path": "$.tasks[13].reference_xmls[3]",
+      "matched": "ThermoPoroElasticWellbore_base.xml",
+      "context": "/geos_lib/inputFiles/wellbore/ThermoPoroElasticWellbore_base.xml"
+    },
+    {
+      "path": "$.tasks[13].written_xmls[0]",
+      "matched": "DeviatedPoroElasticWellbore_Injection_base.xml",
+      "context": "/workspace/inputs/DeviatedPoroElasticWellbore_Injection_base.xml"
+    },
+    {
+      "path": "$.tasks[13].written_xmls[1]",
+      "matched": "DeviatedPoroElasticWellbore_Injection_benchmark.xml",
+      "context": "/workspace/inputs/DeviatedPoroElasticWellbore_Injection_benchmark.xml"
+    },
+    {
+      "path": "$.tasks[14].reference_xmls[0]",
+      "matched": "class09_pb3_drainageOnly_iterative_base.xml",
+      "context": "aseWell/benchmarks/Class09Pb3/class09_pb3_drainageOnly_iterative_base.xml"
+    },
+    {
+      "path": "$.tasks[14].reference_xmls[1]",
+      "matched": "deadOilEggVTK_benchmark.xml",
+      "context": "MultiphaseWell/benchmarks/Egg/deadOilEggVTK_benchmark.xml"
+    },
+    {
+      "path": "$.tasks[14].reference_xmls[2]",
+      "matched": "ThermoPoroElasticWellbore_benchmark.xml",
+      "context": "/geos_lib/inputFiles/wellbore/ThermoPoroElasticWellbore_benchmark.xml"
+    },
+    {
+      "path": "$.tasks[14].reference_xmls[3]",
+      "matched": "ThermoPoroElasticWellbore_base.xml",
+      "context": "/geos_lib/inputFiles/wellbore/ThermoPoroElasticWellbore_base.xml"
+    },
+    {
+      "path": "$.tasks[14].reference_xmls[4]",
+      "matched": "FieldCaseTutorial3_base.xml",
+      "context": "ib/inputFiles/singlePhaseFlow/FieldCaseTutorial3_base.xml"
+    },
+    {
+      "path": "$.tasks[14].reference_xmls[5]",
+      "matched": "ThermoPoroElastic_consolidation_base.xml",
+      "context": "nputFiles/thermoPoromechanics/ThermoPoroElastic_consolidation_base.xml"
+    },
+    {
+      "path": "$.tasks[14].written_xmls[0]",
+      "matched": "simpleCo2InjTutorial_base.xml",
+      "context": "/workspace/inputs/simpleCo2InjTutorial_base.xml"
+    },
+    {
+      "path": "$.tasks[14].written_xmls[1]",
+      "matched": "simpleCo2InjTutorial_smoke.xml",
+      "context": "/workspace/inputs/simpleCo2InjTutorial_smoke.xml"
+    },
+    {
+      "path": "$.tasks[15].reference_xmls[0]",
+      "matched": "PoroElasticWellbore_base.xml",
+      "context": "_lib/inputFiles/poromechanics/PoroElasticWellbore_base.xml"
+    },
+    {
+      "path": "$.tasks[15].reference_xmls[1]",
+      "matched": "SingleFracCompression_benchmark.xml",
+      "context": "es/lagrangianContactMechanics/SingleFracCompression_benchmark.xml"
+    },
+    {
+      "path": "$.tasks[15].reference_xmls[2]",
+      "matched": "deadOilSpe10Layers84_85_base_iterative.xml",
+      "context": "ltiphaseFlow/benchmarks/SPE10/deadOilSpe10Layers84_85_base_iterative.xml"
+    },
+    {
+      "path": "$.tasks[15].written_xmls[0]",
+      "matched": "faultPoroelastic_base.xml",
+      "context": "/workspace/inputs/faultPoroelastic_base.xml"
+    },
+    {
+      "path": "$.tasks[15].written_xmls[1]",
+      "matched": "impermeableFault_benchmark.xml",
+      "context": "/workspace/inputs/impermeableFault_benchmark.xml"
+    },
+    {
+      "path": "$.tasks[15].written_xmls[2]",
+      "matched": "permeableFault_benchmark.xml",
+      "context": "/workspace/inputs/permeableFault_benchmark.xml"
+    },
+    {
+      "path": "$.tasks[16].reference_xmls[0]",
+      "matched": "casedWellbore.xml",
+      "context": "lib/inputFiles/solidMechanics/casedWellbore.xml"
+    },
+    {
+      "path": "$.tasks[16].reference_xmls[1]",
+      "matched": "Sneddon_embeddedFrac_verification.xml",
+      "context": "utFiles/efemFractureMechanics/Sneddon_embeddedFrac_verification.xml"
+    },
+    {
+      "path": "$.tasks[16].reference_xmls[2]",
+      "matched": "SingleFracCompression_base.xml",
+      "context": "es/lagrangianContactMechanics/SingleFracCompression_base.xml"
+    },
+    {
+      "path": "$.tasks[16].reference_xmls[3]",
+      "matched": "SingleFracCompression_benchmark.xml",
+      "context": "es/lagrangianContactMechanics/SingleFracCompression_benchmark.xml"
+    },
+    {
+      "path": "$.tasks[16].reference_xmls[4]",
+      "matched": "ContactMechanics_SingleFracCompression_benchmark.xml",
+      "context": "es/lagrangianContactMechanics/ContactMechanics_SingleFracCompression_benchmark.xml"
+    },
+    {
+      "path": "$.tasks[16].written_xmls[0]",
+      "matched": "TFrac_base.xml",
+      "context": "/workspace/inputs/TFrac_base.xml"
+    },
+    {
+      "path": "$.tasks[16].written_xmls[1]",
+      "matched": "TFrac_benchmark.xml",
+      "context": "/workspace/inputs/TFrac_benchmark.xml"
+    },
+    {
+      "path": "$.tasks[16].written_xmls[2]",
+      "matched": "ContactMechanics_TFrac_benchmark.xml",
+      "context": "/workspace/inputs/ContactMechanics_TFrac_benchmark.xml"
+    },
+    {
+      "path": "$.tasks[17].reference_xmls[0]",
+      "matched": "ThermoPoroElasticWellbore_base.xml",
+      "context": "/geos_lib/inputFiles/wellbore/ThermoPoroElasticWellbore_base.xml"
+    },
+    {
+      "path": "$.tasks[17].reference_xmls[1]",
+      "matched": "ThermoPoroElasticWellbore_benchmark.xml",
+      "context": "/geos_lib/inputFiles/wellbore/ThermoPoroElasticWellbore_benchmark.xml"
+    },
+    {
+      "path": "$.tasks[17].reference_xmls[2]",
+      "matched": "ExtendedDruckerPragerWellbore_benchmark.xml",
+      "context": "lib/inputFiles/solidMechanics/ExtendedDruckerPragerWellbore_benchmark.xml"
+    },
+    {
+      "path": "$.tasks[17].reference_xmls[3]",
+      "matched": "CasedThermoElasticWellbore_benchmark.xml",
+      "context": "/geos_lib/inputFiles/wellbore/CasedThermoElasticWellbore_benchmark.xml"
+    },
+    {
+      "path": "$.tasks[17].written_xmls[0]",
+      "matched": "thermalCompressible_2d_base.xml",
+      "context": "/workspace/inputs/thermalCompressible_2d_base.xml"
+    },
+    {
+      "path": "$.tasks[17].written_xmls[1]",
+      "matched": "thermalCompressible_temperatureDependentSinglePhaseThermalConductivity_benchmark.xml",
+      "context": "/workspace/inputs/thermalCompressible_temperatureDependentSinglePhaseThermalConductivity_benchmark.xml"
+    }
+  ],
+  "blocklist_hits": [
+    {
+      "path": "$.tasks[0].reference_xmls[0]",
+      "blocked_basename": "triaxialdriver_modifiedcamclay.xml",
+      "context": "lib/inputFiles/triaxialDriver/triaxialDriver_ModifiedCamClay.xml"
+    },
+    {
+      "path": "$.tasks[0].reference_xmls[2]",
+      "blocked_basename": "triaxialdriver_viscodruckerprager.xml",
+      "context": "lib/inputFiles/triaxialDriver/triaxialDriver_ViscoDruckerPrager.xml"
+    },
+    {
+      "path": "$.tasks[0].written_xmls[0]",
+      "blocked_basename": "triaxialdriver_base.xml",
+      "context": "/workspace/inputs/triaxialDriver_base.xml"
+    },
+    {
+      "path": "$.tasks[0].productive_rag_queries[1]",
+      "blocked_basename": "triaxialdriver_base.xml",
+      "context": "triaxialDriver_base.xml"
+    },
+    {
+      "path": "$.tasks[2].reference_xmls[0]",
+      "blocked_basename": "triaxialdriver_extendeddruckerprager.xml",
+      "context": "lib/inputFiles/triaxialDriver/triaxialDriver_ExtendedDruckerPrager.xml"
+    },
+    {
+      "path": "$.tasks[2].reference_xmls[1]",
+      "blocked_basename": "triaxialdriver_base.xml",
+      "context": "lib/inputFiles/triaxialDriver/triaxialDriver_base.xml"
+    },
+    {
+      "path": "$.tasks[2].reference_xmls[2]",
+      "blocked_basename": "triaxialdriver_druckerprager.xml",
+      "context": "lib/inputFiles/triaxialDriver/triaxialDriver_DruckerPrager.xml"
+    },
+    {
+      "path": "$.tasks[2].productive_rag_queries[2]",
+      "blocked_basename": "triaxialdriver_base.xml",
+      "context": "triaxialDriver_base.xml"
+    },
+    {
+      "path": "$.tasks[3].reference_xmls[2]",
+      "blocked_basename": "kgdvalidation_benchmark.xml",
+      "context": "nputFiles/hydraulicFracturing/kgdValidation_benchmark.xml"
+    },
+    {
+      "path": "$.tasks[5].reference_xmls[0]",
+      "blocked_basename": "casedthermoelasticwellbore_imperfectinterfaces_base.xml",
+      "context": "/geos_lib/inputFiles/wellbore/CasedThermoElasticWellbore_ImperfectInterfaces_base.xml"
+    },
+    {
+      "path": "$.tasks[5].reference_xmls[1]",
+      "blocked_basename": "casedthermoelasticwellbore_imperfectinterfaces_benchmark.xml",
+      "context": "/geos_lib/inputFiles/wellbore/CasedThermoElasticWellbore_ImperfectInterfaces_benchmark.xml"
+    },
+    {
+      "path": "$.tasks[5].reference_xmls[5]",
+      "blocked_basename": "sneddon_base.xml",
+      "context": "es/lagrangianContactMechanics/Sneddon_base.xml"
+    },
+    {
+      "path": "$.tasks[5].reference_xmls[6]",
+      "blocked_basename": "sneddon_benchmark.xml",
+      "context": "es/lagrangianContactMechanics/Sneddon_benchmark.xml"
+    },
+    {
+      "path": "$.tasks[8].reference_xmls[0]",
+      "blocked_basename": "druckerpragerwellbore_benchmark.xml",
+      "context": "tFiles/solidMechanics/ExtendedDruckerPragerWellbore_benchmark.xml"
+    },
+    {
+      "path": "$.tasks[8].reference_xmls[0]",
+      "blocked_basename": "extendeddruckerpragerwellbore_benchmark.xml",
+      "context": "lib/inputFiles/solidMechanics/ExtendedDruckerPragerWellbore_benchmark.xml"
+    },
+    {
+      "path": "$.tasks[8].reference_xmls[3]",
+      "blocked_basename": "deviatedelasticwellbore_benchmark.xml",
+      "context": "/geos_lib/inputFiles/wellbore/DeviatedElasticWellbore_benchmark.xml"
+    },
+    {
+      "path": "$.tasks[8].reference_xmls[4]",
+      "blocked_basename": "deviatedelasticwellbore_base.xml",
+      "context": "/geos_lib/inputFiles/wellbore/DeviatedElasticWellbore_base.xml"
+    },
+    {
+      "path": "$.tasks[8].reference_xmls[5]",
+      "blocked_basename": "extendeddruckerpragerwellbore_base.xml",
+      "context": "lib/inputFiles/solidMechanics/ExtendedDruckerPragerWellbore_base.xml"
+    },
+    {
+      "path": "$.tasks[8].reference_xmls[5]",
+      "blocked_basename": "druckerpragerwellbore_base.xml",
+      "context": "tFiles/solidMechanics/ExtendedDruckerPragerWellbore_base.xml"
+    },
+    {
+      "path": "$.tasks[10].reference_xmls[1]",
+      "blocked_basename": "thermalleakywell_base_iterative.xml",
+      "context": "hmarks/isothermalLeakyWell/isothermalLeakyWell_base_iterative.xml"
+    },
+    {
+      "path": "$.tasks[10].reference_xmls[1]",
+      "blocked_basename": "isothermalleakywell_base_iterative.xml",
+      "context": "enchmarks/isothermalLeakyWell/isothermalLeakyWell_base_iterative.xml"
+    },
+    {
+      "path": "$.tasks[12].reference_xmls[1]",
+      "blocked_basename": "poroelastic_terzaghi_benchmark.xml",
+      "context": "_lib/inputFiles/poromechanics/PoroElastic_Terzaghi_benchmark.xml"
+    },
+    {
+      "path": "$.tasks[12].reference_xmls[2]",
+      "blocked_basename": "isothermalleakywell_benchmark.xml",
+      "context": "enchmarks/isothermalLeakyWell/isothermalLeakyWell_benchmark.xml"
+    },
+    {
+      "path": "$.tasks[12].reference_xmls[2]",
+      "blocked_basename": "thermalleakywell_benchmark.xml",
+      "context": "hmarks/isothermalLeakyWell/isothermalLeakyWell_benchmark.xml"
+    },
+    {
+      "path": "$.tasks[13].reference_xmls[1]",
+      "blocked_basename": "deviatedelasticwellbore_benchmark.xml",
+      "context": "/geos_lib/inputFiles/wellbore/DeviatedElasticWellbore_benchmark.xml"
+    },
+    {
+      "path": "$.tasks[13].reference_xmls[2]",
+      "blocked_basename": "deviatedelasticwellbore_base.xml",
+      "context": "/geos_lib/inputFiles/wellbore/DeviatedElasticWellbore_base.xml"
+    },
+    {
+      "path": "$.tasks[14].reference_xmls[5]",
+      "blocked_basename": "thermoporoelastic_consolidation_base.xml",
+      "context": "nputFiles/thermoPoromechanics/ThermoPoroElastic_consolidation_base.xml"
+    },
+    {
+      "path": "$.tasks[16].reference_xmls[1]",
+      "blocked_basename": "sneddon_embeddedfrac_verification.xml",
+      "context": "utFiles/efemFractureMechanics/Sneddon_embeddedFrac_verification.xml"
+    },
+    {
+      "path": "$.tasks[17].reference_xmls[2]",
+      "blocked_basename": "druckerpragerwellbore_benchmark.xml",
+      "context": "tFiles/solidMechanics/ExtendedDruckerPragerWellbore_benchmark.xml"
+    },
+    {
+      "path": "$.tasks[17].reference_xmls[2]",
+      "blocked_basename": "extendeddruckerpragerwellbore_benchmark.xml",
+      "context": "lib/inputFiles/solidMechanics/ExtendedDruckerPragerWellbore_benchmark.xml"
+    }
+  ],
+  "passed": false
+}

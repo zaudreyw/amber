@@ -1,0 +1,48 @@
+[  1/17] AdvancedExampleCasedContactThermoElasticWellbore  0.45/10
+[  2/17] AdvancedExampleDeviatedElasticWellbore  1.18/10
+[  3/17] AdvancedExampleDruckerPrager  4.09/10
+[  4/17] AdvancedExampleExtendedDruckerPrager  4.40/10
+[  5/17] AdvancedExampleModifiedCamClay  5.39/10
+[  6/17] AdvancedExampleViscoDruckerPrager  5.59/10
+[  7/17] ExampleDPWellbore  0.66/10
+[  8/17] ExampleEDPWellbore  7.04/10
+[  9/17] ExampleIsothermalLeakyWell  1.83/10
+[ 10/17] ExampleMandel  FAILED: ValueError: Failed to parse XMLs in data/eval/claude_code_repo3_plugin_nohook/plug_mm_v2_s2/ExampleMandel/inputs: PoroElastic_Mandel_base.xml: XML declaration not well-formed: line 1, column 17; PoroElastic_Mandel_benchmark_fim.xml: XML declaration not well-formed: line 1, column 17; PoroElastic_Mandel_smoke_sequential.xml: XML declaration not well-formed: line 1, column 17
+[ 11/17] ExampleThermalLeakyWell  3.64/10
+[ 12/17] ExampleThermoporoelasticConsolidation  2.51/10
+[ 13/17] TutorialPoroelasticity  1.24/10
+[ 14/17] TutorialSneddon  2.51/10
+[ 15/17] buckleyLeverettProblem  3.96/10
+[ 16/17] kgdExperimentValidation  3.75/10
+[ 17/17] pknViscosityDominated  3.29/10
+
+============================================================
+  Batch evaluation: 16/17 succeeded
+============================================================
+  Scored-only     overall_score mean: 3.221  (median 3.465, range 0.45-7.04)
+  Failures-as-0   overall_score mean: 3.031
+  Scored-only     treesim       mean: 0.322
+  Failures-as-0   treesim       mean: 0.303
+  Pass ≥7: 1/16 (of scored)
+
+   7.04/10  ExampleEDPWellbore  treesim=0.705
+   5.59/10  AdvancedExampleViscoDruckerPrager  treesim=0.559
+   5.39/10  AdvancedExampleModifiedCamClay  treesim=0.539
+   4.40/10  AdvancedExampleExtendedDruckerPrager  treesim=0.440
+   4.09/10  AdvancedExampleDruckerPrager  treesim=0.409
+   3.96/10  buckleyLeverettProblem  treesim=0.396
+   3.75/10  kgdExperimentValidation  treesim=0.375
+   3.64/10  ExampleThermalLeakyWell  treesim=0.364
+   3.29/10  pknViscosityDominated  treesim=0.329
+   2.51/10  ExampleThermoporoelasticConsolidation  treesim=0.251
+   2.51/10  TutorialSneddon  treesim=0.251
+   1.83/10  ExampleIsothermalLeakyWell  treesim=0.183
+   1.24/10  TutorialPoroelasticity  treesim=0.124
+   1.18/10  AdvancedExampleDeviatedElasticWellbore  treesim=0.118
+   0.66/10  ExampleDPWellbore  treesim=0.066
+   0.45/10  AdvancedExampleCasedContactThermoElasticWellbore  treesim=0.045
+
+  Failed (1) — counted as 0 in failures-as-zero mean:
+    ExampleMandel: ValueError: Failed to parse XMLs in data/eval/claude_code_repo3_plugin_nohook/plug_mm_v2_s2/ExampleMandel/inputs: PoroElastic_Mandel_base.xml: XML declaration not well-formed: line 1, column 17; PoroElastic_Mandel_benchmark_fim.xml: XML declaration not well-formed: line 1, column 17; PoroElastic_Mandel_smoke_sequential.xml: XML declaration not well-formed: line 1, column 17
+
+Wrote misc/memory_artifacts/scores/plug_mm_v2_s2_summary.json

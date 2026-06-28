@@ -1,0 +1,58 @@
+```json
+[
+  {
+    "title": "Hydrofracture Solver and Permeability Mapping",
+    "description": "Correct solver and constitutive mapping for hydraulic fracturing simulations.",
+    "solver_family": "hydrofracture",
+    "kind": "structural_pattern",
+    "abstraction_level": "medium",
+    "applies_when": "Simulating hydraulic fracture propagation, KGD, or radial penny-shaped benchmarks.",
+    "content": "Use Hydrofracture as the primary solver. For fracture flow, pair with ParallelPlatesPermeability or CompressibleSolidParallelPlatesPermeability constitutive models. Ensure the fracture surface is defined within a SurfaceGenerator or EmbeddedSurface to manage the discontinuity."
+  },
+  {
+    "title": "Poromechanics Solver Coupling",
+    "description": "Coupling logic for single-phase flow and solid mechanics.",
+    "solver_family": "poromechanics",
+    "kind": "structural_pattern",
+    "abstraction_level": "medium",
+    "applies_when": "Task requires coupled fluid-solid interaction in porous media.",
+    "content": "Use the SinglePhasePoromechanics solver. This solver acts as a wrapper; it requires explicit attributes flowSolverName and solidSolverName that point to a SinglePhaseFVM and SolidMechanicsLagrangianFEM solver respectively."
+  },
+  {
+    "title": "Triaxial and Oedometric Driver Setup",
+    "description": "Configuration for single-element or laboratory-scale geomechanics tests.",
+    "solver_family": "triaxial",
+    "kind": "structural_pattern",
+    "abstraction_level": "medium",
+    "applies_when": "Simulating strain-controlled or stress-controlled triaxial tests.",
+    "content": "Use the TriaxialDriver element. It is compatible with advanced constitutive models like ViscoplasticModifiedCamClay, DruckerPrager, and ViscoExtendedDruckerPrager. It bypasses standard mesh-based boundary conditions for simplified element-level testing."
+  },
+  {
+    "title": "Wellbore and Radial Mesh Generation",
+    "description": "Defining geometry for wellbore casing and cement interfaces.",
+    "solver_family": "wellbore",
+    "kind": "structural_pattern",
+    "abstraction_level": "medium",
+    "applies_when": "Simulating wellbore integrity, casing, or cement rock interfaces.",
+    "content": "Use InternalWellbore for radial mesh generation. Reference cellBlockNames to distinguish between casing, cement, and rock regions. For contact between these interfaces, use SolidMechanicsLagrangeContact."
+  },
+  {
+    "title": "Anti-Pattern: Invented Fracture Elements",
+    "description": "Avoid hallucinating non-existent fracture control elements.",
+    "solver_family": "hydrofracture",
+    "kind": "anti_pattern",
+    "abstraction_level": "high",
+    "applies_when": "Defining fracture physics or propagation logic.",
+    "content": "Do NOT use <FractureModel>, <HydraulicFractureSolver>, or <FracturePropagation>. These are not valid GEOS elements. Use Hydrofracture for the solver and SurfaceGenerator or EmbeddedSurface for the geometry."
+  },
+  {
+    "title": "Anti-Pattern: Fluid-Solid Coupling Hallucinations",
+    "description": "Avoid incorrect coupling element names.",
+    "solver_family": "poromechanics",
+    "kind": "anti_pattern",
+    "abstraction_level": "high",
+    "applies_when": "Setting up coupled simulations.",
+    "content": "Do NOT use <CoupledSolver> or <BiotSolver>. GEOS uses specific coupling wrappers like SinglePhasePoromechanics. Do NOT use <FluidSolidInterface>; use the solver's internal coupling attributes to link flow and solid solvers."
+  }
+]
+```

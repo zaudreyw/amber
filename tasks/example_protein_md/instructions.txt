@@ -1,0 +1,29 @@
+Set up a standard 4-stage Amber MD simulation for a small protein in explicit water.
+
+System details:
+- Protein PDB file: protein.pdb (located in the working directory)
+- Force field: ff19SB for the protein
+- Water model: OPC with a 10 Angstrom solvation buffer
+- Add Na+ and Cl- counterions to neutralize and reach 150 mM ionic strength
+
+Simulation stages:
+1. Energy minimization: 2000 steps (1000 steepest descent, then conjugate gradient)
+2. NVT heating: heat from 0 K to 300 K over 50 ps (25000 steps, dt=0.002 ps)
+   - Use a harmonic restraint of 10 kcal/mol/A^2 on all heavy atoms during heating
+3. NPT equilibration: 100 ps at 300 K and 1 bar
+   - Remove restraints, use Monte Carlo barostat
+4. NPT production: 10 ns (5,000,000 steps, dt=0.002 ps) at 300 K and 1 bar
+
+Settings for all MD stages:
+- SHAKE on all bonds involving hydrogen (ntc=2, ntf=2)
+- 10 Angstrom non-bonded cutoff
+- Langevin thermostat (gamma_ln=1.0)
+- Random seed (ig=-1)
+- Write coordinates every 10 ps, print energy every 1 ps
+
+Write:
+- tleap.in (system preparation script)
+- mdin_min.in (minimization)
+- mdin_heat.in (NVT heating with restraints)
+- mdin_equil.in (NPT equilibration)
+- mdin_prod.in (NPT production)

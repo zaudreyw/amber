@@ -1,0 +1,9 @@
+{
+  "variant": "M4-g",
+  "model": "google/gemini-3-flash-preview",
+  "final_artifact_tokens": 869,
+  "budget_tokens": 1000,
+  "within_budget": true,
+  "retried_for_budget": false,
+  "prompt_tokens": 4343
+}

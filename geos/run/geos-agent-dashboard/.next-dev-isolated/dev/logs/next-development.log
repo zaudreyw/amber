@@ -1,0 +1,9 @@
+{"timestamp":"00:00:03.166","source":"Server","level":"LOG","message":""}
+{"timestamp":"00:00:03.167","source":"Server","level":"LOG","message":"  We detected TypeScript in your project and reconfigured your tsconfig.json file for you."}
+{"timestamp":"00:00:03.167","source":"Server","level":"LOG","message":"  The following suggested values were added to your tsconfig.json. These values can be changed to fit your project's needs:\n"}
+{"timestamp":"00:00:03.167","source":"Server","level":"LOG","message":"  \t- include was updated to add '.next-dev-isolated/types/**/*.ts'"}
+{"timestamp":"00:00:03.168","source":"Server","level":"LOG","message":""}
+{"timestamp":"00:00:04.446","source":"Server","level":"LOG","message":"- Experiments (use with caution):"}
+{"timestamp":"00:00:04.446","source":"Server","level":"LOG","message":"  ⨯ lockDistDir"}
+{"timestamp":"00:00:04.446","source":"Server","level":"LOG","message":""}
+{"timestamp":"00:00:23.680","source":"Browser","level":"INFO","message":"%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold"}

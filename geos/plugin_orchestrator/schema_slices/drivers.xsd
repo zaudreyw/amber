@@ -1,0 +1,451 @@
+<!-- Extracted from GEOS schema.xsd. -->
+<!-- Authoritative: attribute names, types, defaults. -->
+<xsd:complexType name="FieldSpecificationsType">
+		<xsd:choice minOccurs="0" maxOccurs="unbounded">
+			<xsd:element name="Aquifer" type="AquiferType" />
+			<xsd:element name="Dirichlet" type="DirichletType" />
+			<xsd:element name="FieldSpecification" type="FieldSpecificationType" />
+			<xsd:element name="HydrostaticEquilibrium" type="HydrostaticEquilibriumType" />
+			<xsd:element name="PML" type="PMLType" />
+			<xsd:element name="SourceFlux" type="SourceFluxType" />
+			<xsd:element name="Traction" type="TractionType" />
+		</xsd:choice>
+	</xsd:complexType>
+
+<xsd:complexType name="FieldSpecificationType">
+		<!--bcApplicationTableName => Name of table that specifies the on/off application of the boundary condition.-->
+		<xsd:attribute name="bcApplicationTableName" type="groupNameRef" default="" />
+		<!--beginTime => Time at which the boundary condition will start being applied.-->
+		<xsd:attribute name="beginTime" type="real64" default="-1e+99" />
+		<!--component => Component of field (if tensor) to apply boundary condition to.
+The component must use the order in which the phaseNames have been defined in the Constitutive Element.-->
+		<xsd:attribute name="component" type="integer" default="-1" />
+		<!--direction => Direction to apply boundary condition to.-->
+		<xsd:attribute name="direction" type="R1Tensor" default="{0,0,0}" />
+		<!--endTime => Time at which the boundary condition will stop being applied.-->
+		<xsd:attribute name="endTime" type="real64" default="1e+99" />
+		<!--errorSetMode => Set the log state when a “set” does not target any region
+When set to "silent", no output.
+When set to "warning", output a warning.
+When set to "error", output a throw.
+-->
+		<xsd:attribute name="errorSetMode" type="geos_FieldSpecificationBase_SetErrorMode" default="error" />
+		<!--fieldName => Name of field that boundary condition is applied to.
+A field can represent a physical variable. (pressure, temperature, global composition fraction of the fluid, ...)-->
+		<xsd:attribute name="fieldName" type="groupNameRef" default="" />
+		<!--functionName => Name of function that specifies variation of the boundary condition.-->
+		<xsd:attribute name="functionName" type="groupNameRef" default="" />
+		<!--initialCondition => Boundary condition is applied as an initial condition.-->
+		<xsd:attribute name="initialCondition" type="integer" default="0" />
+		<!--objectPath => Path to the target field-->
+		<xsd:attribute name="objectPath" type="groupNameRef" default="" />
+		<!--scale => Apply a scaling factor for the value of the boundary condition.-->
+		<xsd:attribute name="scale" type="real64" default="0" />
+		<!--setNames => Names of sets that the boundary condition is applied to.
+A set can contain heterogeneous elements in the mesh (volumes, nodes, faces, edges).
+A set can be be defined by a 'Geometry' component, or correspond to imported sets in case of an external mesh-->
+		<xsd:attribute name="setNames" type="groupNameRef_array" use="required" />
+		<!--name => A name is required for any non-unique nodes-->
+		<xsd:attribute name="name" type="groupName" use="required" />
+	</xsd:complexType>
+
+<xsd:complexType name="FunctionsType">
+		<xsd:choice minOccurs="0" maxOccurs="unbounded">
+			<xsd:element name="CompositeFunction" type="CompositeFunctionType" />
+			<xsd:element name="MultivariableTableFunction" type="MultivariableTableFunctionType" />
+			<xsd:element name="SymbolicFunction" type="SymbolicFunctionType" />
+			<xsd:element name="TableFunction" type="TableFunctionType" />
+		</xsd:choice>
+	</xsd:complexType>
+
+<xsd:complexType name="TableFunctionType">
+		<!--coordinateFiles => List of coordinate file names for ND Table-->
+		<xsd:attribute name="coordinateFiles" type="path_array" default="{}" />
+		<!--coordinates => Coordinates inputs for 1D tables-->
+		<xsd:attribute name="coordinates" type="real64_array" default="{0}" />
+		<!--inputVarNames => Name of fields are input to function.-->
+		<xsd:attribute name="inputVarNames" type="groupNameRef_array" default="{}" />
+		<!--inputVarScale => Scaling applied to function inputs before function evaluation.-->
+		<xsd:attribute name="inputVarScale" type="real64_array" default="{1}" />
+		<!--interpolation => Interpolation method. Valid options:
+* linear
+* nearest
+* upper
+* lower-->
+		<xsd:attribute name="interpolation" type="geos_TableFunction_InterpolationType" default="linear" />
+		<!--logLevel => Sets the level of information to write in the standard output (the console typically).
+Information output from lower logLevels is added with the desired log level
+1
+ - Output PVT table to log
+Even if `writeCSV ="0"`, if the table is too large for the log, a csv file will still be generated.-->
+		<xsd:attribute name="logLevel" type="integer" default="0" />
+		<!--values => Values for 1D tables-->
+		<xsd:attribute name="values" type="real64_array" default="{0}" />
+		<!--voxelFile => Voxel file name for ND Table-->
+		<xsd:attribute name="voxelFile" type="path" default="" />
+		<!--writeCSV => When set to 1, write PVT tables into a CSV file.
+ if the table is requested to be output in the log, and it is too large, a CSV file will be generated even if `writeCSV` is set to 0.-->
+		<xsd:attribute name="writeCSV" type="integer" default="0" />
+		<!--name => A name is required for any non-unique nodes-->
+		<xsd:attribute name="name" type="groupName" use="required" />
+	</xsd:complexType>
+
+<xsd:complexType name="SymbolicFunctionType">
+		<!--expression => Symbolic math expression-->
+		<xsd:attribute name="expression" type="string" use="required" />
+		<!--inputVarNames => Name of fields are input to function.-->
+		<xsd:attribute name="inputVarNames" type="groupNameRef_array" default="{}" />
+		<!--inputVarScale => Scaling applied to function inputs before function evaluation.-->
+		<xsd:attribute name="inputVarScale" type="real64_array" default="{1}" />
+		<!--variableNames => List of variables in expression.  The order must match the evaluate argument-->
+		<xsd:attribute name="variableNames" type="groupNameRef_array" use="required" />
+		<!--name => A name is required for any non-unique nodes-->
+		<xsd:attribute name="name" type="groupName" use="required" />
+	</xsd:complexType>
+
+<xsd:complexType name="CompositeFunctionType">
+		<!--expression => Composite math expression-->
+		<xsd:attribute name="expression" type="string" default="" />
+		<!--functionNames => List of source functions. The order must match the variableNames argument.-->
+		<xsd:attribute name="functionNames" type="string_array" default="{}" />
+		<!--inputVarNames => Name of fields are input to function.-->
+		<xsd:attribute name="inputVarNames" type="groupNameRef_array" default="{}" />
+		<!--inputVarScale => Scaling applied to function inputs before function evaluation.-->
+		<xsd:attribute name="inputVarScale" type="real64_array" default="{1}" />
+		<!--variableNames => List of variables in expression-->
+		<xsd:attribute name="variableNames" type="groupNameRef_array" default="{}" />
+		<!--name => A name is required for any non-unique nodes-->
+		<xsd:attribute name="name" type="groupName" use="required" />
+	</xsd:complexType>
+
+<xsd:complexType name="TasksType">
+		<xsd:choice minOccurs="0" maxOccurs="unbounded">
+			<xsd:element name="CellToCellDataCollection" type="CellToCellDataCollectionType" />
+			<xsd:element name="CompositionalMultiphaseReservoirPoromechanicsConformingFracturesALMInitialization" type="CompositionalMultiphaseReservoirPoromechanicsConformingFracturesALMInitializationType" />
+			<xsd:element name="CompositionalMultiphaseReservoirPoromechanicsConformingFracturesInitialization" type="CompositionalMultiphaseReservoirPoromechanicsConformingFracturesInitializationType" />
+			<xsd:element name="CompositionalMultiphaseReservoirPoromechanicsInitialization" type="CompositionalMultiphaseReservoirPoromechanicsInitializationType" />
+			<xsd:element name="CompositionalMultiphaseStatistics" type="CompositionalMultiphaseStatisticsType" />
+			<xsd:element name="HydrofractureInitialization" type="HydrofractureInitializationType" />
+			<xsd:element name="MultiphasePoromechanicsConformingFracturesALMInitialization" type="MultiphasePoromechanicsConformingFracturesALMInitializationType" />
+			<xsd:element name="MultiphasePoromechanicsConformingFracturesInitialization" type="MultiphasePoromechanicsConformingFracturesInitializationType" />
+			<xsd:element name="MultiphasePoromechanicsInitialization" type="MultiphasePoromechanicsInitializationType" />
+			<xsd:element name="PVTDriver" type="PVTDriverType" />
+			<xsd:element name="PackCollection" type="PackCollectionType" />
+			<xsd:element name="RelpermDriver" type="RelpermDriverType" />
+			<xsd:element name="SinglePhasePoromechanicsConformingFracturesALMInitialization" type="SinglePhasePoromechanicsConformingFracturesALMInitializationType" />
+			<xsd:element name="SinglePhasePoromechanicsConformingFracturesInitialization" type="SinglePhasePoromechanicsConformingFracturesInitializationType" />
+			<xsd:element name="SinglePhasePoromechanicsEmbeddedFracturesInitialization" type="SinglePhasePoromechanicsEmbeddedFracturesInitializationType" />
+			<xsd:element name="SinglePhasePoromechanicsInitialization" type="SinglePhasePoromechanicsInitializationType" />
+			<xsd:element name="SinglePhaseReservoirPoromechanicsConformingFracturesALMInitialization" type="SinglePhaseReservoirPoromechanicsConformingFracturesALMInitializationType" />
+			<xsd:element name="SinglePhaseReservoirPoromechanicsConformingFracturesInitialization" type="SinglePhaseReservoirPoromechanicsConformingFracturesInitializationType" />
+			<xsd:element name="SinglePhaseReservoirPoromechanicsInitialization" type="SinglePhaseReservoirPoromechanicsInitializationType" />
+			<xsd:element name="SinglePhaseStatistics" type="SinglePhaseStatisticsType" />
+			<xsd:element name="SolidMechanicsStateReset" type="SolidMechanicsStateResetType" />
+			<xsd:element name="SolidMechanicsStatistics" type="SolidMechanicsStatisticsType" />
+			<xsd:element name="SourceFluxStatistics" type="SourceFluxStatisticsType" />
+			<xsd:element name="TriaxialDriver" type="TriaxialDriverType" />
+		</xsd:choice>
+	</xsd:complexType>
+
+<xsd:complexType name="PackCollectionType">
+		<!--disableCoordCollection => Whether or not to create coordinate meta-collectors if collected objects are mesh objects.-->
+		<xsd:attribute name="disableCoordCollection" type="integer" default="0" />
+		<!--fieldName => The name of the (packable) field associated with the specified object to retrieve data from-->
+		<xsd:attribute name="fieldName" type="groupNameRef" use="required" />
+		<!--objectPath => The name of the object from which to retrieve field values.-->
+		<xsd:attribute name="objectPath" type="groupNameRef" use="required" />
+		<!--onlyOnSetChange => Whether or not to only collect when the collected sets of indices change in any way.-->
+		<xsd:attribute name="onlyOnSetChange" type="integer" default="0" />
+		<!--setNames => The set(s) for which to retrieve data.-->
+		<xsd:attribute name="setNames" type="groupNameRef_array" default="{}" />
+		<!--name => A name is required for any non-unique nodes-->
+		<xsd:attribute name="name" type="groupName" use="required" />
+	</xsd:complexType>
+
+<xsd:complexType name="OutputsType">
+		<xsd:choice minOccurs="0" maxOccurs="unbounded">
+			<xsd:element name="Blueprint" type="BlueprintType" />
+			<xsd:element name="ChomboIO" type="ChomboIOType" />
+			<xsd:element name="MemoryStats" type="MemoryStatsType" />
+			<xsd:element name="Python" type="PythonType" />
+			<xsd:element name="Restart" type="RestartType" />
+			<xsd:element name="Silo" type="SiloType" />
+			<xsd:element name="TimeHistory" type="TimeHistoryType" />
+			<xsd:element name="VTK" type="VTKType" />
+		</xsd:choice>
+	</xsd:complexType>
+
+<xsd:complexType name="SiloType">
+		<!--childDirectory => Child directory path-->
+		<xsd:attribute name="childDirectory" type="string" default="" />
+		<!--fieldNames => Names of the fields to output. If this attribute is specified, GEOSX outputs all (and only) the fields specified by the user, regardless of their plotLevel-->
+		<xsd:attribute name="fieldNames" type="groupNameRef_array" default="{}" />
+		<!--logLevel => Sets the level of information to write in the standard output (the console typically).
+Information output from lower logLevels is added with the desired log level
+1
+ - Output timing information-->
+		<xsd:attribute name="logLevel" type="integer" default="0" />
+		<!--onlyPlotSpecifiedFieldNames => If this flag is equal to 1, then we only plot the fields listed in `fieldNames`. Otherwise, we plot all the fields with the required `plotLevel`, plus the fields listed in `fieldNames`-->
+		<xsd:attribute name="onlyPlotSpecifiedFieldNames" type="integer" default="0" />
+		<!--parallelThreads => Number of plot files.-->
+		<xsd:attribute name="parallelThreads" type="integer" default="1" />
+		<!--plotFileRoot => (no description available)-->
+		<xsd:attribute name="plotFileRoot" type="string" default="plot" />
+		<!--plotLevel => (no description available)-->
+		<xsd:attribute name="plotLevel" type="integer" default="1" />
+		<!--writeCellElementMesh => (no description available)-->
+		<xsd:attribute name="writeCellElementMesh" type="integer" default="1" />
+		<!--writeEdgeMesh => (no description available)-->
+		<xsd:attribute name="writeEdgeMesh" type="integer" default="0" />
+		<!--writeFEMFaces => (no description available)-->
+		<xsd:attribute name="writeFEMFaces" type="integer" default="0" />
+		<!--writeFaceElementMesh => (no description available)-->
+		<xsd:attribute name="writeFaceElementMesh" type="integer" default="1" />
+		<!--name => A name is required for any non-unique nodes-->
+		<xsd:attribute name="name" type="groupName" use="required" />
+	</xsd:complexType>
+
+<xsd:complexType name="VTKType">
+		<!--childDirectory => Child directory path-->
+		<xsd:attribute name="childDirectory" type="string" default="" />
+		<!--fieldNames => Names of the fields to output. If this attribute is specified, GEOS outputs all the fields specified by the user, regardless of their `plotLevel`-->
+		<xsd:attribute name="fieldNames" type="groupNameRef_array" default="{}" />
+		<!--format => Output data format.  Valid options: ``binary``, ``ascii``-->
+		<xsd:attribute name="format" type="geos_vtk_VTKOutputMode" default="binary" />
+		<!--levelNames => Names of mesh levels to output.-->
+		<xsd:attribute name="levelNames" type="string_array" default="{}" />
+		<!--logLevel => Sets the level of information to write in the standard output (the console typically).
+Information output from lower logLevels is added with the desired log level
+1
+ - Output timing information
+2
+ - Information on output events (VTK/ChomboIO/HDF5)-->
+		<xsd:attribute name="logLevel" type="integer" default="0" />
+		<!--numberOfTargetProcesses => Number of output aggregate files to be written.-->
+		<xsd:attribute name="numberOfTargetProcesses" type="integer" default="1" />
+		<!--onlyPlotSpecifiedFieldNames => If this flag is equal to 1, then we only plot the fields listed in `fieldNames`. Otherwise, we plot all the fields with the required `plotLevel`, plus the fields listed in `fieldNames`-->
+		<xsd:attribute name="onlyPlotSpecifiedFieldNames" type="integer" default="0" />
+		<!--outputRegionType => Output region types.  Valid options: ``cell``, ``well``, ``surface``, ``particle``, ``all``-->
+		<xsd:attribute name="outputRegionType" type="geos_vtk_VTKRegionTypes" default="all" />
+		<!--plotFileRoot => Name of the root file for this output.-->
+		<xsd:attribute name="plotFileRoot" type="string" default="VTK" />
+		<!--plotLevel => Level detail plot. Only fields with lower of equal plot level will be output.-->
+		<xsd:attribute name="plotLevel" type="integer" default="1" />
+		<!--writeFEMFaces => (no description available)-->
+		<xsd:attribute name="writeFEMFaces" type="integer" default="0" />
+		<!--writeFaceElementsAs3D => Should the face elements be written as 3d volumes or not.-->
+		<xsd:attribute name="writeFaceElementsAs3D" type="integer" default="0" />
+		<!--writeGhostCells => Should the vtk files contain the ghost cells or not.-->
+		<xsd:attribute name="writeGhostCells" type="integer" default="0" />
+		<!--name => A name is required for any non-unique nodes-->
+		<xsd:attribute name="name" type="groupName" use="required" />
+	</xsd:complexType>
+
+<xsd:complexType name="TimeHistoryType">
+		<!--childDirectory => Child directory path-->
+		<xsd:attribute name="childDirectory" type="string" default="" />
+		<!--filename => The filename to which to write time history output.-->
+		<xsd:attribute name="filename" type="string" default="TimeHistory" />
+		<!--format => The output file format for time history output.-->
+		<xsd:attribute name="format" type="string" default="hdf" />
+		<!--logLevel => Sets the level of information to write in the standard output (the console typically).
+Information output from lower logLevels is added with the desired log level
+1
+ - Output timing information
+3
+ - Information on Time history Initialization
+ - Information on buffered data in an HDF5 file -->
+		<xsd:attribute name="logLevel" type="integer" default="0" />
+		<!--sources => A list of collectors from which to collect and output time history information.-->
+		<xsd:attribute name="sources" type="groupNameRef_array" use="required" />
+		<!--name => A name is required for any non-unique nodes-->
+		<xsd:attribute name="name" type="groupName" use="required" />
+	</xsd:complexType>
+
+<xsd:complexType name="RestartType">
+		<!--childDirectory => Child directory path-->
+		<xsd:attribute name="childDirectory" type="string" default="" />
+		<!--logLevel => Sets the level of information to write in the standard output (the console typically).
+Information output from lower logLevels is added with the desired log level
+1
+ - Output timing information-->
+		<xsd:attribute name="logLevel" type="integer" default="0" />
+		<!--name => A name is required for any non-unique nodes-->
+		<xsd:attribute name="name" type="groupName" use="required" />
+	</xsd:complexType>
+
+<xsd:complexType name="DirichletType">
+		<!--bcApplicationTableName => Name of table that specifies the on/off application of the boundary condition.-->
+		<xsd:attribute name="bcApplicationTableName" type="groupNameRef" default="" />
+		<!--beginTime => Time at which the boundary condition will start being applied.-->
+		<xsd:attribute name="beginTime" type="real64" default="-1e+99" />
+		<!--component => Component of field (if tensor) to apply boundary condition to.
+The component must use the order in which the phaseNames have been defined in the Constitutive Element.-->
+		<xsd:attribute name="component" type="integer" default="-1" />
+		<!--direction => Direction to apply boundary condition to.-->
+		<xsd:attribute name="direction" type="R1Tensor" default="{0,0,0}" />
+		<!--endTime => Time at which the boundary condition will stop being applied.-->
+		<xsd:attribute name="endTime" type="real64" default="1e+99" />
+		<!--errorSetMode => Set the log state when a “set” does not target any region
+When set to "silent", no output.
+When set to "warning", output a warning.
+When set to "error", output a throw.
+-->
+		<xsd:attribute name="errorSetMode" type="geos_FieldSpecificationBase_SetErrorMode" default="error" />
+		<!--fieldName => Name of field that boundary condition is applied to.
+A field can represent a physical variable. (pressure, temperature, global composition fraction of the fluid, ...)-->
+		<xsd:attribute name="fieldName" type="groupNameRef" default="" />
+		<!--functionName => Name of function that specifies variation of the boundary condition.-->
+		<xsd:attribute name="functionName" type="groupNameRef" default="" />
+		<!--initialCondition => Boundary condition is applied as an initial condition.-->
+		<xsd:attribute name="initialCondition" type="integer" default="0" />
+		<!--objectPath => Path to the target field-->
+		<xsd:attribute name="objectPath" type="groupNameRef" default="" />
+		<!--scale => Apply a scaling factor for the value of the boundary condition.-->
+		<xsd:attribute name="scale" type="real64" default="0" />
+		<!--setNames => Names of sets that the boundary condition is applied to.
+A set can contain heterogeneous elements in the mesh (volumes, nodes, faces, edges).
+A set can be be defined by a 'Geometry' component, or correspond to imported sets in case of an external mesh-->
+		<xsd:attribute name="setNames" type="groupNameRef_array" use="required" />
+		<!--name => A name is required for any non-unique nodes-->
+		<xsd:attribute name="name" type="groupName" use="required" />
+	</xsd:complexType>
+
+<xsd:complexType name="TractionType">
+		<!--bcApplicationTableName => Name of table that specifies the on/off application of the boundary condition.-->
+		<xsd:attribute name="bcApplicationTableName" type="groupNameRef" default="" />
+		<!--beginTime => Time at which the boundary condition will start being applied.-->
+		<xsd:attribute name="beginTime" type="real64" default="-1e+99" />
+		<!--direction => Direction to apply boundary condition to.-->
+		<xsd:attribute name="direction" type="R1Tensor" default="{0,0,0}" />
+		<!--endTime => Time at which the boundary condition will stop being applied.-->
+		<xsd:attribute name="endTime" type="real64" default="1e+99" />
+		<!--errorSetMode => Set the log state when a “set” does not target any region
+When set to "silent", no output.
+When set to "warning", output a warning.
+When set to "error", output a throw.
+-->
+		<xsd:attribute name="errorSetMode" type="geos_FieldSpecificationBase_SetErrorMode" default="error" />
+		<!--functionName => Name of function that specifies variation of the boundary condition.-->
+		<xsd:attribute name="functionName" type="groupNameRef" default="" />
+		<!--initialCondition => Boundary condition is applied as an initial condition.-->
+		<xsd:attribute name="initialCondition" type="integer" default="0" />
+		<!--inputStress => Input stress for tractionType = stress-->
+		<xsd:attribute name="inputStress" type="R2SymTensor" default="{0,0,0,0,0,0}" />
+		<!--nodalScaleFlag => The flag to indicate whether to apply the nodal scale on the traction magnitude-->
+		<xsd:attribute name="nodalScaleFlag" type="integer" default="0" />
+		<!--objectPath => Path to the target field-->
+		<xsd:attribute name="objectPath" type="groupNameRef" default="" />
+		<!--scale => Apply a scaling factor for the value of the boundary condition.-->
+		<xsd:attribute name="scale" type="real64" default="0" />
+		<!--scaleSet => (no description available)-->
+		<xsd:attribute name="scaleSet" type="real64_array" default="{0}" />
+		<!--setNames => Names of sets that the boundary condition is applied to.
+A set can contain heterogeneous elements in the mesh (volumes, nodes, faces, edges).
+A set can be be defined by a 'Geometry' component, or correspond to imported sets in case of an external mesh-->
+		<xsd:attribute name="setNames" type="groupNameRef_array" use="required" />
+		<!--tractionType => Type of traction boundary condition. Options are:
+vector - traction is applied to the faces as specified from the scale and direction,
+normal - traction is applied to the faces as a pressure specified from the product of scale and the outward face normal,
+stress - traction is applied to the faces as specified by the inner product of input stress and face normal.-->
+		<xsd:attribute name="tractionType" type="geos_TractionBoundaryCondition_TractionType" default="vector" />
+		<!--name => A name is required for any non-unique nodes-->
+		<xsd:attribute name="name" type="groupName" use="required" />
+	</xsd:complexType>
+
+<xsd:complexType name="SourceFluxType">
+		<!--bcApplicationTableName => Name of table that specifies the on/off application of the boundary condition.-->
+		<xsd:attribute name="bcApplicationTableName" type="groupNameRef" default="" />
+		<!--beginTime => Time at which the boundary condition will start being applied.-->
+		<xsd:attribute name="beginTime" type="real64" default="-1e+99" />
+		<!--component => Component of field (if tensor) to apply boundary condition to.
+The component must use the order in which the phaseNames have been defined in the Constitutive Element.-->
+		<xsd:attribute name="component" type="integer" default="-1" />
+		<!--direction => Direction to apply boundary condition to.-->
+		<xsd:attribute name="direction" type="R1Tensor" default="{0,0,0}" />
+		<!--endTime => Time at which the boundary condition will stop being applied.-->
+		<xsd:attribute name="endTime" type="real64" default="1e+99" />
+		<!--errorSetMode => Set the log state when a “set” does not target any region
+When set to "silent", no output.
+When set to "warning", output a warning.
+When set to "error", output a throw.
+-->
+		<xsd:attribute name="errorSetMode" type="geos_FieldSpecificationBase_SetErrorMode" default="error" />
+		<!--functionName => Name of a function that specifies the variation of the production rate variations of this SourceFlux.Multiplied by scale. If no function is provided, a constant value of 1 is used.The produced fluid rate unit is in kg by default, or in mole if the flow solver uses moles.-->
+		<xsd:attribute name="functionName" type="groupNameRef" default="" />
+		<!--initialCondition => Boundary condition is applied as an initial condition.-->
+		<xsd:attribute name="initialCondition" type="integer" default="0" />
+		<!--objectPath => Path to the target field-->
+		<xsd:attribute name="objectPath" type="groupNameRef" default="" />
+		<!--scale => Multiplier of the functionName value. If no functionName is provided, this value is used directly.-->
+		<xsd:attribute name="scale" type="real64" default="0" />
+		<!--setNames => Names of sets that the boundary condition is applied to.
+A set can contain heterogeneous elements in the mesh (volumes, nodes, faces, edges).
+A set can be be defined by a 'Geometry' component, or correspond to imported sets in case of an external mesh-->
+		<xsd:attribute name="setNames" type="groupNameRef_array" use="required" />
+		<!--name => A name is required for any non-unique nodes-->
+		<xsd:attribute name="name" type="groupName" use="required" />
+	</xsd:complexType>
+
+<xsd:complexType name="AquiferType">
+		<!--allowAllPhasesIntoAquifer => Flag to allow all phases to flow into the aquifer. 
+This flag only matters for the configuration in which flow is from reservoir to aquifer. 
+    - If the flag is equal to 1, then all phases, including non-aqueous phases, are allowed to flow into the aquifer. 
+     - If the flag is equal to 0, then only the water phase is allowed to flow into the aquifer. 
+If you are in a configuration in which flow is from reservoir to aquifer and you expect non-aqueous phases to saturate the reservoir cells next to the aquifer, set this flag to 1. 
+This keyword is ignored for single-phase flow simulations-->
+		<xsd:attribute name="allowAllPhasesIntoAquifer" type="integer" default="0" />
+		<!--aquiferAngle => Angle subtended by the aquifer boundary from the center of the reservoir [degress]-->
+		<xsd:attribute name="aquiferAngle" type="real64" use="required" />
+		<!--aquiferElevation => Aquifer elevation (positive going upward) [m]-->
+		<xsd:attribute name="aquiferElevation" type="real64" use="required" />
+		<!--aquiferInitialPressure => Aquifer initial pressure [Pa]-->
+		<xsd:attribute name="aquiferInitialPressure" type="real64" use="required" />
+		<!--aquiferInnerRadius => Aquifer inner radius [m]-->
+		<xsd:attribute name="aquiferInnerRadius" type="real64" use="required" />
+		<!--aquiferPermeability => Aquifer permeability [m^2]-->
+		<xsd:attribute name="aquiferPermeability" type="real64" use="required" />
+		<!--aquiferPorosity => Aquifer porosity-->
+		<xsd:attribute name="aquiferPorosity" type="real64" use="required" />
+		<!--aquiferThickness => Aquifer thickness [m]-->
+		<xsd:attribute name="aquiferThickness" type="real64" use="required" />
+		<!--aquiferTotalCompressibility => Aquifer total compressibility (rock and fluid) [Pa^-1]-->
+		<xsd:attribute name="aquiferTotalCompressibility" type="real64" use="required" />
+		<!--aquiferWaterDensity => Aquifer water density [kg.m^-3]-->
+		<xsd:attribute name="aquiferWaterDensity" type="real64" use="required" />
+		<!--aquiferWaterPhaseComponentFraction => Aquifer water phase component fraction. This keyword is ignored for single-phase flow simulations.-->
+		<xsd:attribute name="aquiferWaterPhaseComponentFraction" type="real64_array" default="{0}" />
+		<!--aquiferWaterPhaseComponentNames => Aquifer water phase component names. This keyword is ignored for single-phase flow simulations.-->
+		<xsd:attribute name="aquiferWaterPhaseComponentNames" type="string_array" default="{}" />
+		<!--aquiferWaterViscosity => Aquifer water viscosity [Pa.s]-->
+		<xsd:attribute name="aquiferWaterViscosity" type="real64" use="required" />
+		<!--bcApplicationTableName => Name of table that specifies the on/off application of the boundary condition.-->
+		<xsd:attribute name="bcApplicationTableName" type="groupNameRef" default="" />
+		<!--beginTime => Time at which the boundary condition will start being applied.-->
+		<xsd:attribute name="beginTime" type="real64" default="-1e+99" />
+		<!--direction => Direction to apply boundary condition to.-->
+		<xsd:attribute name="direction" type="R1Tensor" default="{0,0,0}" />
+		<!--endTime => Time at which the boundary condition will stop being applied.-->
+		<xsd:attribute name="endTime" type="real64" default="1e+99" />
+		<!--errorSetMode => Set the log state when a “set” does not target any region
+When set to "silent", no output.
+When set to "warning", output a warning.
+When set to "error", output a throw.
+-->
+		<xsd:attribute name="errorSetMode" type="geos_FieldSpecificationBase_SetErrorMode" default="error" />
+		<!--functionName => Name of function that specifies variation of the boundary condition.-->
+		<xsd:attribute name="functionName" type="groupNameRef" default="" />
+		<!--initialCondition => Boundary condition is applied as an initial condition.-->
+		<xsd:attribute name="initialCondition" type="integer" default="0" />
+		<!--pressureInfluenceFunctionName => Name of the table describing the pressure influence function
+. If not provided, we use a default pressure influence function-->
+		<xsd:attribute name="pressureInfluenceFunctionName" type="groupNameRef" default="" />
+		<!--scale => Apply a scaling factor for the value of the boundary condition.-->
+		<xsd:attribute name="scale" type="real64" default="0" />
+		<!--setNames => Names of sets that the boundary condition is applied to.
+A set can contain heterogeneous elements in the mesh (volumes, nodes, faces, edges).
+A set can be be defined by a 'Geometry' component, or correspond to imported sets in case of an external mesh-->
+		<xsd:attribute name="setNames" type="groupNameRef_array" use="required" />
+		<!--name => A name is required for any non-unique nodes-->
+		<xsd:attribute name="name" type="groupName" use="required" />
+	</xsd:complexType>

@@ -1,0 +1,48 @@
+[  1/17] AdvancedExampleCasedContactThermoElasticWellbore  9.50/10
+[  2/17] AdvancedExampleDeviatedElasticWellbore  FAILED: ValueError: Failed to parse XMLs in data/eval/claude_code_no_plugin/noplug_mm_v2_s2/AdvancedExampleDeviatedElasticWellbore/inputs: DeviatedElasticWellbore_base.xml: not well-formed (invalid token): line 7, column 6; DeviatedElasticWellbore_benchmark.xml: not well-formed (invalid token): line 6, column 6; DeviatedElasticWellbore_smoke.xml: not well-formed (invalid token): line 6, column 6
+[  3/17] AdvancedExampleDruckerPrager  1.73/10
+[  4/17] AdvancedExampleExtendedDruckerPrager  3.96/10
+[  5/17] AdvancedExampleModifiedCamClay  FAILED: ValueError: Failed to parse XMLs in data/eval/claude_code_no_plugin/noplug_mm_v2_s2/AdvancedExampleModifiedCamClay/inputs: triaxialDriver_ModifiedCamClay.xml: mismatched tag: line 230, column 4; triaxialDriver_base.xml: mismatched tag: line 250, column 4
+[  6/17] AdvancedExampleViscoDruckerPrager  3.17/10
+[  7/17] ExampleDPWellbore  10.00/10
+[  8/17] ExampleEDPWellbore  0.15/10
+[  9/17] ExampleIsothermalLeakyWell  1.10/10
+[ 10/17] ExampleMandel  2.69/10
+[ 11/17] ExampleThermalLeakyWell  9.51/10
+[ 12/17] ExampleThermoporoelasticConsolidation  0.04/10
+[ 13/17] TutorialPoroelasticity  FAILED: ValueError: Failed to parse XMLs in data/eval/claude_code_no_plugin/noplug_mm_v2_s2/TutorialPoroelasticity/inputs: PoroElastic_Terzaghi_base_direct.xml: not well-formed (invalid token): line 4, column 20; PoroElastic_Terzaghi_benchmark.xml: not well-formed (invalid token): line 4, column 16; PoroElastic_Terzaghi_smoke.xml: not well-formed (invalid token): line 4, column 16
+[ 14/17] TutorialSneddon  1.33/10
+[ 15/17] buckleyLeverettProblem  9.61/10
+[ 16/17] kgdExperimentValidation  10.00/10
+[ 17/17] pknViscosityDominated  0.00/10
+
+============================================================
+  Batch evaluation: 14/17 succeeded
+============================================================
+  Scored-only     overall_score mean: 4.485  (median 2.930, range 0.00-10.00)
+  Failures-as-0   overall_score mean: 3.694
+  Scored-only     treesim       mean: 0.449
+  Failures-as-0   treesim       mean: 0.369
+  Pass ≥7: 5/14 (of scored)
+
+  10.00/10  ExampleDPWellbore  treesim=1.000
+  10.00/10  kgdExperimentValidation  treesim=1.000
+   9.61/10  buckleyLeverettProblem  treesim=0.961
+   9.51/10  ExampleThermalLeakyWell  treesim=0.951
+   9.50/10  AdvancedExampleCasedContactThermoElasticWellbore  treesim=0.950
+   3.96/10  AdvancedExampleExtendedDruckerPrager  treesim=0.396
+   3.17/10  AdvancedExampleViscoDruckerPrager  treesim=0.317
+   2.69/10  ExampleMandel  treesim=0.269
+   1.73/10  AdvancedExampleDruckerPrager  treesim=0.173
+   1.33/10  TutorialSneddon  treesim=0.133
+   1.10/10  ExampleIsothermalLeakyWell  treesim=0.110
+   0.15/10  ExampleEDPWellbore  treesim=0.015
+   0.04/10  ExampleThermoporoelasticConsolidation  treesim=0.004
+   0.00/10  pknViscosityDominated  treesim=0.000
+
+  Failed (3) — counted as 0 in failures-as-zero mean:
+    AdvancedExampleDeviatedElasticWellbore: ValueError: Failed to parse XMLs in data/eval/claude_code_no_plugin/noplug_mm_v2_s2/AdvancedExampleDeviatedElasticWellbore/inputs: DeviatedElasticWellbore_base.xml: not well-formed (invalid token): line 7, column 6; DeviatedElasticWellbore_benchmark.xml: not well-formed (invalid token): line 6, column 6; DeviatedElasticWellbore_smoke.xml: not well-formed (invalid token): line 6, column 6
+    AdvancedExampleModifiedCamClay: ValueError: Failed to parse XMLs in data/eval/claude_code_no_plugin/noplug_mm_v2_s2/AdvancedExampleModifiedCamClay/inputs: triaxialDriver_ModifiedCamClay.xml: mismatched tag: line 230, column 4; triaxialDriver_base.xml: mismatched tag: line 250, column 4
+    TutorialPoroelasticity: ValueError: Failed to parse XMLs in data/eval/claude_code_no_plugin/noplug_mm_v2_s2/TutorialPoroelasticity/inputs: PoroElastic_Terzaghi_base_direct.xml: not well-formed (invalid token): line 4, column 20; PoroElastic_Terzaghi_benchmark.xml: not well-formed (invalid token): line 4, column 16; PoroElastic_Terzaghi_smoke.xml: not well-formed (invalid token): line 4, column 16
+
+Wrote misc/memory_artifacts/scores/noplug_mm_v2_s2_summary.json

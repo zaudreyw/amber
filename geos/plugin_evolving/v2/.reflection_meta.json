@@ -1,0 +1,23 @@
+{
+  "version": 2,
+  "parent": 1,
+  "timestamp": "2026-04-30T12:04:03.384220",
+  "round_mean_treesim": 0,
+  "round_n_tasks": 6,
+  "files_proposed": [
+    "PRIMER.md",
+    "memory/cheatsheet.md"
+  ],
+  "written": [
+    {
+      "path": "PRIMER.md",
+      "bytes": 2451,
+      "stripped_xml_filenames": 4
+    },
+    {
+      "path": "memory/cheatsheet.md",
+      "bytes": 4804,
+      "stripped_xml_filenames": 3
+    }
+  ]
+}

@@ -1,0 +1,793 @@
+{
+  "experiment": "ExampleTFrac",
+  "overall_score": 9.97,
+  "overall_01": 0.9966,
+  "treesim": 0.9966,
+  "treesim_section_scores": {
+    "Constitutive": 1.0,
+    "ElementRegions": 1.0,
+    "Events": 1.0,
+    "FieldSpecifications": 1.0,
+    "Functions": 1.0,
+    "Geometry": 1.0,
+    "Mesh": 1.0,
+    "NumericalMethods": 1.0,
+    "Outputs": 0.9563,
+    "Solvers": 1.0,
+    "Tasks": 1.0
+  },
+  "treesim_detail": {
+    "tag": "Problem",
+    "name": "",
+    "score": 0.9966,
+    "attr_score": 1.0,
+    "n_gt_children": 13,
+    "n_matched": 13,
+    "n_extra": 0,
+    "children_score": 0.9966,
+    "children": [
+      {
+        "tag": "Constitutive",
+        "name": "",
+        "score": 1.0,
+        "attr_score": 1.0,
+        "n_gt_children": 2,
+        "n_matched": 2,
+        "n_extra": 0,
+        "children_score": 1.0,
+        "children": [
+          {
+            "tag": "Coulomb",
+            "name": "frictionLaw",
+            "score": 1.0,
+            "attr_score": 1.0,
+            "n_gt_children": 0,
+            "n_matched": 0,
+            "n_extra": 0
+          },
+          {
+            "tag": "ElasticIsotropic",
+            "name": "rock",
+            "score": 1.0,
+            "attr_score": 1.0,
+            "n_gt_children": 0,
+            "n_matched": 0,
+            "n_extra": 0
+          }
+        ]
+      },
+      {
+        "tag": "ElementRegions",
+        "name": "",
+        "score": 1.0,
+        "attr_score": 1.0,
+        "n_gt_children": 2,
+        "n_matched": 2,
+        "n_extra": 0,
+        "children_score": 1.0,
+        "children": [
+          {
+            "tag": "CellElementRegion",
+            "name": "Region",
+            "score": 1.0,
+            "attr_score": 1.0,
+            "n_gt_children": 0,
+            "n_matched": 0,
+            "n_extra": 0
+          },
+          {
+            "tag": "SurfaceElementRegion",
+            "name": "Fracture",
+            "score": 1.0,
+            "attr_score": 1.0,
+            "n_gt_children": 0,
+            "n_matched": 0,
+            "n_extra": 0
+          }
+        ]
+      },
+      {
+        "tag": "Events",
+        "name": "",
+        "score": 1.0,
+        "attr_score": 1.0,
+        "n_gt_children": 7,
+        "n_matched": 7,
+        "n_extra": 0,
+        "children_score": 1.0,
+        "children": [
+          {
+            "tag": "PeriodicEvent",
+            "name": "displacementHistoryOutput",
+            "score": 1.0,
+            "attr_score": 1.0,
+            "n_gt_children": 0,
+            "n_matched": 0,
+            "n_extra": 0
+          },
+          {
+            "tag": "PeriodicEvent",
+            "name": "displacementHistoryCollection",
+            "score": 1.0,
+            "attr_score": 1.0,
+            "n_gt_children": 0,
+            "n_matched": 0,
+            "n_extra": 0
+          },
+          {
+            "tag": "PeriodicEvent",
+            "name": "tractionHistoryOutput",
+            "score": 1.0,
+            "attr_score": 1.0,
+            "n_gt_children": 0,
+            "n_matched": 0,
+            "n_extra": 0
+          },
+          {
+            "tag": "PeriodicEvent",
+            "name": "tractionHistoryCollection",
+            "score": 1.0,
+            "attr_score": 1.0,
+            "n_gt_children": 0,
+            "n_matched": 0,
+            "n_extra": 0
+          },
+          {
+            "tag": "PeriodicEvent",
+            "name": "outputs",
+            "score": 1.0,
+            "attr_score": 1.0,
+            "n_gt_children": 0,
+            "n_matched": 0,
+            "n_extra": 0
+          },
+          {
+            "tag": "PeriodicEvent",
+            "name": "solverApplications",
+            "score": 1.0,
+            "attr_score": 1.0,
+            "n_gt_children": 0,
+            "n_matched": 0,
+            "n_extra": 0
+          },
+          {
+            "tag": "SoloEvent",
+            "name": "preFracture",
+            "score": 1.0,
+            "attr_score": 1.0,
+            "n_gt_children": 0,
+            "n_matched": 0,
+            "n_extra": 0
+          }
+        ]
+      },
+      {
+        "tag": "FieldSpecifications",
+        "name": "",
+        "score": 1.0,
+        "attr_score": 1.0,
+        "n_gt_children": 7,
+        "n_matched": 7,
+        "n_extra": 0,
+        "children_score": 1.0,
+        "children": [
+          {
+            "tag": "FieldSpecification",
+            "name": "SigmaY",
+            "score": 1.0,
+            "attr_score": 1.0,
+            "n_gt_children": 0,
+            "n_matched": 0,
+            "n_extra": 0
+          },
+          {
+            "tag": "FieldSpecification",
+            "name": "zconstraint",
+            "score": 1.0,
+            "attr_score": 1.0,
+            "n_gt_children": 0,
+            "n_matched": 0,
+            "n_extra": 0
+          },
+          {
+            "tag": "FieldSpecification",
+            "name": "yconstraint",
+            "score": 1.0,
+            "attr_score": 1.0,
+            "n_gt_children": 0,
+            "n_matched": 0,
+            "n_extra": 0
+          },
+          {
+            "tag": "FieldSpecification",
+            "name": "xconstraint",
+            "score": 1.0,
+            "attr_score": 1.0,
+            "n_gt_children": 0,
+            "n_matched": 0,
+            "n_extra": 0
+          },
+          {
+            "tag": "FieldSpecification",
+            "name": "separableFace",
+            "score": 1.0,
+            "attr_score": 1.0,
+            "n_gt_children": 0,
+            "n_matched": 0,
+            "n_extra": 0
+          },
+          {
+            "tag": "FieldSpecification",
+            "name": "frac",
+            "score": 1.0,
+            "attr_score": 1.0,
+            "n_gt_children": 0,
+            "n_matched": 0,
+            "n_extra": 0
+          },
+          {
+            "tag": "Traction",
+            "name": "NormalTraction",
+            "score": 1.0,
+            "attr_score": 1.0,
+            "n_gt_children": 0,
+            "n_matched": 0,
+            "n_extra": 0
+          }
+        ]
+      },
+      {
+        "tag": "Functions",
+        "name": "",
+        "score": 1.0,
+        "attr_score": 1.0,
+        "n_gt_children": 1,
+        "n_matched": 1,
+        "n_extra": 0,
+        "children_score": 1.0,
+        "children": [
+          {
+            "tag": "TableFunction",
+            "name": "ForceTimeFunction",
+            "score": 1.0,
+            "attr_score": 1.0,
+            "n_gt_children": 0,
+            "n_matched": 0,
+            "n_extra": 0
+          }
+        ]
+      },
+      {
+        "tag": "Geometry",
+        "name": "",
+        "score": 1.0,
+        "attr_score": 1.0,
+        "n_gt_children": 4,
+        "n_matched": 4,
+        "n_extra": 0,
+        "children_score": 1.0,
+        "children": [
+          {
+            "tag": "Rectangle",
+            "name": "core2",
+            "score": 1.0,
+            "attr_score": 1.0,
+            "n_gt_children": 0,
+            "n_matched": 0,
+            "n_extra": 0
+          },
+          {
+            "tag": "Rectangle",
+            "name": "fracture2",
+            "score": 1.0,
+            "attr_score": 1.0,
+            "n_gt_children": 0,
+            "n_matched": 0,
+            "n_extra": 0
+          },
+          {
+            "tag": "Rectangle",
+            "name": "core1",
+            "score": 1.0,
+            "attr_score": 1.0,
+            "n_gt_children": 0,
+            "n_matched": 0,
+            "n_extra": 0
+          },
+          {
+            "tag": "Rectangle",
+            "name": "fracture1",
+            "score": 1.0,
+            "attr_score": 1.0,
+            "n_gt_children": 0,
+            "n_matched": 0,
+            "n_extra": 0
+          }
+        ]
+      },
+      {
+        "tag": "Mesh",
+        "name": "",
+        "score": 1.0,
+        "attr_score": 1.0,
+        "n_gt_children": 1,
+        "n_matched": 1,
+        "n_extra": 0,
+        "children_score": 1.0,
+        "children": [
+          {
+            "tag": "InternalMesh",
+            "name": "mesh1",
+            "score": 1.0,
+            "attr_score": 1.0,
+            "n_gt_children": 0,
+            "n_matched": 0,
+            "n_extra": 0
+          }
+        ]
+      },
+      {
+        "tag": "NumericalMethods",
+        "name": "",
+        "score": 1.0,
+        "attr_score": 1.0,
+        "n_gt_children": 1,
+        "n_matched": 1,
+        "n_extra": 0,
+        "children_score": 1.0,
+        "children": [
+          {
+            "tag": "FiniteVolume",
+            "name": "",
+            "score": 1.0,
+            "attr_score": 1.0,
+            "n_gt_children": 1,
+            "n_matched": 1,
+            "n_extra": 0,
+            "children_score": 1.0,
+            "children": [
+              {
+                "tag": "TwoPointFluxApproximation",
+                "name": "TPFAstabilization",
+                "score": 1.0,
+                "attr_score": 1.0,
+                "n_gt_children": 0,
+                "n_matched": 0,
+                "n_extra": 0
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "tag": "NumericalMethods",
+        "name": "",
+        "score": 1.0,
+        "attr_score": 1.0,
+        "n_gt_children": 1,
+        "n_matched": 1,
+        "n_extra": 0,
+        "children_score": 1.0,
+        "children": [
+          {
+            "tag": "FiniteElements",
+            "name": "",
+            "score": 1.0,
+            "attr_score": 1.0,
+            "n_gt_children": 1,
+            "n_matched": 1,
+            "n_extra": 0,
+            "children_score": 1.0,
+            "children": [
+              {
+                "tag": "FiniteElementSpace",
+                "name": "FE1",
+                "score": 1.0,
+                "attr_score": 1.0,
+                "n_gt_children": 0,
+                "n_matched": 0,
+                "n_extra": 0
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "tag": "Outputs",
+        "name": "",
+        "score": 0.9563,
+        "attr_score": 1.0,
+        "n_gt_children": 4,
+        "n_matched": 4,
+        "n_extra": 0,
+        "children_score": 0.9375,
+        "children": [
+          {
+            "tag": "Restart",
+            "name": "restartOutput",
+            "score": 1.0,
+            "attr_score": 1.0,
+            "n_gt_children": 0,
+            "n_matched": 0,
+            "n_extra": 0
+          },
+          {
+            "tag": "TimeHistory",
+            "name": "displacementOutput",
+            "score": 1.0,
+            "attr_score": 1.0,
+            "n_gt_children": 0,
+            "n_matched": 0,
+            "n_extra": 0
+          },
+          {
+            "tag": "TimeHistory",
+            "name": "tractionOutput",
+            "score": 1.0,
+            "attr_score": 1.0,
+            "n_gt_children": 0,
+            "n_matched": 0,
+            "n_extra": 0
+          },
+          {
+            "tag": "VTK",
+            "name": "vtkOutput",
+            "score": 0.75,
+            "attr_score": 0.75,
+            "n_gt_children": 0,
+            "n_matched": 0,
+            "n_extra": 0
+          }
+        ]
+      },
+      {
+        "tag": "Solvers",
+        "name": "",
+        "score": 1.0,
+        "attr_score": 1.0,
+        "n_gt_children": 1,
+        "n_matched": 1,
+        "n_extra": 0,
+        "children_score": 1.0,
+        "children": [
+          {
+            "tag": "SolidMechanicsLagrangeContact",
+            "name": "lagrangiancontact",
+            "score": 1.0,
+            "attr_score": 1.0,
+            "n_gt_children": 2,
+            "n_matched": 2,
+            "n_extra": 0,
+            "children_score": 1.0,
+            "children": [
+              {
+                "tag": "LinearSolverParameters",
+                "name": "",
+                "score": 1.0,
+                "attr_score": 1.0,
+                "n_gt_children": 0,
+                "n_matched": 0,
+                "n_extra": 0
+              },
+              {
+                "tag": "NonlinearSolverParameters",
+                "name": "",
+                "score": 1.0,
+                "attr_score": 1.0,
+                "n_gt_children": 0,
+                "n_matched": 0,
+                "n_extra": 0
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "tag": "Solvers",
+        "name": "",
+        "score": 1.0,
+        "attr_score": 1.0,
+        "n_gt_children": 1,
+        "n_matched": 1,
+        "n_extra": 0,
+        "children_score": 1.0,
+        "children": [
+          {
+            "tag": "SurfaceGenerator",
+            "name": "SurfaceGen",
+            "score": 1.0,
+            "attr_score": 1.0,
+            "n_gt_children": 0,
+            "n_matched": 0,
+            "n_extra": 0
+          }
+        ]
+      },
+      {
+        "tag": "Tasks",
+        "name": "",
+        "score": 1.0,
+        "attr_score": 1.0,
+        "n_gt_children": 2,
+        "n_matched": 2,
+        "n_extra": 0,
+        "children_score": 1.0,
+        "children": [
+          {
+            "tag": "PackCollection",
+            "name": "displacementJumpCollection",
+            "score": 1.0,
+            "attr_score": 1.0,
+            "n_gt_children": 0,
+            "n_matched": 0,
+            "n_extra": 0
+          },
+          {
+            "tag": "PackCollection",
+            "name": "tractionCollection",
+            "score": 1.0,
+            "attr_score": 1.0,
+            "n_gt_children": 0,
+            "n_matched": 0,
+            "n_extra": 0
+          }
+        ]
+      }
+    ]
+  },
+  "dimension_scores": {
+    "structural_completeness": 1.0,
+    "element_type_match": 1.0,
+    "attribute_accuracy": 0.9939,
+    "tag_coverage": 1.0
+  },
+  "ordering_score": 1.0,
+  "weights": {
+    "structural_completeness": 0.15,
+    "element_type_match": 0.35,
+    "attribute_accuracy": 0.35,
+    "tag_coverage": 0.15
+  },
+  "details": {
+    "structural_completeness": {
+      "required_present": [
+        "Constitutive",
+        "ElementRegions",
+        "Events",
+        "Mesh"
+      ],
+      "required_missing": []
+    },
+    "element_type_match": {
+      "gt_only": [],
+      "gen_only": [],
+      "shared": [
+        "CellElementRegion",
+        "Constitutive",
+        "Coulomb",
+        "ElasticIsotropic",
+        "ElementRegions",
+        "Events",
+        "FieldSpecification",
+        "FieldSpecifications",
+        "FiniteElementSpace",
+        "FiniteElements",
+        "FiniteVolume",
+        "Functions",
+        "Geometry",
+        "InternalMesh",
+        "LinearSolverParameters",
+        "Mesh",
+        "NonlinearSolverParameters",
+        "NumericalMethods",
+        "Outputs",
+        "PackCollection",
+        "PeriodicEvent",
+        "Rectangle",
+        "Restart",
+        "SolidMechanicsLagrangeContact",
+        "SoloEvent",
+        "Solvers",
+        "SurfaceElementRegion",
+        "SurfaceGenerator",
+        "TableFunction",
+        "Tasks",
+        "TimeHistory",
+        "Traction",
+        "TwoPointFluxApproximation",
+        "VTK"
+      ]
+    },
+    "attribute_accuracy": {
+      "matched_attrs": 163,
+      "total_attrs": 164,
+      "elements_compared": 51,
+      "elements_unmatched_gt": 0,
+      "elements_unmatched_gen": 0,
+      "top_mismatches": [
+        {
+          "gt_tag": "VTK",
+          "gt_name": "vtkOutput",
+          "gen_name": "vtkOutput",
+          "similarity": 0.8,
+          "attrs_matched": 3,
+          "attrs_total": 4,
+          "mismatches": [
+            "plotFileRoot: extra in GEN"
+          ]
+        }
+      ]
+    },
+    "tag_coverage": {
+      "covered": [
+        "CellElementRegion",
+        "Constitutive",
+        "Coulomb",
+        "ElasticIsotropic",
+        "ElementRegions",
+        "Events",
+        "FieldSpecification",
+        "FieldSpecifications",
+        "FiniteElementSpace",
+        "FiniteElements",
+        "FiniteVolume",
+        "Functions",
+        "Geometry",
+        "InternalMesh",
+        "LinearSolverParameters",
+        "Mesh",
+        "NonlinearSolverParameters",
+        "NumericalMethods",
+        "Outputs",
+        "PackCollection",
+        "PeriodicEvent",
+        "Rectangle",
+        "Restart",
+        "SolidMechanicsLagrangeContact",
+        "SoloEvent",
+        "Solvers",
+        "SurfaceElementRegion",
+        "SurfaceGenerator",
+        "TableFunction",
+        "Tasks",
+        "TimeHistory",
+        "Traction",
+        "TwoPointFluxApproximation",
+        "VTK"
+      ],
+      "missing": []
+    },
+    "ordering": {
+      "gt_order": [
+        "solverApplications",
+        "outputs",
+        "tractionHistoryCollection",
+        "tractionHistoryOutput",
+        "displacementHistoryCollection",
+        "displacementHistoryOutput"
+      ],
+      "gen_order": [
+        "solverApplications",
+        "outputs",
+        "tractionHistoryCollection",
+        "tractionHistoryOutput",
+        "displacementHistoryCollection",
+        "displacementHistoryOutput"
+      ],
+      "inversions": 0,
+      "max_inversions": 15,
+      "matched_count": 6
+    }
+  },
+  "match_summary": {
+    "paired_elements": 51,
+    "gt_unmatched": 0,
+    "gen_unmatched": 0
+  },
+  "gt_sections": [
+    "Constitutive",
+    "ElementRegions",
+    "Events",
+    "FieldSpecifications",
+    "Functions",
+    "Geometry",
+    "Mesh",
+    "NumericalMethods",
+    "NumericalMethods",
+    "Outputs",
+    "Solvers",
+    "Solvers",
+    "Tasks"
+  ],
+  "gen_sections": [
+    "Constitutive",
+    "ElementRegions",
+    "Events",
+    "FieldSpecifications",
+    "Functions",
+    "Geometry",
+    "Mesh",
+    "NumericalMethods",
+    "NumericalMethods",
+    "Outputs",
+    "Solvers",
+    "Solvers",
+    "Tasks"
+  ],
+  "gt_element_types": [
+    "CellElementRegion",
+    "Constitutive",
+    "Coulomb",
+    "ElasticIsotropic",
+    "ElementRegions",
+    "Events",
+    "FieldSpecification",
+    "FieldSpecifications",
+    "FiniteElementSpace",
+    "FiniteElements",
+    "FiniteVolume",
+    "Functions",
+    "Geometry",
+    "InternalMesh",
+    "LinearSolverParameters",
+    "Mesh",
+    "NonlinearSolverParameters",
+    "NumericalMethods",
+    "Outputs",
+    "PackCollection",
+    "PeriodicEvent",
+    "Rectangle",
+    "Restart",
+    "SolidMechanicsLagrangeContact",
+    "SoloEvent",
+    "Solvers",
+    "SurfaceElementRegion",
+    "SurfaceGenerator",
+    "TableFunction",
+    "Tasks",
+    "TimeHistory",
+    "Traction",
+    "TwoPointFluxApproximation",
+    "VTK"
+  ],
+  "gen_element_types": [
+    "CellElementRegion",
+    "Constitutive",
+    "Coulomb",
+    "ElasticIsotropic",
+    "ElementRegions",
+    "Events",
+    "FieldSpecification",
+    "FieldSpecifications",
+    "FiniteElementSpace",
+    "FiniteElements",
+    "FiniteVolume",
+    "Functions",
+    "Geometry",
+    "InternalMesh",
+    "LinearSolverParameters",
+    "Mesh",
+    "NonlinearSolverParameters",
+    "NumericalMethods",
+    "Outputs",
+    "PackCollection",
+    "PeriodicEvent",
+    "Rectangle",
+    "Restart",
+    "SolidMechanicsLagrangeContact",
+    "SoloEvent",
+    "Solvers",
+    "SurfaceElementRegion",
+    "SurfaceGenerator",
+    "TableFunction",
+    "Tasks",
+    "TimeHistory",
+    "Traction",
+    "TwoPointFluxApproximation",
+    "VTK"
+  ],
+  "mode": "directory",
+  "gt_dir": "/data/shared/geophysics_agent_data/data/eval/experiments_gt/ExampleTFrac/inputs",
+  "gen_dir": "data/eval/claude_code_no_plugin/vanilla_cc_train_s1/ExampleTFrac/inputs",
+  "status": "success"
+}

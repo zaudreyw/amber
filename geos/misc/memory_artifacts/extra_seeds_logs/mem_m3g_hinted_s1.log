@@ -1,0 +1,64 @@
+[93mWarning: --ground-truth-dir '/home/matt/sci/repo3/data/eval/experiments_gt' does not exist; GT XML blocking disabled.[0m
+
+[1m[95m======================================================================[0m
+[1m[95m  GEOS Eval Harness[0m
+[1m[95m======================================================================[0m
+  Run name       : mem_m3g_hinted_s1
+  Experiments dir: /data/shared/geophysics_agent_data/data/eval/experiments_test36_template
+  Tasks          : 17
+  Agents         : ['claude_code_repo3_plugin_m3g_hinted']
+  Combos         : 17
+  Timeout        : 1200s per task
+  Workers        : 12
+  Pseudo retries : 1
+  Dry run        : False
+  GT XML blocking: disabled
+  Results root   : /home/matt/sci/repo3/data/eval
+  Temp GEOS dir  : /data/matt/geos_eval_tmp
+  GEOS lib dir   : /data/shared/geophysics_agent_data/data/GEOS
+  GEOS primer    : /home/brianliu/geophys-embodied-agent-framework/modules/profile/GEOS_PRIMER.md
+  Plugin dir     : /home/matt/sci/repo3/plugin
+  Vector DB dir  : /data/shared/geophysics_agent_data/data/vector_db
+  Claude model   : minimax/minimax-m2.7
+  Results (claude_code_repo3_plugin_m3g_hinted): /home/matt/sci/repo3/data/eval/claude_code_repo3_plugin_m3g_hinted/mem_m3g_hinted_s1
+  Started        : 2026-04-22T09:31:52.879153
+[1m[95m======================================================================[0m
+
+[  1/17] [91mfailed        [0m  claude_code_repo3_plugin_m3g_hinted  AdvancedExampleExtendedDruckerPrager
+[  2/17] [91mfailed        [0m  claude_code_repo3_plugin_m3g_hinted  ExampleIsothermalLeakyWell
+[  3/17] [91mfailed        [0m  claude_code_repo3_plugin_m3g_hinted  ExampleThermalLeakyWell
+[  4/17] [91mfailed        [0m  claude_code_repo3_plugin_m3g_hinted  TutorialSneddon
+[  5/17] [91mfailed        [0m  claude_code_repo3_plugin_m3g_hinted  AdvancedExampleDruckerPrager
+[  6/17] [91mfailed        [0m  claude_code_repo3_plugin_m3g_hinted  AdvancedExampleDeviatedElasticWellbore
+[  7/17] [91mfailed        [0m  claude_code_repo3_plugin_m3g_hinted  ExampleEDPWellbore
+[  8/17] [91mfailed        [0m  claude_code_repo3_plugin_m3g_hinted  AdvancedExampleModifiedCamClay
+[  9/17] [91mfailed        [0m  claude_code_repo3_plugin_m3g_hinted  ExampleDPWellbore
+[ 10/17] [91mfailed        [0m  claude_code_repo3_plugin_m3g_hinted  kgdExperimentValidation
+[ 11/17] [91mfailed        [0m  claude_code_repo3_plugin_m3g_hinted  ExampleMandel
+[ 12/17] [91mfailed        [0m  claude_code_repo3_plugin_m3g_hinted  AdvancedExampleCasedContactThermoElasticWellbore
+[ 13/17] [91mfailed        [0m  claude_code_repo3_plugin_m3g_hinted  pknViscosityDominated
+[ 14/17] [91mfailed        [0m  claude_code_repo3_plugin_m3g_hinted  AdvancedExampleViscoDruckerPrager
+[ 15/17] [91mfailed        [0m  claude_code_repo3_plugin_m3g_hinted  buckleyLeverettProblem
+[ 16/17] [91mfailed        [0m  claude_code_repo3_plugin_m3g_hinted  TutorialPoroelasticity
+[ 17/17] [91mfailed        [0m  claude_code_repo3_plugin_m3g_hinted  ExampleThermoporoelasticConsolidation
+
+[1mDone[0m: [92m0 succeeded[0m, [91m17 failed[0m / 17 total
+
+[91mFailed tasks:[0m
+  [failed] claude_code_repo3_plugin_m3g_hinted / AdvancedExampleExtendedDruckerPrager
+  [failed] claude_code_repo3_plugin_m3g_hinted / ExampleIsothermalLeakyWell
+  [failed] claude_code_repo3_plugin_m3g_hinted / ExampleThermalLeakyWell
+  [failed] claude_code_repo3_plugin_m3g_hinted / TutorialSneddon
+  [failed] claude_code_repo3_plugin_m3g_hinted / AdvancedExampleDruckerPrager
+  [failed] claude_code_repo3_plugin_m3g_hinted / AdvancedExampleDeviatedElasticWellbore
+  [failed] claude_code_repo3_plugin_m3g_hinted / ExampleEDPWellbore
+  [failed] claude_code_repo3_plugin_m3g_hinted / AdvancedExampleModifiedCamClay
+  [failed] claude_code_repo3_plugin_m3g_hinted / ExampleDPWellbore
+  [failed] claude_code_repo3_plugin_m3g_hinted / kgdExperimentValidation
+  [failed] claude_code_repo3_plugin_m3g_hinted / ExampleMandel
+  [failed] claude_code_repo3_plugin_m3g_hinted / AdvancedExampleCasedContactThermoElasticWellbore
+  [failed] claude_code_repo3_plugin_m3g_hinted / pknViscosityDominated
+  [failed] claude_code_repo3_plugin_m3g_hinted / AdvancedExampleViscoDruckerPrager
+  [failed] claude_code_repo3_plugin_m3g_hinted / buckleyLeverettProblem
+  [failed] claude_code_repo3_plugin_m3g_hinted / TutorialPoroelasticity
+  [failed] claude_code_repo3_plugin_m3g_hinted / ExampleThermoporoelasticConsolidation

@@ -1,0 +1,657 @@
+{
+  "experiment": "AdvancedExampleWellboreNonLinearThermalDiffusionTemperatureDependentSinglePhaseThermalConductivity",
+  "overall_score": 8.81,
+  "overall_01": 0.8813,
+  "treesim": 0.8813,
+  "treesim_section_scores": {
+    "Constitutive": 0.727,
+    "ElementRegions": 0.7667,
+    "Events": 1.0,
+    "FieldSpecifications": 0.9067,
+    "Mesh": 1.0,
+    "NumericalMethods": 1.0,
+    "Outputs": 0.65,
+    "Solvers": 1.0
+  },
+  "treesim_detail": {
+    "tag": "Problem",
+    "name": "",
+    "score": 0.8813,
+    "attr_score": 1.0,
+    "n_gt_children": 8,
+    "n_matched": 8,
+    "n_extra": 0,
+    "children_score": 0.8813,
+    "children": [
+      {
+        "tag": "Constitutive",
+        "name": "",
+        "score": 0.727,
+        "attr_score": 1.0,
+        "n_gt_children": 10,
+        "n_matched": 7,
+        "n_extra": 0,
+        "children_score": 0.61,
+        "children": [
+          {
+            "tag": "CompressibleSolidConstantPermeability",
+            "name": "rock_temperatureDependentVolumetricHeatCapacity",
+            "score": 0.6,
+            "attr_score": 0.6,
+            "n_gt_children": 0,
+            "n_matched": 0,
+            "n_extra": 0
+          },
+          {
+            "tag": "CompressibleSolidConstantPermeability",
+            "name": "rock_linear",
+            "score": 0.0,
+            "attr_score": 0.0,
+            "n_gt_children": 0,
+            "n_matched": 0,
+            "n_extra": 0
+          },
+          {
+            "tag": "ConstantPermeability",
+            "name": "rockPerm",
+            "score": 1.0,
+            "attr_score": 1.0,
+            "n_gt_children": 0,
+            "n_matched": 0,
+            "n_extra": 0
+          },
+          {
+            "tag": "NullModel",
+            "name": "nullSolid",
+            "score": 1.0,
+            "attr_score": 1.0,
+            "n_gt_children": 0,
+            "n_matched": 0,
+            "n_extra": 0
+          },
+          {
+            "tag": "PressurePorosity",
+            "name": "rockPorosity",
+            "score": 1.0,
+            "attr_score": 1.0,
+            "n_gt_children": 0,
+            "n_matched": 0,
+            "n_extra": 0
+          },
+          {
+            "tag": "SinglePhaseThermalConductivity",
+            "name": "thermalCond_nonLinear",
+            "score": 0.75,
+            "attr_score": 0.75,
+            "n_gt_children": 0,
+            "n_matched": 0,
+            "n_extra": 0
+          },
+          {
+            "tag": "SinglePhaseThermalConductivity",
+            "name": "thermalCond_linear",
+            "score": 0.0,
+            "attr_score": 0.0,
+            "n_gt_children": 0,
+            "n_matched": 0,
+            "n_extra": 0
+          },
+          {
+            "tag": "SolidInternalEnergy",
+            "name": "rockInternalEnergy_linear",
+            "score": 0.75,
+            "attr_score": 0.75,
+            "n_gt_children": 0,
+            "n_matched": 0,
+            "n_extra": 0
+          },
+          {
+            "tag": "SolidInternalEnergy",
+            "name": "rockInternalEnergy_nonLinear",
+            "score": 0.0,
+            "attr_score": 0.0,
+            "n_gt_children": 0,
+            "n_matched": 0,
+            "n_extra": 0
+          },
+          {
+            "tag": "ThermalCompressibleSinglePhaseFluid",
+            "name": "fluid",
+            "score": 1.0,
+            "attr_score": 1.0,
+            "n_gt_children": 0,
+            "n_matched": 0,
+            "n_extra": 0
+          }
+        ]
+      },
+      {
+        "tag": "ElementRegions",
+        "name": "",
+        "score": 0.7667,
+        "attr_score": 1.0,
+        "n_gt_children": 1,
+        "n_matched": 1,
+        "n_extra": 0,
+        "children_score": 0.6667,
+        "children": [
+          {
+            "tag": "CellElementRegion",
+            "name": "region",
+            "score": 0.6667,
+            "attr_score": 0.6667,
+            "n_gt_children": 0,
+            "n_matched": 0,
+            "n_extra": 0
+          }
+        ]
+      },
+      {
+        "tag": "Events",
+        "name": "",
+        "score": 1.0,
+        "attr_score": 1.0,
+        "n_gt_children": 2,
+        "n_matched": 2,
+        "n_extra": 0,
+        "children_score": 1.0,
+        "children": [
+          {
+            "tag": "PeriodicEvent",
+            "name": "solverApplications",
+            "score": 1.0,
+            "attr_score": 1.0,
+            "n_gt_children": 0,
+            "n_matched": 0,
+            "n_extra": 0
+          },
+          {
+            "tag": "PeriodicEvent",
+            "name": "outputs",
+            "score": 1.0,
+            "attr_score": 1.0,
+            "n_gt_children": 0,
+            "n_matched": 0,
+            "n_extra": 0
+          }
+        ]
+      },
+      {
+        "tag": "FieldSpecifications",
+        "name": "",
+        "score": 0.9067,
+        "attr_score": 1.0,
+        "n_gt_children": 6,
+        "n_matched": 6,
+        "n_extra": 0,
+        "children_score": 0.8667,
+        "children": [
+          {
+            "tag": "FieldSpecification",
+            "name": "initialTemperature",
+            "score": 1.0,
+            "attr_score": 1.0,
+            "n_gt_children": 0,
+            "n_matched": 0,
+            "n_extra": 0
+          },
+          {
+            "tag": "FieldSpecification",
+            "name": "initialPressure",
+            "score": 1.0,
+            "attr_score": 1.0,
+            "n_gt_children": 0,
+            "n_matched": 0,
+            "n_extra": 0
+          },
+          {
+            "tag": "FieldSpecification",
+            "name": "sourceTemperature",
+            "score": 0.8,
+            "attr_score": 0.8,
+            "n_gt_children": 0,
+            "n_matched": 0,
+            "n_extra": 0
+          },
+          {
+            "tag": "FieldSpecification",
+            "name": "sinkTemperature",
+            "score": 0.8,
+            "attr_score": 0.8,
+            "n_gt_children": 0,
+            "n_matched": 0,
+            "n_extra": 0
+          },
+          {
+            "tag": "FieldSpecification",
+            "name": "sourcePressure",
+            "score": 0.8,
+            "attr_score": 0.8,
+            "n_gt_children": 0,
+            "n_matched": 0,
+            "n_extra": 0
+          },
+          {
+            "tag": "FieldSpecification",
+            "name": "sinkPressure",
+            "score": 0.8,
+            "attr_score": 0.8,
+            "n_gt_children": 0,
+            "n_matched": 0,
+            "n_extra": 0
+          }
+        ]
+      },
+      {
+        "tag": "Mesh",
+        "name": "",
+        "score": 1.0,
+        "attr_score": 1.0,
+        "n_gt_children": 1,
+        "n_matched": 1,
+        "n_extra": 0,
+        "children_score": 1.0,
+        "children": [
+          {
+            "tag": "InternalWellbore",
+            "name": "mesh1",
+            "score": 1.0,
+            "attr_score": 1.0,
+            "n_gt_children": 0,
+            "n_matched": 0,
+            "n_extra": 0
+          }
+        ]
+      },
+      {
+        "tag": "NumericalMethods",
+        "name": "",
+        "score": 1.0,
+        "attr_score": 1.0,
+        "n_gt_children": 1,
+        "n_matched": 1,
+        "n_extra": 0,
+        "children_score": 1.0,
+        "children": [
+          {
+            "tag": "FiniteVolume",
+            "name": "",
+            "score": 1.0,
+            "attr_score": 1.0,
+            "n_gt_children": 1,
+            "n_matched": 1,
+            "n_extra": 0,
+            "children_score": 1.0,
+            "children": [
+              {
+                "tag": "TwoPointFluxApproximation",
+                "name": "tpfaFlow",
+                "score": 1.0,
+                "attr_score": 1.0,
+                "n_gt_children": 0,
+                "n_matched": 0,
+                "n_extra": 0
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "tag": "Outputs",
+        "name": "",
+        "score": 0.65,
+        "attr_score": 1.0,
+        "n_gt_children": 2,
+        "n_matched": 1,
+        "n_extra": 0,
+        "children_score": 0.5,
+        "children": [
+          {
+            "tag": "Restart",
+            "name": "restartOutput",
+            "score": 0.0,
+            "attr_score": 0.0,
+            "n_gt_children": 0,
+            "n_matched": 0,
+            "n_extra": 0
+          },
+          {
+            "tag": "VTK",
+            "name": "vtkOutput",
+            "score": 1.0,
+            "attr_score": 1.0,
+            "n_gt_children": 0,
+            "n_matched": 0,
+            "n_extra": 0
+          }
+        ]
+      },
+      {
+        "tag": "Solvers",
+        "name": "",
+        "score": 1.0,
+        "attr_score": 1.0,
+        "n_gt_children": 1,
+        "n_matched": 1,
+        "n_extra": 0,
+        "children_score": 1.0,
+        "children": [
+          {
+            "tag": "SinglePhaseFVM",
+            "name": "singleFlow",
+            "score": 1.0,
+            "attr_score": 1.0,
+            "n_gt_children": 2,
+            "n_matched": 2,
+            "n_extra": 0,
+            "children_score": 1.0,
+            "children": [
+              {
+                "tag": "LinearSolverParameters",
+                "name": "",
+                "score": 1.0,
+                "attr_score": 1.0,
+                "n_gt_children": 0,
+                "n_matched": 0,
+                "n_extra": 0
+              },
+              {
+                "tag": "NonlinearSolverParameters",
+                "name": "",
+                "score": 1.0,
+                "attr_score": 1.0,
+                "n_gt_children": 0,
+                "n_matched": 0,
+                "n_extra": 0
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "dimension_scores": {
+    "structural_completeness": 1.0,
+    "element_type_match": 0.9615,
+    "attribute_accuracy": 0.9043,
+    "tag_coverage": 0.9615
+  },
+  "ordering_score": 1.0,
+  "weights": {
+    "structural_completeness": 0.15,
+    "element_type_match": 0.35,
+    "attribute_accuracy": 0.35,
+    "tag_coverage": 0.15
+  },
+  "details": {
+    "structural_completeness": {
+      "required_present": [
+        "Constitutive",
+        "ElementRegions",
+        "Events",
+        "Mesh"
+      ],
+      "required_missing": []
+    },
+    "element_type_match": {
+      "gt_only": [
+        "Restart"
+      ],
+      "gen_only": [],
+      "shared": [
+        "CellElementRegion",
+        "CompressibleSolidConstantPermeability",
+        "ConstantPermeability",
+        "Constitutive",
+        "ElementRegions",
+        "Events",
+        "FieldSpecification",
+        "FieldSpecifications",
+        "FiniteVolume",
+        "InternalWellbore",
+        "LinearSolverParameters",
+        "Mesh",
+        "NonlinearSolverParameters",
+        "NullModel",
+        "NumericalMethods",
+        "Outputs",
+        "PeriodicEvent",
+        "PressurePorosity",
+        "SinglePhaseFVM",
+        "SinglePhaseThermalConductivity",
+        "SolidInternalEnergy",
+        "Solvers",
+        "ThermalCompressibleSinglePhaseFluid",
+        "TwoPointFluxApproximation",
+        "VTK"
+      ]
+    },
+    "attribute_accuracy": {
+      "matched_attrs": 85,
+      "total_attrs": 94,
+      "elements_compared": 31,
+      "elements_unmatched_gt": 4,
+      "elements_unmatched_gen": 0,
+      "top_mismatches": [
+        {
+          "gt_tag": "CompressibleSolidConstantPermeability",
+          "gt_name": "rock_temperatureDependentVolumetricHeatCapacity",
+          "gen_name": "rock",
+          "similarity": 0.45,
+          "attrs_matched": 3,
+          "attrs_total": 5,
+          "mismatches": [
+            "name: GT='rock_temperatureDependentVolumetricHeatCapacity' GEN='rock'",
+            "solidInternalEnergyModelName: GT='rockInternalEnergy_nonLinear' GEN='rockInternalEnergy'"
+          ]
+        },
+        {
+          "gt_tag": "SolidInternalEnergy",
+          "gt_name": "rockInternalEnergy_linear",
+          "gen_name": "rockInternalEnergy",
+          "similarity": 0.6,
+          "attrs_matched": 3,
+          "attrs_total": 4,
+          "mismatches": [
+            "name: GT='rockInternalEnergy_linear' GEN='rockInternalEnergy'"
+          ]
+        },
+        {
+          "gt_tag": "SinglePhaseThermalConductivity",
+          "gt_name": "thermalCond_nonLinear",
+          "gen_name": "thermalCond",
+          "similarity": 0.6,
+          "attrs_matched": 3,
+          "attrs_total": 4,
+          "mismatches": [
+            "name: GT='thermalCond_nonLinear' GEN='thermalCond'"
+          ]
+        },
+        {
+          "gt_tag": "FieldSpecification",
+          "gt_name": "sourceTemperature",
+          "gen_name": "wellboreTemperature",
+          "similarity": 0.6,
+          "attrs_matched": 4,
+          "attrs_total": 5,
+          "mismatches": [
+            "name: GT='sourceTemperature' GEN='wellboreTemperature'"
+          ]
+        },
+        {
+          "gt_tag": "FieldSpecification",
+          "gt_name": "sinkTemperature",
+          "gen_name": "farfieldTemperature",
+          "similarity": 0.6,
+          "attrs_matched": 4,
+          "attrs_total": 5,
+          "mismatches": [
+            "name: GT='sinkTemperature' GEN='farfieldTemperature'"
+          ]
+        },
+        {
+          "gt_tag": "FieldSpecification",
+          "gt_name": "sourcePressure",
+          "gen_name": "wellborePressure",
+          "similarity": 0.6,
+          "attrs_matched": 4,
+          "attrs_total": 5,
+          "mismatches": [
+            "name: GT='sourcePressure' GEN='wellborePressure'"
+          ]
+        },
+        {
+          "gt_tag": "FieldSpecification",
+          "gt_name": "sinkPressure",
+          "gen_name": "farfieldPressure",
+          "similarity": 0.6,
+          "attrs_matched": 4,
+          "attrs_total": 5,
+          "mismatches": [
+            "name: GT='sinkPressure' GEN='farfieldPressure'"
+          ]
+        },
+        {
+          "gt_tag": "CellElementRegion",
+          "gt_name": "region",
+          "gen_name": "region",
+          "similarity": 0.7,
+          "attrs_matched": 2,
+          "attrs_total": 3,
+          "mismatches": [
+            "materialList: GT='{ fluid, rock_linear, thermalCond_nonLinear }' GEN='{ fluid, rock }'"
+          ]
+        }
+      ]
+    },
+    "tag_coverage": {
+      "covered": [
+        "CellElementRegion",
+        "CompressibleSolidConstantPermeability",
+        "ConstantPermeability",
+        "Constitutive",
+        "ElementRegions",
+        "Events",
+        "FieldSpecification",
+        "FieldSpecifications",
+        "FiniteVolume",
+        "InternalWellbore",
+        "LinearSolverParameters",
+        "Mesh",
+        "NonlinearSolverParameters",
+        "NullModel",
+        "NumericalMethods",
+        "Outputs",
+        "PeriodicEvent",
+        "PressurePorosity",
+        "SinglePhaseFVM",
+        "SinglePhaseThermalConductivity",
+        "SolidInternalEnergy",
+        "Solvers",
+        "ThermalCompressibleSinglePhaseFluid",
+        "TwoPointFluxApproximation",
+        "VTK"
+      ],
+      "missing": [
+        "Restart"
+      ]
+    },
+    "ordering": {
+      "gt_order": [
+        "outputs",
+        "solverApplications"
+      ],
+      "gen_order": [
+        "outputs",
+        "solverApplications"
+      ],
+      "inversions": 0,
+      "max_inversions": 1,
+      "matched_count": 2
+    }
+  },
+  "match_summary": {
+    "paired_elements": 31,
+    "gt_unmatched": 4,
+    "gen_unmatched": 0
+  },
+  "gt_sections": [
+    "Constitutive",
+    "ElementRegions",
+    "Events",
+    "FieldSpecifications",
+    "Mesh",
+    "NumericalMethods",
+    "Outputs",
+    "Solvers"
+  ],
+  "gen_sections": [
+    "Constitutive",
+    "ElementRegions",
+    "Events",
+    "FieldSpecifications",
+    "Mesh",
+    "NumericalMethods",
+    "Outputs",
+    "Solvers"
+  ],
+  "gt_element_types": [
+    "CellElementRegion",
+    "CompressibleSolidConstantPermeability",
+    "ConstantPermeability",
+    "Constitutive",
+    "ElementRegions",
+    "Events",
+    "FieldSpecification",
+    "FieldSpecifications",
+    "FiniteVolume",
+    "InternalWellbore",
+    "LinearSolverParameters",
+    "Mesh",
+    "NonlinearSolverParameters",
+    "NullModel",
+    "NumericalMethods",
+    "Outputs",
+    "PeriodicEvent",
+    "PressurePorosity",
+    "Restart",
+    "SinglePhaseFVM",
+    "SinglePhaseThermalConductivity",
+    "SolidInternalEnergy",
+    "Solvers",
+    "ThermalCompressibleSinglePhaseFluid",
+    "TwoPointFluxApproximation",
+    "VTK"
+  ],
+  "gen_element_types": [
+    "CellElementRegion",
+    "CompressibleSolidConstantPermeability",
+    "ConstantPermeability",
+    "Constitutive",
+    "ElementRegions",
+    "Events",
+    "FieldSpecification",
+    "FieldSpecifications",
+    "FiniteVolume",
+    "InternalWellbore",
+    "LinearSolverParameters",
+    "Mesh",
+    "NonlinearSolverParameters",
+    "NullModel",
+    "NumericalMethods",
+    "Outputs",
+    "PeriodicEvent",
+    "PressurePorosity",
+    "SinglePhaseFVM",
+    "SinglePhaseThermalConductivity",
+    "SolidInternalEnergy",
+    "Solvers",
+    "ThermalCompressibleSinglePhaseFluid",
+    "TwoPointFluxApproximation",
+    "VTK"
+  ],
+  "mode": "directory",
+  "gt_dir": "/data/shared/geophysics_agent_data/data/eval/experiments_gt/AdvancedExampleWellboreNonLinearThermalDiffusionTemperatureDependentSinglePhaseThermalConductivity/inputs",
+  "gen_dir": "data/eval/claude_code_no_plugin/vanilla_cc_train_s1/AdvancedExampleWellboreNonLinearThermalDiffusionTemperatureDependentSinglePhaseThermalConductivity/inputs",
+  "status": "success"
+}

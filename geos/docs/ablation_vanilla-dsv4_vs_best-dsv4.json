@@ -1,0 +1,112 @@
+{
+  "a_name": "vanilla_dsv4_min",
+  "b_name": "best_dsv4_stack",
+  "mean_a": 0.6713333333333333,
+  "mean_b": 0.6277686274509804,
+  "per_task": {
+    "AdvancedExampleCasedContactThermoElasticWellbore": {
+      "a": 0.6986666666666667,
+      "b": 0.6826666666666666,
+      "delta": -0.016000000000000014
+    },
+    "AdvancedExampleDeviatedElasticWellbore": {
+      "a": 0.7661666666666667,
+      "b": 0.27649999999999997,
+      "delta": -0.4896666666666667
+    },
+    "AdvancedExampleDruckerPrager": {
+      "a": 0.6083666666666667,
+      "b": 0.7460666666666667,
+      "delta": 0.13769999999999993
+    },
+    "AdvancedExampleExtendedDruckerPrager": {
+      "a": 0.7690333333333333,
+      "b": 0.8164,
+      "delta": 0.04736666666666667
+    },
+    "AdvancedExampleModifiedCamClay": {
+      "a": 0.5700666666666667,
+      "b": 0.6673,
+      "delta": 0.09723333333333328
+    },
+    "AdvancedExampleViscoDruckerPrager": {
+      "a": 0.7382333333333333,
+      "b": 0.6354,
+      "delta": -0.10283333333333333
+    },
+    "ExampleDPWellbore": {
+      "a": 0.4867666666666667,
+      "b": 0.3005333333333333,
+      "delta": -0.18623333333333336
+    },
+    "ExampleEDPWellbore": {
+      "a": 0.8411666666666666,
+      "b": 0.8375,
+      "delta": -0.003666666666666596
+    },
+    "ExampleIsothermalLeakyWell": {
+      "a": 0.791,
+      "b": 0.7397666666666667,
+      "delta": -0.05123333333333335
+    },
+    "ExampleMandel": {
+      "a": 0.31246666666666667,
+      "b": 0.2817,
+      "delta": -0.030766666666666664
+    },
+    "ExampleThermalLeakyWell": {
+      "a": 0.6558,
+      "b": 0.7008333333333333,
+      "delta": 0.04503333333333326
+    },
+    "ExampleThermoporoelasticConsolidation": {
+      "a": 0.7691666666666667,
+      "b": 0.7724666666666666,
+      "delta": 0.0032999999999999696
+    },
+    "TutorialPoroelasticity": {
+      "a": 0.3651666666666667,
+      "b": 0.38226666666666664,
+      "delta": 0.01709999999999995
+    },
+    "TutorialSneddon": {
+      "a": 0.6426,
+      "b": 0.4097,
+      "delta": -0.23289999999999994
+    },
+    "buckleyLeverettProblem": {
+      "a": 0.7259,
+      "b": 0.7751333333333333,
+      "delta": 0.04923333333333335
+    },
+    "kgdExperimentValidation": {
+      "a": 0.7729666666666667,
+      "b": 0.8128,
+      "delta": 0.039833333333333276
+    },
+    "pknViscosityDominated": {
+      "a": 0.8991333333333333,
+      "b": 0.8350333333333333,
+      "delta": -0.06410000000000005
+    }
+  },
+  "big_swing": [
+    "AdvancedExampleDeviatedElasticWellbore",
+    "TutorialSneddon",
+    "ExampleDPWellbore",
+    "AdvancedExampleViscoDruckerPrager",
+    "AdvancedExampleDruckerPrager"
+  ],
+  "patterns": [
+    "**RAG replaces filesystem search**: in 2/5 big-swing tasks, B used RAG instead of Glob/Grep (smoking-gun mechanism for plugin underperformance).",
+    "**Fewer Reads under B**: in 3/5 big-swing tasks, B made <\u00bd as many Read calls as A.",
+    "**Section 'Solvers' drops repeatedly under B**: 3/5 big-swing tasks lose \u22650.30 in this section.",
+    "**Section 'Constitutive' drops repeatedly under B**: 2/5 big-swing tasks lose \u22650.30 in this section.",
+    "**Section 'ElementRegions' drops repeatedly under B**: 2/5 big-swing tasks lose \u22650.30 in this section.",
+    "**Section 'FieldSpecifications' drops repeatedly under B**: 2/5 big-swing tasks lose \u22650.30 in this section.",
+    "**Section 'Mesh' drops repeatedly under B**: 2/5 big-swing tasks lose \u22650.30 in this section.",
+    "**Section 'Outputs' drops repeatedly under B**: 2/5 big-swing tasks lose \u22650.30 in this section.",
+    "**Section 'Events' drops repeatedly under B**: 2/5 big-swing tasks lose \u22650.30 in this section.",
+    "**Section 'Functions' drops repeatedly under B**: 2/5 big-swing tasks lose \u22650.30 in this section."
+  ]
+}

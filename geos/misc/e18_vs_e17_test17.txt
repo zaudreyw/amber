@@ -1,0 +1,43 @@
+
+==============================================================================
+  gmem_mm_v2 vs plug_mm_v2
+==============================================================================
+  tasks in both: 13
+  only in gmem_mm_v2: ['AdvancedExampleDeviatedElasticWellbore', 'AdvancedExampleDruckerPrager', 'ExampleDPWellbore', 'ExampleThermalLeakyWell']
+
+  gmem_mm_v2
+    scored: 17/17    failed: []
+    mean: 0.725    median: 0.847    range: [0.301, 0.998]
+    pass >=0.7: 11/17
+
+  plug_mm_v2
+    scored: 13/13    failed: []
+    mean: 0.575    median: 0.568    range: [0.148, 1.000]
+    pass >=0.7: 4/13
+
+  Paired on 13 tasks scored in both runs:
+    mean delta (gmem_mm_v2 - plug_mm_v2): +0.094
+    median delta: +0.055
+    wins gmem_mm_v2: 9
+    wins plug_mm_v2: 4
+    ties: 0
+
+  Biggest wins for gmem_mm_v2:
+    +0.511   gmem_mm_v2=0.865  plug_mm_v2=0.354   ExampleIsothermalLeakyWell
+    +0.507   gmem_mm_v2=0.847  plug_mm_v2=0.340   AdvancedExampleCasedContactThermoElasticWellbore
+    +0.424   gmem_mm_v2=0.992  plug_mm_v2=0.568   AdvancedExampleModifiedCamClay
+    +0.298   gmem_mm_v2=0.573  plug_mm_v2=0.274   ExampleThermoporoelasticConsolidation
+    +0.154   gmem_mm_v2=0.301  plug_mm_v2=0.148   TutorialSneddon
+    +0.076   gmem_mm_v2=0.404  plug_mm_v2=0.328   pknViscosityDominated
+    +0.055   gmem_mm_v2=0.723  plug_mm_v2=0.667   TutorialPoroelasticity
+    +0.036   gmem_mm_v2=0.349  plug_mm_v2=0.314   ExampleMandel
+
+  Biggest wins for plug_mm_v2:
+    -0.478   gmem_mm_v2=0.468  plug_mm_v2=0.945   ExampleEDPWellbore
+    -0.236   gmem_mm_v2=0.393  plug_mm_v2=0.629   buckleyLeverettProblem
+    -0.120   gmem_mm_v2=0.880  plug_mm_v2=1.000   AdvancedExampleExtendedDruckerPrager
+    -0.019   gmem_mm_v2=0.903  plug_mm_v2=0.923   kgdExperimentValidation
+    +0.013   gmem_mm_v2=0.998  plug_mm_v2=0.985   AdvancedExampleViscoDruckerPrager
+    +0.036   gmem_mm_v2=0.349  plug_mm_v2=0.314   ExampleMandel
+    +0.055   gmem_mm_v2=0.723  plug_mm_v2=0.667   TutorialPoroelasticity
+    +0.076   gmem_mm_v2=0.404  plug_mm_v2=0.328   pknViscosityDominated

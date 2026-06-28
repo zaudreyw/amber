@@ -1,0 +1,68 @@
+[93mWarning: --ground-truth-dir '/home/matt/sci/repo3/data/eval/experiments_gt' does not exist; GT XML blocking disabled.[0m
+
+[1m[95m======================================================================[0m
+[1m[95m  GEOS Eval Harness[0m
+[1m[95m======================================================================[0m
+  Run name       : vanilla_cc_train_s1
+  Experiments dir: /data/shared/geophysics_agent_data/data/eval/experiments_test36_template
+  Tasks          : 18
+  Agents         : ['claude_code_no_plugin']
+  Combos         : 18
+  Timeout        : 1200s per task
+  Workers        : 12
+  Pseudo retries : 1
+  Dry run        : False
+  GT XML blocking: disabled
+  Results root   : /home/matt/sci/repo3/data/eval
+  Temp GEOS dir  : /data/matt/geos_eval_tmp
+  GEOS lib dir   : /data/shared/geophysics_agent_data/data/GEOS
+  GEOS primer    : /home/brianliu/geophys-embodied-agent-framework/modules/profile/GEOS_PRIMER.md
+  Plugin dir     : /home/matt/sci/repo3/plugin
+  Vector DB dir  : /data/shared/geophysics_agent_data/data/vector_db
+  Claude model   : minimax/minimax-m2.7
+  Results (claude_code_no_plugin): /home/matt/sci/repo3/data/eval/claude_code_no_plugin/vanilla_cc_train_s1
+  Started        : 2026-04-22T03:38:44.065473
+[1m[95m======================================================================[0m
+
+[96m--extend-blocklist-with-test:[0m unioning 55 test-task blocked basenames into every task's blocklist
+  [extra-blocklist] 55 additional XML basenames blocked for triaxialDriverExample
+  [extra-blocklist] 55 additional XML basenames blocked for AdvancedExampleViscoModifiedCamClay
+  [extra-blocklist] 55 additional XML basenames blocked for kgdViscosityDominated
+  [extra-blocklist] 55 additional XML basenames blocked for pennyFracViscosityDominated
+  [extra-blocklist] 55 additional XML basenames blocked for AdvancedExampleCasedElasticWellboreImperfectInterfaces
+  [extra-blocklist] 55 additional XML basenames blocked for kgdToughnessDominated
+  [extra-blocklist] 55 additional XML basenames blocked for ExampleKirschWellbore
+  [extra-blocklist] 55 additional XML basenames blocked for pennyFracToughnessDominated
+  [extra-blocklist] 55 additional XML basenames blocked for AdvancedExampleCasedElasticWellbore
+  [extra-blocklist] 55 additional XML basenames blocked for AdvancedWellboreExampleNonLinearThermalDiffusionTemperatureDependentVolumetricHeatCapacity
+  [extra-blocklist] 55 additional XML basenames blocked for TutorialDeadOilEgg
+  [extra-blocklist] 55 additional XML basenames blocked for TutorialDeadOilBottomLayersSPE10
+[  1/18] [92msuccess       [0m  claude_code_no_plugin         ExampleKirschWellbore
+  [extra-blocklist] 55 additional XML basenames blocked for relaxationTest
+[  2/18] [92msuccess       [0m  claude_code_no_plugin         kgdViscosityDominated
+  [extra-blocklist] 55 additional XML basenames blocked for AdvancedExampleDeviatedPoroElasticWellbore
+[  3/18] [92msuccess       [0m  claude_code_no_plugin         AdvancedExampleCasedElasticWellbore
+  [extra-blocklist] 55 additional XML basenames blocked for TutorialCO2FieldCase
+[  4/18] [92msuccess       [0m  claude_code_no_plugin         TutorialDeadOilBottomLayersSPE10
+  [extra-blocklist] 55 additional XML basenames blocked for faultVerification
+[  5/18] [92msuccess       [0m  claude_code_no_plugin         kgdToughnessDominated
+  [extra-blocklist] 55 additional XML basenames blocked for ExampleTFrac
+[  6/18] [91mfailed_no_outputs[0m  claude_code_no_plugin         AdvancedWellboreExampleNonLinearThermalDiffusionTemperatureDependentVolumetricHeatCapacity
+  [extra-blocklist] 55 additional XML basenames blocked for AdvancedExampleWellboreNonLinearThermalDiffusionTemperatureDependentSinglePhaseThermalConductivity
+[  7/18] [92msuccess       [0m  claude_code_no_plugin         triaxialDriverExample
+[  8/18] [92msuccess       [0m  claude_code_no_plugin         pennyFracToughnessDominated
+[  9/18] [92msuccess       [0m  claude_code_no_plugin         AdvancedExampleCasedElasticWellboreImperfectInterfaces
+[ 10/18] [92msuccess       [0m  claude_code_no_plugin         AdvancedExampleWellboreNonLinearThermalDiffusionTemperatureDependentSinglePhaseThermalConductivity
+[ 11/18] [92msuccess       [0m  claude_code_no_plugin         AdvancedExampleDeviatedPoroElasticWellbore
+[ 12/18] [92msuccess       [0m  claude_code_no_plugin         AdvancedExampleViscoModifiedCamClay
+[ 13/18] [92msuccess       [0m  claude_code_no_plugin         TutorialDeadOilEgg
+[ 14/18] [92msuccess       [0m  claude_code_no_plugin         relaxationTest
+[ 15/18] [92msuccess       [0m  claude_code_no_plugin         TutorialCO2FieldCase
+[ 16/18] [92msuccess       [0m  claude_code_no_plugin         faultVerification
+[ 17/18] [92msuccess       [0m  claude_code_no_plugin         ExampleTFrac
+[ 18/18] [92msuccess       [0m  claude_code_no_plugin         pennyFracViscosityDominated
+
+[1mDone[0m: [92m17 succeeded[0m, [91m1 failed[0m / 18 total
+
+[91mFailed tasks:[0m
+  [failed_no_outputs] claude_code_no_plugin / AdvancedWellboreExampleNonLinearThermalDiffusionTemperatureDependentVolumetricHeatCapacity

@@ -1,0 +1,48 @@
+[  1/17] AdvancedExampleCasedContactThermoElasticWellbore  FAILED: FileNotFoundError: No XML files found in data/eval/claude_code_repo3_plugin_m3g/mem_m3g_s1/AdvancedExampleCasedContactThermoElasticWellbore/inputs
+[  2/17] AdvancedExampleDeviatedElasticWellbore  0.83/10
+[  3/17] AdvancedExampleDruckerPrager  4.72/10
+[  4/17] AdvancedExampleExtendedDruckerPrager  4.52/10
+[  5/17] AdvancedExampleModifiedCamClay  3.71/10
+[  6/17] AdvancedExampleViscoDruckerPrager  10.00/10
+[  7/17] ExampleDPWellbore  1.67/10
+[  8/17] ExampleEDPWellbore  2.72/10
+[  9/17] ExampleIsothermalLeakyWell  3.35/10
+[ 10/17] ExampleMandel  0.00/10
+[ 11/17] ExampleThermalLeakyWell  3.06/10
+[ 12/17] ExampleThermoporoelasticConsolidation  0.73/10
+[ 13/17] TutorialPoroelasticity  2.73/10
+[ 14/17] TutorialSneddon  1.90/10
+[ 15/17] buckleyLeverettProblem  3.40/10
+[ 16/17] kgdExperimentValidation  2.60/10
+[ 17/17] pknViscosityDominated  1.86/10
+
+============================================================
+  Batch evaluation: 16/17 succeeded
+============================================================
+  Scored-only     overall_score mean: 2.987  (median 2.725, range 0.00-10.00)
+  Failures-as-0   overall_score mean: 2.812
+  Scored-only     treesim       mean: 0.299
+  Failures-as-0   treesim       mean: 0.281
+  Pass ≥7: 1/16 (of scored)
+
+  10.00/10  AdvancedExampleViscoDruckerPrager  treesim=1.000
+   4.72/10  AdvancedExampleDruckerPrager  treesim=0.472
+   4.52/10  AdvancedExampleExtendedDruckerPrager  treesim=0.452
+   3.71/10  AdvancedExampleModifiedCamClay  treesim=0.371
+   3.40/10  buckleyLeverettProblem  treesim=0.340
+   3.35/10  ExampleIsothermalLeakyWell  treesim=0.335
+   3.06/10  ExampleThermalLeakyWell  treesim=0.306
+   2.73/10  TutorialPoroelasticity  treesim=0.273
+   2.72/10  ExampleEDPWellbore  treesim=0.272
+   2.60/10  kgdExperimentValidation  treesim=0.260
+   1.90/10  TutorialSneddon  treesim=0.190
+   1.86/10  pknViscosityDominated  treesim=0.186
+   1.67/10  ExampleDPWellbore  treesim=0.167
+   0.83/10  AdvancedExampleDeviatedElasticWellbore  treesim=0.083
+   0.73/10  ExampleThermoporoelasticConsolidation  treesim=0.073
+   0.00/10  ExampleMandel  treesim=0.000
+
+  Failed (1) — counted as 0 in failures-as-zero mean:
+    AdvancedExampleCasedContactThermoElasticWellbore: FileNotFoundError: No XML files found in data/eval/claude_code_repo3_plugin_m3g/mem_m3g_s1/AdvancedExampleCasedContactThermoElasticWellbore/inputs
+
+Wrote misc/memory_artifacts/scores/mem_m3g_s1_summary.json

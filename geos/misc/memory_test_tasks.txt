@@ -1,0 +1,18 @@
+TEST tasks (n=17):
+  ExampleDPWellbore
+  AdvancedExampleExtendedDruckerPrager
+  ExampleMandel
+  AdvancedExampleModifiedCamClay
+  ExampleIsothermalLeakyWell
+  ExampleEDPWellbore
+  AdvancedExampleDeviatedElasticWellbore
+  kgdExperimentValidation
+  ExampleThermalLeakyWell
+  AdvancedExampleCasedContactThermoElasticWellbore
+  AdvancedExampleDruckerPrager
+  TutorialSneddon
+  AdvancedExampleViscoDruckerPrager
+  pknViscosityDominated
+  buckleyLeverettProblem
+  TutorialPoroelasticity
+  ExampleThermoporoelasticConsolidation
